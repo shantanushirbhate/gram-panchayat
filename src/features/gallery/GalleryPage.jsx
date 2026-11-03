@@ -44,58 +44,58 @@ const galleryImages = [
   {
     id: 1,
     category: "village",
-    title: "Village View",
+    title: "Traditional Indian Village",
     image:
-      "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80",
+      "https://www.renuka-voyagerforlife.com/wp-content/uploads/2019/12/IMG-Dehna-Shahpur-District.jpg",
   },
   {
     id: 2,
-    category: "development",
-    title: "Village Development",
+    category: "village",
+    title: "Maharashtra Village Street",
     image:
-      "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80",
+      "https://media.assettype.com/deccanherald/import/sites/dh/files/articleimages/2022/11/25/istock-468861698-1-1165615-1669370304.jpg?auto=format%2Ccompress&enlarge=true&fit=max&h=675&w=1200",
   },
   {
     id: 3,
-    category: "nature",
-    title: "Green Fields",
+    category: "agriculture",
+    title: "Indian Rural Bullock Cart",
     image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1604491671692-bb9413a6003b?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 4,
-    category: "events",
-    title: "Village Celebration",
+    category: "agriculture",
+    title: "Traditional Farming in Maharashtra",
     image:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
+      "https://bsmedia.business-standard.com/_media/bs/img/article/2015-04/21/full/1429604783-413.jpg",
   },
   {
     id: 5,
     category: "village",
-    title: "Village Life",
+    title: "Rural Life in Maharashtra",
     image:
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Rural_girl_riding_a_bullock_cart_in_village%2C_Beed%2C_Maharashtra.jpg/1200px-Rural_girl_riding_a_bullock_cart_in_village%2C_Beed%2C_Maharashtra.jpg",
   },
   {
     id: 6,
-    category: "development",
-    title: "Infrastructure",
+    category: "nature",
+    title: "Indian Rural Green Fields",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      "https://static2.tripoto.com/media/filter/tst/img/794607/TripDocument/1556621112_fireflies4.png",
   },
   {
     id: 7,
-    category: "nature",
-    title: "Beautiful Nature",
+    category: "development",
+    title: "Rural Water and Transportation",
     image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80",
+      "https://media.assettype.com/indiawaterportal%2F2025-08-07%2Fk8ig0ngu%2FScreenshot-2025-08-07-122216.png",
   },
   {
     id: 8,
-    category: "events",
-    title: "Community Event",
+    category: "nature",
+    title: "Indian Countryside",
     image:
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
