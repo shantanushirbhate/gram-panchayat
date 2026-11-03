@@ -1,0 +1,62 @@
+
+src/
+│
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+│
+├── common/
+│   ├── Header.jsx
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── Loader.jsx
+│   ├── SectionTitle.jsx
+│   └── LanguageSwitcher.jsx
+│
+├── features/
+│   ├── home/
+│   │   ├── HomePage.jsx
+│   │   └── components/
+│   │
+│   ├── about/
+│   │   ├── AboutPage.jsx
+│   │   └── components/
+│   │
+│   ├── services/
+│   │   ├── ServicesPage.jsx
+│   │   └── components/
+│   │
+│   ├── gallery/
+│   │   ├── GalleryPage.jsx
+│   │   └── components/
+│   │
+│   └── contact/
+│       ├── ContactPage.jsx
+│       └── components/
+│
+├── layouts/
+│   └── MainLayout.jsx
+│
+├── routes/
+│   └── AppRoutes.jsx
+│
+├── context/
+│   └── LanguageContext.jsx
+│
+├── locales/
+│   ├── en.json
+│   └── mr.json
+│
+├── services/
+│   └── api.js
+│
+├── theme/
+│   └── theme.js
+│
+├── utils/
+│   └── constants.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css

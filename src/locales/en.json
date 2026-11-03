@@ -1,0 +1,201 @@
+{
+  "header": {
+    "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
+    "contact": "Contact Gram Panchayat",
+    "portal": "Official Information Portal"
+  },
+  "footer": {
+    "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
+    "englishName": "Gram Panchayat Pimpalkhuta Budruk",
+    "description": "Welcome to the official digital platform of Gram Panchayat Pimpalkhuta Budruk.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "contactInformation": "Contact Information",
+    "address": "Pimpalkhuta Budruk, Maharashtra, India",
+    "office": "Gram Panchayat Office",
+    "officialContact": "Official Contact",
+    "copyright": "Gram Panchayat Pimpalkhuta Budruk. All Rights Reserved.",
+    "tagline": "Designed for Digital Village Development"
+  },
+  "navbar": {
+  "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
+  "englishName": "Gram Panchayat Pimpalkhuta Budruk",
+  "home": "Home",
+  "about": "About Us",
+  "services": "Services",
+  "gallery": "Gallery",
+  "contact": "Contact"
+},
+
+"home": {
+  "welcome": "Welcome to our village",
+  "heroTitle": "A Digital Gateway to a Developed Village",
+  "heroDescription": "Welcome to the official website of Gram Panchayat Pimpalkhuta Budruk. Explore village information, citizen services and development initiatives.",
+  "aboutButton": "About Gram Panchayat",
+  "servicesButton": "Explore Services",
+  "servicesSubtitle": "CITIZEN SERVICES",
+  "servicesTitle": "Services for Every Citizen",
+  "servicesDescription": "Access important Gram Panchayat services and information.",
+  "birthDeath": "Certificates",
+  "birthDeathDesc": "Information about birth and death registration and certificates.",
+  "propertyTax": "Property Tax",
+  "propertyTaxDesc": "Access property tax information and related services.",
+  "waterSupply": "Water Supply",
+  "waterSupplyDesc": "Information about village water supply services.",
+  "complaints": "Complaints",
+  "complaintsDesc": "Share your concerns and suggestions with the Gram Panchayat.",
+  "learnMore": "Learn More",
+  "aboutSubtitle": "ABOUT OUR VILLAGE",
+  "aboutTitle": "A Village Moving Towards Development",
+  "aboutDescription": "Gram Panchayat Pimpalkhuta Budruk is committed to transparent administration, citizen participation and sustainable village development.",
+  "readMore": "Read More",
+  "statisticsTitle": "Our Village at a Glance",
+  "statisticsDescription": "Important information about our village.",
+  "population": "Population",
+  "families": "Families",
+  "wards": "Wards",
+  "villageArea": "Village Area",
+  "noticesTitle": "Latest Notices & Announcements",
+  "noticesDescription": "Stay updated with the latest Gram Panchayat announcements, public notices and important information for citizens.",
+  "viewNotices": "View All Notices",
+  "galleryTitle": "Village Gallery",
+  "galleryDescription": "Explore photographs of our village, development activities and community events.",
+  "viewGallery": "Explore Gallery",
+  "contactTitle": "Have a Question or Need Assistance?",
+  "contactDescription": "Get in touch with Gram Panchayat Pimpalkhuta Budruk.",
+  "contactButton": "Contact Us"
+},
+"about": {
+  "breadcrumb": "HOME / ABOUT US",
+  "heroTitle": "About Our Village",
+  "heroDescription": "Discover Gram Panchayat Pimpalkhuta Budruk, our community, our values and our commitment towards village development.",
+  "introSubtitle": "WHO WE ARE",
+  "introTitle": "Welcome to Gram Panchayat Pimpalkhuta Budruk",
+  "introDescription": "Gram Panchayat Pimpalkhuta Budruk works towards the overall development of the village and the well-being of its citizens.",
+  "introDescription2": "Through public participation, transparent administration and local development initiatives, the Gram Panchayat aims to provide essential services and improve the quality of village life.",
+  "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
+  "panchayatSubname": "Local Self-Government Institution",
+  "directionSubtitle": "OUR PURPOSE",
+  "directionTitle": "Our Vision & Mission",
+  "visionTitle": "Our Vision",
+  "visionDescription": "To build a clean, healthy, educated and developed village where every citizen has access to essential facilities and opportunities.",
+  "missionTitle": "Our Mission",
+  "missionDescription": "To provide transparent and responsible local administration, encourage citizen participation and support sustainable village development.",
+  "responsibilitySubtitle": "WHAT WE DO",
+  "responsibilityTitle": "Our Responsibilities",
+  "responsibilityDescription": "Working towards essential services and a better quality of life for villagers.",
+  "water": "Water Supply",
+  "waterDesc": "Supporting access to clean drinking water and maintaining village water supply facilities.",
+  "cleanliness": "Cleanliness",
+  "cleanlinessDesc": "Encouraging sanitation, waste management and a clean village environment.",
+  "education": "Education",
+  "educationDesc": "Supporting educational awareness and initiatives for children and the community.",
+  "welfare": "Public Welfare",
+  "welfareDesc": "Promoting citizen welfare and helping people access relevant government services.",
+  "developmentSubtitle": "OUR COMMITMENT",
+  "developmentTitle": "Building a Better Future Together",
+  "developmentDescription": "Village development is a shared responsibility. We believe that community participation and effective local administration can create lasting positive change.",
+  "developmentPoint1": "Improving basic village infrastructure and facilities",
+  "developmentPoint2": "Encouraging public participation in local development",
+  "developmentPoint3": "Supporting cleanliness and sustainable development",
+  "contactTitle": "Connect With Your Gram Panchayat",
+  "contactDescription": "For information and assistance, get in touch with our Gram Panchayat office.",
+  "contactButton": "Contact Us"
+},"services": {
+  "label": "Gram Panchayat Services",
+  "title": "Services for Our Village",
+  "description": "The Gram Panchayat provides essential services and facilities to support residents and improve the quality of village life.",
+  "sectionLabel": "WHAT WE OFFER",
+  "sectionTitle": "Our Public Services",
+  "sectionDescription": "Explore the various services provided by the Gram Panchayat.",
+  "contactButton": "Contact Office",
+  "ctaTitle": "Need Help with a Service?",
+  "ctaDescription": "Contact the Gram Panchayat office for information and assistance regarding village services.",
+  "ctaButton": "Contact Us",
+  "items": {
+    "birth": {
+      "title": "Birth Certificate",
+      "description": "Get information about birth registration and the process for obtaining birth certificates."
+    },
+    "death": {
+      "title": "Death Certificate",
+      "description": "Get information about death registration and the required documentation."
+    },
+    "residence": {
+      "title": "Residence Certificate",
+      "description": "Get guidance about residence verification and the certificate application process."
+    },
+    "property": {
+      "title": "Property Tax",
+      "description": "Get information about property tax assessment, payment procedures and related services."
+    },
+    "water": {
+      "title": "Water Supply",
+      "description": "Find information about village water supply facilities, maintenance and related concerns."
+    },
+    "cleanliness": {
+      "title": "Sanitation & Cleanliness",
+      "description": "Learn about village cleanliness, waste management and sanitation initiatives."
+    },
+    "schemes": {
+      "title": "Government Schemes",
+      "description": "Get information about government welfare schemes and eligibility requirements."
+    },
+    "complaints": {
+      "title": "Public Complaints",
+      "description": "Find out how to submit complaints and raise issues concerning village facilities."
+    }
+  }
+},"gallery": {
+  "label": "Village Photo Gallery",
+  "title": "Explore Our Village",
+  "description": "Discover the beauty, culture, development and memorable moments of our village through photographs.",
+  "sectionLabel": "OUR MEMORIES",
+  "sectionTitle": "Village Photo Gallery",
+  "sectionDescription": "Explore photographs from different parts of village life.",
+  "noImages": "No photographs available in this category.",
+  "ctaTitle": "Have Village Photographs?",
+  "ctaDescription": "Help us preserve our village memories by sharing photographs of local events and development.",
+  "ctaButton": "Contact Us",
+  "categories": {
+    "all": "All Photos",
+    "village": "Village",
+    "development": "Development",
+    "events": "Events",
+    "nature": "Nature"
+  }
+},"contact": {
+  "label": "GET IN TOUCH",
+  "title": "Contact Gram Panchayat",
+  "description": "We are here to help you. Contact the Gram Panchayat office for information, assistance and public services.",
+  "sectionLabel": "CONTACT INFORMATION",
+  "sectionTitle": "How Can We Help You?",
+  "addressTitle": "Office Address",
+  "address": "Gram Panchayat Pimpalkhuta Budruk, Maharashtra, India",
+  "phoneTitle": "Phone Number",
+  "phone": "Update official phone number",
+  "emailTitle": "Email Address",
+  "email": "Update official email address",
+  "officeTitle": "Office Hours",
+  "officeHours": "Update official office timings",
+  "formTitle": "Send Us a Message",
+  "formDescription": "Fill out the form below to share your query with us.",
+  "name": "Your Name",
+  "email": "Email Address",
+  "phone": "Phone Number",
+  "subject": "Subject",
+  "message": "Your Message",
+  "sendButton": "Send Message",
+  "successMessage": "Your message form was submitted. Please connect a backend to deliver it to the office.",
+  "mapTitle": "Find Our Location",
+  "mapDescription": "Locate Gram Panchayat Pimpalkhuta Budruk.",
+  "ctaTitle": "We Are Happy to Help You",
+  "ctaDescription": "Visit the Gram Panchayat office for assistance with village services and public information."
+}
+
+
+}
