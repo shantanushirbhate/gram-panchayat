@@ -22,7 +22,7 @@ import {
 } from "swiper/modules";
 
 import MinisterSection from "./component/villagephotoslider/ministerphotos";
-
+import TodaysThoughts from "./component/todaythought/Todaysthought";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
@@ -509,6 +509,9 @@ function HomePage() {
           ))}
         </Swiper>
 
+
+
+
         {/* VILLAGE LOCATION LABEL */}
         <Box
           sx={{
@@ -716,6 +719,9 @@ function HomePage() {
           ))}
         </Box>
       </Box>
+
+      <TodaysThoughts />
+
 
       {/* OUR VILLAGE SECTION */}
       <Box

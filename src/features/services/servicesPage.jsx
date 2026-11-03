@@ -6,7 +6,7 @@ import {
   Card,
   CardContent,
   Button,
-//   Stack,
+  Stack,
 } from "@mui/material";
 
 import {
@@ -17,12 +17,28 @@ import {
   Trash2,
   Landmark,
   MessageCircleWarning,
-//   Users,
   ArrowRight,
+  // CheckCircle2,
+  Building2,
+  Sparkles,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
+const COLORS = {
+  green: "#173B2A",
+  darkGreen: "#102D20",
+  orange: "#C65A16",
+  saffron: "#FF9933",
+  cream: "#FFF7ED",
+  lightGreen: "#EAF2EC",
+  white: "#FFFFFF",
+  text: "#334155",
+  muted: "#64748B",
+  border: "#E2EAE4",
+  background: "#F7F9F7",
+};
 
 const services = [
   {
@@ -75,92 +91,246 @@ const services = [
   },
 ];
 
+function SectionLabel({ children, centered = false }) {
+  return (
+    <Stack
+      direction="row"
+      alignItems="center"
+      justifyContent={centered ? "center" : "flex-start"}
+      spacing={1.2}
+      sx={{ mb: 1.5 }}
+    >
+      <Box
+        sx={{
+          width: 30,
+          height: 3,
+          borderRadius: 5,
+          backgroundColor: COLORS.saffron,
+        }}
+      />
+
+      <Typography
+        sx={{
+          color: COLORS.orange,
+          fontWeight: 800,
+          fontSize: 12,
+          letterSpacing: 1.5,
+          textTransform: "uppercase",
+        }}
+      >
+        {children}
+      </Typography>
+    </Stack>
+  );
+}
+
 function ServicesPage() {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
+    <Box
+      sx={{
+        backgroundColor: COLORS.background,
+        minHeight: "100vh",
+        overflow: "hidden",
+      }}
+    >
+      {/* ================= HERO SECTION ================= */}
 
-      {/* Hero Section */}
       <Box
         sx={{
-          background:
-            "linear-gradient(120deg, #FFF0DF 0%, #F0F5F1 100%)",
-          py: { xs: 7, md: 10 },
-          textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
+          background: `
+            linear-gradient(
+              115deg,
+              rgba(10, 39, 25, 0.97),
+              rgba(23, 59, 42, 0.94),
+              rgba(23, 59, 42, 0.82)
+            )
+          `,
+          py: { xs: 8, sm: 10, md: 13 },
         }}
       >
-        <Container maxWidth="lg">
-          <Typography
-            sx={{
-              color: "#C65A16",
-              fontWeight: 700,
-              fontSize: 14,
-              letterSpacing: 1.5,
-              textTransform: "uppercase",
-              mb: 2,
-            }}
-          >
-            {t("services.label")}
-          </Typography>
+        {/* Decorative circles */}
 
-          <Typography
-            variant="h3"
-            sx={{
-              color: "#173B2A",
-              fontWeight: 800,
-              fontSize: { xs: 30, sm: 38, md: 46 },
-              mb: 2,
-            }}
-          >
-            {t("services.title")}
-          </Typography>
+        <Box
+          sx={{
+            position: "absolute",
+            width: { xs: 220, md: 450 },
+            height: { xs: 220, md: 450 },
+            border: "1px solid rgba(255,255,255,0.10)",
+            borderRadius: "50%",
+            top: -180,
+            right: { xs: -100, md: 80 },
+          }}
+        />
 
-          <Typography
-            sx={{
-              color: "#64748B",
-              maxWidth: 700,
-              mx: "auto",
-              lineHeight: 1.8,
-              fontSize: { xs: 14, sm: 16 },
-            }}
-          >
-            {t("services.description")}
-          </Typography>
+        <Box
+          sx={{
+            position: "absolute",
+            width: { xs: 300, md: 600 },
+            height: { xs: 300, md: 600 },
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "50%",
+            bottom: -420,
+            right: { xs: -120, md: 200 },
+          }}
+        />
+
+        <Box
+          sx={{
+            position: "absolute",
+            left: 0,
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: 7,
+            height: 120,
+            backgroundColor: COLORS.saffron,
+            borderRadius: "0 5px 5px 0",
+          }}
+        />
+
+        <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
+          <Box sx={{ maxWidth: 850, mx: "auto", textAlign: "center" }}>
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="center"
+              spacing={1}
+              sx={{
+                display: "inline-flex",
+                backgroundColor: "rgba(255,255,255,0.10)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                borderRadius: 10,
+                px: 2,
+                py: 1,
+                mb: 3,
+                backdropFilter: "blur(8px)",
+              }}
+            >
+              <Building2 size={17} color={COLORS.saffron} />
+
+              <Typography
+                sx={{
+                  color: COLORS.white,
+                  fontSize: 12,
+                  fontWeight: 800,
+                  letterSpacing: 1.3,
+                }}
+              >
+                {t("services.label")}
+              </Typography>
+            </Stack>
+
+            <Typography
+              variant="h1"
+              sx={{
+                color: COLORS.white,
+                fontWeight: 900,
+                fontSize: {
+                  xs: "2.2rem",
+                  sm: "3rem",
+                  md: "4rem",
+                },
+                lineHeight: 1.2,
+                mb: 2.5,
+                letterSpacing: "-1px",
+              }}
+            >
+              {t("services.title")}
+            </Typography>
+
+            <Box
+              sx={{
+                width: 75,
+                height: 5,
+                borderRadius: 5,
+                backgroundColor: COLORS.saffron,
+                mx: "auto",
+                mb: 3,
+              }}
+            />
+
+            <Typography
+              sx={{
+                color: "#E0EAE3",
+                maxWidth: 720,
+                mx: "auto",
+                lineHeight: 2,
+                fontSize: { xs: 14, sm: 16, md: 17 },
+              }}
+            >
+              {t("services.description")}
+            </Typography>
+          </Box>
         </Container>
+
+        {/* Tiranga accent */}
+
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: 6,
+            background: `linear-gradient(90deg, ${COLORS.saffron} 0%, ${COLORS.saffron} 33%, #FFFFFF 33%, #FFFFFF 66%, #16803D 66%, #16803D 100%)`,
+          }}
+        />
       </Box>
 
-      {/* Services Section */}
-      <Container maxWidth="lg" sx={{ py: { xs: 6, md: 9 } }}>
-        <Box sx={{ textAlign: "center", mb: 5 }}>
-          <Typography
-            sx={{
-              color: "#C65A16",
-              fontWeight: 700,
-              fontSize: 14,
-              mb: 1,
-            }}
-          >
+      {/* ================= SERVICES INTRO ================= */}
+
+      <Container maxWidth="xl" sx={{ pt: { xs: 7, md: 10 }, pb: 4 }}>
+        <Box textAlign="center" sx={{ maxWidth: 750, mx: "auto" }}>
+          <SectionLabel centered>
             {t("services.sectionLabel")}
-          </Typography>
+          </SectionLabel>
 
           <Typography
-            variant="h4"
+            variant="h2"
             sx={{
-              color: "#173B2A",
-              fontWeight: 800,
-              fontSize: { xs: 25, md: 34 },
-              mb: 1.5,
+              color: COLORS.green,
+              fontWeight: 900,
+              fontSize: {
+                xs: "1.8rem",
+                sm: "2.3rem",
+                md: "2.8rem",
+              },
+              lineHeight: 1.3,
+              mb: 2,
             }}
           >
             {t("services.sectionTitle")}
           </Typography>
 
-          <Typography sx={{ color: "#64748B", fontSize: 15 }}>
+          <Typography
+            sx={{
+              color: COLORS.muted,
+              fontSize: { xs: 14, sm: 15 },
+              lineHeight: 1.9,
+            }}
+          >
             {t("services.sectionDescription")}
           </Typography>
-        </Box>
 
+          <Box
+            sx={{
+              width: 65,
+              height: 4,
+              borderRadius: 5,
+              backgroundColor: COLORS.saffron,
+              mx: "auto",
+              mt: 2.5,
+            }}
+          />
+        </Box>
+      </Container>
+
+      {/* ================= SERVICES GRID ================= */}
+
+      <Container maxWidth="xl" sx={{ pb: { xs: 8, md: 12 } }}>
         <Box
           sx={{
             display: "grid",
@@ -170,10 +340,10 @@ function ServicesPage() {
               md: "repeat(3, 1fr)",
               lg: "repeat(4, 1fr)",
             },
-            gap: 3,
+            gap: { xs: 2.5, md: 3 },
           }}
         >
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
@@ -182,42 +352,86 @@ function ServicesPage() {
                 elevation={0}
                 sx={{
                   height: "100%",
-                  border: "1px solid #E2E8F0",
-                  borderRadius: 3,
+                  minHeight: 290,
+                  border: `1px solid ${COLORS.border}`,
+                  borderRadius: 4,
+                  backgroundColor: COLORS.white,
+                  position: "relative",
+                  overflow: "hidden",
                   transition: "all 0.3s ease",
+
                   "&:hover": {
-                    transform: "translateY(-6px)",
-                    boxShadow: "0 12px 30px rgba(23,59,42,0.10)",
-                    borderColor: "#D6B58B",
+                    transform: { xs: "none", md: "translateY(-9px)" },
+                    boxShadow: "0 20px 45px rgba(23,59,42,0.10)",
+                    borderColor: "#E7BC91",
+                  },
+
+                  "&:hover .service-icon": {
+                    transform: "rotate(-7deg) scale(1.08)",
+                  },
+
+                  "&:hover .service-arrow": {
+                    transform: "translateX(5px)",
                   },
                 }}
               >
+                {/* Top accent */}
+
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: 4,
+                    backgroundColor: service.color,
+                  }}
+                />
+
+                {/* Decorative number */}
+
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: 15,
+                    right: 20,
+                    color: "#E8EDE9",
+                    fontSize: 27,
+                    fontWeight: 900,
+                  }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </Typography>
+
                 <CardContent
                   sx={{
-                    p: 3,
+                    p: { xs: 2.7, md: 3 },
                     "&:last-child": { pb: 3 },
                   }}
                 >
                   <Box
+                    className="service-icon"
                     sx={{
-                      width: 58,
-                      height: 58,
-                      borderRadius: 2.5,
+                      width: 65,
+                      height: 65,
+                      borderRadius: 3,
                       backgroundColor: service.bg,
+                      color: service.color,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       mb: 3,
+                      transition: "0.3s ease",
                     }}
                   >
-                    <Icon size={27} color={service.color} />
+                    <Icon size={30} strokeWidth={1.8} />
                   </Box>
 
                   <Typography
                     variant="h6"
                     sx={{
-                      color: "#173B2A",
-                      fontWeight: 700,
+                      color: COLORS.green,
+                      fontWeight: 800,
                       fontSize: 18,
                       mb: 1.5,
                     }}
@@ -227,28 +441,48 @@ function ServicesPage() {
 
                   <Typography
                     sx={{
-                      color: "#64748B",
+                      color: COLORS.muted,
                       fontSize: 14,
-                      lineHeight: 1.8,
-                      minHeight: 75,
+                      lineHeight: 1.9,
+                      minHeight: { xs: "auto", md: 80 },
                       mb: 2.5,
                     }}
                   >
                     {t(`services.items.${service.key}.description`)}
                   </Typography>
 
+                  <Box
+                    sx={{
+                      height: "1px",
+                      backgroundColor: "#EDF1ED",
+                      mb: 2,
+                    }}
+                  />
+
                   <Button
                     component={Link}
                     to="/contact"
-                    endIcon={<ArrowRight size={17} />}
+                    endIcon={
+                      <ArrowRight
+                        size={17}
+                        className="service-arrow"
+                      />
+                    }
                     sx={{
-                      color: "#C65A16",
-                      fontWeight: 700,
+                      color: COLORS.orange,
+                      fontWeight: 800,
+                      fontSize: 14,
                       textTransform: "none",
                       p: 0,
+                      transition: "0.25s ease",
+
+                      "& .service-arrow": {
+                        transition: "0.25s ease",
+                      },
+
                       "&:hover": {
                         backgroundColor: "transparent",
-                        color: "#173B2A",
+                        color: COLORS.green,
                       },
                     }}
                   >
@@ -261,29 +495,88 @@ function ServicesPage() {
         </Box>
       </Container>
 
-      {/* Contact CTA */}
-      <Box sx={{ pb: { xs: 6, md: 9 } }}>
-        <Container maxWidth="lg">
+      {/* ================= CONTACT CTA ================= */}
+
+      <Box sx={{ pb: { xs: 7, md: 11 } }}>
+        <Container maxWidth="xl">
           <Box
             sx={{
-              backgroundColor: "#173B2A",
-              borderRadius: 4,
-              px: { xs: 3, md: 7 },
+              position: "relative",
+              overflow: "hidden",
+              background: `linear-gradient(115deg, ${COLORS.darkGreen}, ${COLORS.green})`,
+              borderRadius: { xs: 3, md: 5 },
+              px: { xs: 3, sm: 4, md: 7 },
               py: { xs: 5, md: 6 },
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
               alignItems: "center",
               justifyContent: "space-between",
-              gap: 3,
+              gap: 4,
             }}
           >
-            <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+            {/* Decorative background circles */}
+
+            <Box
+              sx={{
+                position: "absolute",
+                width: 240,
+                height: 240,
+                border: "1px solid rgba(255,255,255,0.10)",
+                borderRadius: "50%",
+                top: -140,
+                right: "25%",
+              }}
+            />
+
+            <Box
+              sx={{
+                position: "absolute",
+                width: 350,
+                height: 350,
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: "50%",
+                bottom: -260,
+                right: -80,
+              }}
+            />
+
+            <Box
+              sx={{
+                position: "relative",
+                zIndex: 1,
+                textAlign: { xs: "center", md: "left" },
+                maxWidth: 650,
+              }}
+            >
+              <Stack
+                direction="row"
+                justifyContent={{ xs: "center", md: "flex-start" }}
+                alignItems="center"
+                spacing={1}
+                sx={{ mb: 2 }}
+              >
+                <Sparkles size={18} color={COLORS.saffron} />
+
+                <Typography
+                  sx={{
+                    color: COLORS.saffron,
+                    fontWeight: 800,
+                    fontSize: 12,
+                    letterSpacing: 1.5,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {t("services.label")}
+                </Typography>
+              </Stack>
+
               <Typography
                 variant="h4"
                 sx={{
-                  color: "#FFFFFF",
-                  fontWeight: 800,
-                  fontSize: { xs: 23, md: 30 },
+                  color: COLORS.white,
+                  fontWeight: 900,
+                  fontSize: { xs: 23, sm: 27, md: 32 },
+                  lineHeight: 1.3,
                   mb: 1.5,
                 }}
               >
@@ -293,8 +586,8 @@ function ServicesPage() {
               <Typography
                 sx={{
                   color: "#D1E4D7",
-                  lineHeight: 1.8,
-                  maxWidth: 550,
+                  lineHeight: 1.9,
+                  fontSize: { xs: 14, sm: 15 },
                 }}
               >
                 {t("services.ctaDescription")}
@@ -305,17 +598,27 @@ function ServicesPage() {
               component={Link}
               to="/contact"
               variant="contained"
-              endIcon={<ArrowRight size={18} />}
+              endIcon={<ArrowRight size={19} />}
               sx={{
-                backgroundColor: "#FF9933",
-                color: "#173B2A",
-                fontWeight: 700,
-                px: 3,
-                py: 1.5,
+                position: "relative",
+                zIndex: 1,
+                flexShrink: 0,
+                backgroundColor: COLORS.saffron,
+                color: COLORS.darkGreen,
+                fontWeight: 800,
+                px: { xs: 3, md: 4 },
+                py: 1.7,
+                borderRadius: 2.5,
                 whiteSpace: "nowrap",
                 textTransform: "none",
+                fontSize: 15,
+                boxShadow: "0 8px 20px rgba(0,0,0,0.14)",
+                transition: "all 0.25s ease",
+
                 "&:hover": {
                   backgroundColor: "#FFB45E",
+                  transform: { xs: "none", md: "translateY(-3px)" },
+                  boxShadow: "0 12px 25px rgba(0,0,0,0.20)",
                 },
               }}
             >
@@ -324,6 +627,15 @@ function ServicesPage() {
           </Box>
         </Container>
       </Box>
+
+      {/* ================= BOTTOM ACCENT ================= */}
+
+      <Box
+        sx={{
+          height: 6,
+          background: `linear-gradient(90deg, ${COLORS.saffron} 0%, ${COLORS.saffron} 33%, #FFFFFF 33%, #FFFFFF 66%, #16803D 66%, #16803D 100%)`,
+        }}
+      />
     </Box>
   );
 }
