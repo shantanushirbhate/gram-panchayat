@@ -69,7 +69,17 @@ function Navbar() {
           backgroundColor: COLORS.white,
           borderBottom: `1px solid ${COLORS.border}`,
           width: "100%",
-          overflow: "hidden",
+          overflow: "visible",
+          position: {
+            xs: "sticky",
+            md: "relative",
+          },
+          top: 0,
+          zIndex: 1200,
+          boxShadow: {
+            xs: "0 3px 12px rgba(0,0,0,0.08)",
+            md: "none",
+          },
         }}
       >
         <Container maxWidth="xl">
@@ -360,7 +370,7 @@ function Navbar() {
               </Stack>
             </Stack>
 
-            {/* LANGUAGE AND MOBILE MENU */}
+            {/* MOBILE LANGUAGE AND MENU */}
             <Stack
               direction="row"
               alignItems="center"
@@ -372,7 +382,16 @@ function Navbar() {
                 flexShrink: 0,
               }}
             >
-              <LanguageSwitcher />
+              <Box
+                sx={{
+                  display: {
+                    xs: "flex",
+                    md: "none",
+                  },
+                }}
+              >
+                <LanguageSwitcher />
+              </Box>
 
               <IconButton
                 onClick={() => setMobileOpen(true)}
@@ -398,7 +417,7 @@ function Navbar() {
         </Container>
       </Box>
 
-      {/* DESKTOP NAVIGATION */}
+      {/* DESKTOP STICKY NAVIGATION */}
       <AppBar
         position="sticky"
         elevation={2}
@@ -419,6 +438,7 @@ function Navbar() {
               justifyContent: "space-between",
             }}
           >
+            {/* ORIGINAL NAVIGATION LINKS - UNCHANGED */}
             <Stack direction="row" alignItems="center">
               {menuItems.map((item) => (
                 <Button
@@ -464,19 +484,61 @@ function Navbar() {
               ))}
             </Stack>
 
-            <Typography
+            {/* RIGHT SIDE: ORANGE LANGUAGE SWITCHER + MAHARASHTRA SEAL */}
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={2}
               sx={{
-                color: "#FFE0B2",
-                fontWeight: 700,
-                fontSize: 12,
-                display: {
-                  xs: "none",
-                  lg: "block",
-                },
+                flexShrink: 0,
               }}
             >
-              सेवा • समर्पण • पारदर्शकता
-            </Typography>
+              {/* ORANGE LANGUAGE SWITCHER */}
+              <Box
+                sx={{
+                  backgroundColor: COLORS.orange,
+                  borderRadius: 2,
+                  px: 1.5,
+                  py: 0.5,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "1px solid rgba(255,255,255,0.35)",
+                  boxShadow: "0 2px 5px rgba(0,0,0,0.15)",
+
+                  "& button": {
+                    color: `${COLORS.white} !important`,
+                    backgroundColor: "transparent",
+                  },
+
+                  "& button:hover": {
+                    backgroundColor: "rgba(255,255,255,0.15)",
+                  },
+
+                  "& .MuiTypography-root": {
+                    color: `${COLORS.white} !important`,
+                  },
+
+                  "& svg": {
+                    color: `${COLORS.white} !important`,
+                  },
+                }}
+              >
+                <LanguageSwitcher />
+              </Box>
+
+              {/* MAHARASHTRA GOVERNMENT SEAL */}
+              <Box
+                component="img"
+                src={maharashtraSeal}
+                alt="Maharashtra Government Seal"
+                sx={{
+                  width: 38,
+                  height: 42,
+                  objectFit: "contain",
+                }}
+              />
+            </Stack>
           </Toolbar>
         </Container>
       </AppBar>

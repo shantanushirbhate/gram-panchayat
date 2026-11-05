@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
 
-import HomePage from "../features/home/HomePage";
+import HomePage from "../features/home/page/HomePage";
 import AboutPage from "../features/aboutt/AboutPage";
 import ServicesPage from "../features/services/servicesPage";
 import GalleryPage from "../features/gallery/GalleryPage";

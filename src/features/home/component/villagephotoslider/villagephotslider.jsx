@@ -54,123 +54,82 @@ export default function VillagePhotSlider() {
         py: { xs: 7, sm: 8, md: 10 },
         backgroundColor: COLORS.cream,
         overflow: "hidden",
+        width: "100%",
       }}
     >
-      <Container maxWidth="lg">
-
+      <Container
+        maxWidth={false}
+        sx={{
+          maxWidth: "1320px",
+          mx: "auto",
+          px: {
+            xs: 2,
+            sm: 3,
+            md: 5,
+            lg: 7,
+            xl: 8,
+          },
+          boxSizing: "border-box",
+        }}
+      >
         {/* SECTION HEADING */}
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          justifyContent="space-between"
-          alignItems={{ xs: "flex-start", sm: "flex-end" }}
-          spacing={3}
-          sx={{ mb: 4 }}
-        >
-          <Box sx={{ maxWidth: 650 }}>
-            <Typography
-              sx={{
-                color: COLORS.orange,
-                fontWeight: 800,
-                fontSize: 13,
-                letterSpacing: 2,
-                mb: 1,
-              }}
-            >
-              OUR VILLAGE GALLERY
-            </Typography>
+        <Box sx={{ maxWidth: 750, mb: 4 }}>
+          <Typography
+            sx={{
+              color: COLORS.orange,
+              fontWeight: 800,
+              fontSize: 13,
+              letterSpacing: 2,
+              mb: 1,
+            }}
+          >
+            OUR VILLAGE GALLERY
+          </Typography>
 
-            <Typography
-              sx={{
-                color: COLORS.green,
-                fontWeight: 800,
-                fontSize: { xs: 28, sm: 34, md: 42 },
-                lineHeight: 1.2,
-                mb: 1.5,
-              }}
-            >
-              आमच्या गावाची सुंदर झलक
-            </Typography>
+          <Typography
+            sx={{
+              color: COLORS.green,
+              fontWeight: 800,
+              fontSize: { xs: 28, sm: 34, md: 42 },
+              lineHeight: 1.2,
+              mb: 1.5,
+            }}
+          >
+            आमच्या गावाची सुंदर झलक
+          </Typography>
 
-            <Typography
-              sx={{
-                color: COLORS.muted,
-                fontSize: { xs: 14, sm: 16 },
-                lineHeight: 1.8,
-              }}
-            >
-              आपल्या गावातील सुंदर क्षण, निसर्ग आणि विकासकामांची
-              छायाचित्रे पाहा.
-            </Typography>
-          </Box>
-
-          {/* OUTSIDE SLIDER ARROW BUTTONS */}
-          <Stack direction="row" spacing={1.5}>
-            <IconButton
-              onClick={() => swiper?.slidePrev()}
-              aria-label="Previous images"
-              sx={{
-                width: 48,
-                height: 48,
-                border: `1px solid ${COLORS.green}`,
-                color: COLORS.green,
-                backgroundColor: "transparent",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  backgroundColor: COLORS.green,
-                  color: COLORS.white,
-                  transform: "translateX(-3px)",
-                },
-              }}
-            >
-              <ChevronLeft size={24} />
-            </IconButton>
-
-            <IconButton
-              onClick={() => swiper?.slideNext()}
-              aria-label="Next images"
-              sx={{
-                width: 48,
-                height: 48,
-                backgroundColor: COLORS.green,
-                color: COLORS.white,
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  backgroundColor: COLORS.orange,
-                  transform: "translateX(3px)",
-                },
-              }}
-            >
-              <ChevronRight size={24} />
-            </IconButton>
-          </Stack>
-        </Stack>
+          <Typography
+            sx={{
+              color: COLORS.muted,
+              fontSize: { xs: 14, sm: 16 },
+              lineHeight: 1.8,
+            }}
+          >
+            आपल्या गावातील सुंदर क्षण, निसर्ग आणि विकासकामांची
+            छायाचित्रे पाहा.
+          </Typography>
+        </Box>
 
         {/* IMAGE SLIDER */}
         <Box
           sx={{
             position: "relative",
+            width: "100%",
+            minWidth: 0,
+            overflow: "hidden",
+
             "& .swiper": {
-              overflow: "visible",
-              pb: 5,
+              width: "100%",
+              overflow: "hidden",
+              pb: 4,
             },
+
+            "& .swiper-wrapper": {
+              alignItems: "stretch",
+            },
+
             "& .swiper-slide": {
               height: "auto",
-            },
-            "& .swiper-pagination": {
-              bottom: "0px",
-            },
-            "& .swiper-pagination-bullet": {
-              width: 8,
-              height: 8,
-              backgroundColor: COLORS.green,
-              opacity: 0.3,
-              transition: "all 0.3s ease",
-            },
-            "& .swiper-pagination-bullet-active": {
-              width: 25,
-              borderRadius: 10,
-              opacity: 1,
-              backgroundColor: COLORS.orange,
             },
           }}
         >
@@ -188,22 +147,23 @@ export default function VillagePhotSlider() {
             }}
             pagination={{
               clickable: true,
+              el: ".village-slider-pagination",
             }}
             breakpoints={{
               480: {
-                slidesPerView: 1.5,
+                slidesPerView: 1.35,
                 spaceBetween: 18,
               },
               600: {
-                slidesPerView: 2,
+                slidesPerView: 2.15,
                 spaceBetween: 20,
               },
               900: {
-                slidesPerView: 3,
+                slidesPerView: 2.2,
                 spaceBetween: 22,
               },
               1200: {
-                slidesPerView: 3,
+                slidesPerView: 3.15,
                 spaceBetween: 25,
               },
             }}
@@ -213,24 +173,29 @@ export default function VillagePhotSlider() {
                 <Box
                   sx={{
                     position: "relative",
+                    width: "100%",
                     height: { xs: 260, sm: 300, md: 340 },
                     borderRadius: 3,
                     overflow: "hidden",
                     backgroundColor: "#E5E7EB",
                     boxShadow: "0 8px 25px rgba(23,59,42,0.10)",
                     cursor: "pointer",
+
                     "&:hover .village-image": {
                       transform: "scale(1.08)",
                     },
+
                     "&:hover .village-image-overlay": {
                       opacity: 1,
                     },
+
                     "&:hover .village-image-arrow": {
                       transform: "translate(0, 0)",
                       opacity: 1,
                     },
                   }}
                 >
+                  {/* IMAGE */}
                   <Box
                     component="img"
                     src={item.image}
@@ -318,6 +283,7 @@ export default function VillagePhotSlider() {
                         sx={{
                           width: 34,
                           height: 34,
+                          flexShrink: 0,
                           borderRadius: "50%",
                           backgroundColor: COLORS.orange,
                           display: "flex",
@@ -337,6 +303,84 @@ export default function VillagePhotSlider() {
             ))}
           </Swiper>
         </Box>
+
+        {/* BOTTOM SLIDER CONTROLS */}
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{
+            mt: 1,
+            minHeight: 48,
+          }}
+        >
+          {/* PAGINATION */}
+          <Box
+            className="village-slider-pagination"
+            sx={{
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              gap: 0.5,
+
+              "& .swiper-pagination-bullet": {
+                width: 8,
+                height: 8,
+                backgroundColor: COLORS.green,
+                opacity: 0.3,
+                transition: "all 0.3s ease",
+              },
+
+              "& .swiper-pagination-bullet-active": {
+                width: 25,
+                borderRadius: 10,
+                opacity: 1,
+                backgroundColor: COLORS.orange,
+              },
+            }}
+          />
+
+          {/* NAVIGATION BUTTONS */}
+          <Stack direction="row" spacing={1.5}>
+            <IconButton
+              onClick={() => swiper?.slidePrev()}
+              aria-label="Previous images"
+              sx={{
+                width: 44,
+                height: 44,
+                border: `1px solid ${COLORS.green}`,
+                color: COLORS.green,
+                backgroundColor: "transparent",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: COLORS.green,
+                  color: COLORS.white,
+                  transform: "translateX(-3px)",
+                },
+              }}
+            >
+              <ChevronLeft size={22} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => swiper?.slideNext()}
+              aria-label="Next images"
+              sx={{
+                width: 44,
+                height: 44,
+                backgroundColor: COLORS.green,
+                color: COLORS.white,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: COLORS.orange,
+                  transform: "translateX(3px)",
+                },
+              }}
+            >
+              <ChevronRight size={22} />
+            </IconButton>
+          </Stack>
+        </Stack>
       </Container>
     </Box>
   );
