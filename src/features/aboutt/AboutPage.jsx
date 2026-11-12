@@ -2,11 +2,12 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   Card,
   CardContent,
   Stack,
 } from "@mui/material";
+
+import Grid from "@mui/material/Grid";
 
 import Bharatsarkarlogo from "../../assets/Emblem_of_India_(Government_Gazette).svg";
 
@@ -119,7 +120,7 @@ export default function AboutPage() {
 
   return (
     <Box sx={{ overflow: "hidden", backgroundColor: COLORS.background }}>
-      {/* ================= HERO SECTION ================= */}
+      {/* HERO SECTION */}
       <Box
         sx={{
           position: "relative",
@@ -226,7 +227,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      {/* ================= INTRODUCTION SECTION ================= */}
+      {/* INTRODUCTION SECTION */}
       <Box sx={{ py: { xs: 7, sm: 9, md: 12 }, bgcolor: "#FFFFFF" }}>
         <Container maxWidth="lg">
           <Grid
@@ -235,7 +236,7 @@ export default function AboutPage() {
             alignItems="center"
           >
             {/* GOVERNMENT EMBLEM */}
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 sx={{
                   maxWidth: 550,
@@ -243,17 +244,17 @@ export default function AboutPage() {
                   mx: "auto",
                 }}
               >
-                {/* Emblem display panel */}
                 <Box
                   sx={{
                     width: "100%",
-                    minHeight: { xs: 320, sm: 390, md: 450 },
+                    minHeight: { xs: 300, sm: 350, md: 420 },
+                    aspectRatio: { xs: "4 / 3", sm: "5 / 4", md: "1 / 1" },
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     overflow: "hidden",
-                    borderRadius: { xs: 3, md: 5 },
+                    borderRadius: 4,
                     background:
                       "radial-gradient(circle at center, #FFFFFF 0%, #F4F8F4 75%, #EAF2EC 100%)",
                     border: "1px solid #DCE7DE",
@@ -261,7 +262,6 @@ export default function AboutPage() {
                     p: { xs: 3, sm: 5, md: 6 },
                   }}
                 >
-                  {/* Background decorative circle */}
                   <Box
                     sx={{
                       position: "absolute",
@@ -282,7 +282,6 @@ export default function AboutPage() {
                     }}
                   />
 
-                  {/* Government of India emblem */}
                   <Box
                     component="img"
                     src={Bharatsarkarlogo}
@@ -298,7 +297,6 @@ export default function AboutPage() {
                     }}
                   />
 
-                  {/* Saffron corner */}
                   <Box
                     sx={{
                       position: "absolute",
@@ -312,7 +310,6 @@ export default function AboutPage() {
                     }}
                   />
 
-                  {/* Green corner */}
                   <Box
                     sx={{
                       position: "absolute",
@@ -326,7 +323,6 @@ export default function AboutPage() {
                     }}
                   />
 
-                  {/* Tricolour accent */}
                   <Box
                     sx={{
                       position: "absolute",
@@ -341,7 +337,7 @@ export default function AboutPage() {
                   />
                 </Box>
 
-                {/* Panchayat information card */}
+                {/* PANCHAYAT INFORMATION CARD */}
                 <Card
                   elevation={0}
                   sx={{
@@ -401,7 +397,7 @@ export default function AboutPage() {
             </Grid>
 
             {/* INTRODUCTION CONTENT */}
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box>
                 <SectionLabel>
                   {t("about.introSubtitle")}
@@ -468,7 +464,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      {/* ================= VISION AND MISSION ================= */}
+      {/* VISION AND MISSION */}
       <Box
         sx={{
           py: { xs: 7, sm: 9, md: 11 },
@@ -498,13 +494,16 @@ export default function AboutPage() {
             />
           </Box>
 
-          <Grid container spacing={3}>
-            {/* Vision */}
-            <Grid item xs={12} md={6}>
+          <Grid container spacing={3} alignItems="stretch">
+            {/* VISION */}
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card
                 elevation={0}
                 sx={{
                   height: "100%",
+                  minHeight: { xs: 260, md: 300 },
+                  display: "flex",
+                  flexDirection: "column",
                   borderRadius: 4,
                   p: { xs: 2.5, sm: 4 },
                   background:
@@ -517,7 +516,14 @@ export default function AboutPage() {
                   },
                 }}
               >
-                <CardContent>
+                <CardContent
+                  sx={{
+                    p: { xs: 2.5, sm: 3.5 },
+                    flexGrow: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <Box
                     sx={{
                       width: 65,
@@ -558,12 +564,15 @@ export default function AboutPage() {
               </Card>
             </Grid>
 
-            {/* Mission */}
-            <Grid item xs={12} md={6}>
+            {/* MISSION */}
+            <Grid size={{ xs: 12, md: 6 }}>
               <Card
                 elevation={0}
                 sx={{
                   height: "100%",
+                  minHeight: { xs: 260, md: 300 },
+                  display: "flex",
+                  flexDirection: "column",
                   borderRadius: 4,
                   p: { xs: 2.5, sm: 4 },
                   background:
@@ -576,7 +585,14 @@ export default function AboutPage() {
                   },
                 }}
               >
-                <CardContent>
+                <CardContent
+                  sx={{
+                    p: { xs: 2.5, sm: 3.5 },
+                    flexGrow: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <Box
                     sx={{
                       width: 65,
@@ -620,7 +636,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      {/* ================= RESPONSIBILITIES SECTION ================= */}
+      {/* RESPONSIBILITIES SECTION */}
       <Box
         sx={{
           py: { xs: 7, sm: 9, md: 11 },
@@ -663,16 +679,24 @@ export default function AboutPage() {
             />
           </Box>
 
-          <Grid container spacing={3}>
+          <Grid container spacing={3} alignItems="stretch">
             {responsibilities.map((item) => {
               const Icon = item.icon;
 
               return (
-                <Grid item xs={12} sm={6} md={3} key={item.title}>
+                <Grid
+                  size={{ xs: 12, sm: 6, md: 3 }}
+                  key={item.title}
+                  sx={{ display: "flex" }}
+                >
                   <Card
                     elevation={0}
                     sx={{
+                      width: "100%",
                       height: "100%",
+                      minHeight: { xs: 250, sm: 270, md: 290 },
+                      display: "flex",
+                      flexDirection: "column",
                       border: `1px solid ${COLORS.border}`,
                       borderRadius: 4,
                       transition: "0.3s",
@@ -683,7 +707,14 @@ export default function AboutPage() {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: 3 }}>
+                    <CardContent
+                      sx={{
+                        p: 3,
+                        flexGrow: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
                       <Box
                         sx={{
                           width: 58,
@@ -716,6 +747,7 @@ export default function AboutPage() {
                           color: COLORS.muted,
                           fontSize: 14,
                           lineHeight: 1.9,
+                          flexGrow: 1,
                         }}
                       >
                         {t(item.description)}
@@ -731,6 +763,7 @@ export default function AboutPage() {
                         }}
                       >
                         <CheckCircle2 size={17} />
+
                         <Typography
                           sx={{ fontSize: 12, fontWeight: 700 }}
                         >
@@ -746,7 +779,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      {/* ================= DEVELOPMENT SECTION ================= */}
+      {/* DEVELOPMENT SECTION */}
       <Box
         sx={{
           py: { xs: 7, sm: 9, md: 12 },
@@ -759,7 +792,7 @@ export default function AboutPage() {
             spacing={{ xs: 5, md: 7 }}
             alignItems="center"
           >
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <SectionLabel>
                 {t("about.developmentSubtitle")}
               </SectionLabel>
@@ -822,14 +855,16 @@ export default function AboutPage() {
                 }}
               >
                 <Building2 size={25} />
+
                 <Typography fontWeight={800}>
                   {t("about.panchayatName")}
                 </Typography>
+
                 <MoveUpRight size={19} />
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 sx={{
                   position: "relative",
@@ -910,7 +945,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      {/* ================= BOTTOM TRICOLOUR STRIP ================= */}
+      {/* BOTTOM TRICOLOUR STRIP */}
       <Box
         sx={{
           display: "flex",

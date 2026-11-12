@@ -4,7 +4,6 @@ import {
   Container,
   Typography,
   Button,
-  Grid,
   Card,
   CardContent,
   Stack,
@@ -12,6 +11,7 @@ import {
   LinearProgress,
   Divider,
 } from "@mui/material";
+import Grid from "@mui/material/Grid";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
@@ -1069,7 +1069,7 @@ function HomePage() {
             spacing={{ xs: 4, md: 6 }}
             alignItems="stretch"
           >
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Box
                 sx={{
                   height: "100%",
@@ -1201,23 +1201,22 @@ function HomePage() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={8} sx={{ minWidth: 0 }}>
+            <Grid size={{ xs: 12, md: 8 }} sx={{ minWidth: 0 }}>
               <Grid
                 container
                 spacing={CARD_GRID_SPACING}
                 alignItems="stretch"
               >
                 {villageStats.map((stat, index) => (
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    key={stat.title}
-                    sx={{
-                      display: "flex",
-                      minWidth: 0,
-                    }}
-                  >
+                  <Grid size={{ xs: 12, sm: 6 }}
+ 
+ 
+ 
+ key={stat.title}
+ sx={{
+ display: "flex",
+ minWidth: 0,
+ }}>
                     <StatCard stat={stat} index={index} text={text} />
                   </Grid>
                 ))}
@@ -1256,7 +1255,7 @@ function HomePage() {
             spacing={{ xs: 4, md: 6 }}
             alignItems="center"
           >
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 sx={{
                   position: "relative",
@@ -1308,7 +1307,7 @@ function HomePage() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Typography
                 color={COLORS.orange}
                 fontWeight={900}
@@ -1462,17 +1461,16 @@ function HomePage() {
             alignItems="stretch"
           >
             {progressItems.map((item) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                key={item.title}
-                sx={{
-                  display: "flex",
-                  minWidth: 0,
-                }}
-              >
+              <Grid size={{ xs: 12, sm: 6, md: 3 }}
+ 
+ 
+ 
+ 
+ key={item.title}
+ sx={{
+ display: "flex",
+ minWidth: 0,
+ }}>
                 <ProgressCard item={item} text={text} />
               </Grid>
             ))}
@@ -1504,17 +1502,16 @@ function HomePage() {
             alignItems="stretch"
           >
             {services.map((service) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                key={service.title}
-                sx={{
-                  display: "flex",
-                  minWidth: 0,
-                }}
-              >
+              <Grid size={{ xs: 12, sm: 6, md: 3 }}
+ 
+ 
+ 
+ 
+ key={service.title}
+ sx={{
+ display: "flex",
+ minWidth: 0,
+ }}>
                 <ServiceCard service={service} text={text} />
               </Grid>
             ))}
@@ -1574,7 +1571,7 @@ function HomePage() {
             spacing={{ xs: 4, md: 6 }}
             alignItems="center"
           >
-            <Grid item xs={12} md={5}>
+            <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 color="#FFB875"
                 fontWeight={900}
@@ -1636,7 +1633,7 @@ function HomePage() {
               </Button>
             </Grid>
 
-            <Grid item xs={12} md={7}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Card
                 elevation={0}
                 sx={{
