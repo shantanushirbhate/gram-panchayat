@@ -1,764 +1,360 @@
 
+import React from "react";
 import {
   Box,
   Container,
+  Grid,
   Typography,
-  Card,
-  CardContent,
-  Button,
+  Paper,
   Stack,
 } from "@mui/material";
-
+import { useTranslation } from "react-i18next";
 import {
-  FileText,
-  Home,
-  ReceiptText,
-  Droplets,
-  Trash2,
-  Landmark,
-  MessageCircleWarning,
-  ArrowRight,
-  Building2,
-  Sparkles,
+  HandHelping,
+  ShieldCheck,
+  UsersRound,
 } from "lucide-react";
 
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import ServicesHero from "../components/ServicesHero";
+import ServicesCard from "../components/ServicesCard";
+import ServicesSectionHeading from "../components/ServicesSectionHeading";
+import { servicesCards } from "../data/servicesData";
 
-const COLORS = {
-  green: "#173B2A",
-  darkGreen: "#102D20",
-  orange: "#C65A16",
-  saffron: "#FF9933",
-  cream: "#FFF7ED",
-  lightGreen: "#EAF2EC",
-  white: "#FFFFFF",
-  text: "#334155",
-  muted: "#64748B",
-  border: "#E2EAE4",
-  background: "#F7F9F7",
+const serviceFallbacks = {
+  suchanaVJahirati: {
+    mrTitle: "सूचना व जाहिराती",
+    mrDescription:
+      "ग्रामपंचायतीच्या सूचना, सार्वजनिक जाहिराती आणि महत्त्वाच्या घोषणांची माहिती.",
+    enTitle: "Notices & Announcements",
+    enDescription:
+      "Information about Gram Panchayat notices, public announcements and important updates.",
+  },
+  onlineKarBharna: {
+    mrTitle: "ऑनलाइन कर भरणा",
+    mrDescription:
+      "मालमत्ता कर, पाणीपट्टी आणि इतर कर भरण्याबाबत माहिती व मार्गदर्शन.",
+    enTitle: "Online Tax Payment",
+    enDescription:
+      "Information and guidance about property tax, water tax and other tax payments.",
+  },
+  nagrikSeva: {
+    mrTitle: "नागरिक सेवा",
+    mrDescription:
+      "जन्म, मृत्यू, रहिवास आणि इतर नागरी सेवांबाबत माहिती.",
+    enTitle: "Citizen Services",
+    enDescription:
+      "Information about birth, death, residence and other citizen services.",
+  },
+  shaskiyaYojna: {
+    mrTitle: "शासकीय योजना",
+    mrDescription:
+      "केंद्र आणि राज्य शासनाच्या विविध योजनांची माहिती व मार्गदर्शन.",
+    enTitle: "Government Schemes",
+    enDescription:
+      "Information and guidance about various Central and State Government schemes.",
+  },
+  mahitichaAdhikar: {
+    mrTitle: "माहितीचा अधिकार",
+    mrDescription:
+      "माहितीचा अधिकार अधिनियम आणि सार्वजनिक माहिती मिळवण्याच्या प्रक्रियेबाबत माहिती.",
+    enTitle: "Right to Information",
+    enDescription:
+      "Information about the Right to Information Act and the process of requesting public information.",
+  },
 };
 
-// ======================================================
-// COMMON RESPONSIVE CONTAINER
-// Desktop: Equal 1-inch left and right spacing
-// Mobile / Tablet: Responsive side spacing
-// ======================================================
+const ServicesPage = () => {
+  const { t, i18n } = useTranslation();
 
-const CONTENT_CONTAINER_SX = {
-  width: { xs: "100%", md: "calc(100% - 2in)" },
-  maxWidth: "none",
-  px: { xs: 2, sm: 3, md: 0 },
-  mx: "auto",
-};
+  const isMarathi = (
+    i18n.resolvedLanguage ||
+    i18n.language ||
+    "en"
+  ).startsWith("mr");
 
-// ======================================================
-// SERVICES DATA
-// ======================================================
+  const tr = (key, mrFallback, enFallback) => {
+    return t(key, {
+      defaultValue: isMarathi ? mrFallback : enFallback,
+    });
+  };
 
-const services = [
-  {
-    key: "birth",
-    icon: FileText,
-    color: "#2563EB",
-    bg: "#EFF6FF",
-  },
-  {
-    key: "death",
-    icon: FileText,
-    color: "#7C3AED",
-    bg: "#F5F3FF",
-  },
-  {
-    key: "residence",
-    icon: Home,
-    color: "#0D9488",
-    bg: "#F0FDFA",
-  },
-  {
-    key: "property",
-    icon: ReceiptText,
-    color: "#C65A16",
-    bg: "#FFF7ED",
-  },
-  {
-    key: "water",
-    icon: Droplets,
-    color: "#0284C7",
-    bg: "#F0F9FF",
-  },
-  {
-    key: "cleanliness",
-    icon: Trash2,
-    color: "#16A34A",
-    bg: "#F0FDF4",
-  },
-  {
-    key: "schemes",
-    icon: Landmark,
-    color: "#B45309",
-    bg: "#FFFBEB",
-  },
-  {
-    key: "complaints",
-    icon: MessageCircleWarning,
-    color: "#DC2626",
-    bg: "#FEF2F2",
-  },
-];
-
-// ======================================================
-// SECTION LABEL
-// ======================================================
-
-function SectionLabel({ children, centered = false }) {
   return (
-    <Stack
-      direction="row"
-      alignItems="center"
-      justifyContent={centered ? "center" : "flex-start"}
-      spacing={1.2}
-      sx={{ mb: 1.5 }}
-    >
-      <Box
-        sx={{
-          width: 30,
-          height: 3,
-          borderRadius: 5,
-          backgroundColor: COLORS.saffron,
-          flexShrink: 0,
-        }}
+    <Box sx={{ bgcolor: "#FFF8EF", minHeight: "100vh" }}>
+      {/* Hero */}
+      <ServicesHero
+        title={tr(
+          "services.hero.title",
+          "नागरिक सेवा",
+          "Gram Panchayat Services"
+        )}
+        subtitle={tr(
+          "services.hero.description",
+          "ग्रामपंचायतीमार्फत उपलब्ध असलेल्या विविध सेवा, सुविधा आणि महत्त्वाची माहिती.",
+          "Explore the various services and facilities available through the Gram Panchayat."
+        )}
+        breadcrumb={tr(
+          "services.hero.breadcrumb",
+          "सेवा",
+          "Services"
+        )}
       />
 
-      <Typography
-        sx={{
-          color: COLORS.orange,
-          fontWeight: 800,
-          fontSize: 12,
-          letterSpacing: 1.5,
-          textTransform: "uppercase",
-        }}
-      >
-        {children}
-      </Typography>
-    </Stack>
-  );
-}
-
-// ======================================================
-// SERVICES PAGE
-// ======================================================
-
-function ServicesPage() {
-  const { t } = useTranslation();
-
-  return (
-    <Box
-      sx={{
-        backgroundColor: COLORS.background,
-        minHeight: "100vh",
-        overflowX: "clip",
-      }}
-    >
-      {/* ================= HERO SECTION ================= */}
-
-      <Box
-        sx={{
-          position: "relative",
-          overflow: "hidden",
-          background: `
-            linear-gradient(
-              115deg,
-              rgba(10, 39, 25, 0.97),
-              rgba(23, 59, 42, 0.94),
-              rgba(23, 59, 42, 0.82)
-            )
-          `,
-          py: { xs: 8, sm: 10, md: 13 },
-        }}
-      >
-        {/* Decorative circles */}
-
-        <Box
-          sx={{
-            position: "absolute",
-            width: { xs: 220, md: 450 },
-            height: { xs: 220, md: 450 },
-            border: "1px solid rgba(255,255,255,0.10)",
-            borderRadius: "50%",
-            top: -180,
-            right: { xs: -100, md: 80 },
-            pointerEvents: "none",
-          }}
+      {/* Introduction */}
+      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+        <ServicesSectionHeading
+          eyebrow={tr(
+            "services.intro.eyebrow",
+            "आमच्या सेवा",
+            "OUR SERVICES"
+          )}
+          title={tr(
+            "services.intro.title",
+            "नागरिकांसाठी विविध सेवा आणि सुविधा",
+            "Services and Facilities for Citizens"
+          )}
+          description={tr(
+            "services.intro.description",
+            "ग्रामपंचायत पिंपळखुटा बुद्रुक नागरिकांना आवश्यक सेवा, माहिती आणि शासकीय योजनांशी संबंधित मार्गदर्शन उपलब्ध करून देण्यासाठी कटिबद्ध आहे.",
+            "Gram Panchayat Pimpalkhuta Budruk is committed to providing essential services, information and guidance about government schemes."
+          )}
         />
 
-        <Box
+        <Paper
+          elevation={0}
           sx={{
-            position: "absolute",
-            width: { xs: 300, md: 600 },
-            height: { xs: 300, md: 600 },
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: "50%",
-            bottom: -420,
-            right: { xs: -120, md: 200 },
-            pointerEvents: "none",
-          }}
-        />
-
-        <Box
-          sx={{
-            position: "absolute",
-            left: 0,
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: 7,
-            height: 120,
-            backgroundColor: COLORS.saffron,
-            borderRadius: "0 5px 5px 0",
-          }}
-        />
-
-        <Container
-          maxWidth={false}
-          sx={{
-            ...CONTENT_CONTAINER_SX,
-            position: "relative",
-            zIndex: 1,
+            mt: 4,
+            p: { xs: 2.5, sm: 3.5, md: 4 },
+            borderRadius: 4,
+            bgcolor: "#FFFFFF",
+            border: "1px solid #E8EFE9",
           }}
         >
-          <Box
-            sx={{
-              maxWidth: 850,
-              mx: "auto",
-              textAlign: "center",
-            }}
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={2.5}
+            alignItems={{ xs: "flex-start", sm: "center" }}
           >
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="center"
-              spacing={1}
+            <Box
               sx={{
-                display: "inline-flex",
-                backgroundColor: "rgba(255,255,255,0.10)",
-                border: "1px solid rgba(255,255,255,0.18)",
-                borderRadius: 10,
-                px: 2,
-                py: 1,
-                mb: 3,
-                backdropFilter: "blur(8px)",
+                width: 58,
+                height: 58,
+                flexShrink: 0,
+                display: "grid",
+                placeItems: "center",
+                borderRadius: 3,
+                bgcolor: "#EDF5EF",
+                color: "#14532D",
               }}
             >
-              <Building2 size={17} color={COLORS.saffron} />
+              <HandHelping size={30} />
+            </Box>
+
+            <Box>
+              <Typography
+                sx={{
+                  color: "#173B2A",
+                  fontWeight: 800,
+                  fontSize: { xs: "1.05rem", sm: "1.2rem" },
+                  mb: 0.7,
+                }}
+              >
+                {tr(
+                  "services.intro.messageTitle",
+                  "आपल्या सेवेसाठी ग्रामपंचायत सदैव तत्पर",
+                  "Gram Panchayat Services for Citizens"
+                )}
+              </Typography>
 
               <Typography
                 sx={{
-                  color: COLORS.white,
-                  fontSize: 12,
-                  fontWeight: 800,
-                  letterSpacing: 1.3,
+                  color: "#64748B",
+                  lineHeight: 1.85,
+                  fontSize: "0.93rem",
                 }}
               >
-                {t("services.label")}
+                {tr(
+                  "services.intro.messageDescription",
+                  "नागरिकांना आवश्यक माहिती आणि सेवा सहज उपलब्ध व्हाव्यात यासाठी ग्रामपंचायत कटिबद्ध आहे. विविध सेवा आणि अर्ज प्रक्रियेबद्दल अधिक माहितीसाठी ग्रामपंचायत कार्यालयाशी संपर्क साधावा.",
+                  "The Gram Panchayat is committed to making essential information and services accessible to citizens. Contact the Gram Panchayat office for further information."
+                )}
               </Typography>
-            </Stack>
-
-            <Typography
-              variant="h1"
-              sx={{
-                color: COLORS.white,
-                fontWeight: 900,
-                fontSize: {
-                  xs: "2.2rem",
-                  sm: "3rem",
-                  md: "4rem",
-                },
-                lineHeight: 1.2,
-                mb: 2.5,
-                letterSpacing: "-1px",
-              }}
-            >
-              {t("services.title")}
-            </Typography>
-
-            <Box
-              sx={{
-                width: 75,
-                height: 5,
-                borderRadius: 5,
-                backgroundColor: COLORS.saffron,
-                mx: "auto",
-                mb: 3,
-              }}
-            />
-
-            <Typography
-              sx={{
-                color: "#E0EAE3",
-                maxWidth: 720,
-                mx: "auto",
-                lineHeight: 2,
-                fontSize: { xs: 14, sm: 16, md: 17 },
-              }}
-            >
-              {t("services.description")}
-            </Typography>
-          </Box>
-        </Container>
-
-        {/* Tiranga Accent */}
-
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: 6,
-            background: `
-              linear-gradient(
-                90deg,
-                ${COLORS.saffron} 0%,
-                ${COLORS.saffron} 33%,
-                #FFFFFF 33%,
-                #FFFFFF 66%,
-                #16803D 66%,
-                #16803D 100%
-              )
-            `,
-          }}
-        />
-      </Box>
-
-      {/* ================= SERVICES INTRO ================= */}
-
-      <Container
-        maxWidth={false}
-        sx={{
-          ...CONTENT_CONTAINER_SX,
-          pt: { xs: 7, sm: 8, md: 10 },
-          pb: { xs: 4, md: 5 },
-        }}
-      >
-        <Box
-          textAlign="center"
-          sx={{
-            maxWidth: 750,
-            mx: "auto",
-          }}
-        >
-          <SectionLabel centered>
-            {t("services.sectionLabel")}
-          </SectionLabel>
-
-          <Typography
-            variant="h2"
-            sx={{
-              color: COLORS.green,
-              fontWeight: 900,
-              fontSize: {
-                xs: "1.8rem",
-                sm: "2.3rem",
-                md: "2.8rem",
-              },
-              lineHeight: 1.3,
-              mb: 2,
-            }}
-          >
-            {t("services.sectionTitle")}
-          </Typography>
-
-          <Typography
-            sx={{
-              color: COLORS.muted,
-              fontSize: { xs: 14, sm: 15 },
-              lineHeight: 1.9,
-            }}
-          >
-            {t("services.sectionDescription")}
-          </Typography>
-
-          <Box
-            sx={{
-              width: 65,
-              height: 4,
-              borderRadius: 5,
-              backgroundColor: COLORS.saffron,
-              mx: "auto",
-              mt: 2.5,
-            }}
-          />
-        </Box>
+            </Box>
+          </Stack>
+        </Paper>
       </Container>
 
-      {/* ================= SERVICES GRID ================= */}
-
-      <Container
-        maxWidth={false}
-        sx={{
-          ...CONTENT_CONTAINER_SX,
-          pb: { xs: 8, sm: 9, md: 12 },
-        }}
-      >
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "1fr",
-              sm: "repeat(2, minmax(0, 1fr))",
-              md: "repeat(3, minmax(0, 1fr))",
-              lg: "repeat(4, minmax(0, 1fr))",
-            },
-            gap: {
-              xs: 2.5,
-              sm: 3,
-              md: 3.5,
-              lg: 3.5,
-            },
-            alignItems: "stretch",
-          }}
-        >
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <Card
-                key={service.key}
-                elevation={0}
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  minWidth: 0,
-                  minHeight: { xs: 275, md: 305 },
-                  display: "flex",
-                  flexDirection: "column",
-                  border: `1px solid ${COLORS.border}`,
-                  borderRadius: { xs: 3, md: 4 },
-                  backgroundColor: COLORS.white,
-                  position: "relative",
-                  overflow: "hidden",
-                  transition: "all 0.3s ease",
-                  boxShadow: "0 8px 25px rgba(23,59,42,0.045)",
-
-                  "&:hover": {
-                    transform: { xs: "none", md: "translateY(-8px)" },
-                    boxShadow: "0 20px 45px rgba(23,59,42,0.11)",
-                    borderColor: "#E7BC91",
-                  },
-
-                  "&:hover .service-icon": {
-                    transform: "rotate(-7deg) scale(1.08)",
-                  },
-
-                  "&:hover .service-arrow": {
-                    transform: "translateX(5px)",
-                  },
-                }}
-              >
-                {/* Top accent */}
-
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: 4,
-                    backgroundColor: service.color,
-                  }}
-                />
-
-                {/* Decorative number */}
-
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    top: 17,
-                    right: 20,
-                    color: "#E8EDE9",
-                    fontSize: 27,
-                    fontWeight: 900,
-                    lineHeight: 1,
-                  }}
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </Typography>
-
-                <CardContent
-                  sx={{
-                    p: { xs: 2.7, sm: 3, md: 3.2 },
-                    "&:last-child": {
-                      pb: { xs: 2.7, sm: 3, md: 3.2 },
-                    },
-                    display: "flex",
-                    flexDirection: "column",
-                    flex: 1,
-                  }}
-                >
-                  {/* Icon */}
-
-                  <Box
-                    className="service-icon"
-                    sx={{
-                      width: 65,
-                      height: 65,
-                      flexShrink: 0,
-                      borderRadius: 3,
-                      backgroundColor: service.bg,
-                      color: service.color,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mb: 3,
-                      transition: "0.3s ease",
-                    }}
-                  >
-                    <Icon size={30} strokeWidth={1.8} />
-                  </Box>
-
-                  {/* Title */}
-
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: COLORS.green,
-                      fontWeight: 800,
-                      fontSize: 18,
-                      lineHeight: 1.45,
-                      minHeight: 52,
-                      mb: 1,
-                    }}
-                  >
-                    {t(`services.items.${service.key}.title`)}
-                  </Typography>
-
-                  {/* Description */}
-
-                  <Typography
-                    sx={{
-                      color: COLORS.muted,
-                      fontSize: 14,
-                      lineHeight: 1.9,
-                      minHeight: { xs: 75, md: 82 },
-                      mb: 2.5,
-                    }}
-                  >
-                    {t(`services.items.${service.key}.description`)}
-                  </Typography>
-
-                  <Box
-                    sx={{
-                      height: "1px",
-                      width: "100%",
-                      backgroundColor: "#EDF1ED",
-                      mb: 2,
-                      mt: "auto",
-                    }}
-                  />
-
-                  {/* Contact Button */}
-
-                  <Button
-                    component={Link}
-                    to="/contact"
-                    endIcon={
-                      <ArrowRight
-                        size={17}
-                        className="service-arrow"
-                      />
-                    }
-                    sx={{
-                      alignSelf: "flex-start",
-                      color: COLORS.orange,
-                      fontWeight: 800,
-                      fontSize: 14,
-                      textTransform: "none",
-                      p: 0,
-                      transition: "0.25s ease",
-
-                      "& .service-arrow": {
-                        transition: "0.25s ease",
-                      },
-
-                      "&:hover": {
-                        backgroundColor: "transparent",
-                        color: COLORS.green,
-                      },
-                    }}
-                  >
-                    {t("services.contactButton")}
-                  </Button>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </Box>
-      </Container>
-
-      {/* ================= CONTACT CTA ================= */}
-
+      {/* Services Cards */}
       <Box
         sx={{
-          pb: { xs: 7, sm: 9, md: 11 },
+          py: { xs: 5, md: 8 },
+          bgcolor: "#F1F7F1",
         }}
       >
-        <Container
-          maxWidth={false}
-          sx={CONTENT_CONTAINER_SX}
-        >
-          <Box
-            sx={{
-              position: "relative",
-              overflow: "hidden",
-              background: `linear-gradient(115deg, ${COLORS.darkGreen}, ${COLORS.green})`,
-              borderRadius: { xs: 3, md: 5 },
-              px: { xs: 3, sm: 4, md: 7 },
-              py: { xs: 5, md: 6 },
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: 4,
-              boxShadow: "0 15px 40px rgba(16,45,32,0.13)",
-            }}
+        <Container maxWidth="lg">
+          <ServicesSectionHeading
+            eyebrow={tr(
+              "services.categories.eyebrow",
+              "सेवा विभाग",
+              "SERVICE CATEGORIES"
+            )}
+            title={tr(
+              "services.categories.title",
+              "उपलब्ध सेवा विभाग",
+              "Available Service Categories"
+            )}
+            description={tr(
+              "services.categories.description",
+              "आपल्याला आवश्यक असलेल्या सेवांची माहिती मिळवण्यासाठी खालील विभाग निवडा.",
+              "Choose a category below to explore information about the services you need."
+            )}
+          />
+
+          <Grid
+            container
+            spacing={{ xs: 2, sm: 2.5, md: 3 }}
+            sx={{ mt: 2 }}
           >
-            {/* Decorative background circles */}
+            {servicesCards.map((item) => {
+              const fallback = serviceFallbacks[item.key] || {
+                mrTitle: item.key,
+                mrDescription:
+                  "या सेवेसंबंधी अधिक माहितीसाठी ग्रामपंचायत कार्यालयाशी संपर्क साधावा.",
+                enTitle: item.key,
+                enDescription:
+                  "Contact the Gram Panchayat office for more information about this service.",
+              };
 
-            <Box
-              sx={{
-                position: "absolute",
-                width: 240,
-                height: 240,
-                border: "1px solid rgba(255,255,255,0.10)",
-                borderRadius: "50%",
-                top: -140,
-                right: "25%",
-                pointerEvents: "none",
-              }}
-            />
+              return (
+                <Grid
+                  key={item.id}
+                  size={{ xs: 12, sm: 6, md: 4 }}
+                >
+                  <ServicesCard
+                    item={{
+                      ...item,
+                      title: tr(
+                        `services.categories.${item.key}.title`,
+                        fallback.mrTitle,
+                        fallback.enTitle
+                      ),
+                      description: tr(
+                        `services.categories.${item.key}.description`,
+                        fallback.mrDescription,
+                        fallback.enDescription
+                      ),
+                    }}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Container>
+      </Box>
 
-            <Box
-              sx={{
-                position: "absolute",
-                width: 350,
-                height: 350,
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "50%",
-                bottom: -260,
-                right: -80,
-                pointerEvents: "none",
-              }}
-            />
-
-            <Box
-              sx={{
-                position: "relative",
-                zIndex: 1,
-                textAlign: { xs: "center", md: "left" },
-                maxWidth: 650,
-                minWidth: 0,
-              }}
-            >
+      {/* Citizen Support */}
+      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+        <Paper
+          elevation={0}
+          sx={{
+            p: { xs: 3, sm: 4, md: 5 },
+            borderRadius: 4,
+            background:
+              "linear-gradient(120deg, #123D27 0%, #14532D 100%)",
+            color: "#FFFFFF",
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid size={{ xs: 12, md: 8 }}>
               <Stack
                 direction="row"
-                justifyContent={{ xs: "center", md: "flex-start" }}
+                spacing={1.5}
                 alignItems="center"
-                spacing={1}
-                sx={{ mb: 2 }}
+                mb={2}
               >
-                <Sparkles size={18} color={COLORS.saffron} />
+                <ShieldCheck size={25} color="#FFB45E" />
 
                 <Typography
                   sx={{
-                    color: COLORS.saffron,
+                    color: "#FFB45E",
                     fontWeight: 800,
-                    fontSize: 12,
+                    fontSize: "0.82rem",
                     letterSpacing: 1.5,
-                    textTransform: "uppercase",
                   }}
                 >
-                  {t("services.label")}
+                  {tr(
+                    "services.support.eyebrow",
+                    "नागरिक सहाय्य",
+                    "CITIZEN SUPPORT"
+                  )}
                 </Typography>
               </Stack>
 
               <Typography
-                variant="h4"
+                component="h2"
                 sx={{
-                  color: COLORS.white,
-                  fontWeight: 900,
-                  fontSize: { xs: 23, sm: 27, md: 32 },
-                  lineHeight: 1.3,
+                  fontSize: { xs: "1.45rem", sm: "1.9rem" },
+                  fontWeight: 800,
+                  lineHeight: 1.35,
                   mb: 1.5,
                 }}
               >
-                {t("services.ctaTitle")}
+                {tr(
+                  "services.support.title",
+                  "आपल्याला काही मदत हवी आहे का?",
+                  "Need Assistance?"
+                )}
               </Typography>
 
               <Typography
                 sx={{
-                  color: "#D1E4D7",
-                  lineHeight: 1.9,
-                  fontSize: { xs: 14, sm: 15 },
+                  color: "rgba(255,255,255,0.82)",
+                  lineHeight: 1.85,
+                  fontSize: "0.95rem",
                 }}
               >
-                {t("services.ctaDescription")}
+                {tr(
+                  "services.support.description",
+                  "ग्रामपंचायतीच्या सेवा, अर्ज प्रक्रिया किंवा आवश्यक कागदपत्रांबाबत अधिक माहितीसाठी ग्रामपंचायत कार्यालयाशी संपर्क साधा.",
+                  "Contact the Gram Panchayat office for more information about services, application procedures or required documents."
+                )}
               </Typography>
-            </Box>
+            </Grid>
 
-            <Button
-              component={Link}
-              to="/contact"
-              variant="contained"
-              endIcon={<ArrowRight size={19} />}
-              sx={{
-                position: "relative",
-                zIndex: 1,
-                flexShrink: 0,
-                backgroundColor: COLORS.saffron,
-                color: COLORS.darkGreen,
-                fontWeight: 800,
-                px: { xs: 3, md: 4 },
-                py: 1.7,
-                borderRadius: 2.5,
-                whiteSpace: "nowrap",
-                textTransform: "none",
-                fontSize: 15,
-                boxShadow: "0 8px 20px rgba(0,0,0,0.14)",
-                transition: "all 0.25s ease",
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: {
+                    xs: "flex-start",
+                    md: "center",
+                  },
+                  alignItems: "center",
+                  gap: 1.5,
+                  mt: { xs: 1, md: 0 },
+                }}
+              >
+                <UsersRound size={38} color="#FFB45E" />
 
-                "&:hover": {
-                  backgroundColor: "#FFB45E",
-                  transform: { xs: "none", md: "translateY(-3px)" },
-                  boxShadow: "0 12px 25px rgba(0,0,0,0.20)",
-                },
-              }}
-            >
-              {t("services.ctaButton")}
-            </Button>
-          </Box>
-        </Container>
-      </Box>
-
-      {/* ================= BOTTOM ACCENT ================= */}
-
-      <Box
-        sx={{
-          height: 6,
-          background: `
-            linear-gradient(
-              90deg,
-              ${COLORS.saffron} 0%,
-              ${COLORS.saffron} 33%,
-              #FFFFFF 33%,
-              #FFFFFF 66%,
-              #16803D 66%,
-              #16803D 100%
-            )
-          `,
-        }}
-      />
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    color: "#FFFFFF",
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  {tr(
+                    "services.support.footer",
+                    "आपली ग्रामपंचायत, आपल्या सेवेसाठी",
+                    "Your Gram Panchayat, Here to Serve You"
+                  )}
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Container>
     </Box>
   );
-}
+};
 
 export default ServicesPage;

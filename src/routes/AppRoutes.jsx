@@ -33,8 +33,16 @@ import ParyavaranVShasvatVikasPage from "../features/educationParyavaran/page/Pa
 import ShikshanAniYuvakKopraPage from "../features/educationParyavaran/page/ShikshanAniYuvakKopraPage";
 import ShikshanVPayavaranPage from "../features/educationParyavaran/page/ShikshanVPayavaranPage";
 
+// Samitiya
+import SamitiyaPage from "../features/samitiya/page/SamitiyaPage";
+
 // Services / Seva
-import ServicesPage from "../features/services/page/servicesPage";
+import ServicesPage from "../features/services/page/ServicesPage";
+import SuchanaVJahiratiPage from "../features/services/page/SuchanaVJahiratiPage";
+import OnlineKarBharnaPage from "../features/services/page/OnlineKarBharnaPage";
+import NagrikSevaPage from "../features/services/page/NagrikSevaPage";
+import ShaskiyaYojnaPage from "../features/services/page/ShaskiyaYojnaPage";
+import MahitichaAdhikarPage from "../features/services/page/MahitichaAdhikarPage";
 
 // Gallery
 import GalleryPage from "../features/gallery/GalleryPage";
@@ -117,32 +125,51 @@ function AppRoutes() {
           element={<ParyavaranVShasvatVikasPage />}
         />
 
-        {/* Youth detail - Main route */}
+        {/* Youth detail */}
         <Route
           path="/education-paryavaran/shikshan-ani-yuvak-kopra"
           element={<ShikshanAniYuvakKopraPage />}
         />
-
-        {/* Youth detail - Alias route */}
         <Route
           path="/education-paryavaran/shikshan-yuvak-kopra"
           element={<ShikshanAniYuvakKopraPage />}
         />
 
-        {/* Education detail - Main route */}
+        {/* Education detail */}
         <Route
           path="/education-paryavaran/shikshan-v-paryavaran"
           element={<ShikshanVPayavaranPage />}
         />
-
-        {/* Education detail - Alias route */}
         <Route
           path="/education-paryavaran/shikshan-paryavaran"
           element={<ShikshanVPayavaranPage />}
         />
 
+        {/* Samitiya */}
+        <Route path="/samitiya" element={<SamitiyaPage />} />
+
         {/* Services / Seva */}
         <Route path="/services" element={<ServicesPage />} />
+        <Route
+          path="/services/suchana-jahirati"
+          element={<SuchanaVJahiratiPage />}
+        />
+        <Route
+          path="/services/online-kar-bharna"
+          element={<OnlineKarBharnaPage />}
+        />
+        <Route
+          path="/services/nagrik-seva"
+          element={<NagrikSevaPage />}
+        />
+        <Route
+          path="/services/shaskiya-yojna"
+          element={<ShaskiyaYojnaPage />}
+        />
+        <Route
+          path="/services/mahiticha-adhikar"
+          element={<MahitichaAdhikarPage />}
+        />
 
         {/* Gallery */}
         <Route path="/gallery" element={<GalleryPage />} />

@@ -1,4 +1,3 @@
-
 {
   "header": {
     "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
@@ -22,8 +21,6 @@
     "copyright": "Gram Panchayat Pimpalkhuta Budruk. All Rights Reserved.",
     "tagline": "Designed for Digital Village Development"
   },
- 
-
   "navbar": {
     "home": "Home",
     "about": "About",
@@ -33,10 +30,8 @@
     "seva": "Seva",
     "adhik": "Adhik",
     "dashboard": "Dashboard",
-
     "panchayatName": "ग्रामपंचायत पिंपळखुटा बु.",
     "englishName": "Gram Panchayat Pimpalkhuta Budruk",
-
     "aboutInformation": "About Gram Panchayat",
     "villageIdentity": "Village Identity",
     "villageHistory": "Village History",
@@ -49,33 +44,27 @@
     "cultureAndTraditions": "Culture & Traditions",
     "emergencyContacts": "Emergency Contacts",
     "rolesAndResponsibilities": "Roles & Responsibilities",
-
     "arthikMahiti": "Financial Information",
     "kamachiMahiti": "Development Work Information",
     "gramSabhaCorner": "Gram Sabha Corner",
-
     "paryavaranVShasvatVikas": "Environment & Sustainable Development",
     "shikshanAniYuvakKopra": "Education & Youth Corner",
     "shikshanVPayavaran": "Education & Environment",
-
     "suchanaVJahirati": "Notices & Advertisements",
     "onlineKarBharna": "Pay Tax Online",
     "nagrikSeva": "Citizen Services",
     "shaskiyaYojna": "Government Schemes",
     "mahitichaAdhikar": "Right to Information",
-
     "rojgarVKaushalya": "Employment & Skills",
     "udyogVUpkram": "Industries & Initiatives",
     "swyamSahayataGut": "Self-Help Groups",
     "mahatvacheDuwe": "Important Links",
     "takrarSuchanaSallaAbhipray": "Complaints, Notices, Suggestions & Feedback",
     "sitemap": "Sitemap",
-
     "overview": "Overview",
     "mainMenu": "Main Menu",
     "contactInformation": "Contact Information"
-  }
-,
+  },
   "home": {
     "welcome": "Welcome to our village",
     "heroTitle": "A Digital Gateway to a Developed Village",
@@ -885,335 +874,325 @@
       "description": "Good governance is a shared effort. Connect with the Gram Panchayat to share suggestions, raise concerns, and participate in village development.",
       "button": "Contact Gram Panchayat"
     }
-  }
-
-  ,
-"wishesAndCongratulations": {
-  "hero": {
-    "badge": "Celebrating Our Community",
-    "title": "Wishes and Congratulations",
-    "description": "A place to share good wishes, celebrate special moments and recognise the achievements of the people of Pimpalkhuta Budruk.",
-    "chipOne": "Celebrating Together",
-    "chipTwo": "Sharing Happiness"
   },
-  "intro": {
-    "eyebrow": "MOMENTS THAT MATTER",
-    "title": "Every Special Moment Deserves to Be Celebrated",
-    "description": "Our village is built on relationships, shared experiences and community spirit. Birthdays, anniversaries, personal achievements and important milestones bring happiness to families and neighbours.",
-    "descriptionTwo": "This page is dedicated to celebrating these occasions and spreading positivity, encouragement and appreciation throughout our community.",
-    "highlightTitle": "A Message of Happiness",
-    "highlightDescription": "May every home be filled with happiness, good health, peace and prosperity. Let us celebrate one another's special moments with warmth and respect."
-  },
-  "wishes": {
-    "eyebrow": "WISHES AND RECOGNITION",
-    "title": "Celebrating Life's Special Moments",
-    "description": "We extend our warm wishes and congratulations to residents on their important occasions and achievements.",
-    "items": {
-      "birthday": {
-        "title": "Birthday Wishes",
-        "description": "Wishing everyone celebrating a birthday happiness, good health, success and a wonderful year ahead."
-      },
-      "anniversary": {
-        "title": "Anniversary Wishes",
-        "description": "Warm wishes to couples celebrating their wedding anniversaries. May their journey together continue with love and happiness."
-      },
-      "achievement": {
-        "title": "Congratulations on Achievements",
-        "description": "Congratulations to students, professionals, sportspersons and residents for their dedication, hard work and accomplishments."
-      },
-      "success": {
-        "title": "Success and New Beginnings",
-        "description": "Best wishes to everyone beginning a new journey, reaching a milestone or taking an important step towards their dreams."
-      }
-    }
-  },
-  "celebrations": {
-    "eyebrow": "TOGETHER AS A COMMUNITY",
-    "title": "Celebrating Our Shared Happiness",
-    "description": "Special occasions and community celebrations create lasting memories and strengthen relationships among residents.",
-    "items": {
-      "festivals": {
-        "title": "Festivals and Special Days",
-        "description": "Warm wishes to all residents on festivals, national days and other important occasions. May these celebrations bring unity and happiness."
-      },
-      "community": {
-        "title": "Community Celebrations",
-        "description": "Celebrating the spirit of togetherness, cooperation and participation that makes our village community stronger."
-      },
-      "special": {
-        "title": "Special Achievements",
-        "description": "Recognising meaningful contributions, educational milestones, sporting accomplishments and other positive achievements."
-      }
-    }
-  },
-  "values": {
-    "eyebrow": "OUR COMMUNITY VALUES",
-    "title": "Good Wishes Bring People Closer",
-    "description": "Sharing happiness and appreciating one another helps build a supportive, respectful and positive village community.",
-    "items": {
-      "respect": {
-        "title": "Respect and Appreciation",
-        "description": "Recognising the efforts, contributions and special moments of every member of our community."
-      },
-      "togetherness": {
-        "title": "Unity and Togetherness",
-        "description": "Sharing celebrations and happiness helps strengthen relationships between families and neighbours."
-      },
-      "encouragement": {
-        "title": "Encouragement and Inspiration",
-        "description": "Appreciating achievements inspires young people and residents to continue learning, growing and contributing."
-      }
-    }
-  },
-  "closing": {
-    "title": "Let Us Celebrate Happiness Together",
-    "description": "Every good wish, achievement and celebration adds to the happiness of our village. Stay connected and share the spirit of positivity and community cooperation.",
-    "button": "Contact Gram Panchayat"
-  }
-}
-,
-
-
-"employeeList": {
-  "hero": {
-    "eyebrow": "OUR TEAM",
-    "title": "Gram Panchayat Employees",
-    "description": "Meet the people who support the day-to-day administration and public services of Gram Panchayat Pimpalkhuta Budruk.",
-    "location": "Pimpalkhuta Budruk, Warud, Amravati"
-  },
-  "section": {
-    "eyebrow": "OUR PEOPLE",
-    "title": "Meet Our Employees",
-    "description": "Our employees help coordinate village administration and support the delivery of public services."
-  },
-  "card": {
-    "namePending": "Employee Name",
-    "designationPending": "Designation to be updated",
-    "departmentPending": "Department to be updated"
-  },
-  "empty": {
-    "title": "Employee Details Coming Soon",
-    "description": "The official employee information is being prepared. Please visit again to see the updated list of Gram Panchayat employees."
-  },
-  "footer": {
-    "message": "Committed to serving the people and supporting the development of our village."
-  },
-  "positions": {
-    "gramSevak": "Gram Sevak",
-    "villageDevelopmentOfficer": "Village Development Officer",
-    "computerOperator": "Computer Operator",
-    "clerk": "Clerk",
-    "waterSupplyWorker": "Water Supply Worker",
-    "sanitationWorker": "Sanitation Worker"
-  },
-  "departments": {
-    "administration": "Administration Department",
-    "development": "Village Development Department",
-    "it": "Information Technology Department",
-    "waterSupply": "Water Supply Department",
-    "sanitation": "Sanitation Department",
-    "publicServices": "Public Services Department"
-  }
-},
-
-
-"transparency": {
-  "badge": "Transparency & Public Information",
-  "hero": {
-    "title": "Transparency in Village Governance",
-    "description": "Access important public information about village finances, development activities and Gram Sabha decisions through the official Gram Panchayat information portal."
-  },
-  "section": {
-    "eyebrow": "Public Information",
-    "title": "Explore Transparency Information",
-    "description": "Find important information and updates related to the administration and development of our village."
-  },
-  "cards": {
-    "arthik": {
-      "title": "Financial Information",
-      "description": "Explore budget information, income, expenditure, grants and available financial reports of the Gram Panchayat."
+  "wishesAndCongratulations": {
+    "hero": {
+      "badge": "Celebrating Our Community",
+      "title": "Wishes and Congratulations",
+      "description": "A place to share good wishes, celebrate special moments and recognise the achievements of the people of Pimpalkhuta Budruk.",
+      "chipOne": "Celebrating Together",
+      "chipTwo": "Sharing Happiness"
     },
-    "kamachi": {
-      "title": "Development Work Information",
-      "description": "Learn about village development projects, completed works, ongoing activities and project progress."
+    "intro": {
+      "eyebrow": "MOMENTS THAT MATTER",
+      "title": "Every Special Moment Deserves to Be Celebrated",
+      "description": "Our village is built on relationships, shared experiences and community spirit. Birthdays, anniversaries, personal achievements and important milestones bring happiness to families and neighbours.",
+      "descriptionTwo": "This page is dedicated to celebrating these occasions and spreading positivity, encouragement and appreciation throughout our community.",
+      "highlightTitle": "A Message of Happiness",
+      "highlightDescription": "May every home be filled with happiness, good health, peace and prosperity. Let us celebrate one another's special moments with warmth and respect."
+    },
+    "wishes": {
+      "eyebrow": "WISHES AND RECOGNITION",
+      "title": "Celebrating Life's Special Moments",
+      "description": "We extend our warm wishes and congratulations to residents on their important occasions and achievements.",
+      "items": {
+        "birthday": {
+          "title": "Birthday Wishes",
+          "description": "Wishing everyone celebrating a birthday happiness, good health, success and a wonderful year ahead."
+        },
+        "anniversary": {
+          "title": "Anniversary Wishes",
+          "description": "Warm wishes to couples celebrating their wedding anniversaries. May their journey together continue with love and happiness."
+        },
+        "achievement": {
+          "title": "Congratulations on Achievements",
+          "description": "Congratulations to students, professionals, sportspersons and residents for their dedication, hard work and accomplishments."
+        },
+        "success": {
+          "title": "Success and New Beginnings",
+          "description": "Best wishes to everyone beginning a new journey, reaching a milestone or taking an important step towards their dreams."
+        }
+      }
+    },
+    "celebrations": {
+      "eyebrow": "TOGETHER AS A COMMUNITY",
+      "title": "Celebrating Our Shared Happiness",
+      "description": "Special occasions and community celebrations create lasting memories and strengthen relationships among residents.",
+      "items": {
+        "festivals": {
+          "title": "Festivals and Special Days",
+          "description": "Warm wishes to all residents on festivals, national days and other important occasions. May these celebrations bring unity and happiness."
+        },
+        "community": {
+          "title": "Community Celebrations",
+          "description": "Celebrating the spirit of togetherness, cooperation and participation that makes our village community stronger."
+        },
+        "special": {
+          "title": "Special Achievements",
+          "description": "Recognising meaningful contributions, educational milestones, sporting accomplishments and other positive achievements."
+        }
+      }
+    },
+    "values": {
+      "eyebrow": "OUR COMMUNITY VALUES",
+      "title": "Good Wishes Bring People Closer",
+      "description": "Sharing happiness and appreciating one another helps build a supportive, respectful and positive village community.",
+      "items": {
+        "respect": {
+          "title": "Respect and Appreciation",
+          "description": "Recognising the efforts, contributions and special moments of every member of our community."
+        },
+        "togetherness": {
+          "title": "Unity and Togetherness",
+          "description": "Sharing celebrations and happiness helps strengthen relationships between families and neighbours."
+        },
+        "encouragement": {
+          "title": "Encouragement and Inspiration",
+          "description": "Appreciating achievements inspires young people and residents to continue learning, growing and contributing."
+        }
+      }
+    },
+    "closing": {
+      "title": "Let Us Celebrate Happiness Together",
+      "description": "Every good wish, achievement and celebration adds to the happiness of our village. Stay connected and share the spirit of positivity and community cooperation.",
+      "button": "Contact Gram Panchayat"
+    }
+  },
+  "employeeList": {
+    "hero": {
+      "eyebrow": "OUR TEAM",
+      "title": "Gram Panchayat Employees",
+      "description": "Meet the people who support the day-to-day administration and public services of Gram Panchayat Pimpalkhuta Budruk.",
+      "location": "Pimpalkhuta Budruk, Warud, Amravati"
+    },
+    "section": {
+      "eyebrow": "OUR PEOPLE",
+      "title": "Meet Our Employees",
+      "description": "Our employees help coordinate village administration and support the delivery of public services."
+    },
+    "card": {
+      "namePending": "Employee Name",
+      "designationPending": "Designation to be updated",
+      "departmentPending": "Department to be updated"
+    },
+    "empty": {
+      "title": "Employee Details Coming Soon",
+      "description": "The official employee information is being prepared. Please visit again to see the updated list of Gram Panchayat employees."
+    },
+    "footer": {
+      "message": "Committed to serving the people and supporting the development of our village."
+    },
+    "positions": {
+      "gramSevak": "Gram Sevak",
+      "villageDevelopmentOfficer": "Village Development Officer",
+      "computerOperator": "Computer Operator",
+      "clerk": "Clerk",
+      "waterSupplyWorker": "Water Supply Worker",
+      "sanitationWorker": "Sanitation Worker"
+    },
+    "departments": {
+      "administration": "Administration Department",
+      "development": "Village Development Department",
+      "it": "Information Technology Department",
+      "waterSupply": "Water Supply Department",
+      "sanitation": "Sanitation Department",
+      "publicServices": "Public Services Department"
+    }
+  },
+  "transparency": {
+    "badge": "Transparency & Public Information",
+    "hero": {
+      "title": "Transparency in Village Governance",
+      "description": "Access important public information about village finances, development activities and Gram Sabha decisions through the official Gram Panchayat information portal."
+    },
+    "section": {
+      "eyebrow": "Public Information",
+      "title": "Explore Transparency Information",
+      "description": "Find important information and updates related to the administration and development of our village."
+    },
+    "cards": {
+      "arthik": {
+        "title": "Financial Information",
+        "description": "Explore budget information, income, expenditure, grants and available financial reports of the Gram Panchayat."
+      },
+      "kamachi": {
+        "title": "Development Work Information",
+        "description": "Learn about village development projects, completed works, ongoing activities and project progress."
+      },
+      "gramSabha": {
+        "title": "Gram Sabha Corner",
+        "description": "Find Gram Sabha notices, meeting information, resolutions, minutes and important village decisions."
+      }
+    },
+    "viewDetails": "Explore Details",
+    "principles": {
+      "eyebrow": "Our Commitment",
+      "heading": "Our Governance Principles",
+      "intro": "We believe that transparent information and responsible administration help build trust between citizens and the Gram Panchayat.",
+      "openness": {
+        "title": "Openness",
+        "description": "Making relevant public information accessible to village residents."
+      },
+      "accountability": {
+        "title": "Accountability",
+        "description": "Encouraging responsible administration and clear communication about public activities."
+      },
+      "access": {
+        "title": "Easy Access",
+        "description": "Helping citizens find important public records and information conveniently."
+      }
+    },
+    "commitment": {
+      "title": "Information for Every Citizen",
+      "description": "Gram Panchayat Pimpalkhuta Budruk is committed to sharing public information in an accessible and understandable manner. Official documents and records will be published as they become available."
+    },
+    "finance": {
+      "hero": {
+        "title": "Financial Information",
+        "description": "Access information about Gram Panchayat budgets, income, expenditure, grants and financial records.",
+        "breadcrumb": "Financial Information"
+      },
+      "intro": {
+        "eyebrow": "Financial Transparency",
+        "title": "Understanding Panchayat Finances",
+        "description": "Explore information about financial planning, public funds and responsible financial administration."
+      },
+      "sections": {
+        "budget": {
+          "title": "Annual Budget",
+          "description": "Information about annual budget planning, approved allocations and financial provisions."
+        },
+        "income": {
+          "title": "Income Details",
+          "description": "Information about government grants, local taxes and other sources of Gram Panchayat income."
+        },
+        "expenses": {
+          "title": "Expenditure Details",
+          "description": "Information about expenditure on village development activities and public services."
+        },
+        "audit": {
+          "title": "Audit Reports",
+          "description": "Information about financial audits, audit observations and related official reports."
+        }
+      },
+      "records": {
+        "eyebrow": "Official Records",
+        "title": "Financial Documents",
+        "description": "Access verified financial documents and official records.",
+        "emptyTitle": "Financial Records Will Be Published Here",
+        "emptyDescription": "Official budgets, income and expenditure statements, grants and audit reports will be displayed here after verification and publication by the Gram Panchayat."
+      },
+      "note": {
+        "title": "Our Commitment to Transparency",
+        "description": "Gram Panchayat Pimpalkhuta Budruk aims to make verified financial information accessible to all citizens. Official financial figures and documents will be published only after verification."
+      }
+    },
+    "works": {
+      "hero": {
+        "title": "Village Development Work Information",
+        "description": "Explore information about development activities, infrastructure projects and public works undertaken for the progress of Gram Panchayat Pimpalkhuta Budruk.",
+        "breadcrumb": "Development Work"
+      },
+      "intro": {
+        "eyebrow": "Village Development",
+        "title": "Development Activities",
+        "description": "Explore the different stages of development work undertaken or planned for our village."
+      },
+      "categories": {
+        "completed": {
+          "title": "Completed Works",
+          "description": "Information about development projects that have been completed."
+        },
+        "ongoing": {
+          "title": "Ongoing Works",
+          "description": "Information about development projects currently in progress."
+        },
+        "proposed": {
+          "title": "Proposed Works",
+          "description": "Information about development projects proposed for future implementation."
+        }
+      },
+      "records": {
+        "eyebrow": "Work Records",
+        "title": "Development Work Details",
+        "description": "View project details, locations, financial information and implementation status.",
+        "work1": {
+          "title": "Official work record to be added",
+          "description": "Verified details of completed village development work will be published here.",
+          "status": "Completed",
+          "location": "Location to be updated",
+          "year": "Year to be updated",
+          "cost": "Official cost to be updated"
+        },
+        "work2": {
+          "title": "Official work record to be added",
+          "description": "Verified details of ongoing village development work will be published here.",
+          "status": "Ongoing",
+          "location": "Location to be updated",
+          "year": "Year to be updated",
+          "cost": "Official cost to be updated"
+        },
+        "work3": {
+          "title": "Official work record to be added",
+          "description": "Verified details of proposed village development work will be published here.",
+          "status": "Proposed",
+          "location": "Location to be updated",
+          "year": "Year to be updated",
+          "cost": "Official cost to be updated"
+        }
+      },
+      "progress": "Work Progress",
+      "note": {
+        "title": "Important Information",
+        "description": "The records shown above are placeholders. Official project names, costs, dates, locations and progress details should be added only after verification by the Gram Panchayat."
+      }
     },
     "gramSabha": {
-      "title": "Gram Sabha Corner",
-      "description": "Find Gram Sabha notices, meeting information, resolutions, minutes and important village decisions."
-    }
-  },
-  "viewDetails": "Explore Details",
-  "principles": {
-    "eyebrow": "Our Commitment",
-    "heading": "Our Governance Principles",
-    "intro": "We believe that transparent information and responsible administration help build trust between citizens and the Gram Panchayat.",
-    "openness": {
-      "title": "Openness",
-      "description": "Making relevant public information accessible to village residents."
-    },
-    "accountability": {
-      "title": "Accountability",
-      "description": "Encouraging responsible administration and clear communication about public activities."
-    },
-    "access": {
-      "title": "Easy Access",
-      "description": "Helping citizens find important public records and information conveniently."
-    }
-  },
-  "commitment": {
-    "title": "Information for Every Citizen",
-    "description": "Gram Panchayat Pimpalkhuta Budruk is committed to sharing public information in an accessible and understandable manner. Official documents and records will be published as they become available."
-  },
-  "finance": {
-    "hero": {
-      "title": "Financial Information",
-      "description": "Access information about Gram Panchayat budgets, income, expenditure, grants and financial records.",
-      "breadcrumb": "Financial Information"
-    },
-    "intro": {
-      "eyebrow": "Financial Transparency",
-      "title": "Understanding Panchayat Finances",
-      "description": "Explore information about financial planning, public funds and responsible financial administration."
-    },
-    "sections": {
-      "budget": {
-        "title": "Annual Budget",
-        "description": "Information about annual budget planning, approved allocations and financial provisions."
+      "hero": {
+        "title": "Gram Sabha Corner",
+        "description": "Stay informed about Gram Sabha meetings, public notices, resolutions and important decisions concerning village development.",
+        "breadcrumb": "Gram Sabha Corner"
       },
-      "income": {
-        "title": "Income Details",
-        "description": "Information about government grants, local taxes and other sources of Gram Panchayat income."
+      "intro": {
+        "eyebrow": "People's Participation",
+        "title": "Gram Sabha Information",
+        "description": "The Gram Sabha provides a platform for village residents to participate in local governance, discuss community needs and contribute to development decisions."
       },
-      "expenses": {
-        "title": "Expenditure Details",
-        "description": "Information about expenditure on village development activities and public services."
+      "sections": {
+        "meetings": {
+          "title": "Gram Sabha Meetings",
+          "description": "Information about scheduled meetings, meeting dates, agendas and public participation."
+        },
+        "notices": {
+          "title": "Meeting Notices",
+          "description": "Official announcements and notices regarding Gram Sabha meetings and village matters."
+        },
+        "resolutions": {
+          "title": "Gram Sabha Resolutions",
+          "description": "Important resolutions and decisions taken during Gram Sabha meetings."
+        },
+        "minutes": {
+          "title": "Meeting Minutes",
+          "description": "Records and summaries of discussions and proceedings from Gram Sabha meetings."
+        }
       },
-      "audit": {
-        "title": "Audit Reports",
-        "description": "Information about financial audits, audit observations and related official reports."
+      "records": {
+        "eyebrow": "Public Records",
+        "title": "Meetings & Decisions",
+        "description": "Explore information about Gram Sabha meetings and the decisions made for the development of the village.",
+        "meetingTitle": "Meeting Information",
+        "meetingDescription": "Meeting schedules, agendas and related information will be published here after they are officially confirmed by the Gram Panchayat.",
+        "meetingStatus": "Information will be updated",
+        "decisionTitle": "Decisions & Resolutions",
+        "decisionDescription": "Official resolutions, approved proposals and meeting records will be made available here when published.",
+        "decisionStatus": "Official records pending"
+      },
+      "note": {
+        "title": "Important Information",
+        "description": "Gram Sabha meeting dates, notices and resolutions will be updated by the Gram Panchayat. Please refer to official announcements for confirmed information."
       }
-    },
-    "records": {
-      "eyebrow": "Official Records",
-      "title": "Financial Documents",
-      "description": "Access verified financial documents and official records.",
-      "emptyTitle": "Financial Records Will Be Published Here",
-      "emptyDescription": "Official budgets, income and expenditure statements, grants and audit reports will be displayed here after verification and publication by the Gram Panchayat."
-    },
-    "note": {
-      "title": "Our Commitment to Transparency",
-      "description": "Gram Panchayat Pimpalkhuta Budruk aims to make verified financial information accessible to all citizens. Official financial figures and documents will be published only after verification."
     }
   },
-  "works": {
-    "hero": {
-      "title": "Village Development Work Information",
-      "description": "Explore information about development activities, infrastructure projects and public works undertaken for the progress of Gram Panchayat Pimpalkhuta Budruk.",
-      "breadcrumb": "Development Work"
-    },
-    "intro": {
-      "eyebrow": "Village Development",
-      "title": "Development Activities",
-      "description": "Explore the different stages of development work undertaken or planned for our village."
-    },
-    "categories": {
-      "completed": {
-        "title": "Completed Works",
-        "description": "Information about development projects that have been completed."
-      },
-      "ongoing": {
-        "title": "Ongoing Works",
-        "description": "Information about development projects currently in progress."
-      },
-      "proposed": {
-        "title": "Proposed Works",
-        "description": "Information about development projects proposed for future implementation."
-      }
-    },
-    "records": {
-      "eyebrow": "Work Records",
-      "title": "Development Work Details",
-      "description": "View project details, locations, financial information and implementation status.",
-      "work1": {
-        "title": "Official work record to be added",
-        "description": "Verified details of completed village development work will be published here.",
-        "status": "Completed",
-        "location": "Location to be updated",
-        "year": "Year to be updated",
-        "cost": "Official cost to be updated"
-      },
-      "work2": {
-        "title": "Official work record to be added",
-        "description": "Verified details of ongoing village development work will be published here.",
-        "status": "Ongoing",
-        "location": "Location to be updated",
-        "year": "Year to be updated",
-        "cost": "Official cost to be updated"
-      },
-      "work3": {
-        "title": "Official work record to be added",
-        "description": "Verified details of proposed village development work will be published here.",
-        "status": "Proposed",
-        "location": "Location to be updated",
-        "year": "Year to be updated",
-        "cost": "Official cost to be updated"
-      }
-    },
-    "progress": "Work Progress",
-    "note": {
-      "title": "Important Information",
-      "description": "The records shown above are placeholders. Official project names, costs, dates, locations and progress details should be added only after verification by the Gram Panchayat."
-    }
-  },
-  "gramSabha": {
-    "hero": {
-      "title": "Gram Sabha Corner",
-      "description": "Stay informed about Gram Sabha meetings, public notices, resolutions and important decisions concerning village development.",
-      "breadcrumb": "Gram Sabha Corner"
-    },
-    "intro": {
-      "eyebrow": "People's Participation",
-      "title": "Gram Sabha Information",
-      "description": "The Gram Sabha provides a platform for village residents to participate in local governance, discuss community needs and contribute to development decisions."
-    },
-    "sections": {
-      "meetings": {
-        "title": "Gram Sabha Meetings",
-        "description": "Information about scheduled meetings, meeting dates, agendas and public participation."
-      },
-      "notices": {
-        "title": "Meeting Notices",
-        "description": "Official announcements and notices regarding Gram Sabha meetings and village matters."
-      },
-      "resolutions": {
-        "title": "Gram Sabha Resolutions",
-        "description": "Important resolutions and decisions taken during Gram Sabha meetings."
-      },
-      "minutes": {
-        "title": "Meeting Minutes",
-        "description": "Records and summaries of discussions and proceedings from Gram Sabha meetings."
-      }
-    },
-    "records": {
-      "eyebrow": "Public Records",
-      "title": "Meetings & Decisions",
-      "description": "Explore information about Gram Sabha meetings and the decisions made for the development of the village.",
-      "meetingTitle": "Meeting Information",
-      "meetingDescription": "Meeting schedules, agendas and related information will be published here after they are officially confirmed by the Gram Panchayat.",
-      "meetingStatus": "Information will be updated",
-      "decisionTitle": "Decisions & Resolutions",
-      "decisionDescription": "Official resolutions, approved proposals and meeting records will be made available here when published.",
-      "decisionStatus": "Official records pending"
-    },
-    "note": {
-      "title": "Important Information",
-      "description": "Gram Sabha meeting dates, notices and resolutions will be updated by the Gram Panchayat. Please refer to official announcements for confirmed information."
-    }
-  }
-}
-,
-
-
   "educationParyavaran": {
     "badge": "Education & Environment",
     "hero": {
@@ -1270,9 +1249,7 @@
       "title": "Together for a Better Future",
       "description": "Gram Panchayat Pimpalkhuta Budruk aims to encourage education, environmental awareness and sustainable development through public participation."
     }
-  }
-  ,
-
+  },
   "environment": {
     "hero": {
       "title": "Environment & Sustainable Development",
@@ -1323,9 +1300,7 @@
       "title": "Our Commitment to Sustainable Development",
       "description": "We aim to encourage responsible environmental practices and community participation for a cleaner, greener and healthier village."
     }
-  }
-  ,
-
+  },
   "youth": {
     "hero": {
       "title": "Education & Youth Corner",
@@ -1396,7 +1371,6 @@
       "description": "An educated and skilled generation can contribute to a stronger, more aware and progressive village. Let us encourage every child and young person to learn and grow."
     }
   },
-
   "information": {
     "hero": {
       "title": "Education & Environment Information",
@@ -1477,18 +1451,349 @@
       "title": "Together Towards a Better Tomorrow",
       "description": "Gram Panchayat Pimpalkhuta Budruk encourages education, environmental awareness and community participation for sustainable village development."
     }
+  },
+  "samitiya": {
+    "badge": "Village Development Committees",
+    "hero": {
+      "title": "Village Committees",
+      "description": "Learn about the committees that support village development, public participation, and effective Gram Panchayat functioning.",
+      "breadcrumb": "Committees"
+    },
+    "intro": {
+      "eyebrow": "ABOUT COMMITTEES",
+      "title": "Working Together for Village Development",
+      "description": "Village committees encourage community participation, support local development activities, and help address important village needs.",
+      "messageTitle": "Community Participation Matters",
+      "messageDescription": "Active participation from villagers helps identify local needs, share ideas, and contribute to inclusive and sustainable village development."
+    },
+    "committees": {
+      "eyebrow": "COMMITTEE AREAS",
+      "title": "Areas of Community Work",
+      "description": "Explore important areas where community participation can support the development and well-being of our village.",
+      "note": "The categories shown are informational. Official committee names, membership, and constitution details should be confirmed through Gram Panchayat records.",
+      "items": {
+        "villageDevelopment": {
+          "title": "Village Development",
+          "description": "Encourage local development planning, identify village needs, and support community development activities."
+        },
+        "waterManagement": {
+          "title": "Water Management",
+          "description": "Promote water conservation, responsible water use, and awareness about local water resources."
+        },
+        "healthAndSanitation": {
+          "title": "Health and Sanitation",
+          "description": "Encourage cleanliness, hygiene, sanitation awareness, and a healthy village environment."
+        },
+        "education": {
+          "title": "Education",
+          "description": "Support educational awareness, school participation, literacy, and learning opportunities for children and youth."
+        },
+        "environment": {
+          "title": "Environment Protection",
+          "description": "Promote tree plantation, environmental awareness, waste management, and sustainable village practices."
+        },
+        "socialJustice": {
+          "title": "Social Welfare",
+          "description": "Encourage social inclusion, equal opportunities, public awareness, and participation of all community members."
+        }
+      }
+    },
+    "responsibilities": {
+      "eyebrow": "OUR RESPONSIBILITIES",
+      "title": "Roles and Responsibilities",
+      "description": "Important activities that contribute to transparent, inclusive, and effective village development.",
+      "items": {
+        "planning": "Supporting village development planning and identifying local needs",
+        "publicParticipation": "Encouraging villagers to participate in meetings and development activities",
+        "monitoring": "Reviewing development activities and identifying areas for improvement",
+        "transparency": "Promoting transparency, accountability, and public awareness"
+      }
+    },
+    "participation": {
+      "title": "Your Participation Makes a Difference",
+      "description": "Share your ideas, participate in Gram Sabha meetings, raise important village issues, and contribute to the development of Pimpalkhuta Budruk."
+    },
+    "commitment": {
+      "eyebrow": "OUR COMMITMENT",
+      "title": "Together Towards a Better Village",
+      "description": "Gram Panchayat Pimpalkhuta Budruk encourages cooperation, transparency, equal participation, and collective efforts for sustainable village development."
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Citizen Services",
+      "description": "Access information about the services and facilities provided by Gram Panchayat Pimpalkhuta Budruk."
+    },
+    "intro": {
+      "eyebrow": "OUR SERVICES",
+      "title": "Services for Every Citizen",
+      "description": "Gram Panchayat works to make essential information and public services accessible to every village resident.",
+      "messageTitle": "Public Services with Transparency",
+      "messageDescription": "Explore the available service categories, understand the general process, and contact the Gram Panchayat office for the latest requirements and assistance."
+    },
+    "categories": {
+      "eyebrow": "SERVICE DIRECTORY",
+      "title": "Explore Our Services",
+      "description": "Choose a category to learn more about the relevant public services.",
+      "items": {
+        "suchanaVJahirati": {
+          "title": "Notices & Announcements",
+          "description": "Find public notices, announcements, important updates and information shared by the Gram Panchayat."
+        },
+        "onlineKarBharna": {
+          "title": "Online Tax Payment",
+          "description": "Learn about village taxes, payment procedures and available online payment facilities."
+        },
+        "nagrikSeva": {
+          "title": "Citizen Services",
+          "description": "Explore information about certificates, applications and other essential citizen services."
+        },
+        "shaskiyaYojna": {
+          "title": "Government Schemes",
+          "description": "Learn about government welfare schemes, eligibility information and application guidance."
+        },
+        "mahitichaAdhikar": {
+          "title": "Right to Information",
+          "description": "Understand the Right to Information process and how citizens can request public information."
+        }
+      }
+    },
+    "support": {
+      "eyebrow": "CITIZEN SUPPORT",
+      "title": "Need Help with a Gram Panchayat Service?",
+      "description": "Visit or contact the Gram Panchayat office for guidance about documents, applications, eligibility and current service procedures.",
+      "footer": "Information and assistance for every citizen"
+    },
+    "notices": {
+      "hero": {
+        "title": "Notices & Announcements",
+        "description": "Stay informed about important notices, public announcements and updates from Gram Panchayat Pimpalkhuta Budruk.",
+        "breadcrumb": "Notices & Announcements"
+      },
+      "intro": {
+        "eyebrow": "PUBLIC INFORMATION",
+        "title": "Notices and Important Updates",
+        "description": "Access information about public announcements, official communications and important village updates."
+      },
+      "categories": {
+        "publicNotices": {
+          "title": "Public Notices",
+          "description": "Information about public notices and communications issued by the Gram Panchayat."
+        },
+        "announcements": {
+          "title": "Announcements",
+          "description": "Important announcements and information intended for village residents."
+        },
+        "circulars": {
+          "title": "Official Circulars",
+          "description": "Information about official circulars and administrative communications."
+        },
+        "importantUpdates": {
+          "title": "Important Updates",
+          "description": "Updates about village activities, public services and important developments."
+        }
+      },
+      "information": {
+        "eyebrow": "NOTICE INFORMATION",
+        "title": "Stay Connected with Village Updates",
+        "description": "The Gram Panchayat shares important information to keep citizens aware of local activities and public matters.",
+        "message": "Citizens can visit the Gram Panchayat office to obtain information about current notices, announcements and official communications.",
+        "note": "Official notices, publication dates and supporting documents should be checked with the Gram Panchayat office."
+      }
+    },
+    "onlineTax": {
+      "hero": {
+        "title": "Online Tax Payment",
+        "description": "Learn about Gram Panchayat taxes, payment procedures and available payment facilities.",
+        "breadcrumb": "Online Tax Payment"
+      },
+      "intro": {
+        "eyebrow": "TAX SERVICES",
+        "title": "Tax Payment Information",
+        "description": "Understand the different tax-related services and how to obtain payment information from the Gram Panchayat."
+      },
+      "items": {
+        "propertyTax": {
+          "title": "Property Tax",
+          "description": "Information about property tax assessment, outstanding dues and payment procedures."
+        },
+        "waterTax": {
+          "title": "Water Tax",
+          "description": "Information about water-related charges and applicable payment procedures."
+        },
+        "paymentReceipt": {
+          "title": "Payment Receipts",
+          "description": "Learn about obtaining and keeping records of tax payment receipts."
+        },
+        "taxInformation": {
+          "title": "Tax Information",
+          "description": "Get guidance about applicable taxes, assessment details and outstanding amounts."
+        }
+      },
+      "process": {
+        "eyebrow": "PAYMENT GUIDANCE",
+        "title": "General Tax Payment Process",
+        "description": "Follow these general steps and confirm the current payment procedure with the Gram Panchayat office.",
+        "steps": {
+          "identifyProperty": "Provide the relevant property or account details.",
+          "checkOutstandingTax": "Confirm the applicable tax amount and outstanding dues.",
+          "makePayment": "Pay using a payment method officially accepted by the Gram Panchayat.",
+          "collectReceipt": "Collect and preserve the official payment receipt."
+        }
+      },
+      "note": {
+        "title": "Important Payment Information",
+        "description": "Please confirm the current tax amount, payment methods and official payment facility with the Gram Panchayat office. Do not make payments through unverified links or accounts."
+      }
+    },
+    "citizen": {
+      "hero": {
+        "title": "Citizen Services",
+        "description": "Explore information about certificates, applications and essential services available to village residents.",
+        "breadcrumb": "Citizen Services"
+      },
+      "intro": {
+        "eyebrow": "PUBLIC SERVICES",
+        "title": "Services for Village Residents",
+        "description": "Find general information about citizen-related certificates, applications and services provided through the Gram Panchayat."
+      },
+      "items": {
+        "birthCertificate": {
+          "title": "Birth Certificate",
+          "description": "Information about birth registration and the process for obtaining a birth certificate."
+        },
+        "deathCertificate": {
+          "title": "Death Certificate",
+          "description": "Information about death registration and related certificate procedures."
+        },
+        "residenceCertificate": {
+          "title": "Residence Certificate",
+          "description": "Guidance about residence-related applications and supporting documents."
+        },
+        "marriageRelatedServices": {
+          "title": "Marriage-Related Services",
+          "description": "Information about marriage-related records and applicable local services."
+        },
+        "applicationServices": {
+          "title": "Application Services",
+          "description": "General guidance about submitting applications and required supporting documents."
+        },
+        "otherCertificates": {
+          "title": "Other Certificates",
+          "description": "Information about other certificates and citizen services available through the office."
+        }
+      },
+      "process": {
+        "eyebrow": "SERVICE PROCEDURE",
+        "title": "How to Access Citizen Services",
+        "description": "The general steps for enquiring about and applying for a citizen service.",
+        "stepOne": "Identify the certificate or service you require.",
+        "stepTwo": "Confirm the eligibility criteria and required documents.",
+        "stepThree": "Submit the application through the appropriate official process.",
+        "stepFour": "Follow up with the office regarding application status and collection."
+      },
+      "note": {
+        "title": "Important Information",
+        "description": "Required documents, fees, eligibility and processing times may vary by service. Please confirm the latest details with the Gram Panchayat office."
+      }
+    },
+    "schemes": {
+      "hero": {
+        "title": "Government Schemes",
+        "description": "Explore information about government welfare schemes and development initiatives for rural communities.",
+        "breadcrumb": "Government Schemes"
+      },
+      "intro": {
+        "eyebrow": "PUBLIC WELFARE",
+        "title": "Government Schemes for Citizens",
+        "description": "Learn about different categories of government schemes and seek guidance about eligibility and application procedures."
+      },
+      "categories": {
+        "socialWelfare": {
+          "title": "Social Welfare Schemes",
+          "description": "Information about welfare initiatives supporting eligible individuals, families and communities."
+        },
+        "housingSchemes": {
+          "title": "Housing Schemes",
+          "description": "Information about government housing assistance and related application guidance."
+        },
+        "educationSchemes": {
+          "title": "Education Schemes",
+          "description": "Information about educational assistance, scholarships and student welfare initiatives."
+        },
+        "healthSchemes": {
+          "title": "Health Schemes",
+          "description": "Information about public health initiatives and eligible healthcare benefits."
+        },
+        "agricultureSchemes": {
+          "title": "Agriculture Schemes",
+          "description": "Information about agricultural development, farmer assistance and related initiatives."
+        },
+        "otherSchemes": {
+          "title": "Other Government Schemes",
+          "description": "Information about other government welfare and rural development initiatives."
+        }
+      },
+      "process": {
+        "eyebrow": "APPLICATION GUIDANCE",
+        "title": "General Scheme Application Process",
+        "description": "Understand the general steps involved in enquiring about and applying for a government scheme.",
+        "stepOne": "Identify the scheme relevant to your needs.",
+        "stepTwo": "Check the official eligibility criteria and required documents.",
+        "stepThree": "Submit your application through the authorised channel.",
+        "stepFour": "Follow up with the concerned department regarding application status."
+      },
+      "note": {
+        "title": "Scheme Information",
+        "description": "Scheme availability, eligibility, benefits and application deadlines are subject to official government guidelines. Verify current details with the concerned department before applying."
+      }
+    },
+    "rti": {
+      "hero": {
+        "title": "Right to Information",
+        "description": "Learn about your right to access public information and promote transparency in local administration.",
+        "breadcrumb": "Right to Information"
+      },
+      "intro": {
+        "eyebrow": "CITIZEN RIGHTS",
+        "title": "Right to Information (RTI)",
+        "description": "The Right to Information framework enables eligible citizens to seek information from public authorities in accordance with applicable law."
+      },
+      "features": {
+        "rightToInformation": {
+          "title": "Right to Information",
+          "description": "Understand the right of citizens to request information held by public authorities under applicable law."
+        },
+        "publicRecords": {
+          "title": "Public Records",
+          "description": "Learn about access to eligible official records, documents and public information."
+        },
+        "applicationProcess": {
+          "title": "Application Process",
+          "description": "Understand the general procedure for submitting an RTI application to the appropriate public authority."
+        },
+        "officialResponse": {
+          "title": "Official Response",
+          "description": "Learn about responses from public authorities and the applicable appeal process."
+        }
+      },
+      "process": {
+        "eyebrow": "RTI GUIDANCE",
+        "title": "General RTI Application Process",
+        "description": "The following is a general overview. Follow the applicable RTI rules and official instructions.",
+        "stepOne": "Identify the public authority holding the information you need.",
+        "stepTwo": "Prepare a clear application describing the information requested.",
+        "stepThree": "Submit the application with the prescribed fee, if applicable, through the authorised process.",
+        "stepFour": "Track the response and use the applicable appeal procedure if required."
+      },
+      "rights": {
+        "title": "Transparency and Citizen Rights",
+        "description": "The Right to Information Act, 2005 provides a legal framework for citizens to access information from public authorities, subject to the provisions and exemptions of the Act."
+      },
+      "note": {
+        "title": "Important RTI Information",
+        "description": "Application fees, submission methods, response timelines and appeal procedures are governed by applicable law and rules. Please verify the current procedure with the appropriate public information officer or official authority."
+      }
+    }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
