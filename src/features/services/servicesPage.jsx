@@ -1,3 +1,4 @@
+
 import {
   Box,
   Container,
@@ -38,13 +39,22 @@ const COLORS = {
   background: "#F7F9F7",
 };
 
-const PAGE_SPACING = {
-  xs: 2,
-  sm: 3,
-  md: 4,
-  lg: 5,
-  xl: 6,
+// ======================================================
+// COMMON RESPONSIVE CONTAINER
+// Desktop: Equal 1-inch left and right spacing
+// Mobile / Tablet: Responsive side spacing
+// ======================================================
+
+const CONTENT_CONTAINER_SX = {
+  width: { xs: "100%", md: "calc(100% - 2in)" },
+  maxWidth: "none",
+  px: { xs: 2, sm: 3, md: 0 },
+  mx: "auto",
 };
+
+// ======================================================
+// SERVICES DATA
+// ======================================================
 
 const services = [
   {
@@ -97,6 +107,10 @@ const services = [
   },
 ];
 
+// ======================================================
+// SECTION LABEL
+// ======================================================
+
 function SectionLabel({ children, centered = false }) {
   return (
     <Stack
@@ -130,6 +144,10 @@ function SectionLabel({ children, centered = false }) {
     </Stack>
   );
 }
+
+// ======================================================
+// SERVICES PAGE
+// ======================================================
 
 function ServicesPage() {
   const { t } = useTranslation();
@@ -201,9 +219,9 @@ function ServicesPage() {
         />
 
         <Container
-          maxWidth="xl"
+          maxWidth={false}
           sx={{
-            px: PAGE_SPACING,
+            ...CONTENT_CONTAINER_SX,
             position: "relative",
             zIndex: 1,
           }}
@@ -288,7 +306,7 @@ function ServicesPage() {
           </Box>
         </Container>
 
-        {/* Tiranga accent */}
+        {/* Tiranga Accent */}
 
         <Box
           sx={{
@@ -315,9 +333,9 @@ function ServicesPage() {
       {/* ================= SERVICES INTRO ================= */}
 
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         sx={{
-          px: PAGE_SPACING,
+          ...CONTENT_CONTAINER_SX,
           pt: { xs: 7, sm: 8, md: 10 },
           pb: { xs: 4, md: 5 },
         }}
@@ -376,9 +394,9 @@ function ServicesPage() {
       {/* ================= SERVICES GRID ================= */}
 
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         sx={{
-          px: PAGE_SPACING,
+          ...CONTENT_CONTAINER_SX,
           pb: { xs: 8, sm: 9, md: 12 },
         }}
       >
@@ -469,7 +487,9 @@ function ServicesPage() {
                 <CardContent
                   sx={{
                     p: { xs: 2.7, sm: 3, md: 3.2 },
-                    "&:last-child": { pb: { xs: 2.7, sm: 3, md: 3.2 } },
+                    "&:last-child": {
+                      pb: { xs: 2.7, sm: 3, md: 3.2 },
+                    },
                     display: "flex",
                     flexDirection: "column",
                     flex: 1,
@@ -583,10 +603,8 @@ function ServicesPage() {
         }}
       >
         <Container
-          maxWidth="xl"
-          sx={{
-            px: PAGE_SPACING,
-          }}
+          maxWidth={false}
+          sx={CONTENT_CONTAINER_SX}
         >
           <Box
             sx={{

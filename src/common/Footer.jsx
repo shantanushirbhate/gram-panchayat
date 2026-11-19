@@ -31,27 +31,73 @@ function Footer() {
     { name: t("footer.contact"), path: "/contact" },
   ];
 
+  const contactItems = [
+    {
+      icon: MapPin,
+      text: t("footer.address"),
+    },
+    {
+      icon: Phone,
+      text: t("footer.office"),
+    },
+    {
+      icon: Mail,
+      text: t("footer.officialContact"),
+    },
+  ];
+
   return (
     <Box
       component="footer"
       sx={{
+        width: "100%",
         backgroundColor: "#102D20",
         color: "#FFFFFF",
-        pt: { xs: 5, md: 7 },
-        pb: 2,
         mt: 6,
+        pt: { xs: 5, md: 6 },
+        pb: { xs: 2.5, md: 3 },
       }}
     >
-      <Container maxWidth="xl">
-        <Grid container spacing={5}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          px: {
+            xs: 3,
+            sm: 4,
+            md: 6,
+            lg: 8,
+            xl: 10,
+          },
+        }}
+      >
+        {/* Main Footer Content */}
+        <Grid
+          container
+          spacing={{ xs: 4, md: 5 }}
+          alignItems="flex-start"
+          justifyContent="space-between"
+          sx={{
+            width: "100%",
+            mx: "auto",
+          }}
+        >
           {/* Panchayat Information */}
           <Grid size={{ xs: 12, md: 4 }}>
-            <Stack spacing={2}>
-              <Stack direction="row" alignItems="center" spacing={1.5}>
+            <Stack
+              spacing={2}
+              alignItems={{ xs: "center", md: "flex-start" }}
+              sx={{ height: "100%" }}
+            >
+              <Stack
+                direction="row"
+                alignItems="center"
+                spacing={1.5}
+              >
                 <Box
                   sx={{
                     width: 48,
                     height: 48,
+                    minWidth: 48,
                     backgroundColor: "#FFFFFF",
                     color: "#166534",
                     borderRadius: 2,
@@ -60,7 +106,6 @@ function Footer() {
                     justifyContent: "center",
                     fontWeight: 800,
                     fontSize: 20,
-                    flexShrink: 0,
                   }}
                 >
                   GP
@@ -79,6 +124,7 @@ function Footer() {
 
               <Typography
                 variant="body2"
+                textAlign={{ xs: "center", md: "left" }}
                 sx={{
                   color: "#CBD5E1",
                   lineHeight: 1.9,
@@ -88,74 +134,118 @@ function Footer() {
                 {t("footer.description")}
               </Typography>
 
-              <Globe size={20} color="#F59E0B" />
+              <Globe size={21} color="#F59E0B" />
             </Stack>
           </Grid>
 
           {/* Quick Links */}
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Typography fontWeight={700} fontSize={18} mb={2}>
-              {t("footer.quickLinks")}
-            </Typography>
+            <Stack
+              alignItems="center"
+              spacing={2}
+            >
+              <Typography
+                fontWeight={700}
+                fontSize={18}
+                textAlign="center"
+              >
+                {t("footer.quickLinks")}
+              </Typography>
 
-            <Stack spacing={1.5}>
-              {quickLinks.map((item) => (
-                <Link
-                  key={item.path}
-                  component={RouterLink}
-                  to={item.path}
-                  underline="none"
-                  sx={{
-                    color: "#CBD5E1",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1,
-                    fontSize: 14,
-                    "&:hover": { color: "#F59E0B" },
-                  }}
-                >
-                  <ArrowRight size={15} />
-                  {item.name}
-                </Link>
-              ))}
+              <Stack spacing={1.5}>
+                {quickLinks.map((item) => (
+                  <Link
+                    key={item.path}
+                    component={RouterLink}
+                    to={item.path}
+                    underline="none"
+                    sx={{
+                      color: "#CBD5E1",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                      fontSize: 14,
+                      transition: "0.2s ease",
+                      "&:hover": {
+                        color: "#F59E0B",
+                        transform: "translateX(3px)",
+                      },
+                    }}
+                  >
+                    <ArrowRight size={15} />
+                    {item.name}
+                  </Link>
+                ))}
+              </Stack>
             </Stack>
           </Grid>
 
           {/* Contact Information */}
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <Typography fontWeight={700} fontSize={18} mb={2}>
-              {t("footer.contactInformation")}
-            </Typography>
+            <Stack
+              spacing={2}
+              alignItems={{ xs: "center", md: "flex-end" }}
+            >
+              <Typography
+                fontWeight={700}
+                fontSize={18}
+                textAlign="center"
+              >
+                {t("footer.contactInformation")}
+              </Typography>
 
-            <Stack spacing={2.5}>
-              <Stack direction="row" spacing={1.5} alignItems="flex-start">
-                <MapPin size={19} color="#F59E0B" />
+              <Stack
+                spacing={2.5}
+                sx={{
+                  width: "fit-content",
+                  maxWidth: "100%",
+                }}
+              >
+                {contactItems.map((item, index) => {
+                  const Icon = item.icon;
 
-                <Typography variant="body2" color="#CBD5E1">
-                  {t("footer.address")}
-                </Typography>
-              </Stack>
+                  return (
+                    <Stack
+                      key={index}
+                      direction="row"
+                      spacing={1.5}
+                      alignItems="flex-start"
+                    >
+                      <Box
+                        sx={{
+                          color: "#F59E0B",
+                          mt: 0.2,
+                          flexShrink: 0,
+                        }}
+                      >
+                        <Icon size={19} />
+                      </Box>
 
-              <Stack direction="row" spacing={1.5} alignItems="flex-start">
-                <Phone size={19} color="#F59E0B" />
-
-                <Typography variant="body2" color="#CBD5E1">
-                  {t("footer.office")}
-                </Typography>
-              </Stack>
-
-              <Stack direction="row" spacing={1.5} alignItems="flex-start">
-                <Mail size={19} color="#F59E0B" />
-
-                <Typography variant="body2" color="#CBD5E1">
-                  {t("footer.officialContact")}
-                </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: "#CBD5E1",
+                          lineHeight: 1.7,
+                          maxWidth: 260,
+                        }}
+                      >
+                        {item.text}
+                      </Typography>
+                    </Stack>
+                  );
+                })}
               </Stack>
             </Stack>
           </Grid>
         </Grid>
 
-        <Divider sx={{ borderColor: "#355344", my: 4 }} />
+        {/* Divider */}
+        <Divider
+          sx={{
+            borderColor: "#355344",
+            my: { xs: 3, md: 4 },
+          }}
+        />
 
         {/* Copyright */}
         <Stack
@@ -168,11 +258,17 @@ function Footer() {
             variant="body2"
             color="#CBD5E1"
             textAlign="center"
+            fontSize={13}
           >
             © {new Date().getFullYear()} {t("footer.copyright")}
           </Typography>
 
-          <Typography variant="body2" color="#CBD5E1" textAlign="center">
+          <Typography
+            variant="body2"
+            color="#CBD5E1"
+            textAlign="center"
+            fontSize={13}
+          >
             {t("footer.tagline")}
           </Typography>
         </Stack>

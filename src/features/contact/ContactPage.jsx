@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 import {
@@ -45,12 +46,17 @@ const COLORS = {
   background: "#F7F9F7",
 };
 
-const PAGE_SPACING = {
-  xs: 2,
-  sm: 3,
-  md: 4,
-  lg: 5,
-  xl: 6,
+// ======================================================
+// COMMON RESPONSIVE CONTAINER
+// Desktop: Equal 1-inch left and right spacing
+// Mobile / Tablet: Responsive side spacing
+// ======================================================
+
+const CONTENT_CONTAINER_SX = {
+  width: { xs: "100%", md: "calc(100% - 2in)" },
+  maxWidth: "none",
+  px: { xs: 2, sm: 3, md: 0 },
+  mx: "auto",
 };
 
 const contactDetails = [
@@ -117,8 +123,6 @@ function FloatingContactButtons() {
         alignItems: "center",
       }}
     >
-      {/* WhatsApp Button */}
-
       <Button
         component="a"
         href="https://wa.me/919920942994"
@@ -146,8 +150,6 @@ function FloatingContactButtons() {
       >
         <WhatsAppIcon size={26} />
       </Button>
-
-      {/* Mobile / Call Button */}
 
       <Button
         component="a"
@@ -349,9 +351,9 @@ function ContactPage() {
         />
 
         <Container
-          maxWidth="xl"
+          maxWidth={false}
           sx={{
-            px: PAGE_SPACING,
+            ...CONTENT_CONTAINER_SX,
             position: "relative",
             zIndex: 1,
           }}
@@ -463,9 +465,9 @@ function ContactPage() {
       {/* ================= CONTACT INTRO ================= */}
 
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         sx={{
-          px: PAGE_SPACING,
+          ...CONTENT_CONTAINER_SX,
           pt: { xs: 7, sm: 8, md: 10 },
           pb: { xs: 4, md: 5 },
         }}
@@ -524,9 +526,9 @@ function ContactPage() {
       {/* ================= CONTACT INFORMATION CARDS ================= */}
 
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         sx={{
-          px: PAGE_SPACING,
+          ...CONTENT_CONTAINER_SX,
           pb: { xs: 7, sm: 8, md: 10 },
         }}
       >
@@ -681,7 +683,10 @@ function ContactPage() {
           py: { xs: 7, sm: 8, md: 11 },
         }}
       >
-        <Container maxWidth="xl" sx={{ px: PAGE_SPACING }}>
+        <Container
+          maxWidth={false}
+          sx={CONTENT_CONTAINER_SX}
+        >
           <Box
             sx={{
               display: "grid",
@@ -1024,9 +1029,9 @@ function ContactPage() {
       {/* ================= LOCATION / MAP SECTION ================= */}
 
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         sx={{
-          px: PAGE_SPACING,
+          ...CONTENT_CONTAINER_SX,
           py: { xs: 7, sm: 8, md: 11 },
         }}
       >
@@ -1193,7 +1198,10 @@ function ContactPage() {
           pb: { xs: 7, sm: 9, md: 11 },
         }}
       >
-        <Container maxWidth="xl" sx={{ px: PAGE_SPACING }}>
+        <Container
+          maxWidth={false}
+          sx={CONTENT_CONTAINER_SX}
+        >
           <Box
             sx={{
               position: "relative",

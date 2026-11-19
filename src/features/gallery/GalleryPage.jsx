@@ -40,6 +40,17 @@ const COLORS = {
 
 const INITIAL_VISIBLE_IMAGES = 6;
 
+// Common responsive container spacing
+// Desktop: 1 inch left and right
+// Tablet: 24px left and right
+// Mobile: 16px left and right
+const CONTENT_CONTAINER_SX = {
+  width: { xs: "100%", md: "calc(100% - 2in)" },
+  maxWidth: "none",
+  px: { xs: 2, sm: 3, md: 0 },
+  mx: "auto",
+};
+
 const galleryImages = [
   {
     id: 1,
@@ -191,8 +202,12 @@ function GalleryPage() {
         />
 
         <Container
-          maxWidth="lg"
-          sx={{ position: "relative", zIndex: 1 }}
+          maxWidth={false}
+          sx={{
+            ...CONTENT_CONTAINER_SX,
+            position: "relative",
+            zIndex: 1,
+          }}
         >
           <Box
             sx={{
@@ -291,10 +306,10 @@ function GalleryPage() {
       {/* ================= GALLERY SECTION ================= */}
 
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         sx={{
+          ...CONTENT_CONTAINER_SX,
           py: { xs: 6, sm: 8, md: 10 },
-          px: { xs: 2, sm: 3, md: 4 },
         }}
       >
         {/* Section Heading */}
@@ -744,10 +759,12 @@ function GalleryPage() {
       <Box
         sx={{
           pb: { xs: 6, sm: 7, md: 10 },
-          px: { xs: 2, sm: 3 },
         }}
       >
-        <Container maxWidth="xl">
+        <Container
+          maxWidth={false}
+          sx={CONTENT_CONTAINER_SX}
+        >
           <Box
             sx={{
               position: "relative",

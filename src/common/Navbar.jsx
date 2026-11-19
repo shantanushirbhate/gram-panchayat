@@ -1,9 +1,8 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   AppBar,
-  Toolbar,
   Container,
   Box,
   Typography,
@@ -15,21 +14,27 @@ import {
   ListItemText,
   Stack,
   Divider,
+  Menu as MuiMenu,
+  MenuItem,
+  Collapse,
+  useMediaQuery,
 } from "@mui/material";
 
 import {
   Menu,
-  X,
   MapPin,
   Phone,
   Mail,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import LanguageSwitcher from "./LanguageSwitchr";
+import navigationMenu from "../config/navigationMenu.js";
 
 import indiaEmblem from "../assets/Emblem_of_India_(Government_Gazette).svg";
 import maharashtraSeal from "../assets/Seal_of_Maharashtra.svg.webp";
@@ -37,8 +42,10 @@ import maharashtraSeal from "../assets/Seal_of_Maharashtra.svg.webp";
 const COLORS = {
   green: "#14532D",
   darkGreen: "#123D27",
+  deepGreen: "#0B2E1A",
   orange: "#E87519",
   cream: "#FFF8EF",
+  lightGreen: "#EAF3EC",
   text: "#263B30",
   muted: "#64748B",
   white: "#FFFFFF",
@@ -47,29 +54,289 @@ const COLORS = {
 
 const LOGO_URL = "https://www.pimpalkhutabk.in/icon/logo_gp.png";
 
-const menuItems = [
-  { label: "home", path: "/" },
-  { label: "about", path: "/about" },
-  { label: "services", path: "/services" },
-  { label: "gallery", path: "/gallery" },
-  { label: "contact", path: "/contact" },
-];
+const containerSpacing = {
+  px: {
+    xs: 2,
+    sm: 3,
+    md: 4,
+    lg: 5,
+    xl: 7,
+  },
+};
+
+// ================= SHORT NAVIGATION LABELS =================
+//in transparancy add this three dropdown
+//1.arthik mahiti
+//2.kamachi mahiti
+//3.gram sabha corner
+
+//in education and environment add this add this drop down
+//1.paryavaran v shasvat vikas
+//2.shikshan ani yuvak kopra
+//3.shikshan v payavaran
+
+//in seva add this drop down
+//1.suchana v jahirati
+//2.online kar bharna
+//3.nagrik seva
+//4.shaskiya yojna
+//5.mahiticha adhikar
+
+
+//in adhik add this dropdown
+//1.rojgar v kaushalya
+//2.udyog v upkram
+//3.swyam sahayata gut
+//4.mahatvache duve
+//5.takrar,suchana,salla,abhipray
+//6.sitemap
+
+const shortLabels = {
+  en: {
+    home: "Home",
+    about: "About",
+    transparency: "Transparency",
+    educationParyavaran: "Education & Paryavaran",
+    samitiya: "Samitiya",
+    seva: "Seva",
+    adhik: "Adhik",
+    dashboard: "Dashboard",
+  },
+
+  mr: {
+    home: "मुख्यपृष्ठ",
+    about: "परिचय",
+    transparency: "पारदर्शकता",
+    educationParyavaran: "शिक्षण व पर्यावरण",
+    samitiya: "समित्या",
+    seva: "सेवा",
+    adhik: "अधिक",
+    dashboard: "डॅशबोर्ड",
+  },
+};
 
 function Navbar() {
-  const { t } = useTranslation();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
 
-  const closeDrawer = () => setMobileOpen(false);
+  const isDesktop = useMediaQuery("(min-width: 900px)");
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [desktopAnchor, setDesktopAnchor] = useState(null);
+  const [activeDesktopMenu, setActiveDesktopMenu] = useState(null);
+  const [expandedMobileMenu, setExpandedMobileMenu] = useState(null);
+
+  // ================= LANGUAGE =================
+
+  const currentLanguage = i18n.resolvedLanguage?.startsWith("mr")
+    ? "mr"
+    : "en";
+
+  // ================= TRANSLATION HELPERS =================
+
+  const getLabel = (label) => t(`navbar.${label}`);
+
+  const getShortLabel = (label) => {
+    return shortLabels[currentLanguage]?.[label] || getLabel(label);
+  };
+
+  // ================= ROUTE CHANGE =================
+
+  useEffect(() => {
+    const activeItem = navigationMenu.find((item) =>
+      item.children?.some(
+        (child) =>
+          location.pathname === child.path ||
+          location.pathname.startsWith(`${child.path}/`)
+      )
+    );
+
+    setExpandedMobileMenu(activeItem?.label ?? null);
+    setMobileOpen(false);
+    setDesktopAnchor(null);
+    setActiveDesktopMenu(null);
+  }, [location.pathname]);
+
+  // ================= RESPONSIVE DRAWER =================
+
+  useEffect(() => {
+    if (isDesktop) {
+      setMobileOpen(false);
+    }
+  }, [isDesktop]);
+
+  const closeDrawer = () => {
+    setMobileOpen(false);
+  };
+
+  const closeDesktopMenu = () => {
+    setDesktopAnchor(null);
+    setActiveDesktopMenu(null);
+  };
+
+  // ================= DESKTOP DROPDOWN =================
+
+  const handleDesktopMenu = (event, label) => {
+    if (activeDesktopMenu === label && desktopAnchor) {
+      closeDesktopMenu();
+      return;
+    }
+
+    setDesktopAnchor(event.currentTarget);
+    setActiveDesktopMenu(label);
+  };
+
+  // ================= MOBILE SUBMENU =================
+
+  const toggleMobileMenu = (label) => {
+    setExpandedMobileMenu((previous) =>
+      previous === label ? null : label
+    );
+  };
+
+  // ================= ACTIVE ROUTE =================
+
+  const isParentActive = (item) => {
+    if (item.path === "/") {
+      return location.pathname === "/";
+    }
+
+    return (
+      location.pathname === item.path ||
+      location.pathname.startsWith(`${item.path}/`) ||
+      item.children?.some(
+        (child) =>
+          location.pathname === child.path ||
+          location.pathname.startsWith(`${child.path}/`)
+      )
+    );
+  };
+
+  const activeDesktopItem = navigationMenu.find(
+    (item) => item.label === activeDesktopMenu
+  );
+
+  // ================= DESKTOP NAVIGATION ITEM =================
+
+  const renderDesktopItem = (item) => {
+    const active = isParentActive(item);
+
+    const buttonStyles = {
+      width: "auto",
+      minWidth: 0,
+      minHeight: {
+        md: 42,
+        lg: 44,
+      },
+      height: "100%",
+      px: {
+        md: 0.8,
+        lg: 1.2,
+        xl: 1.5,
+      },
+      py: 0.2,
+      borderRadius: 1,
+      color: COLORS.white,
+      fontWeight: 700,
+      fontSize: {
+        md: 11,
+        lg: 12,
+        xl: 13,
+      },
+      lineHeight: 1.3,
+      textTransform: "none",
+      whiteSpace: "nowrap",
+      textAlign: "center",
+      justifyContent: "center",
+      overflow: "visible",
+      transition: "color 0.2s ease",
+      flexShrink: 0,
+
+      "&:hover": {
+        backgroundColor: "transparent",
+        color: COLORS.orange,
+      },
+    };
+
+    return (
+      <Box
+        key={item.path}
+        sx={{
+          flex: "0 0 auto",
+          width: "auto",
+          minWidth: 0,
+          display: "flex",
+        }}
+      >
+        {item.children?.length > 0 ? (
+          <Button
+            fullWidth
+            title={getLabel(item.label)}
+            onClick={(event) =>
+              handleDesktopMenu(event, item.label)
+            }
+            endIcon={<ChevronDown size={12} />}
+            sx={{
+              ...buttonStyles,
+              backgroundColor:
+                activeDesktopMenu === item.label || active
+                  ? "rgba(255,255,255,0.10)"
+                  : "transparent",
+
+              "& .MuiButton-endIcon": {
+                ml: 0.2,
+                mr: 0,
+                flexShrink: 0,
+              },
+            }}
+          >
+            {getShortLabel(item.label)}
+          </Button>
+        ) : (
+          <Button
+            component={NavLink}
+            to={item.path}
+            end={item.path === "/"}
+            fullWidth
+            title={getLabel(item.label)}
+            sx={{
+              ...buttonStyles,
+              position: "relative",
+
+              "&.active": {
+                backgroundColor: "rgba(255,255,255,0.10)",
+                color: COLORS.white,
+                boxShadow: "none",
+              },
+
+              "&.active::after": {
+                content: '""',
+                position: "absolute",
+                bottom: 0,
+                left: "25%",
+                right: "25%",
+                height: 3,
+                borderRadius: "4px 4px 0 0",
+                backgroundColor: COLORS.orange,
+              },
+            }}
+          >
+            {getShortLabel(item.label)}
+          </Button>
+        )}
+      </Box>
+    );
+  };
 
   return (
     <>
-      {/* BRAND HEADER */}
+      {/* ================= BRAND HEADER ================= */}
+
       <Box
         sx={{
           backgroundColor: COLORS.white,
           borderBottom: `1px solid ${COLORS.border}`,
           width: "100%",
-          overflow: "visible",
           position: {
             xs: "sticky",
             md: "relative",
@@ -77,29 +344,32 @@ function Navbar() {
           top: 0,
           zIndex: 1200,
           boxShadow: {
-            xs: "0 3px 12px rgba(0,0,0,0.08)",
+            xs: "0 3px 15px rgba(0,0,0,0.07)",
             md: "none",
           },
         }}
       >
-        <Container maxWidth="xl">
-          <Toolbar
-            disableGutters
+        <Container maxWidth="xl" sx={containerSpacing}>
+          <Box
             sx={{
               minHeight: {
                 xs: 76,
                 sm: 90,
-                md: 108,
+                md: 112,
               },
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
               gap: {
                 xs: 0.5,
                 sm: 1.5,
                 md: 2,
               },
-              justifyContent: "space-between",
+              width: "100%",
             }}
           >
             {/* BRANDING */}
+
             <Box
               component={NavLink}
               to="/"
@@ -116,10 +386,10 @@ function Navbar() {
                 minWidth: 0,
                 flex: 1,
                 textDecoration: "none",
-                overflow: "hidden",
               }}
             >
               {/* GOVERNMENT LOGOS */}
+
               <Stack
                 direction="row"
                 alignItems="center"
@@ -128,41 +398,25 @@ function Navbar() {
                   sm: 0.8,
                   md: 1.3,
                 }}
-                sx={{
-                  flexShrink: 0,
-                }}
+                sx={{ flexShrink: 0 }}
               >
-                {/* PANCHAYAT LOGO */}
                 <Box
                   component="img"
                   src={LOGO_URL}
                   alt="Gram Panchayat Logo"
                   sx={{
-                    width: {
-                      xs: 36,
-                      sm: 53,
-                      md: 70,
-                    },
-                    height: {
-                      xs: 36,
-                      sm: 53,
-                      md: 70,
-                    },
+                    width: { xs: 37, sm: 54, md: 72 },
+                    height: { xs: 37, sm: 54, md: 72 },
                     objectFit: "contain",
                   }}
                 />
 
-                {/* INDIA EMBLEM */}
                 <Box
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    minWidth: {
-                      xs: 24,
-                      sm: 38,
-                      md: 48,
-                    },
+                    minWidth: { xs: 24, sm: 38, md: 48 },
                   }}
                 >
                   <Box
@@ -170,27 +424,15 @@ function Navbar() {
                     src={indiaEmblem}
                     alt="Government of India"
                     sx={{
-                      width: {
-                        xs: 22,
-                        sm: 32,
-                        md: 43,
-                      },
-                      height: {
-                        xs: 30,
-                        sm: 43,
-                        md: 55,
-                      },
+                      width: { xs: 22, sm: 33, md: 43 },
+                      height: { xs: 30, sm: 44, md: 56 },
                       objectFit: "contain",
                     }}
                   />
 
                   <Typography
                     sx={{
-                      fontSize: {
-                        xs: 5,
-                        sm: 8,
-                        md: 10,
-                      },
+                      fontSize: { xs: 5, sm: 8, md: 10 },
                       fontWeight: 800,
                       whiteSpace: "nowrap",
                       color: COLORS.text,
@@ -200,17 +442,12 @@ function Navbar() {
                   </Typography>
                 </Box>
 
-                {/* MAHARASHTRA SEAL */}
                 <Box
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    minWidth: {
-                      xs: 26,
-                      sm: 40,
-                      md: 50,
-                    },
+                    minWidth: { xs: 26, sm: 40, md: 50 },
                   }}
                 >
                   <Box
@@ -218,27 +455,15 @@ function Navbar() {
                     src={maharashtraSeal}
                     alt="Maharashtra Government"
                     sx={{
-                      width: {
-                        xs: 24,
-                        sm: 35,
-                        md: 45,
-                      },
-                      height: {
-                        xs: 30,
-                        sm: 43,
-                        md: 55,
-                      },
+                      width: { xs: 24, sm: 36, md: 46 },
+                      height: { xs: 30, sm: 44, md: 56 },
                       objectFit: "contain",
                     }}
                   />
 
                   <Typography
                     sx={{
-                      fontSize: {
-                        xs: 5,
-                        sm: 8,
-                        md: 10,
-                      },
+                      fontSize: { xs: 5, sm: 8, md: 10 },
                       fontWeight: 800,
                       whiteSpace: "nowrap",
                       color: COLORS.text,
@@ -250,12 +475,8 @@ function Navbar() {
               </Stack>
 
               {/* PANCHAYAT NAME */}
-              <Box
-                sx={{
-                  minWidth: 0,
-                  overflow: "hidden",
-                }}
-              >
+
+              <Box sx={{ minWidth: 0, overflow: "hidden" }}>
                 <Typography
                   sx={{
                     color: COLORS.green,
@@ -264,9 +485,9 @@ function Navbar() {
                       xs: 11,
                       sm: 17,
                       md: 23,
-                      lg: 25,
+                      lg: 26,
                     },
-                    lineHeight: 1.5,
+                    lineHeight: 1.4,
                     whiteSpace: {
                       xs: "normal",
                       sm: "nowrap",
@@ -274,32 +495,24 @@ function Navbar() {
                     overflowWrap: "anywhere",
                   }}
                 >
-                  पिंपळखुटा बु. ग्रामपंचायत
+                  {t("navbar.panchayatName")}
                 </Typography>
 
                 <Typography
                   sx={{
                     color: COLORS.text,
                     fontWeight: 700,
-                    fontSize: {
-                      xs: 7,
-                      sm: 10,
-                      md: 13,
-                    },
+                    fontSize: { xs: 7, sm: 10, md: 13 },
                     lineHeight: 1.5,
                   }}
                 >
-                  Gram Panchayat Pimpalkhuta Budruk
+                  {t("navbar.englishName")}
                 </Typography>
 
                 <Typography
                   sx={{
                     color: COLORS.muted,
-                    fontSize: {
-                      xs: 6,
-                      sm: 8,
-                      md: 10,
-                    },
+                    fontSize: { xs: 6, sm: 8, md: 10 },
                     mt: 0.3,
                   }}
                 >
@@ -309,20 +522,29 @@ function Navbar() {
             </Box>
 
             {/* DESKTOP CONTACT DETAILS */}
+
             <Stack
               direction="row"
               alignItems="center"
-              spacing={2}
+              spacing={{ lg: 1.5, xl: 2.5 }}
               sx={{
-                display: {
-                  xs: "none",
-                  lg: "flex",
-                },
+                display: { xs: "none", lg: "flex" },
                 flexShrink: 0,
               }}
             >
               <Stack direction="row" alignItems="center" spacing={1}>
-                <Phone size={17} color={COLORS.orange} />
+                <Box
+                  sx={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 2,
+                    backgroundColor: "#FFF3E8",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  <Phone size={17} color={COLORS.orange} />
+                </Box>
 
                 <Box>
                   <Typography fontSize={10} color={COLORS.muted}>
@@ -337,6 +559,7 @@ function Navbar() {
                       fontSize: 12,
                       color: COLORS.green,
                       textDecoration: "none",
+                      "&:hover": { color: COLORS.orange },
                     }}
                   >
                     9920942994
@@ -344,10 +567,25 @@ function Navbar() {
                 </Box>
               </Stack>
 
-              <Divider orientation="vertical" flexItem />
+              <Divider
+                orientation="vertical"
+                flexItem
+                sx={{ borderColor: COLORS.border }}
+              />
 
               <Stack direction="row" alignItems="center" spacing={1}>
-                <Mail size={17} color={COLORS.orange} />
+                <Box
+                  sx={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 2,
+                    backgroundColor: "#FFF3E8",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  <Mail size={17} color={COLORS.orange} />
+                </Box>
 
                 <Box>
                   <Typography fontSize={10} color={COLORS.muted}>
@@ -362,6 +600,7 @@ function Navbar() {
                       fontSize: 11,
                       color: COLORS.green,
                       textDecoration: "none",
+                      "&:hover": { color: COLORS.orange },
                     }}
                   >
                     gppimpalkhuta30@gmail.com
@@ -371,25 +610,14 @@ function Navbar() {
             </Stack>
 
             {/* MOBILE LANGUAGE AND MENU */}
+
             <Stack
               direction="row"
               alignItems="center"
-              spacing={{
-                xs: 0.3,
-                sm: 1,
-              }}
-              sx={{
-                flexShrink: 0,
-              }}
+              spacing={{ xs: 0.3, sm: 1 }}
+              sx={{ flexShrink: 0 }}
             >
-              <Box
-                sx={{
-                  display: {
-                    xs: "flex",
-                    md: "none",
-                  },
-                }}
-              >
+              <Box sx={{ display: { xs: "flex", md: "none" } }}>
                 <LanguageSwitcher />
               </Box>
 
@@ -397,128 +625,95 @@ function Navbar() {
                 onClick={() => setMobileOpen(true)}
                 aria-label="Open navigation menu"
                 sx={{
-                  display: {
-                    xs: "flex",
-                    md: "none",
-                  },
+                  display: { xs: "flex", md: "none" },
                   color: COLORS.green,
+                  backgroundColor: "#F0F5F1",
                   border: `1px solid ${COLORS.border}`,
                   borderRadius: 2,
-                  p: {
-                    xs: 0.7,
-                    sm: 1,
+                  p: { xs: 0.7, sm: 1 },
+                  "&:hover": {
+                    backgroundColor: COLORS.lightGreen,
                   },
                 }}
               >
                 <Menu size={22} />
               </IconButton>
             </Stack>
-          </Toolbar>
+          </Box>
         </Container>
       </Box>
 
-      {/* DESKTOP STICKY NAVIGATION */}
+      {/* ================= DESKTOP NAVIGATION ================= */}
+
       <AppBar
         position="sticky"
-        elevation={2}
+        elevation={0}
         sx={{
           backgroundColor: COLORS.green,
           zIndex: 1100,
+          borderBottom: `3px solid ${COLORS.orange}`,
+          boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
         }}
       >
-        <Container maxWidth="xl">
-          <Toolbar
-            disableGutters
+        <Container maxWidth="xl" sx={containerSpacing}>
+          <Box
             sx={{
-              minHeight: "55px !important",
-              display: {
-                xs: "none",
-                md: "flex",
-              },
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
               justifyContent: "space-between",
+              width: "100%",
+              minHeight: { md: 52, lg: 56 },
+              gap: { md: 1, lg: 2 },
+              py: 0.3,
             }}
           >
-            {/* ORIGINAL NAVIGATION LINKS - UNCHANGED */}
-            <Stack direction="row" alignItems="center">
-              {menuItems.map((item) => (
-                <Button
-                  key={item.path}
-                  component={NavLink}
-                  to={item.path}
-                  end={item.path === "/"}
-                  sx={{
-                    height: 55,
-                    px: {
-                      md: 1.5,
-                      lg: 2.2,
-                    },
-                    borderRadius: 0,
-                    color: COLORS.white,
-                    fontWeight: 700,
-                    fontSize: 13,
-                    textTransform: "none",
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                flex: 1,
+                minWidth: 0,
+                gap: { md: 0.15, lg: 0.3 },
+                overflow: "visible",
+              }}
+            >
+              {navigationMenu.map(renderDesktopItem)}
+            </Box>
 
-                    "&.active": {
-                      backgroundColor: COLORS.white,
-                      color: COLORS.green,
-                    },
-
-                    "&:hover": {
-                      backgroundColor: "#F1F5F0",
-                      color: COLORS.green,
-                    },
-
-                    "&.active::after": {
-                      content: '""',
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: 3,
-                      backgroundColor: COLORS.orange,
-                    },
-                  }}
-                >
-                  {t(`navbar.${item.label}`)}
-                </Button>
-              ))}
-            </Stack>
-
-            {/* RIGHT SIDE: ORANGE LANGUAGE SWITCHER + MAHARASHTRA SEAL */}
             <Stack
               direction="row"
               alignItems="center"
-              spacing={2}
+              justifyContent="flex-end"
+              spacing={1}
               sx={{
                 flexShrink: 0,
+                ml: { md: 0.5, lg: 1.5 },
               }}
             >
-              {/* ORANGE LANGUAGE SWITCHER */}
               <Box
                 sx={{
                   backgroundColor: COLORS.orange,
                   borderRadius: 2,
-                  px: 1.5,
-                  py: 0.5,
+                  px: 0.7,
+                  py: 0.1,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   border: "1px solid rgba(255,255,255,0.35)",
                   boxShadow: "0 2px 5px rgba(0,0,0,0.15)",
+                  whiteSpace: "nowrap",
 
                   "& button": {
                     color: `${COLORS.white} !important`,
                     backgroundColor: "transparent",
                   },
-
                   "& button:hover": {
                     backgroundColor: "rgba(255,255,255,0.15)",
                   },
-
                   "& .MuiTypography-root": {
                     color: `${COLORS.white} !important`,
                   },
-
                   "& svg": {
                     color: `${COLORS.white} !important`,
                   },
@@ -527,176 +722,451 @@ function Navbar() {
                 <LanguageSwitcher />
               </Box>
 
-              {/* MAHARASHTRA GOVERNMENT SEAL */}
               <Box
                 component="img"
                 src={maharashtraSeal}
                 alt="Maharashtra Government Seal"
                 sx={{
-                  width: 38,
-                  height: 42,
+                  width: 32,
+                  height: 36,
                   objectFit: "contain",
+                  flexShrink: 0,
                 }}
               />
             </Stack>
-          </Toolbar>
+          </Box>
         </Container>
+
+        {/* DESKTOP DROPDOWN */}
+
+        <MuiMenu
+          anchorEl={desktopAnchor}
+          open={Boolean(desktopAnchor)}
+          onClose={closeDesktopMenu}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          slotProps={{
+            paper: {
+              sx: {
+                mt: 0.8,
+                minWidth: 245,
+                maxWidth: 360,
+                maxHeight: 440,
+                overflowY: "auto",
+                borderRadius: 2,
+                borderTop: `4px solid ${COLORS.orange}`,
+                boxShadow: "0 12px 30px rgba(0,0,0,0.17)",
+                py: 0.8,
+              },
+            },
+          }}
+        >
+          {activeDesktopItem && (
+            <MenuItem
+              component={NavLink}
+              to={activeDesktopItem.path}
+              end
+              onClick={closeDesktopMenu}
+              sx={{
+                py: 1.2,
+                px: 2,
+                fontSize: 13,
+                fontWeight: 800,
+                color: COLORS.green,
+                backgroundColor: "#F0F5F1",
+                borderBottom: `1px solid ${COLORS.border}`,
+                whiteSpace: "normal",
+                "&:hover": {
+                  backgroundColor: COLORS.lightGreen,
+                },
+              }}
+            >
+              {getLabel(activeDesktopItem.label)} - Overview
+            </MenuItem>
+          )}
+
+          {activeDesktopItem?.children?.map((child) => (
+            <MenuItem
+              key={child.path}
+              component={NavLink}
+              to={child.path}
+              onClick={closeDesktopMenu}
+              sx={{
+                py: 1.2,
+                px: 2,
+                fontSize: 13,
+                fontWeight: 600,
+                color: COLORS.text,
+                whiteSpace: "normal",
+
+                "&:hover": {
+                  backgroundColor: COLORS.lightGreen,
+                  color: COLORS.green,
+                },
+
+                "&.active": {
+                  backgroundColor: COLORS.lightGreen,
+                  color: COLORS.green,
+                  borderLeft: `3px solid ${COLORS.orange}`,
+                },
+              }}
+            >
+              <ChevronRight
+                size={15}
+                style={{ marginRight: 9, flexShrink: 0 }}
+              />
+              {getLabel(child.label)}
+            </MenuItem>
+          ))}
+        </MuiMenu>
       </AppBar>
 
-      {/* MOBILE DRAWER */}
+      {/* ================= MOBILE DRAWER ================= */}
+
       <Drawer
         anchor="right"
-        open={mobileOpen}
+        variant="temporary"
+        open={mobileOpen && !isDesktop}
         onClose={closeDrawer}
-        PaperProps={{
-          sx: {
-            width: {
-              xs: "85%",
-              sm: 340,
+        ModalProps={{
+          keepMounted: true,
+        }}
+        slotProps={{
+          paper: {
+            sx: {
+              position: "fixed",
+              top: { xs: 10, sm: 14 },
+              right: { xs: 10, sm: 14 },
+              bottom: { xs: 10, sm: 14 },
+              height: "auto",
+              width: { xs: "88%", sm: 350 },
+              maxWidth: 350,
+              boxSizing: "border-box",
+              borderRadius: {
+                xs: "16px 0 0 16px",
+                sm: 2,
+              },
+              backgroundColor: COLORS.white,
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+              boxShadow: "-8px 0 30px rgba(0,0,0,0.18)",
             },
-            maxWidth: 340,
-            backgroundColor: COLORS.white,
-            display: "flex",
-            flexDirection: "column",
           },
         }}
       >
         {/* DRAWER HEADER */}
+
         <Box
           sx={{
-            backgroundColor: COLORS.green,
+            background: `linear-gradient(135deg, ${COLORS.deepGreen}, ${COLORS.green})`,
             color: COLORS.white,
-            p: 2,
+            p: 1.5,
+            borderBottom: `3px solid ${COLORS.orange}`,
           }}
         >
           <Stack
             direction="row"
             alignItems="center"
-            justifyContent="space-between"
+            justifyContent="flex-start"
           >
-            <Stack direction="row" alignItems="center" spacing={1.5}>
+            <Stack direction="row" alignItems="center" spacing={1.2}>
               <Box
                 component="img"
                 src={LOGO_URL}
                 alt="Gram Panchayat Logo"
                 sx={{
-                  width: 48,
-                  height: 48,
+                  width: 42,
+                  height: 42,
                   objectFit: "contain",
                   backgroundColor: COLORS.white,
-                  borderRadius: 1,
+                  borderRadius: 2,
+                  p: 0.4,
                 }}
               />
 
               <Box>
-                <Typography fontWeight={800} fontSize={14}>
-                  पिंपळखुटा बु.
+                <Typography fontWeight={900} fontSize={12}>
+                  {t("navbar.panchayatName")}
                 </Typography>
 
-                <Typography fontSize={11}>
+                <Typography
+                  fontSize={9}
+                  sx={{ color: "rgba(255,255,255,0.8)" }}
+                >
                   ग्रामपंचायत
+                </Typography>
+
+                <Typography
+                  fontSize={7}
+                  sx={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  ता. वरुड, जि. अमरावती
                 </Typography>
               </Box>
             </Stack>
-
-            <IconButton
-              onClick={closeDrawer}
-              aria-label="Close navigation menu"
-              sx={{ color: COLORS.white }}
-            >
-              <X size={23} />
-            </IconButton>
           </Stack>
         </Box>
 
         {/* DRAWER CONTENT */}
+
         <Box
           sx={{
-            p: 2,
+            p: 1.5,
             flex: 1,
             overflowY: "auto",
+            backgroundColor: "#FCFDFC",
           }}
         >
           <Typography
             sx={{
               color: COLORS.muted,
               fontWeight: 800,
-              fontSize: 11,
-              letterSpacing: 1,
-              mb: 1.5,
+              fontSize: 9,
+              letterSpacing: 0.7,
+              mb: 1,
+              px: 0.5,
             }}
           >
-            मुख्य मेनू
+            {currentLanguage === "en" ? "MAIN MENU" : "मुख्य मेनू"}
           </Typography>
 
           <List disablePadding>
-            {menuItems.map((item) => (
-              <ListItemButton
-                key={item.path}
-                component={NavLink}
-                to={item.path}
-                end={item.path === "/"}
-                onClick={closeDrawer}
-                sx={{
-                  borderRadius: 2,
-                  mb: 0.7,
-                  py: 1.4,
-                  color: COLORS.text,
+            {navigationMenu.map((item) => (
+              <Box key={item.path}>
+                {item.children?.length > 0 ? (
+                  <>
+                    <ListItemButton
+                      onClick={() => toggleMobileMenu(item.label)}
+                      aria-expanded={expandedMobileMenu === item.label}
+                      sx={{
+                        borderRadius: 1.5,
+                        mb: 0.4,
+                        py: 0.8,
+                        px: 1.2,
+                        minHeight: 36,
+                        color: isParentActive(item)
+                          ? COLORS.green
+                          : COLORS.text,
+                        backgroundColor: isParentActive(item)
+                          ? COLORS.lightGreen
+                          : "transparent",
+                        borderLeft: isParentActive(item)
+                          ? `3px solid ${COLORS.orange}`
+                          : "3px solid transparent",
 
-                  "&.active": {
-                    backgroundColor: "#EAF3EC",
-                    color: COLORS.green,
-                    fontWeight: 800,
-                    borderLeft: `4px solid ${COLORS.orange}`,
-                  },
+                        "&:hover": {
+                          backgroundColor: "#F0F5F1",
+                        },
+                      }}
+                    >
+                      <ListItemText
+                        primary={getLabel(item.label)}
+                        slotProps={{
+                          primary: {
+                            sx: {
+                              fontWeight: 700,
+                              fontSize: 11,
+                              lineHeight: 1.35,
+                            },
+                          },
+                        }}
+                      />
 
-                  "&:hover": {
-                    backgroundColor: "#F0F5F1",
-                  },
-                }}
-              >
-                <ListItemText
-                  primary={t(`navbar.${item.label}`)}
-                  primaryTypographyProps={{
-                    fontWeight: 700,
-                    fontSize: 14,
-                  }}
-                />
+                      {expandedMobileMenu === item.label ? (
+                        <ChevronUp size={15} />
+                      ) : (
+                        <ChevronDown size={15} />
+                      )}
+                    </ListItemButton>
 
-                <ChevronRight size={17} />
-              </ListItemButton>
+                    <Collapse
+                      in={expandedMobileMenu === item.label}
+                      timeout="auto"
+                      unmountOnExit
+                    >
+                      <List
+                        disablePadding
+                        sx={{
+                          ml: 1.5,
+                          mb: 0.7,
+                          borderLeft: `2px solid ${COLORS.orange}`,
+                        }}
+                      >
+                        {/* MOBILE OVERVIEW ITEM */}
+
+                        <ListItemButton
+                          component={NavLink}
+                          to={item.path}
+                          end
+                          onClick={closeDrawer}
+                          sx={{
+                            borderRadius: 1,
+                            py: 0.5,
+                            pl: 1.5,
+                            minHeight: 29,
+
+                            "&.active": {
+                              backgroundColor: COLORS.lightGreen,
+                              color: COLORS.green,
+                            },
+                          }}
+                        >
+                          <ListItemText
+                            primary={`${getLabel(item.label)} - ${
+                              currentLanguage === "en"
+                                ? "Overview"
+                                : "मुख्य माहिती"
+                            }`}
+                            slotProps={{
+                              primary: {
+                                sx: {
+                                  fontSize: 8,
+                                  fontWeight: 800,
+                                  lineHeight: 1.3,
+                                },
+                              },
+                            }}
+                          />
+                        </ListItemButton>
+
+                        {/* MOBILE SUBMENU ITEMS */}
+
+                        {item.children.map((child) => (
+                          <ListItemButton
+                            key={child.path}
+                            component={NavLink}
+                            to={child.path}
+                            onClick={closeDrawer}
+                            sx={{
+                              borderRadius: 1,
+                              py: 0.5,
+                              pl: 1.5,
+                              minHeight: 29,
+
+                              "&.active": {
+                                backgroundColor: COLORS.lightGreen,
+                                color: COLORS.green,
+                                borderLeft: `3px solid ${COLORS.orange}`,
+                              },
+                            }}
+                          >
+                            <ListItemText
+                              primary={getLabel(child.label)}
+                              slotProps={{
+                                primary: {
+                                  sx: {
+                                    fontSize: 9,
+                                    fontWeight: 600,
+                                    lineHeight: 1.3,
+                                  },
+                                },
+                              }}
+                            />
+
+                            <ChevronRight size={12} />
+                          </ListItemButton>
+                        ))}
+                      </List>
+                    </Collapse>
+                  </>
+                ) : (
+                  <ListItemButton
+                    component={NavLink}
+                    to={item.path}
+                    end={item.path === "/"}
+                    onClick={closeDrawer}
+                    sx={{
+                      borderRadius: 1.5,
+                      mb: 0.4,
+                      py: 0.8,
+                      px: 1.2,
+                      minHeight: 36,
+                      color: COLORS.text,
+
+                      "&.active": {
+                        backgroundColor: COLORS.lightGreen,
+                        color: COLORS.green,
+                        fontWeight: 800,
+                        borderLeft: `3px solid ${COLORS.orange}`,
+                      },
+
+                      "&:hover": {
+                        backgroundColor: "#F0F5F1",
+                      },
+                    }}
+                  >
+                    <ListItemText
+                      primary={getLabel(item.label)}
+                      slotProps={{
+                        primary: {
+                          sx: {
+                            fontWeight: 700,
+                            fontSize: 11,
+                            lineHeight: 1.35,
+                          },
+                        },
+                      }}
+                    />
+
+                    <ChevronRight size={14} />
+                  </ListItemButton>
+                )}
+              </Box>
             ))}
           </List>
 
-          <Divider sx={{ my: 2 }} />
+          <Divider sx={{ my: 1.5, borderColor: COLORS.border }} />
 
           {/* CONTACT INFORMATION */}
+
           <Typography
             sx={{
               color: COLORS.muted,
               fontWeight: 800,
-              fontSize: 11,
-              letterSpacing: 1,
-              mb: 2,
+              fontSize: 9,
+              letterSpacing: 0.7,
+              mb: 1.2,
+              px: 0.5,
             }}
           >
-            संपर्क माहिती
+            {currentLanguage === "en"
+              ? "CONTACT INFORMATION"
+              : "संपर्क माहिती"}
           </Typography>
 
-          <Stack spacing={2}>
-            <Stack direction="row" spacing={1.5} alignItems="center">
-              <Phone size={18} color={COLORS.orange} />
+          <Stack spacing={1.3}>
+            <Stack direction="row" spacing={1.2} alignItems="center">
+              <Box
+                sx={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 1.5,
+                  backgroundColor: "#FFF3E8",
+                  display: "grid",
+                  placeItems: "center",
+                  flexShrink: 0,
+                }}
+              >
+                <Phone size={14} color={COLORS.orange} />
+              </Box>
 
               <Box>
-                <Typography fontSize={11} color={COLORS.muted}>
+                <Typography fontSize={9} color={COLORS.muted}>
                   संपर्क क्रमांक
                 </Typography>
 
                 <Typography
                   component="a"
                   href="tel:9920942994"
-                  fontWeight={700}
-                  fontSize={13}
+                  fontWeight={800}
+                  fontSize={11}
                   color={COLORS.green}
                   sx={{ textDecoration: "none" }}
                 >
@@ -705,11 +1175,23 @@ function Navbar() {
               </Box>
             </Stack>
 
-            <Stack direction="row" spacing={1.5} alignItems="center">
-              <Mail size={18} color={COLORS.orange} />
+            <Stack direction="row" spacing={1.2} alignItems="center">
+              <Box
+                sx={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 1.5,
+                  backgroundColor: "#FFF3E8",
+                  display: "grid",
+                  placeItems: "center",
+                  flexShrink: 0,
+                }}
+              >
+                <Mail size={14} color={COLORS.orange} />
+              </Box>
 
               <Box sx={{ minWidth: 0 }}>
-                <Typography fontSize={11} color={COLORS.muted}>
+                <Typography fontSize={9} color={COLORS.muted}>
                   ई-मेल
                 </Typography>
 
@@ -717,7 +1199,7 @@ function Navbar() {
                   component="a"
                   href="mailto:gppimpalkhuta30@gmail.com"
                   fontWeight={700}
-                  fontSize={12}
+                  fontSize={10}
                   color={COLORS.green}
                   sx={{
                     textDecoration: "none",
@@ -729,13 +1211,26 @@ function Navbar() {
               </Box>
             </Stack>
 
-            <Stack direction="row" spacing={1.5} alignItems="center">
-              <MapPin size={18} color={COLORS.orange} />
+            <Stack direction="row" spacing={1.2} alignItems="center">
+              <Box
+                sx={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 1.5,
+                  backgroundColor: "#FFF3E8",
+                  display: "grid",
+                  placeItems: "center",
+                  flexShrink: 0,
+                }}
+              >
+                <MapPin size={14} color={COLORS.orange} />
+              </Box>
 
               <Typography
-                fontSize={12}
+                fontSize={10}
                 color={COLORS.text}
                 fontWeight={600}
+                lineHeight={1.4}
               >
                 ता. वरुड, जि. अमरावती, महाराष्ट्र
               </Typography>
@@ -744,19 +1239,29 @@ function Navbar() {
         </Box>
 
         {/* DRAWER FOOTER */}
+
         <Box
           sx={{
             backgroundColor: COLORS.cream,
-            p: 2,
+            borderTop: `1px solid ${COLORS.border}`,
+            p: 1.5,
             textAlign: "center",
           }}
         >
           <Typography
             color={COLORS.green}
-            fontSize={12}
-            fontWeight={800}
+            fontSize={10}
+            fontWeight={900}
           >
             सेवा • समर्पण • पारदर्शकता
+          </Typography>
+
+          <Typography
+            color={COLORS.muted}
+            fontSize={8}
+            sx={{ mt: 0.4 }}
+          >
+            {t("navbar.englishName")}
           </Typography>
         </Box>
       </Drawer>

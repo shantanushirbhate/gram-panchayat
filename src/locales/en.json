@@ -1,3 +1,4 @@
+
 {
   "header": {
     "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
@@ -21,181 +22,1000 @@
     "copyright": "Gram Panchayat Pimpalkhuta Budruk. All Rights Reserved.",
     "tagline": "Designed for Digital Village Development"
   },
-  "navbar": {
-  "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
-  "englishName": "Gram Panchayat Pimpalkhuta Budruk",
-  "home": "Home",
-  "about": "About Us",
-  "services": "Services",
-  "gallery": "Gallery",
-  "contact": "Contact"
-},
+ 
 
-"home": {
-  "welcome": "Welcome to our village",
-  "heroTitle": "A Digital Gateway to a Developed Village",
-  "heroDescription": "Welcome to the official website of Gram Panchayat Pimpalkhuta Budruk. Explore village information, citizen services and development initiatives.",
-  "aboutButton": "About Gram Panchayat",
-  "servicesButton": "Explore Services",
-  "servicesSubtitle": "CITIZEN SERVICES",
-  "servicesTitle": "Services for Every Citizen",
-  "servicesDescription": "Access important Gram Panchayat services and information.",
-  "birthDeath": "Certificates",
-  "birthDeathDesc": "Information about birth and death registration and certificates.",
-  "propertyTax": "Property Tax",
-  "propertyTaxDesc": "Access property tax information and related services.",
-  "waterSupply": "Water Supply",
-  "waterSupplyDesc": "Information about village water supply services.",
-  "complaints": "Complaints",
-  "complaintsDesc": "Share your concerns and suggestions with the Gram Panchayat.",
-  "learnMore": "Learn More",
-  "aboutSubtitle": "ABOUT OUR VILLAGE",
-  "aboutTitle": "A Village Moving Towards Development",
-  "aboutDescription": "Gram Panchayat Pimpalkhuta Budruk is committed to transparent administration, citizen participation and sustainable village development.",
-  "readMore": "Read More",
-  "statisticsTitle": "Our Village at a Glance",
-  "statisticsDescription": "Important information about our village.",
-  "population": "Population",
-  "families": "Families",
-  "wards": "Wards",
-  "villageArea": "Village Area",
-  "noticesTitle": "Latest Notices & Announcements",
-  "noticesDescription": "Stay updated with the latest Gram Panchayat announcements, public notices and important information for citizens.",
-  "viewNotices": "View All Notices",
-  "galleryTitle": "Village Gallery",
-  "galleryDescription": "Explore photographs of our village, development activities and community events.",
-  "viewGallery": "Explore Gallery",
-  "contactTitle": "Have a Question or Need Assistance?",
-  "contactDescription": "Get in touch with Gram Panchayat Pimpalkhuta Budruk.",
-  "contactButton": "Contact Us"
-},
-"about": {
-  "breadcrumb": "HOME / ABOUT US",
-  "heroTitle": "About Our Village",
-  "heroDescription": "Discover Gram Panchayat Pimpalkhuta Budruk, our community, our values and our commitment towards village development.",
-  "introSubtitle": "WHO WE ARE",
-  "introTitle": "Welcome to Gram Panchayat Pimpalkhuta Budruk",
-  "introDescription": "Gram Panchayat Pimpalkhuta Budruk works towards the overall development of the village and the well-being of its citizens.",
-  "introDescription2": "Through public participation, transparent administration and local development initiatives, the Gram Panchayat aims to provide essential services and improve the quality of village life.",
-  "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
-  "panchayatSubname": "Local Self-Government Institution",
-  "directionSubtitle": "OUR PURPOSE",
-  "directionTitle": "Our Vision & Mission",
-  "visionTitle": "Our Vision",
-  "visionDescription": "To build a clean, healthy, educated and developed village where every citizen has access to essential facilities and opportunities.",
-  "missionTitle": "Our Mission",
-  "missionDescription": "To provide transparent and responsible local administration, encourage citizen participation and support sustainable village development.",
-  "responsibilitySubtitle": "WHAT WE DO",
-  "responsibilityTitle": "Our Responsibilities",
-  "responsibilityDescription": "Working towards essential services and a better quality of life for villagers.",
-  "water": "Water Supply",
-  "waterDesc": "Supporting access to clean drinking water and maintaining village water supply facilities.",
-  "cleanliness": "Cleanliness",
-  "cleanlinessDesc": "Encouraging sanitation, waste management and a clean village environment.",
-  "education": "Education",
-  "educationDesc": "Supporting educational awareness and initiatives for children and the community.",
-  "welfare": "Public Welfare",
-  "welfareDesc": "Promoting citizen welfare and helping people access relevant government services.",
-  "developmentSubtitle": "OUR COMMITMENT",
-  "developmentTitle": "Building a Better Future Together",
-  "developmentDescription": "Village development is a shared responsibility. We believe that community participation and effective local administration can create lasting positive change.",
-  "developmentPoint1": "Improving basic village infrastructure and facilities",
-  "developmentPoint2": "Encouraging public participation in local development",
-  "developmentPoint3": "Supporting cleanliness and sustainable development",
-  "contactTitle": "Connect With Your Gram Panchayat",
-  "contactDescription": "For information and assistance, get in touch with our Gram Panchayat office.",
-  "contactButton": "Contact Us"
-},"services": {
-  "label": "Gram Panchayat Services",
-  "title": "Services for Our Village",
-  "description": "The Gram Panchayat provides essential services and facilities to support residents and improve the quality of village life.",
-  "sectionLabel": "WHAT WE OFFER",
-  "sectionTitle": "Our Public Services",
-  "sectionDescription": "Explore the various services provided by the Gram Panchayat.",
-  "contactButton": "Contact Office",
-  "ctaTitle": "Need Help with a Service?",
-  "ctaDescription": "Contact the Gram Panchayat office for information and assistance regarding village services.",
-  "ctaButton": "Contact Us",
-  "items": {
-    "birth": {
-      "title": "Birth Certificate",
-      "description": "Get information about birth registration and the process for obtaining birth certificates."
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "transparency": "Transparency",
+    "educationParyavaran": "Education & Paryavaran",
+    "samitiya": "Samitiya",
+    "seva": "Seva",
+    "adhik": "Adhik",
+    "dashboard": "Dashboard",
+
+    "panchayatName": "ग्रामपंचायत पिंपळखुटा बु.",
+    "englishName": "Gram Panchayat Pimpalkhuta Budruk",
+
+    "aboutInformation": "About Gram Panchayat",
+    "villageIdentity": "Village Identity",
+    "villageHistory": "Village History",
+    "villageInformation": "Village Information",
+    "officeDetails": "Office Details",
+    "employeeList": "Employee List",
+    "honorsAndAwards": "Honors & Awards",
+    "wishesAndCongratulations": "Wishes & Congratulations",
+    "initiativesAndEvents": "Initiatives & Events",
+    "cultureAndTraditions": "Culture & Traditions",
+    "emergencyContacts": "Emergency Contacts",
+    "rolesAndResponsibilities": "Roles & Responsibilities",
+
+    "arthikMahiti": "Financial Information",
+    "kamachiMahiti": "Development Work Information",
+    "gramSabhaCorner": "Gram Sabha Corner",
+
+    "paryavaranVShasvatVikas": "Environment & Sustainable Development",
+    "shikshanAniYuvakKopra": "Education & Youth Corner",
+    "shikshanVPayavaran": "Education & Environment",
+
+    "suchanaVJahirati": "Notices & Advertisements",
+    "onlineKarBharna": "Pay Tax Online",
+    "nagrikSeva": "Citizen Services",
+    "shaskiyaYojna": "Government Schemes",
+    "mahitichaAdhikar": "Right to Information",
+
+    "rojgarVKaushalya": "Employment & Skills",
+    "udyogVUpkram": "Industries & Initiatives",
+    "swyamSahayataGut": "Self-Help Groups",
+    "mahatvacheDuwe": "Important Links",
+    "takrarSuchanaSallaAbhipray": "Complaints, Notices, Suggestions & Feedback",
+    "sitemap": "Sitemap",
+
+    "overview": "Overview",
+    "mainMenu": "Main Menu",
+    "contactInformation": "Contact Information"
+  }
+,
+  "home": {
+    "welcome": "Welcome to our village",
+    "heroTitle": "A Digital Gateway to a Developed Village",
+    "heroDescription": "Welcome to the official website of Gram Panchayat Pimpalkhuta Budruk. Explore village information, citizen services and development initiatives.",
+    "aboutButton": "About Gram Panchayat",
+    "servicesButton": "Explore Services",
+    "servicesSubtitle": "CITIZEN SERVICES",
+    "servicesTitle": "Services for Every Citizen",
+    "servicesDescription": "Access important Gram Panchayat services and information.",
+    "birthDeath": "Certificates",
+    "birthDeathDesc": "Information about birth and death registration and certificates.",
+    "propertyTax": "Property Tax",
+    "propertyTaxDesc": "Access property tax information and related services.",
+    "waterSupply": "Water Supply",
+    "waterSupplyDesc": "Information about village water supply services.",
+    "complaints": "Complaints",
+    "complaintsDesc": "Share your concerns and suggestions with the Gram Panchayat.",
+    "learnMore": "Learn More",
+    "aboutSubtitle": "ABOUT OUR VILLAGE",
+    "aboutTitle": "A Village Moving Towards Development",
+    "aboutDescription": "Gram Panchayat Pimpalkhuta Budruk is committed to transparent administration, citizen participation and sustainable village development.",
+    "readMore": "Read More",
+    "statisticsTitle": "Our Village at a Glance",
+    "statisticsDescription": "Important information about our village.",
+    "population": "Population",
+    "families": "Families",
+    "wards": "Wards",
+    "villageArea": "Village Area",
+    "noticesTitle": "Latest Notices & Announcements",
+    "noticesDescription": "Stay updated with the latest Gram Panchayat announcements, public notices and important information for citizens.",
+    "viewNotices": "View All Notices",
+    "galleryTitle": "Village Gallery",
+    "galleryDescription": "Explore photographs of our village, development activities and community events.",
+    "viewGallery": "Explore Gallery",
+    "contactTitle": "Have a Question or Need Assistance?",
+    "contactDescription": "Get in touch with Gram Panchayat Pimpalkhuta Budruk.",
+    "contactButton": "Contact Us"
+  },
+  "about": {
+    "breadcrumb": "HOME / ABOUT US",
+    "heroTitle": "About Our Village",
+    "heroDescription": "Discover Gram Panchayat Pimpalkhuta Budruk, our community, our values and our commitment towards village development.",
+    "introSubtitle": "WHO WE ARE",
+    "introTitle": "Welcome to Gram Panchayat Pimpalkhuta Budruk",
+    "introDescription": "Gram Panchayat Pimpalkhuta Budruk is an important part of the local self-government system. Its primary objective is to provide basic facilities to villagers and work systematically towards the development of the village.",
+    "introDescription2": "The Gram Panchayat continuously works on village cleanliness, water supply, roads, education, healthcare, and the implementation of various government schemes.",
+    "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
+    "panchayatSubname": "Taluka Warud, District Amravati, Maharashtra",
+    "panchayatDescription": "Public participation, transparency, and responsible administration are the key principles guiding our Gram Panchayat.",
+    "directionSubtitle": "OUR PURPOSE",
+    "directionTitle": "Our Vision & Mission",
+    "visionTitle": "Our Vision",
+    "visionDescription": "To build a clean, beautiful, prosperous, and developed village where every citizen has access to basic facilities, equal opportunities, and a safe environment.",
+    "missionTitle": "Our Mission",
+    "missionDescription": "To achieve sustainable village development through public participation, effectively implement government schemes, and establish transparent and citizen-oriented administration.",
+    "responsibilitySubtitle": "WHAT WE DO",
+    "responsibilityTitle": "Our Key Responsibilities",
+    "responsibilityDescription": "The Gram Panchayat provides essential services and carries out development initiatives to improve the quality of life of village residents.",
+    "water": "Water Supply",
+    "waterDesc": "Working to provide clean and safe drinking water to village residents.",
+    "cleanliness": "Cleanliness and Health",
+    "cleanlinessDesc": "Promoting village cleanliness, waste management, and public health initiatives.",
+    "education": "Education",
+    "educationDesc": "Supporting educational facilities and encouraging education-related initiatives.",
+    "welfare": "Citizen Welfare",
+    "welfareDesc": "Implementing various government schemes and social initiatives for the welfare of citizens.",
+    "ourResponsibility": "Our Responsibility",
+    "developmentSubtitle": "OUR COMMITMENT",
+    "developmentTitle": "Village Development and Progress",
+    "developmentDescription": "The Gram Panchayat plans development activities for the overall progress of the village and implements various initiatives through the effective use of available resources.",
+    "developmentPoint1": "Development of village roads and infrastructure.",
+    "developmentPoint2": "Water supply, cleanliness, and environmental conservation.",
+    "developmentPoint3": "Ensuring eligible citizens receive the benefits of government schemes.",
+    "contactTitle": "Connect With Your Gram Panchayat",
+    "contactDescription": "For information and assistance, get in touch with our Gram Panchayat office.",
+    "contactButton": "Contact Us"
+  },
+  "services": {
+    "label": "Gram Panchayat Services",
+    "title": "Services for Our Village",
+    "description": "The Gram Panchayat provides essential services and facilities to support residents and improve the quality of village life.",
+    "sectionLabel": "WHAT WE OFFER",
+    "sectionTitle": "Our Public Services",
+    "sectionDescription": "Explore the various services provided by the Gram Panchayat.",
+    "contactButton": "Contact Office",
+    "ctaTitle": "Need Help with a Service?",
+    "ctaDescription": "Contact the Gram Panchayat office for information and assistance regarding village services.",
+    "ctaButton": "Contact Us",
+    "items": {
+      "birth": {
+        "title": "Birth Certificate",
+        "description": "Get information about birth registration and the process for obtaining birth certificates."
+      },
+      "death": {
+        "title": "Death Certificate",
+        "description": "Get information about death registration and the required documentation."
+      },
+      "residence": {
+        "title": "Residence Certificate",
+        "description": "Get guidance about residence verification and the certificate application process."
+      },
+      "property": {
+        "title": "Property Tax",
+        "description": "Get information about property tax assessment, payment procedures and related services."
+      },
+      "water": {
+        "title": "Water Supply",
+        "description": "Find information about village water supply facilities, maintenance and related concerns."
+      },
+      "cleanliness": {
+        "title": "Sanitation & Cleanliness",
+        "description": "Learn about village cleanliness, waste management and sanitation initiatives."
+      },
+      "schemes": {
+        "title": "Government Schemes",
+        "description": "Get information about government welfare schemes and eligibility requirements."
+      },
+      "complaints": {
+        "title": "Public Complaints",
+        "description": "Find out how to submit complaints and raise issues concerning village facilities."
+      }
+    }
+  },
+  "gallery": {
+    "label": "Village Photo Gallery",
+    "title": "Explore Our Village",
+    "description": "Discover the beauty, culture, development and memorable moments of our village through photographs.",
+    "sectionLabel": "OUR MEMORIES",
+    "sectionTitle": "Village Photo Gallery",
+    "sectionDescription": "Explore photographs from different parts of village life.",
+    "noImages": "No photographs available in this category.",
+    "ctaTitle": "Have Village Photographs?",
+    "ctaDescription": "Help us preserve our village memories by sharing photographs of local events and development.",
+    "ctaButton": "Contact Us",
+    "categories": {
+      "all": "All Photos",
+      "village": "Village",
+      "development": "Development",
+      "events": "Events",
+      "nature": "Nature"
+    }
+  },
+  "contact": {
+    "label": "GET IN TOUCH",
+    "title": "Contact Gram Panchayat",
+    "description": "We are here to help you. Contact the Gram Panchayat office for information, assistance and public services.",
+    "sectionLabel": "CONTACT INFORMATION",
+    "sectionTitle": "How Can We Help You?",
+    "addressTitle": "Office Address",
+    "address": "Gram Panchayat Pimpalkhuta Budruk, Maharashtra, India",
+    "phoneTitle": "Phone Number",
+    "phone": "Update official phone number",
+    "emailTitle": "Email Address",
+    "emailAddress": "Update official email address",
+    "email": "Update official email address",
+    "officeTitle": "Office Hours",
+    "officeHours": "Update official office timings",
+    "formTitle": "Send Us a Message",
+    "formDescription": "Fill out the form below to share your query with us.",
+    "name": "Your Name",
+    "subject": "Subject",
+    "message": "Your Message",
+    "sendButton": "Send Message",
+    "successMessage": "Your message form was submitted. Please connect a backend to deliver it to the office.",
+    "mapTitle": "Find Our Location",
+    "mapDescription": "Locate Gram Panchayat Pimpalkhuta Budruk.",
+    "ctaTitle": "We Are Happy to Help You",
+    "ctaDescription": "Visit the Gram Panchayat office for assistance with village services and public information."
+  },
+  "villageIdentity": {
+    "heroTitle": "Village Identity",
+    "heroDescription": "Discover the identity, administrative location and unique character of Gram Panchayat Pimpalkhuta Budruk.",
+    "introEyebrow": "OUR IDENTITY",
+    "introTitle": "Welcome to Pimpalkhuta Budruk",
+    "introDescription": "Pimpalkhuta Budruk is a village in Warud Taluka of Amravati District, Maharashtra. The Gram Panchayat serves as an important local self-government institution, working to support village administration, public facilities and community development.",
+    "introDescription2": "The village identity reflects its local community, agricultural surroundings, traditions and shared commitment towards progress and development.",
+    "panchayatLabel": "Gram Panchayat",
+    "villageShortName": "Pimpalkhuta Budruk",
+    "talukaDistrict": "Taluka Warud, District Amravati",
+    "detailsEyebrow": "BASIC DETAILS",
+    "detailsTitle": "Village at a Glance",
+    "detailsDescription": "Important administrative and geographical details of our village.",
+    "details": {
+      "villageName": "Village Name",
+      "villageValue": "Pimpalkhuta Budruk",
+      "administrativeBody": "Administrative Body",
+      "administrativeBodyValue": "Gram Panchayat",
+      "taluka": "Taluka",
+      "talukaValue": "Warud",
+      "district": "District",
+      "districtValue": "Amravati",
+      "state": "State",
+      "stateValue": "Maharashtra",
+      "environment": "Village Environment",
+      "environmentValue": "Rural / Agricultural"
     },
-    "death": {
-      "title": "Death Certificate",
-      "description": "Get information about death registration and the required documentation."
+    "locationEyebrow": "OUR LOCATION",
+    "locationTitle": "Administrative Location",
+    "locationDescription": "Our village is part of the Amravati district administration in Maharashtra.",
+    "location": {
+      "village": "Village",
+      "villageValue": "Pimpalkhuta Budruk",
+      "taluka": "Taluka",
+      "talukaValue": "Warud",
+      "district": "District",
+      "districtValue": "Amravati",
+      "state": "State",
+      "stateValue": "Maharashtra",
+      "country": "Country",
+      "countryValue": "India"
     },
-    "residence": {
-      "title": "Residence Certificate",
-      "description": "Get guidance about residence verification and the certificate application process."
+    "closingTitle": "Our Village, Our Identity, Our Pride",
+    "closingDescription": "Together, we work towards preserving our village identity while building a better future for coming generations."
+  },
+  "villageHistory": {
+    "breadcrumb": "HOME / ABOUT US / VILLAGE HISTORY",
+    "heroTitle": "Village History",
+    "heroDescription": "Discover the journey, traditions, community life and development of Gram Panchayat Pimpalkhuta Budruk.",
+    "introEyebrow": "OUR HERITAGE",
+    "introTitle": "The Heritage of Pimpalkhuta Budruk",
+    "introDescription": "Pimpalkhuta Budruk is a village located in Warud Taluka of Amravati District. Its identity is connected with the lives of its residents, social unity, agricultural traditions and local culture.",
+    "introDescription2": "The history of a village is more than a collection of past events. It reflects the traditions preserved by generations, collective efforts and the journey of community development.",
+    "panchayatName": "Gram Panchayat Pimpalkhuta Budruk",
+    "location": "Taluka Warud, District Amravati, Maharashtra",
+    "backgroundEyebrow": "HISTORICAL BACKGROUND",
+    "backgroundTitle": "The Background of Our Village",
+    "backgroundDescription": "Explore the social, cultural and administrative journey of our village.",
+    "backgroundCardTitle": "From Tradition to Progress",
+    "backgroundCardDescription": "Verified information about the history of Pimpalkhuta Budruk, its establishment year, important historical events and old records can be added here once they are obtained from the Gram Panchayat office. This section aims to preserve the village heritage and share it with future generations.",
+    "journeyEyebrow": "OUR JOURNEY",
+    "journeyTitle": "Important Aspects of Village Development",
+    "journeyDescription": "Explore different aspects that contribute to the journey and development of our village.",
+    "journeyItems": {
+      "community": {
+        "label": "COMMUNITY LIFE",
+        "title": "Social Unity and Community Life",
+        "description": "Mutual support, social relationships and community participation are important elements in shaping village life."
+      },
+      "agriculture": {
+        "label": "AGRICULTURAL TRADITIONS",
+        "title": "Agriculture and Rural Lifestyle",
+        "description": "Agriculture and related occupations are an important part of rural life. Local agricultural traditions influence the lifestyle of the village."
+      },
+      "administration": {
+        "label": "LOCAL ADMINISTRATION",
+        "title": "The Role of the Gram Panchayat",
+        "description": "The local self-government institution works towards planning village facilities, public services and development activities."
+      },
+      "development": {
+        "label": "DEVELOPMENT",
+        "title": "Facilities and Progress",
+        "description": "The development of roads, water supply, sanitation, education and other public facilities contributes to the progress of the village."
+      }
     },
-    "property": {
-      "title": "Property Tax",
-      "description": "Get information about property tax assessment, payment procedures and related services."
+    "themesEyebrow": "OUR VILLAGE",
+    "themesTitle": "Aspects Connected to Our Village History",
+    "themesDescription": "Discover the important elements that shape the identity of our village.",
+    "themes": {
+      "community": {
+        "title": "Community and Unity",
+        "description": "Social unity, cooperation and public participation are important characteristics of rural life."
+      },
+      "agriculture": {
+        "title": "Agriculture and Nature",
+        "description": "Agriculture, land and the natural surroundings are closely connected to village life."
+      },
+      "administration": {
+        "title": "Village Administration",
+        "description": "The Gram Panchayat works towards local administration and public facilities in the village."
+      },
+      "development": {
+        "title": "Village Development",
+        "description": "Collective efforts and development activities help build a strong foundation for the village's future."
+      }
     },
-    "water": {
-      "title": "Water Supply",
-      "description": "Find information about village water supply facilities, maintenance and related concerns."
+    "closingTitle": "Our History, Our Pride",
+    "closingDescription": "Let us preserve our village heritage and move forward together towards a better future."
+  },
+  "villageInformation": {
+    "heroTitle": "Village Information",
+    "heroDescription": "Explore the geographical, social, administrative and basic information about Pimpalkhuta Budruk.",
+    "introEyebrow": "ABOUT OUR VILLAGE",
+    "introTitle": "Pimpalkhuta Budruk – Our Village",
+    "introDescription": "Pimpalkhuta Budruk is a village in Warud Taluka of Amravati District, Maharashtra. Its identity is connected with rural life, the local community and agricultural traditions.",
+    "introDescription2": "The Gram Panchayat works towards village development through local administration, public facilities and citizen participation.",
+    "villageName": "Pimpalkhuta Budruk",
+    "location": "Taluka Warud, District Amravati, Maharashtra",
+    "cardCaption": "Our Village, Our Shared Responsibility",
+    "profileEyebrow": "VILLAGE PROFILE",
+    "profileTitle": "Basic Village Information",
+    "profileDescription": "Important geographical and administrative information about Pimpalkhuta Budruk.",
+    "profile": {
+      "village": "Village Name",
+      "villageValue": "Pimpalkhuta Budruk",
+      "taluka": "Taluka",
+      "talukaValue": "Warud",
+      "district": "District",
+      "districtValue": "Amravati",
+      "state": "State",
+      "stateValue": "Maharashtra",
+      "country": "Country",
+      "countryValue": "India",
+      "character": "Village Character",
+      "characterValue": "Rural and Agricultural"
     },
-    "cleanliness": {
-      "title": "Sanitation & Cleanliness",
-      "description": "Learn about village cleanliness, waste management and sanitation initiatives."
+    "featuresEyebrow": "VILLAGE CHARACTERISTICS",
+    "featuresTitle": "Important Aspects of Our Village",
+    "featuresDescription": "Important elements that reflect the identity and rural lifestyle of our village.",
+    "features": {
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Agriculture and related occupations are an important part of rural life. Agricultural traditions are connected with the social and economic life of the village."
+      },
+      "community": {
+        "title": "Community Life",
+        "description": "Mutual cooperation, social unity and public participation are important elements of community life."
+      },
+      "environment": {
+        "title": "Nature and Environment",
+        "description": "Conservation of the natural surroundings, cleanliness and environmentally responsible practices are important for village development."
+      },
+      "governance": {
+        "title": "Local Administration",
+        "description": "The Gram Panchayat works towards local administration, public facilities and planning village development activities."
+      }
     },
-    "schemes": {
-      "title": "Government Schemes",
-      "description": "Get information about government welfare schemes and eligibility requirements."
+    "facilitiesEyebrow": "PUBLIC FACILITIES",
+    "facilitiesTitle": "Basic Village Facilities",
+    "facilitiesDescription": "Information about public facilities that are important for the quality of life of residents.",
+    "facilities": {
+      "water": {
+        "title": "Water Supply",
+        "description": "Providing drinking water to residents and maintaining water supply facilities."
+      },
+      "roads": {
+        "title": "Roads and Transport",
+        "description": "Development of village roads and infrastructure related to public transportation."
+      },
+      "education": {
+        "title": "Education",
+        "description": "Supporting educational facilities and encouraging students in the village to pursue education."
+      },
+      "health": {
+        "title": "Health and Sanitation",
+        "description": "Promoting public cleanliness, health awareness and a clean village environment."
+      }
     },
-    "complaints": {
-      "title": "Public Complaints",
-      "description": "Find out how to submit complaints and raise issues concerning village facilities."
+    "locationTitle": "Geographical Location of Our Village",
+    "locationDescription": "Pimpalkhuta Budruk is located in Warud Taluka of Amravati District, Maharashtra.",
+    "locationDetailsTitle": "Administrative Details",
+    "closingTitle": "Your Participation Matters in Village Development",
+    "closingDescription": "Let us work together as a Gram Panchayat and community to support village development, improve public facilities and create a clean and beautiful environment.",
+    "contactButton": "Contact Us"
+  },
+  "cultureAndTraditions": {
+    "heroTitle": "Culture and Traditions",
+    "heroDescription": "Discover the cultural values, traditions, celebrations and community life of Pimpalkhuta Budruk.",
+    "introEyebrow": "OUR CULTURAL HERITAGE",
+    "introTitle": "Culture That Brings Our Village Together",
+    "introDescription": "Culture and traditions are an important part of village life. They reflect the values, customs, beliefs and shared experiences of the community.",
+    "introDescription2": "The people of Pimpalkhuta Budruk contribute to community life through social gatherings, traditional practices, festivals and mutual cooperation.",
+    "valuesEyebrow": "OUR VALUES",
+    "valuesTitle": "Values That Shape Our Community",
+    "valuesDescription": "The values that help preserve harmony, respect and togetherness in village life.",
+    "values": {
+      "unity": {
+        "title": "Unity and Togetherness",
+        "description": "Community participation and mutual support help strengthen relationships among villagers."
+      },
+      "respect": {
+        "title": "Respect for Elders",
+        "description": "Respect for elders and the sharing of knowledge between generations are meaningful parts of community life."
+      },
+      "heritage": {
+        "title": "Cultural Heritage",
+        "description": "Traditional customs and local practices help preserve the cultural identity of the village."
+      },
+      "cooperation": {
+        "title": "Community Cooperation",
+        "description": "Working together during social occasions and community activities encourages a sense of belonging."
+      }
+    },
+    "festivalsEyebrow": "FESTIVALS AND CELEBRATIONS",
+    "festivalsTitle": "Celebrations That Bring People Together",
+    "festivalsDescription": "Festivals and celebrations provide opportunities for people to come together, share happiness and maintain community bonds.",
+    "festivals": {
+      "diwali": {
+        "title": "Diwali",
+        "description": "A festival of lights celebrated with family gatherings, decorations and traditional customs."
+      },
+      "holi": {
+        "title": "Holi",
+        "description": "A festival that brings people together through colours, joy and community celebrations."
+      },
+      "ganesh": {
+        "title": "Ganesh Festival",
+        "description": "A celebration that encourages devotion, cultural activities and community participation."
+      },
+      "makarSankranti": {
+        "title": "Makar Sankranti",
+        "description": "A traditional festival associated with seasonal change, greetings and social gatherings."
+      }
+    },
+    "traditionsEyebrow": "LOCAL TRADITIONS",
+    "traditionsTitle": "Traditions and Everyday Community Life",
+    "traditionsDescription": "Everyday customs, social relationships and shared activities contribute to the village's cultural identity.",
+    "traditions": {
+      "family": {
+        "title": "Family Traditions",
+        "description": "Family gatherings and the sharing of customs help pass values from one generation to another."
+      },
+      "social": {
+        "title": "Social Gatherings",
+        "description": "Community gatherings create opportunities for interaction, cooperation and strengthening relationships."
+      },
+      "folk": {
+        "title": "Folk Culture",
+        "description": "Traditional songs, local art forms and cultural expressions are valuable parts of rural heritage."
+      },
+      "community": {
+        "title": "Community Participation",
+        "description": "Participation in village activities helps maintain social harmony and a shared sense of responsibility."
+      }
+    },
+    "preservationEyebrow": "PRESERVING OUR HERITAGE",
+    "preservationTitle": "Keeping Our Culture Alive",
+    "preservationDescription": "Preserving cultural values and traditions helps future generations understand and appreciate the village's heritage.",
+    "preservationPoints": {
+      "one": "Encourage children and young people to learn about local traditions.",
+      "two": "Respect cultural practices and the knowledge of elders.",
+      "three": "Promote participation in community and cultural activities.",
+      "four": "Preserve traditional art, stories and local heritage."
+    },
+    "closingTitle": "Our Culture, Our Identity",
+    "closingDescription": "Let us respect our traditions, celebrate our shared values and pass our cultural heritage on to future generations.",
+    "contactButton": "Contact Gram Panchayat"
+  },
+  "emergencyContacts": {
+    "heroBadge": "Emergency Support",
+    "heroTitle": "Emergency Contacts",
+    "heroDescription": "Important emergency helpline numbers for the residents of Pimpalkhuta Budruk. Keep these contacts accessible and call the appropriate service when immediate help is required.",
+    "call112": "Call Emergency Helpline 112",
+    "available": "Emergency assistance available 24 hours",
+    "noticeTitle": "In an emergency, call 112",
+    "noticeDescription": "112 is India's unified emergency response number for police, fire and medical emergencies. For ambulance services in Maharashtra, you can also call 108.",
+    "sectionEyebrow": "IMPORTANT HELPLINES",
+    "sectionTitle": "Emergency Service Numbers",
+    "sectionDescription": "Select the relevant service below to call directly from your mobile phone.",
+    "callNow": "Call Now",
+    "services": {
+      "national": {
+        "title": "National Emergency",
+        "description": "Single emergency response number for police, fire and medical assistance."
+      },
+      "ambulance": {
+        "title": "Ambulance Service",
+        "description": "Medical emergencies, road accidents and urgent ambulance assistance in Maharashtra."
+      },
+      "police": {
+        "title": "Police Helpline",
+        "description": "Contact the police for immediate law enforcement and safety assistance."
+      },
+      "fire": {
+        "title": "Fire Brigade",
+        "description": "Report fire incidents and request fire and rescue assistance."
+      },
+      "women": {
+        "title": "Women Helpline",
+        "description": "Support and assistance for women facing violence or distress."
+      },
+      "child": {
+        "title": "Child Helpline",
+        "description": "Help and protection for children who need care or emergency support."
+      },
+      "cyber": {
+        "title": "Cyber Crime Helpline",
+        "description": "Report online financial fraud and cybercrime incidents."
+      }
+    },
+    "guidelinesTitle": "What to Do During an Emergency",
+    "guidelinesDescription": "Follow these simple steps when requesting emergency assistance.",
+    "guidelines": {
+      "1": "Stay calm and assess the situation without putting yourself in danger.",
+      "2": "Call the appropriate emergency number and clearly explain what happened.",
+      "3": "Share your exact location, nearby landmark and a callback number.",
+      "4": "Follow the instructions given by the emergency operator and keep the phone available."
+    },
+    "panchayatNoteTitle": "Need to Contact the Gram Panchayat?",
+    "panchayatNoteDescription": "For general village administration, certificates and office-related enquiries, use the official contact details listed on the Contact Us page. For urgent emergencies, contact the relevant emergency service directly."
+  },
+  "honorsAndAwards": {
+    "heroBadge": "Recognition and Excellence",
+    "heroTitle": "Honors and Awards",
+    "heroDescription": "Recognizing dedication, community participation and efforts towards the development of Gram Panchayat Pimpalkhuta Budruk.",
+    "heroCaption": "Working together for a better village",
+    "introEyebrow": "OUR JOURNEY",
+    "introTitle": "Recognition Begins with Dedicated Service",
+    "introDescription": "The progress of a village is built through the collective efforts of its citizens, elected representatives and Gram Panchayat staff.",
+    "introDescription2": "Every initiative that improves public services, strengthens community participation and supports sustainable development contributes to the village's journey towards excellence.",
+    "quoteTitle": "Excellence Through Community Effort",
+    "quoteDescription": "The greatest achievement is creating positive and lasting change in the lives of village residents.",
+    "areasEyebrow": "AREAS OF ACHIEVEMENT",
+    "areasTitle": "Our Focus Areas",
+    "areasDescription": "These are important areas where responsible governance and community participation can make a meaningful difference.",
+    "areas": {
+      "development": {
+        "title": "Village Development",
+        "description": "Supporting infrastructure, public facilities and development initiatives for the overall progress of the village."
+      },
+      "cleanliness": {
+        "title": "Cleanliness and Sanitation",
+        "description": "Encouraging clean surroundings, proper sanitation and responsible waste management."
+      },
+      "environment": {
+        "title": "Environmental Protection",
+        "description": "Promoting tree plantation, water conservation and environmentally responsible practices."
+      },
+      "publicService": {
+        "title": "Public Service",
+        "description": "Working towards accessible, transparent and citizen-friendly public services."
+      },
+      "community": {
+        "title": "Community Participation",
+        "description": "Encouraging residents to participate in village meetings, local initiatives and collective decisions."
+      },
+      "governance": {
+        "title": "Good Governance",
+        "description": "Promoting transparency, accountability and effective implementation of public welfare initiatives."
+      }
+    },
+    "recordsTitle": "Official Awards and Recognition",
+    "recordsSubtitle": "Verified achievements and certificates",
+    "recordsDescription": "Official award names, certificates, awarding authorities and years should be published here after verification by the Gram Panchayat. No unverified award claims are displayed.",
+    "valuesEyebrow": "OUR COMMITMENT",
+    "valuesTitle": "Values Behind Every Achievement",
+    "valuesDescription": "Meaningful progress comes from shared responsibility, honesty and continuous efforts.",
+    "values": {
+      "service": {
+        "title": "Commitment to Service",
+        "description": "Prioritizing the needs and well-being of village residents."
+      },
+      "teamwork": {
+        "title": "Teamwork",
+        "description": "Bringing citizens, representatives and staff together to achieve common goals."
+      },
+      "integrity": {
+        "title": "Transparency and Integrity",
+        "description": "Maintaining accountability and trust in village administration."
+      }
+    },
+    "closingEyebrow": "CONNECT WITH US",
+    "closingTitle": "Be a Part of Village Progress",
+    "closingDescription": "Your participation, suggestions and cooperation help build a stronger and better community.",
+    "contactButton": "Contact Gram Panchayat"
+  },
+  "initiativesAndEvents": {
+    "heroBadge": "Village Activities and Development",
+    "heroTitle": "Initiatives and Events",
+    "heroDescription": "Discover the initiatives, community activities and development efforts that bring the residents of Pimpalkhuta Budruk together.",
+    "heroCaption": "Together we participate, contribute and grow",
+    "introEyebrow": "OUR COMMUNITY",
+    "introTitle": "Building a Better Village Together",
+    "introDescription": "Village development is a continuous journey that requires the participation of citizens, local representatives and the Gram Panchayat.",
+    "introDescription2": "Through community initiatives, awareness programmes and cultural activities, we aim to encourage cooperation, improve public awareness and create a positive environment for everyone.",
+    "highlightTitle": "Small Initiatives, Meaningful Change",
+    "highlightDescription": "Every contribution matters. When villagers work together, even small efforts can create lasting improvements in the community.",
+    "initiativesEyebrow": "DEVELOPMENT ACTIVITIES",
+    "initiativesTitle": "Our Key Initiatives",
+    "initiativesDescription": "Explore important areas where community participation and collective efforts can support village development.",
+    "initiatives": {
+      "cleanliness": {
+        "title": "Village Cleanliness",
+        "description": "Encouraging clean streets, proper sanitation, waste management and healthy surroundings."
+      },
+      "treePlantation": {
+        "title": "Tree Plantation",
+        "description": "Promoting greenery, tree plantation and environmental awareness for a healthier village."
+      },
+      "waterConservation": {
+        "title": "Water Conservation",
+        "description": "Creating awareness about responsible water use, rainwater conservation and water resource protection."
+      },
+      "education": {
+        "title": "Education and Awareness",
+        "description": "Supporting educational awareness, learning opportunities and community knowledge programmes."
+      },
+      "villageDevelopment": {
+        "title": "Infrastructure Development",
+        "description": "Encouraging improvements in village roads, public facilities and essential community infrastructure."
+      },
+      "publicAwareness": {
+        "title": "Public Awareness",
+        "description": "Sharing information about government schemes, public welfare services and citizen responsibilities."
+      }
+    },
+    "eventsEyebrow": "COMMUNITY PARTICIPATION",
+    "eventsTitle": "Community Events and Activities",
+    "eventsDescription": "Village events provide opportunities for residents to connect, celebrate, learn and contribute.",
+    "events": {
+      "cultural": {
+        "title": "Cultural Celebrations",
+        "description": "Celebrating festivals, cultural traditions and important occasions that strengthen village unity."
+      },
+      "environmental": {
+        "title": "Environmental Activities",
+        "description": "Encouraging tree plantation, cleanliness drives and awareness activities for environmental protection."
+      },
+      "social": {
+        "title": "Social and Community Programmes",
+        "description": "Promoting community meetings, public awareness programmes and activities supporting social welfare."
+      }
+    },
+    "upcomingTitle": "Upcoming Events and Announcements",
+    "upcomingDescription": "Stay informed about upcoming village programmes and important activities.",
+    "noEventsTitle": "Event Schedule Will Be Updated",
+    "noEventsDescription": "Upcoming event dates, timings and programme details will be published here after confirmation by the Gram Panchayat. Please check this section regularly for announcements.",
+    "closingEyebrow": "YOUR PARTICIPATION MATTERS",
+    "closingTitle": "Be Part of Our Village Initiatives",
+    "closingDescription": "Share your ideas, participate in community activities and work together towards a cleaner, healthier and more developed village.",
+    "contactButton": "Contact Gram Panchayat"
+  },
+  "officeDetails": {
+    "heroBadge": "Official Gram Panchayat Office",
+    "heroTitle": "Office Details",
+    "heroDescription": "Find important information about Gram Panchayat Pimpalkhuta Budruk, including office location, contact information, working hours and citizen services.",
+    "locationShort": "Pimpalkhuta Budruk, Warud, Amravati, Maharashtra",
+    "introEyebrow": "ABOUT OUR OFFICE",
+    "introTitle": "Your Local Government Office",
+    "introDescription": "The Gram Panchayat office serves as the local administrative centre for village governance, public services and development activities.",
+    "introDescription2": "It provides a point of contact for residents to access information, submit applications, understand government schemes and raise local civic concerns.",
+    "highlightTitle": "Serving the Village Community",
+    "highlightDescription": "Our aim is to support transparent administration, accessible public services and the overall development of Pimpalkhuta Budruk.",
+    "informationEyebrow": "OFFICE INFORMATION",
+    "informationTitle": "Location and Working Hours",
+    "informationDescription": "Important details to help residents plan their visit to the Gram Panchayat office.",
+    "locationTitle": "Office Location",
+    "locationDescription": "Gram Panchayat Pimpalkhuta Budruk",
+    "address": "Pimpalkhuta Budruk, Taluka Warud, District Amravati, Maharashtra, India.",
+    "timingTitle": "Office Timings",
+    "timingDescription": "Please confirm working hours before visiting.",
+    "timingValue": "Contact the office for current timings",
+    "workingDaysTitle": "Working Days",
+    "workingDaysDescription": "Office working days may vary on public holidays and official notices.",
+    "workingDaysValue": "Confirm the schedule with the office",
+    "contactEyebrow": "GET IN TOUCH",
+    "contactTitle": "Office Contact Information",
+    "contactDescription": "Contact the Gram Panchayat office for general enquiries and administrative assistance.",
+    "phoneTitle": "Contact Number",
+    "phoneDescription": "Call the Gram Panchayat office for enquiries and assistance.",
+    "emailTitle": "Official Email",
+    "emailDescription": "Send your questions and written enquiries by email.",
+    "facilitiesEyebrow": "CITIZEN SERVICES",
+    "facilitiesTitle": "Office Facilities and Services",
+    "facilitiesDescription": "The Gram Panchayat office helps residents access various local administrative services.",
+    "facilities": {
+      "certificates": {
+        "title": "Certificates and Records",
+        "description": "Information and assistance regarding eligible certificates, applications and village records."
+      },
+      "publicServices": {
+        "title": "Citizen Assistance",
+        "description": "Guidance for residents regarding local services, applications and civic matters."
+      },
+      "administration": {
+        "title": "Village Administration",
+        "description": "Administrative coordination, local governance and public information."
+      },
+      "schemes": {
+        "title": "Government Schemes",
+        "description": "Information and guidance about applicable government welfare and development schemes."
+      }
+    },
+    "guidelinesTitle": "Guidelines Before Visiting",
+    "guidelinesDescription": "A few useful suggestions to make your office visit easier.",
+    "guidelines": {
+      "1": "Visit during confirmed office working hours.",
+      "2": "Carry the required identity documents and supporting papers for your application.",
+      "3": "Clearly explain your enquiry or the service you require to the office staff.",
+      "4": "Keep your application acknowledgement or reference number for future follow-up."
+    },
+    "closingEyebrow": "WE ARE HERE TO HELP",
+    "closingTitle": "Visit or Contact Your Gram Panchayat",
+    "closingDescription": "For village-related information, public services and administrative enquiries, connect with the Gram Panchayat office.",
+    "directionsButton": "Get Directions",
+    "contactButton": "Contact Us"
+  },
+  "rolesResponsibilities": {
+    "hero": {
+      "eyebrow": "Village Governance",
+      "title": "Roles and Responsibilities",
+      "description": "Learn about the duties of elected representatives, village administration, committees, and citizens in building a well-organised and progressive village.",
+      "chipOne": "Public Participation",
+      "chipTwo": "Accountable Governance"
+    },
+    "intro": {
+      "eyebrow": "Understanding Local Governance",
+      "title": "Working Together for Village Development",
+      "description": "The Gram Panchayat is a local self-government institution that works to address village needs, support public services, and promote development through community participation.",
+      "descriptionTwo": "Each representative and administrative function has an important role in planning, implementing, and monitoring village development activities.",
+      "highlightTitle": "A Shared Responsibility",
+      "highlightDescription": "Effective village governance depends on cooperation between elected representatives, administrative staff, committees, and residents."
+    },
+    "roles": {
+      "eyebrow": "People Behind Local Governance",
+      "sectionTitle": "Key Roles in the Gram Panchayat",
+      "sectionDescription": "Different representatives and officials contribute through their respective duties and responsibilities.",
+      "roleLabel": "Key responsibilities",
+      "sarpanch": {
+        "title": "Sarpanch",
+        "description": "The elected head of the Gram Panchayat who provides leadership and coordinates its functioning.",
+        "points": {
+          "one": "Preside over Gram Panchayat meetings and guide discussions.",
+          "two": "Coordinate village development plans and priorities.",
+          "three": "Work with members and officials to address public concerns.",
+          "four": "Encourage transparency, participation, and responsible governance."
+        }
+      },
+      "deputy": {
+        "title": "Deputy Sarpanch",
+        "description": "Supports the Sarpanch in carrying out Panchayat responsibilities and helps maintain continuity in administration.",
+        "points": {
+          "one": "Assist the Sarpanch in Panchayat activities and meetings.",
+          "two": "Help coordinate development and public welfare work.",
+          "three": "Support communication between members and residents.",
+          "four": "Discharge the Sarpanch's duties when authorised or required under applicable rules."
+        }
+      },
+      "members": {
+        "title": "Gram Panchayat Members",
+        "description": "Elected representatives who bring the needs and concerns of their respective wards to the Panchayat.",
+        "points": {
+          "one": "Represent residents and raise local issues in meetings.",
+          "two": "Participate in decisions and village development planning.",
+          "three": "Monitor public works and service delivery in their wards.",
+          "four": "Encourage residents to participate in Gram Sabha activities."
+        }
+      },
+      "secretary": {
+        "title": "Gram Sevak / Secretary",
+        "description": "The administrative functionary who supports the Gram Panchayat in its official and day-to-day work.",
+        "points": {
+          "one": "Maintain official records, registers, and meeting documents.",
+          "two": "Assist with the implementation of government schemes.",
+          "three": "Support administrative procedures and public information.",
+          "four": "Coordinate with relevant government departments and authorities."
+        }
+      }
+    },
+    "committees": {
+      "eyebrow": "Community-Based Support",
+      "title": "Village Committees",
+      "description": "Committees can support focused planning and community participation in important areas of village life. Their actual composition and duties are governed by applicable rules and local decisions.",
+      "sanitation": {
+        "title": "Sanitation",
+        "description": "Support cleanliness, waste management awareness, and a healthy village environment."
+      },
+      "education": {
+        "title": "Education",
+        "description": "Encourage school participation, educational awareness, and learning opportunities."
+      },
+      "social": {
+        "title": "Social Welfare",
+        "description": "Promote inclusion, awareness, and support for eligible welfare initiatives."
+      },
+      "development": {
+        "title": "Village Development",
+        "description": "Help identify local needs and contribute to development planning and monitoring."
+      }
+    },
+    "areas": {
+      "eyebrow": "Important Work Areas",
+      "title": "Major Areas of Responsibility",
+      "description": "The Gram Panchayat works across several areas that contribute to village facilities, public welfare, and sustainable development.",
+      "development": {
+        "title": "Infrastructure and Development",
+        "description": "Support local infrastructure such as internal roads, street lighting, drainage, and public facilities, according to approved plans and available resources."
+      },
+      "finance": {
+        "title": "Financial Management",
+        "description": "Support proper budgeting, authorised expenditure, financial records, and responsible use of public funds."
+      },
+      "publicServices": {
+        "title": "Public Services",
+        "description": "Facilitate access to applicable civic services, public information, and government welfare schemes."
+      },
+      "environment": {
+        "title": "Environment and Cleanliness",
+        "description": "Promote sanitation, water conservation, tree plantation, and protection of shared village resources."
+      }
+    },
+    "citizens": {
+      "eyebrow": "Your Role Matters",
+      "title": "Responsibilities of Village Citizens",
+      "highlightTitle": "A Better Village Starts with Everyone",
+      "highlightDescription": "Active citizen participation helps the Gram Panchayat understand local needs and improve village life.",
+      "points": {
+        "one": "Participate in Gram Sabha meetings and share constructive suggestions.",
+        "two": "Keep homes, streets, and public spaces clean.",
+        "three": "Pay applicable local taxes and fees on time.",
+        "four": "Use water and other public resources responsibly.",
+        "five": "Protect public property and report civic problems to the Panchayat.",
+        "six": "Support education, health, environmental protection, and community initiatives."
+      }
+    },
+    "closing": {
+      "title": "Together, We Build a Better Village",
+      "description": "Good governance is a shared effort. Connect with the Gram Panchayat to share suggestions, raise concerns, and participate in village development.",
+      "button": "Contact Gram Panchayat"
     }
   }
-},"gallery": {
-  "label": "Village Photo Gallery",
-  "title": "Explore Our Village",
-  "description": "Discover the beauty, culture, development and memorable moments of our village through photographs.",
-  "sectionLabel": "OUR MEMORIES",
-  "sectionTitle": "Village Photo Gallery",
-  "sectionDescription": "Explore photographs from different parts of village life.",
-  "noImages": "No photographs available in this category.",
-  "ctaTitle": "Have Village Photographs?",
-  "ctaDescription": "Help us preserve our village memories by sharing photographs of local events and development.",
-  "ctaButton": "Contact Us",
-  "categories": {
-    "all": "All Photos",
-    "village": "Village",
-    "development": "Development",
-    "events": "Events",
-    "nature": "Nature"
+
+  ,
+"wishesAndCongratulations": {
+  "hero": {
+    "badge": "Celebrating Our Community",
+    "title": "Wishes and Congratulations",
+    "description": "A place to share good wishes, celebrate special moments and recognise the achievements of the people of Pimpalkhuta Budruk.",
+    "chipOne": "Celebrating Together",
+    "chipTwo": "Sharing Happiness"
+  },
+  "intro": {
+    "eyebrow": "MOMENTS THAT MATTER",
+    "title": "Every Special Moment Deserves to Be Celebrated",
+    "description": "Our village is built on relationships, shared experiences and community spirit. Birthdays, anniversaries, personal achievements and important milestones bring happiness to families and neighbours.",
+    "descriptionTwo": "This page is dedicated to celebrating these occasions and spreading positivity, encouragement and appreciation throughout our community.",
+    "highlightTitle": "A Message of Happiness",
+    "highlightDescription": "May every home be filled with happiness, good health, peace and prosperity. Let us celebrate one another's special moments with warmth and respect."
+  },
+  "wishes": {
+    "eyebrow": "WISHES AND RECOGNITION",
+    "title": "Celebrating Life's Special Moments",
+    "description": "We extend our warm wishes and congratulations to residents on their important occasions and achievements.",
+    "items": {
+      "birthday": {
+        "title": "Birthday Wishes",
+        "description": "Wishing everyone celebrating a birthday happiness, good health, success and a wonderful year ahead."
+      },
+      "anniversary": {
+        "title": "Anniversary Wishes",
+        "description": "Warm wishes to couples celebrating their wedding anniversaries. May their journey together continue with love and happiness."
+      },
+      "achievement": {
+        "title": "Congratulations on Achievements",
+        "description": "Congratulations to students, professionals, sportspersons and residents for their dedication, hard work and accomplishments."
+      },
+      "success": {
+        "title": "Success and New Beginnings",
+        "description": "Best wishes to everyone beginning a new journey, reaching a milestone or taking an important step towards their dreams."
+      }
+    }
+  },
+  "celebrations": {
+    "eyebrow": "TOGETHER AS A COMMUNITY",
+    "title": "Celebrating Our Shared Happiness",
+    "description": "Special occasions and community celebrations create lasting memories and strengthen relationships among residents.",
+    "items": {
+      "festivals": {
+        "title": "Festivals and Special Days",
+        "description": "Warm wishes to all residents on festivals, national days and other important occasions. May these celebrations bring unity and happiness."
+      },
+      "community": {
+        "title": "Community Celebrations",
+        "description": "Celebrating the spirit of togetherness, cooperation and participation that makes our village community stronger."
+      },
+      "special": {
+        "title": "Special Achievements",
+        "description": "Recognising meaningful contributions, educational milestones, sporting accomplishments and other positive achievements."
+      }
+    }
+  },
+  "values": {
+    "eyebrow": "OUR COMMUNITY VALUES",
+    "title": "Good Wishes Bring People Closer",
+    "description": "Sharing happiness and appreciating one another helps build a supportive, respectful and positive village community.",
+    "items": {
+      "respect": {
+        "title": "Respect and Appreciation",
+        "description": "Recognising the efforts, contributions and special moments of every member of our community."
+      },
+      "togetherness": {
+        "title": "Unity and Togetherness",
+        "description": "Sharing celebrations and happiness helps strengthen relationships between families and neighbours."
+      },
+      "encouragement": {
+        "title": "Encouragement and Inspiration",
+        "description": "Appreciating achievements inspires young people and residents to continue learning, growing and contributing."
+      }
+    }
+  },
+  "closing": {
+    "title": "Let Us Celebrate Happiness Together",
+    "description": "Every good wish, achievement and celebration adds to the happiness of our village. Stay connected and share the spirit of positivity and community cooperation.",
+    "button": "Contact Gram Panchayat"
   }
-},"contact": {
-  "label": "GET IN TOUCH",
-  "title": "Contact Gram Panchayat",
-  "description": "We are here to help you. Contact the Gram Panchayat office for information, assistance and public services.",
-  "sectionLabel": "CONTACT INFORMATION",
-  "sectionTitle": "How Can We Help You?",
-  "addressTitle": "Office Address",
-  "address": "Gram Panchayat Pimpalkhuta Budruk, Maharashtra, India",
-  "phoneTitle": "Phone Number",
-  "phone": "Update official phone number",
-  "emailTitle": "Email Address",
-  "email": "Update official email address",
-  "officeTitle": "Office Hours",
-  "officeHours": "Update official office timings",
-  "formTitle": "Send Us a Message",
-  "formDescription": "Fill out the form below to share your query with us.",
-  "name": "Your Name",
-  "email": "Email Address",
-  "phone": "Phone Number",
-  "subject": "Subject",
-  "message": "Your Message",
-  "sendButton": "Send Message",
-  "successMessage": "Your message form was submitted. Please connect a backend to deliver it to the office.",
-  "mapTitle": "Find Our Location",
-  "mapDescription": "Locate Gram Panchayat Pimpalkhuta Budruk.",
-  "ctaTitle": "We Are Happy to Help You",
-  "ctaDescription": "Visit the Gram Panchayat office for assistance with village services and public information."
+}
+,
+
+
+"employeeList": {
+  "hero": {
+    "eyebrow": "OUR TEAM",
+    "title": "Gram Panchayat Employees",
+    "description": "Meet the people who support the day-to-day administration and public services of Gram Panchayat Pimpalkhuta Budruk.",
+    "location": "Pimpalkhuta Budruk, Warud, Amravati"
+  },
+  "section": {
+    "eyebrow": "OUR PEOPLE",
+    "title": "Meet Our Employees",
+    "description": "Our employees help coordinate village administration and support the delivery of public services."
+  },
+  "card": {
+    "namePending": "Employee Name",
+    "designationPending": "Designation to be updated",
+    "departmentPending": "Department to be updated"
+  },
+  "empty": {
+    "title": "Employee Details Coming Soon",
+    "description": "The official employee information is being prepared. Please visit again to see the updated list of Gram Panchayat employees."
+  },
+  "footer": {
+    "message": "Committed to serving the people and supporting the development of our village."
+  },
+  "positions": {
+    "gramSevak": "Gram Sevak",
+    "villageDevelopmentOfficer": "Village Development Officer",
+    "computerOperator": "Computer Operator",
+    "clerk": "Clerk",
+    "waterSupplyWorker": "Water Supply Worker",
+    "sanitationWorker": "Sanitation Worker"
+  },
+  "departments": {
+    "administration": "Administration Department",
+    "development": "Village Development Department",
+    "it": "Information Technology Department",
+    "waterSupply": "Water Supply Department",
+    "sanitation": "Sanitation Department",
+    "publicServices": "Public Services Department"
+  }
+}
+
 }
 
 
-}

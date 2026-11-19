@@ -1,3 +1,4 @@
+
 import {
   Box,
   Container,
@@ -9,7 +10,7 @@ import {
 
 import Grid from "@mui/material/Grid";
 
-import Bharatsarkarlogo from "../../assets/Emblem_of_India_(Government_Gazette).svg";
+import Bharatsarkarlogo from "../../../assets/Emblem_of_India_(Government_Gazette).svg";
 
 import {
   Landmark,
@@ -38,6 +39,20 @@ const COLORS = {
   muted: "#64748B",
   border: "#E2EAE4",
   background: "#F7F9F7",
+};
+
+// Common responsive spacing for every section
+const pageContainerSx = {
+  width: "100%",
+  maxWidth: "none",
+  px: {
+    xs: 2,
+    sm: 3,
+    md: "48px",
+    lg: "96px",
+  },
+  mx: "auto",
+  boxSizing: "border-box",
 };
 
 const responsibilities = [
@@ -119,7 +134,13 @@ export default function AboutPage() {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ overflow: "hidden", backgroundColor: COLORS.background }}>
+    <Box
+      sx={{
+        overflow: "hidden",
+        backgroundColor: COLORS.background,
+        width: "100%",
+      }}
+    >
       {/* HERO SECTION */}
       <Box
         sx={{
@@ -160,7 +181,14 @@ export default function AboutPage() {
           }}
         />
 
-        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+        <Container
+          maxWidth={false}
+          sx={{
+            ...pageContainerSx,
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
           <Box
             sx={{
               width: 6,
@@ -228,8 +256,13 @@ export default function AboutPage() {
       </Box>
 
       {/* INTRODUCTION SECTION */}
-      <Box sx={{ py: { xs: 7, sm: 9, md: 12 }, bgcolor: "#FFFFFF" }}>
-        <Container maxWidth="lg">
+      <Box
+        sx={{
+          py: { xs: 7, sm: 9, md: 12 },
+          bgcolor: "#FFFFFF",
+        }}
+      >
+        <Container maxWidth={false} sx={pageContainerSx}>
           <Grid
             container
             spacing={{ xs: 5, md: 7 }}
@@ -248,7 +281,11 @@ export default function AboutPage() {
                   sx={{
                     width: "100%",
                     minHeight: { xs: 300, sm: 350, md: 420 },
-                    aspectRatio: { xs: "4 / 3", sm: "5 / 4", md: "1 / 1" },
+                    aspectRatio: {
+                      xs: "4 / 3",
+                      sm: "5 / 4",
+                      md: "1 / 1",
+                    },
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
@@ -439,7 +476,11 @@ export default function AboutPage() {
                     borderLeft: "5px solid #16803D",
                   }}
                 >
-                  <Stack direction="row" spacing={2} alignItems="center">
+                  <Stack
+                    direction="row"
+                    spacing={2}
+                    alignItems="center"
+                  >
                     <ShieldCheck
                       size={32}
                       color={COLORS.green}
@@ -471,7 +512,7 @@ export default function AboutPage() {
           backgroundColor: COLORS.background,
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={pageContainerSx}>
           <Box textAlign="center" sx={{ mb: 6 }}>
             <SectionLabel>
               {t("about.directionSubtitle")}
@@ -643,7 +684,7 @@ export default function AboutPage() {
           backgroundColor: "#FFFFFF",
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={pageContainerSx}>
           <Box textAlign="center" sx={{ mb: 6 }}>
             <SectionLabel>
               {t("about.responsibilitySubtitle")}
@@ -786,7 +827,7 @@ export default function AboutPage() {
           backgroundColor: COLORS.background,
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={pageContainerSx}>
           <Grid
             container
             spacing={{ xs: 5, md: 7 }}
@@ -906,7 +947,11 @@ export default function AboutPage() {
                     color: "#FFFFFF",
                   }}
                 >
-                  <Stack direction="row" spacing={1.5} alignItems="center">
+                  <Stack
+                    direction="row"
+                    spacing={1.5}
+                    alignItems="center"
+                  >
                     <Box
                       sx={{
                         width: 48,
