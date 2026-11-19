@@ -109,32 +109,32 @@ const navigationMenu = [
   },
 
   // SEVA
-  {
-    label: "seva",
-    path: "/seva",
-    children: [
-      {
-        label: "suchanaVJahirati",
-        path: "/seva/suchana-jahirati",
-      },
-      {
-        label: "onlineKarBharna",
-        path: "/seva/online-kar-bharna",
-      },
-      {
-        label: "nagrikSeva",
-        path: "/seva/nagrik-seva",
-      },
-      {
-        label: "shaskiyaYojna",
-        path: "/seva/shaskiya-yojna",
-      },
-      {
-        label: "mahitichaAdhikar",
-        path: "/seva/mahiticha-adhikar",
-      },
-    ],
-  },
+{
+  label: "seva",
+  path: "/services",
+  children: [
+    {
+      label: "suchanaVJahirati",
+      path: "/services/suchana-jahirati",
+    },
+    {
+      label: "onlineKarBharna",
+      path: "/services/online-kar-bharna",
+    },
+    {
+      label: "nagrikSeva",
+      path: "/services/nagrik-seva",
+    },
+    {
+      label: "shaskiyaYojna",
+      path: "/services/shaskiya-yojna",
+    },
+    {
+      label: "mahitichaAdhikar",
+      path: "/services/mahiticha-adhikar",
+    },
+  ],
+},
 
   // ADHIK
   {

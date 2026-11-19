@@ -1014,8 +1014,481 @@
     "sanitation": "Sanitation Department",
     "publicServices": "Public Services Department"
   }
+},
+
+
+"transparency": {
+  "badge": "Transparency & Public Information",
+  "hero": {
+    "title": "Transparency in Village Governance",
+    "description": "Access important public information about village finances, development activities and Gram Sabha decisions through the official Gram Panchayat information portal."
+  },
+  "section": {
+    "eyebrow": "Public Information",
+    "title": "Explore Transparency Information",
+    "description": "Find important information and updates related to the administration and development of our village."
+  },
+  "cards": {
+    "arthik": {
+      "title": "Financial Information",
+      "description": "Explore budget information, income, expenditure, grants and available financial reports of the Gram Panchayat."
+    },
+    "kamachi": {
+      "title": "Development Work Information",
+      "description": "Learn about village development projects, completed works, ongoing activities and project progress."
+    },
+    "gramSabha": {
+      "title": "Gram Sabha Corner",
+      "description": "Find Gram Sabha notices, meeting information, resolutions, minutes and important village decisions."
+    }
+  },
+  "viewDetails": "Explore Details",
+  "principles": {
+    "eyebrow": "Our Commitment",
+    "heading": "Our Governance Principles",
+    "intro": "We believe that transparent information and responsible administration help build trust between citizens and the Gram Panchayat.",
+    "openness": {
+      "title": "Openness",
+      "description": "Making relevant public information accessible to village residents."
+    },
+    "accountability": {
+      "title": "Accountability",
+      "description": "Encouraging responsible administration and clear communication about public activities."
+    },
+    "access": {
+      "title": "Easy Access",
+      "description": "Helping citizens find important public records and information conveniently."
+    }
+  },
+  "commitment": {
+    "title": "Information for Every Citizen",
+    "description": "Gram Panchayat Pimpalkhuta Budruk is committed to sharing public information in an accessible and understandable manner. Official documents and records will be published as they become available."
+  },
+  "finance": {
+    "hero": {
+      "title": "Financial Information",
+      "description": "Access information about Gram Panchayat budgets, income, expenditure, grants and financial records.",
+      "breadcrumb": "Financial Information"
+    },
+    "intro": {
+      "eyebrow": "Financial Transparency",
+      "title": "Understanding Panchayat Finances",
+      "description": "Explore information about financial planning, public funds and responsible financial administration."
+    },
+    "sections": {
+      "budget": {
+        "title": "Annual Budget",
+        "description": "Information about annual budget planning, approved allocations and financial provisions."
+      },
+      "income": {
+        "title": "Income Details",
+        "description": "Information about government grants, local taxes and other sources of Gram Panchayat income."
+      },
+      "expenses": {
+        "title": "Expenditure Details",
+        "description": "Information about expenditure on village development activities and public services."
+      },
+      "audit": {
+        "title": "Audit Reports",
+        "description": "Information about financial audits, audit observations and related official reports."
+      }
+    },
+    "records": {
+      "eyebrow": "Official Records",
+      "title": "Financial Documents",
+      "description": "Access verified financial documents and official records.",
+      "emptyTitle": "Financial Records Will Be Published Here",
+      "emptyDescription": "Official budgets, income and expenditure statements, grants and audit reports will be displayed here after verification and publication by the Gram Panchayat."
+    },
+    "note": {
+      "title": "Our Commitment to Transparency",
+      "description": "Gram Panchayat Pimpalkhuta Budruk aims to make verified financial information accessible to all citizens. Official financial figures and documents will be published only after verification."
+    }
+  },
+  "works": {
+    "hero": {
+      "title": "Village Development Work Information",
+      "description": "Explore information about development activities, infrastructure projects and public works undertaken for the progress of Gram Panchayat Pimpalkhuta Budruk.",
+      "breadcrumb": "Development Work"
+    },
+    "intro": {
+      "eyebrow": "Village Development",
+      "title": "Development Activities",
+      "description": "Explore the different stages of development work undertaken or planned for our village."
+    },
+    "categories": {
+      "completed": {
+        "title": "Completed Works",
+        "description": "Information about development projects that have been completed."
+      },
+      "ongoing": {
+        "title": "Ongoing Works",
+        "description": "Information about development projects currently in progress."
+      },
+      "proposed": {
+        "title": "Proposed Works",
+        "description": "Information about development projects proposed for future implementation."
+      }
+    },
+    "records": {
+      "eyebrow": "Work Records",
+      "title": "Development Work Details",
+      "description": "View project details, locations, financial information and implementation status.",
+      "work1": {
+        "title": "Official work record to be added",
+        "description": "Verified details of completed village development work will be published here.",
+        "status": "Completed",
+        "location": "Location to be updated",
+        "year": "Year to be updated",
+        "cost": "Official cost to be updated"
+      },
+      "work2": {
+        "title": "Official work record to be added",
+        "description": "Verified details of ongoing village development work will be published here.",
+        "status": "Ongoing",
+        "location": "Location to be updated",
+        "year": "Year to be updated",
+        "cost": "Official cost to be updated"
+      },
+      "work3": {
+        "title": "Official work record to be added",
+        "description": "Verified details of proposed village development work will be published here.",
+        "status": "Proposed",
+        "location": "Location to be updated",
+        "year": "Year to be updated",
+        "cost": "Official cost to be updated"
+      }
+    },
+    "progress": "Work Progress",
+    "note": {
+      "title": "Important Information",
+      "description": "The records shown above are placeholders. Official project names, costs, dates, locations and progress details should be added only after verification by the Gram Panchayat."
+    }
+  },
+  "gramSabha": {
+    "hero": {
+      "title": "Gram Sabha Corner",
+      "description": "Stay informed about Gram Sabha meetings, public notices, resolutions and important decisions concerning village development.",
+      "breadcrumb": "Gram Sabha Corner"
+    },
+    "intro": {
+      "eyebrow": "People's Participation",
+      "title": "Gram Sabha Information",
+      "description": "The Gram Sabha provides a platform for village residents to participate in local governance, discuss community needs and contribute to development decisions."
+    },
+    "sections": {
+      "meetings": {
+        "title": "Gram Sabha Meetings",
+        "description": "Information about scheduled meetings, meeting dates, agendas and public participation."
+      },
+      "notices": {
+        "title": "Meeting Notices",
+        "description": "Official announcements and notices regarding Gram Sabha meetings and village matters."
+      },
+      "resolutions": {
+        "title": "Gram Sabha Resolutions",
+        "description": "Important resolutions and decisions taken during Gram Sabha meetings."
+      },
+      "minutes": {
+        "title": "Meeting Minutes",
+        "description": "Records and summaries of discussions and proceedings from Gram Sabha meetings."
+      }
+    },
+    "records": {
+      "eyebrow": "Public Records",
+      "title": "Meetings & Decisions",
+      "description": "Explore information about Gram Sabha meetings and the decisions made for the development of the village.",
+      "meetingTitle": "Meeting Information",
+      "meetingDescription": "Meeting schedules, agendas and related information will be published here after they are officially confirmed by the Gram Panchayat.",
+      "meetingStatus": "Information will be updated",
+      "decisionTitle": "Decisions & Resolutions",
+      "decisionDescription": "Official resolutions, approved proposals and meeting records will be made available here when published.",
+      "decisionStatus": "Official records pending"
+    },
+    "note": {
+      "title": "Important Information",
+      "description": "Gram Sabha meeting dates, notices and resolutions will be updated by the Gram Panchayat. Please refer to official announcements for confirmed information."
+    }
+  }
+}
+,
+
+
+  "educationParyavaran": {
+    "badge": "Education & Environment",
+    "hero": {
+      "title": "Education & Environment",
+      "description": "Explore village initiatives related to education, environmental protection, sustainable development and youth participation."
+    },
+    "intro": {
+      "eyebrow": "Our Commitment",
+      "title": "Building an Educated and Sustainable Village",
+      "description": "Education and environmental awareness are essential for the overall development of our village.",
+      "messageTitle": "A Better Future Through Education and Environmental Care",
+      "messageDescription": "Gram Panchayat Pimpalkhuta Budruk encourages educational opportunities, environmental awareness, cleanliness and community participation for a better future."
+    },
+    "section": {
+      "eyebrow": "Explore Information",
+      "title": "Education & Environment Activities",
+      "description": "Explore information about education, youth initiatives and environmental development."
+    },
+    "cards": {
+      "environment": {
+        "title": "Environment & Sustainable Development",
+        "description": "Information about environmental protection, tree plantation, cleanliness and sustainable village development."
+      },
+      "youth": {
+        "title": "Education & Youth Corner",
+        "description": "Information about educational opportunities, youth participation, learning activities and development initiatives."
+      },
+      "education": {
+        "title": "Education & Environment Information",
+        "description": "Explore available information about village education, environmental awareness and related activities."
+      }
+    },
+    "viewDetails": "View Details",
+    "principles": {
+      "environment": {
+        "title": "Environmental Protection",
+        "description": "Promoting cleanliness, greenery and responsible use of natural resources."
+      },
+      "education": {
+        "title": "Quality Education",
+        "description": "Encouraging learning opportunities and educational awareness for all."
+      },
+      "sustainability": {
+        "title": "Sustainable Development",
+        "description": "Supporting community participation for a cleaner and healthier village."
+      }
+    },
+    "commitment": {
+      "eyebrow": "Our Vision",
+      "title": "A Greener and More Educated Tomorrow",
+      "description": "We believe that education, environmental responsibility and community participation together create a strong foundation for village development."
+    },
+    "note": {
+      "title": "Together for a Better Future",
+      "description": "Gram Panchayat Pimpalkhuta Budruk aims to encourage education, environmental awareness and sustainable development through public participation."
+    }
+  }
+  ,
+
+  "environment": {
+    "hero": {
+      "title": "Environment & Sustainable Development",
+      "description": "Learn about environmental protection, natural resource conservation and sustainable village development.",
+      "breadcrumb": "Environment & Sustainable Development"
+    },
+    "intro": {
+      "eyebrow": "Our Environment",
+      "title": "Protecting Nature for Future Generations",
+      "description": "Environmental protection is a shared responsibility. Community participation helps create a clean, green and healthy village."
+    },
+    "message": {
+      "title": "Together for a Greener Village",
+      "description": "Gram Panchayat Pimpalkhuta Budruk encourages environmental awareness, cleanliness and responsible use of natural resources."
+    },
+    "activities": {
+      "eyebrow": "Key Focus Areas",
+      "title": "Environmental Protection Activities",
+      "description": "Important areas that support environmental awareness and sustainable village development.",
+      "items": {
+        "treePlantation": {
+          "title": "Tree Plantation",
+          "description": "Encouraging tree plantation and protection of existing trees to increase green cover."
+        },
+        "cleanliness": {
+          "title": "Village Cleanliness",
+          "description": "Promoting cleanliness, proper waste management and responsible disposal practices."
+        },
+        "waterConservation": {
+          "title": "Water Conservation",
+          "description": "Creating awareness about saving water and protecting local water resources."
+        },
+        "renewableEnergy": {
+          "title": "Renewable Energy",
+          "description": "Encouraging awareness about solar energy and other environment-friendly energy sources."
+        },
+        "greenery": {
+          "title": "Green Village",
+          "description": "Supporting greenery and responsible care of public spaces and natural surroundings."
+        },
+        "awareness": {
+          "title": "Environmental Awareness",
+          "description": "Encouraging citizen participation in environmental protection and sustainable practices."
+        }
+      }
+    },
+    "commitment": {
+      "title": "Our Commitment to Sustainable Development",
+      "description": "We aim to encourage responsible environmental practices and community participation for a cleaner, greener and healthier village."
+    }
+  }
+  ,
+
+  "youth": {
+    "hero": {
+      "title": "Education & Youth Corner",
+      "description": "Explore educational opportunities, youth development, learning resources and initiatives that support the future of our village.",
+      "breadcrumb": "Education & Youth Corner"
+    },
+    "intro": {
+      "eyebrow": "Empowering Young Minds",
+      "title": "Education Opens Doors to Opportunity",
+      "description": "Education and youth participation play an important role in building a knowledgeable, skilled and progressive village."
+    },
+    "message": {
+      "title": "Supporting Education and Youth Development",
+      "description": "Gram Panchayat Pimpalkhuta Budruk encourages awareness about educational opportunities, learning resources, skill development and active youth participation."
+    },
+    "opportunities": {
+      "eyebrow": "Learning Opportunities",
+      "title": "Education & Career Support",
+      "description": "Explore important areas of education, learning and career development.",
+      "items": {
+        "schoolEducation": {
+          "title": "School Education",
+          "description": "Encouraging school education, regular learning and educational awareness among children."
+        },
+        "higherEducation": {
+          "title": "Higher Education",
+          "description": "Creating awareness about college education, professional courses and further study opportunities."
+        },
+        "scholarships": {
+          "title": "Scholarships & Support",
+          "description": "Providing awareness about scholarship opportunities and educational assistance schemes."
+        },
+        "digitalLearning": {
+          "title": "Digital Learning",
+          "description": "Promoting digital literacy, online learning resources and technology-based education."
+        },
+        "skillDevelopment": {
+          "title": "Skill Development",
+          "description": "Encouraging vocational learning, practical skills and employment-oriented training."
+        },
+        "careerGuidance": {
+          "title": "Career Guidance",
+          "description": "Creating awareness about career choices, competitive examinations and future opportunities."
+        }
+      }
+    },
+    "activities": {
+      "eyebrow": "Youth Development",
+      "title": "Opportunities for Youth Participation",
+      "description": "Encouraging young citizens to contribute to learning, innovation and village development.",
+      "items": {
+        "youthParticipation": {
+          "title": "Youth Participation",
+          "description": "Encouraging youth involvement in community activities and village development initiatives."
+        },
+        "readingCulture": {
+          "title": "Reading & Learning",
+          "description": "Promoting reading habits, knowledge sharing and continuous learning."
+        },
+        "innovation": {
+          "title": "Innovation & Creativity",
+          "description": "Motivating young people to explore ideas, creativity and problem-solving."
+        }
+      }
+    },
+    "note": {
+      "title": "Investing in Education, Building the Future",
+      "description": "An educated and skilled generation can contribute to a stronger, more aware and progressive village. Let us encourage every child and young person to learn and grow."
+    }
+  },
+
+  "information": {
+    "hero": {
+      "title": "Education & Environment Information",
+      "description": "Explore information about village education, environmental protection, awareness programmes and community participation.",
+      "breadcrumb": "Education & Environment Information"
+    },
+    "intro": {
+      "eyebrow": "Village Information",
+      "title": "Knowledge for a Better Village",
+      "description": "Access information related to education and environmental development to encourage awareness and responsible participation."
+    },
+    "message": {
+      "title": "Education and Environment Go Hand in Hand",
+      "description": "An educated community and a healthy environment are important foundations for sustainable village development."
+    },
+    "education": {
+      "eyebrow": "Education",
+      "title": "Educational Information",
+      "description": "Explore information about schools, learning facilities and educational opportunities.",
+      "items": {
+        "schoolInformation": {
+          "title": "School Information",
+          "description": "Information about educational institutions and school-related facilities in the village."
+        },
+        "educationFacilities": {
+          "title": "Educational Facilities",
+          "description": "Information about learning resources, educational facilities and opportunities for students."
+        },
+        "higherEducation": {
+          "title": "Higher Education",
+          "description": "Awareness about higher education, further studies and professional learning opportunities."
+        }
+      }
+    },
+    "environment": {
+      "eyebrow": "Environment",
+      "title": "Environmental Information",
+      "description": "Learn about environmental protection and responsible management of natural resources.",
+      "items": {
+        "environmentProtection": {
+          "title": "Environmental Protection",
+          "description": "Information about protecting nature and maintaining a clean and healthy environment."
+        },
+        "treePlantation": {
+          "title": "Tree Plantation",
+          "description": "Awareness about tree plantation, greenery and the importance of protecting trees."
+        },
+        "wasteManagement": {
+          "title": "Waste Management",
+          "description": "Information about waste segregation, cleanliness and responsible waste disposal."
+        },
+        "waterConservation": {
+          "title": "Water Conservation",
+          "description": "Awareness about water saving, conservation and protection of local water resources."
+        }
+      }
+    },
+    "participation": {
+      "eyebrow": "Community Involvement",
+      "title": "Awareness & Public Participation",
+      "description": "Community participation helps improve educational awareness and environmental responsibility.",
+      "items": {
+        "publicAwareness": {
+          "title": "Public Awareness",
+          "description": "Encouraging citizens to participate in education and environmental awareness activities."
+        },
+        "officialInformation": {
+          "title": "Official Information",
+          "description": "Providing access to verified information and relevant official announcements."
+        },
+        "communityParticipation": {
+          "title": "Community Participation",
+          "description": "Promoting cooperation among citizens for education, cleanliness and village development."
+        }
+      }
+    },
+    "note": {
+      "title": "Together Towards a Better Tomorrow",
+      "description": "Gram Panchayat Pimpalkhuta Budruk encourages education, environmental awareness and community participation for sustainable village development."
+    }
+  }
 }
 
-}
+
+
+
+
+
+
+
+
+
+
 
 

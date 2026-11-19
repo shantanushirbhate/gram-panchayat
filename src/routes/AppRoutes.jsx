@@ -20,8 +20,21 @@ import OfficeDetailsPage from "../features/aboutt/page/OfficeDetailsPage";
 import RolesAndResponsibilitiesPage from "../features/aboutt/page/RolesAndResponsibilitiesPage";
 import WishesAndCongratulationsPage from "../features/aboutt/page/WishesAndCongratulationsPage";
 import EmployeeListPage from "../features/aboutt/page/EmployeeListPage";
-// Services
-import ServicesPage from "../features/services/servicesPage";
+
+// Transparency
+import TransparencyPage from "../features/transparency/page/TransparencyPage";
+import ArthikMahitiPage from "../features/transparency/page/ArthikMahitiPage";
+import KamachiMahitiPage from "../features/transparency/page/KamachiMahitiPage";
+import GramSabhaCornerPage from "../features/transparency/page/GramSabhaCornerPage";
+
+// Education & Environment
+import EducationParyavaranPage from "../features/educationParyavaran/page/EducationParyavaranPage";
+import ParyavaranVShasvatVikasPage from "../features/educationParyavaran/page/ParyavaranVShasvatVikasPage";
+import ShikshanAniYuvakKopraPage from "../features/educationParyavaran/page/ShikshanAniYuvakKopraPage";
+import ShikshanVPayavaranPage from "../features/educationParyavaran/page/ShikshanVPayavaranPage";
+
+// Services / Seva
+import ServicesPage from "../features/services/page/servicesPage";
 
 // Gallery
 import GalleryPage from "../features/gallery/GalleryPage";
@@ -38,70 +51,97 @@ function AppRoutes() {
 
         {/* About */}
         <Route path="/about" element={<AboutPage />} />
-
-        <Route
-          path="/about/information"
-          element={<AboutInformationPage />}
-        />
-
-        <Route
-          path="/about/village-identity"
-          element={<VillageIdentityPage />}
-        />
-
-        <Route
-          path="/about/history"
-          element={<VillageHistoryPage />}
-        />
-
+        <Route path="/about/information" element={<AboutInformationPage />} />
+        <Route path="/about/village-identity" element={<VillageIdentityPage />} />
+        <Route path="/about/history" element={<VillageHistoryPage />} />
         <Route
           path="/about/village-information"
           element={<VillageInformationPage />}
         />
-
         <Route
           path="/about/culture-and-traditions"
           element={<CultureAndTraditionsPage />}
         />
-
         <Route
           path="/about/emergency-contacts"
           element={<EmergencyContactsPage />}
         />
         <Route
-  path="/about/initiatives-and-events"
-  element={<InitiativesAndEventsPage />}
+          path="/about/initiatives-and-events"
+          element={<InitiativesAndEventsPage />}
         />
-        
+        <Route path="/about/office-details" element={<OfficeDetailsPage />} />
         <Route
-  path="/about/office-details"
-  element={<OfficeDetailsPage />}
-/>
-<Route
-  path="/about/roles-and-responsibilities"
-  element={<RolesAndResponsibilitiesPage />}
-/>
-      {/* Honors and Awards */}
-<Route
-  path="/about/honors-and-awards"
-  element={<HonorsAndAwardsPage />}
-/>
+          path="/about/roles-and-responsibilities"
+          element={<RolesAndResponsibilitiesPage />}
+        />
+        <Route
+          path="/about/honors-and-awards"
+          element={<HonorsAndAwardsPage />}
+        />
+        <Route path="/about/awards" element={<HonorsAndAwardsPage />} />
+        <Route
+          path="/about/wishes-and-congratulations"
+          element={<WishesAndCongratulationsPage />}
+        />
+        <Route path="/about/employees" element={<EmployeeListPage />} />
 
-<Route
-  path="/about/awards"
-  element={<HonorsAndAwardsPage />}
-        />
-        
+        {/* Transparency */}
+        <Route path="/transparency" element={<TransparencyPage />} />
         <Route
-  path="/about/wishes-and-congratulations"
-  element={<WishesAndCongratulationsPage />}
+          path="/transparency/arthik-mahiti"
+          element={<ArthikMahitiPage />}
         />
         <Route
-  path="/about/employees"
-  element={<EmployeeListPage />}
-/>
+          path="/transparency/kamachi-mahiti"
+          element={<KamachiMahitiPage />}
+        />
+        <Route
+          path="/transparency/gram-sabha-corner"
+          element={<GramSabhaCornerPage />}
+        />
 
-        {/* Services */}
+        {/* Education & Paryavaran */}
+        <Route
+          path="/education-paryavaran"
+          element={<EducationParyavaranPage />}
+        />
+
+        {/* Environment detail */}
+        <Route
+          path="/education-paryavaran/paryavaran-v-shasvat-vikas"
+          element={<ParyavaranVShasvatVikasPage />}
+        />
+        <Route
+          path="/education-paryavaran/paryavaran-shasvat-vikas"
+          element={<ParyavaranVShasvatVikasPage />}
+        />
+
+        {/* Youth detail - Main route */}
+        <Route
+          path="/education-paryavaran/shikshan-ani-yuvak-kopra"
+          element={<ShikshanAniYuvakKopraPage />}
+        />
+
+        {/* Youth detail - Alias route */}
+        <Route
+          path="/education-paryavaran/shikshan-yuvak-kopra"
+          element={<ShikshanAniYuvakKopraPage />}
+        />
+
+        {/* Education detail - Main route */}
+        <Route
+          path="/education-paryavaran/shikshan-v-paryavaran"
+          element={<ShikshanVPayavaranPage />}
+        />
+
+        {/* Education detail - Alias route */}
+        <Route
+          path="/education-paryavaran/shikshan-paryavaran"
+          element={<ShikshanVPayavaranPage />}
+        />
+
+        {/* Services / Seva */}
         <Route path="/services" element={<ServicesPage />} />
 
         {/* Gallery */}
