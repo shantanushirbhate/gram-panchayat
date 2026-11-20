@@ -1,0 +1,69 @@
+
+{
+  "services": {
+    "rti": {
+      "villageName": "Gram Panchayat Pimpalkhuta Budruk",
+      "hero": {
+        "title": "Right to Information (RTI)",
+        "description": "Information about citizens' right to information and transparent local administration.",
+        "breadcrumb": "Right to Information"
+      },
+      "intro": {
+        "eyebrow": "SERVING CITIZENS",
+        "title": "Right to Information",
+        "description": "The Right to Information Act, 2005 enables citizens to request information held by public authorities and promotes transparency and accountability."
+      },
+      "notice": {
+        "title": "Important Notice",
+        "description": "The officer contact details and annual report figures below may not be fully updated. Please contact the Gram Panchayat office for verified information until updated records are published."
+      },
+      "officers": {
+        "eyebrow": "OFFICIAL CONTACTS",
+        "title": "Information Officers",
+        "description": "The designated contacts for RTI applications and first appeals are listed below.",
+        "pio": {
+          "designation": "Public Information Officer",
+          "name": "Gram Sevak / Village Development Officer",
+          "office": "Gram Panchayat Office",
+          "phone": "",
+          "email": ""
+        },
+        "appellate": {
+          "designation": "First Appellate Authority",
+          "name": "Block Development Officer (BDO)",
+          "office": "Panchayat Samiti Office",
+          "phone": "",
+          "email": ""
+        }
+      },
+      "process": {
+        "eyebrow": "APPLICATION GUIDANCE",
+        "title": "RTI Application Process",
+        "description": "Follow these general steps when submitting an RTI application.",
+        "stepOne": "Clearly identify the information you need.",
+        "stepTwo": "Submit the application to the concerned Public Information Officer.",
+        "stepThree": "Pay the applicable fee or attach proof of fee exemption.",
+        "stepFour": "Keep the acknowledgement and wait for the response."
+      },
+      "law": {
+        "eyebrow": "ACT & PROVISIONS",
+        "title": "Right to Information Act, 2005",
+        "description": "Selected fees and timelines under the Maharashtra Right to Information Rules, 2026.",
+        "smallNote": "Note: Fees and procedures are subject to the Maharashtra RTI Rules, 2026 and applicable legal provisions. Verify the official rules before filing."
+      },
+      "report": {
+        "eyebrow": "ANNUAL STATISTICS",
+        "title": "Annual RTI Progress Report",
+        "description": "Year-wise details of received, disposed and pending RTI applications.",
+        "note": "The figures above are sample data. Publish them only after verifying them against official records."
+      },
+      "rights": {
+        "title": "Citizens' Right to Information",
+        "description": "Under the Right to Information Act, 2005, citizens may request information held by public authorities, subject to the Act's provisions and exemptions."
+      },
+      "contact": {
+        "title": "For More Information"
+      }
+    }
+  }
+}

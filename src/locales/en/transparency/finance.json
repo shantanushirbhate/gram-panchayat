@@ -1,0 +1,137 @@
+{
+  "transparency": {
+    "badge": "Public Information",
+    "finance": {
+      "hero": {
+        "breadcrumb": "Financial Information",
+        "title": "Financial Information",
+        "description": "Explore the Gram Panchayat's estimated annual budget, sources of income, planned expenditure and financial records. This information is shared to promote transparency and public awareness."
+      },
+      "intro": {
+        "eyebrow": "Financial Transparency",
+        "title": "Financial Planning and Accountability",
+        "description": "The Gram Panchayat prepares its annual budget to plan development works and essential public services. The estimated income and expenditure details for the financial year 2025–26 are provided below."
+      },
+      "notice": {
+        "title": "Information Update Notice",
+        "description": "The information displayed below is not currently up to date. It will be updated once the latest verified information is received."
+      },
+      "village": {
+        "name": "Gram Panchayat Sategaon",
+        "location": "Taluka Anjangaon Surji, District Amravati, Maharashtra"
+      },
+      "year": {
+        "label": "Financial Year",
+        "value": "2025–26",
+        "subtitle": "Estimated Budget"
+      },
+      "updates": {
+        "title": "Latest Updates",
+        "items": [
+          "Work on the new water supply scheme under Gram Panchayat Sategaon is in progress.",
+          "The revised budget for the financial year 2025–26 has been approved by the Gram Sabha.",
+          "Please cooperate with the property tax and water tax collection campaign.",
+          "Sategaon has received an 'A' grade under the Swachh Bharat Mission."
+        ]
+      },
+      "summary": {
+        "income": {
+          "label": "Total Estimated Income",
+          "amount": "₹25,00,000"
+        },
+        "expenses": {
+          "label": "Total Estimated Expenditure",
+          "amount": "₹22,50,000"
+        },
+        "balance": {
+          "label": "Expected Balance",
+          "amount": "₹2,50,000"
+        }
+      },
+      "sections": {
+        "budget": {
+          "title": "Annual Budget",
+          "description": "The estimated annual budget outlines the funds expected to be received and the expenditure planned for village development and public services."
+        },
+        "income": {
+          "title": "Sources of Income",
+          "description": "Details of grants, taxes and other funds expected to be received by the Gram Panchayat during the financial year."
+        },
+        "expenses": {
+          "title": "Planned Expenditure",
+          "description": "Estimated spending on water supply, roads, drainage, street lighting, sanitation, health and administrative services."
+        },
+        "audit": {
+          "title": "Audit and Accountability",
+          "description": "Financial records and audit information help ensure responsible use of public funds and accountability to residents."
+        }
+      },
+      "incomeTable": {
+        "title": "Estimated Income",
+        "description": "Sources of funds and estimated amounts for the financial year 2025–26.",
+        "itemColumn": "Sources of Funds / Items",
+        "amountColumn": "Estimated Amount (₹)",
+        "rows": [
+          {
+            "name": "15th Finance Commission Grant",
+            "amount": "15,00,000"
+          },
+          {
+            "name": "Property Tax and Water Tax Collection",
+            "amount": "5,00,000"
+          },
+          {
+            "name": "Stamp Duty and Other Government Grants",
+            "amount": "3,00,000"
+          },
+          {
+            "name": "Dalit Settlement and Special Component Schemes",
+            "amount": "2,00,000"
+          }
+        ],
+        "totalLabel": "Total Estimated Income",
+        "totalAmount": "25,00,000"
+      },
+      "expenseTable": {
+        "title": "Planned Expenditure",
+        "description": "Estimated expenditure on village development and essential public services for the financial year 2025–26.",
+        "itemColumn": "Type of Work",
+        "amountColumn": "Estimated Expenditure (₹)",
+        "rows": [
+          {
+            "name": "Water Supply Scheme Maintenance",
+            "amount": "5,00,000"
+          },
+          {
+            "name": "Internal Village Roads and Drainage System",
+            "amount": "8,00,000"
+          },
+          {
+            "name": "Street Lighting and Solar Energy Projects",
+            "amount": "2,50,000"
+          },
+          {
+            "name": "Swachh Bharat Mission",
+            "amount": "3,00,000"
+          },
+          {
+            "name": "Health and Administrative Expenses",
+            "amount": "4,00,000"
+          }
+        ],
+        "totalLabel": "Total Planned Expenditure",
+        "totalAmount": "22,50,000"
+      },
+      "records": {
+        "eyebrow": "Financial Documents",
+        "title": "Budget and Audit Records",
+        "emptyTitle": "Documents Will Be Published Soon",
+        "emptyDescription": "Verified budget statements, expenditure details and audit reports will be published here when they become available."
+      },
+      "note": {
+        "title": "Commitment to Financial Transparency",
+        "description": "The Gram Panchayat is committed to responsible financial management and transparency. The figures shown are estimated amounts for the financial year 2025–26 and should not be treated as final audited accounts. Updated and verified information will be published when available."
+      }
+    }
+  }
+}

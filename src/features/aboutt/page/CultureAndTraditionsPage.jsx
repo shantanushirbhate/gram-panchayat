@@ -1,32 +1,24 @@
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import {
   Box,
   Container,
   Typography,
-  Button,
   Paper,
   Stack,
   Chip,
 } from "@mui/material";
 
 import {
-  Sparkles,
-  UsersRound,
-  CalendarDays,
-  Utensils,
-  Palette,
-  Music2,
-  HeartHandshake,
-  Leaf,
-  Landmark,
-  ArrowRight,
   Flower2,
-  HandHeart,
-  Sun,
+  Landmark,
+  Sprout,
+  UsersRound,
+  MapPin,
+  Quote,
+  ArrowUpRight,
 } from "lucide-react";
 
 const COLORS = {
@@ -41,69 +33,34 @@ const COLORS = {
   border: "#E5EBE5",
 };
 
-const traditions = [
+const villageHighlights = [
   {
-    icon: UsersRound,
-    title: "traditions.community.title",
-    description: "traditions.community.description",
     number: "01",
+    icon: Landmark,
+    title: "religiousHeritage.title",
+    description: "religiousHeritage.description",
+    action: "religiousHeritage.action",
+    color: "orange",
   },
   {
-    icon: CalendarDays,
-    title: "traditions.festivals.title",
-    description: "traditions.festivals.description",
     number: "02",
+    icon: Sprout,
+    title: "agriculturalProsperity.title",
+    description: "agriculturalProsperity.description",
+    action: "agriculturalProsperity.action",
+    color: "green",
   },
   {
-    icon: Utensils,
-    title: "traditions.food.title",
-    description: "traditions.food.description",
     number: "03",
-  },
-  {
-    icon: Palette,
-    title: "traditions.art.title",
-    description: "traditions.art.description",
-    number: "04",
-  },
-];
-
-const festivals = [
-  {
-    icon: Flower2,
-    title: "festivals.diwali.title",
-    description: "festivals.diwali.description",
-  },
-  {
-    icon: Sparkles,
-    title: "festivals.holi.title",
-    description: "festivals.holi.description",
-  },
-  {
-    icon: Music2,
-    title: "festivals.ganesh.title",
-    description: "festivals.ganesh.description",
-  },
-  {
-    icon: Leaf,
-    title: "festivals.harvest.title",
-    description: "festivals.harvest.description",
+    icon: UsersRound,
+    title: "communityLife.title",
+    description: "communityLife.description",
+    action: "communityLife.action",
+    color: "orange",
   },
 ];
 
-const values = [
-  { key: "values.cooperation", icon: HeartHandshake },
-  { key: "values.respect", icon: HandHeart },
-  { key: "values.hospitality", icon: UsersRound },
-  { key: "values.heritage", icon: Landmark },
-];
-
-function SectionHeading({
-  eyebrow,
-  title,
-  description,
-  centered = false,
-}) {
+function SectionHeading({ eyebrow, title, description, centered = false }) {
   return (
     <Box
       sx={{
@@ -134,15 +91,10 @@ function SectionHeading({
         sx={{
           color: COLORS.green,
           fontWeight: 900,
-          fontSize: {
-            xs: 26,
-            sm: 33,
-            md: 39,
-          },
-          lineHeight: 1.25,
+          fontSize: { xs: 26, sm: 33, md: 39 },
+          lineHeight: 1.3,
           mb: 1.5,
           overflowWrap: "break-word",
-          wordBreak: "normal",
         }}
       >
         {title}
@@ -164,31 +116,109 @@ function SectionHeading({
   );
 }
 
-function IconBox({ icon: Icon, color = "green", size = 25 }) {
-  const isOrange = color === "orange";
+function HighlightCard({ item, t }) {
+  const Icon = item.icon;
+  const isOrange = item.color === "orange";
 
   return (
-    <Box
+    <Paper
+      elevation={0}
       sx={{
-        width: 58,
-        height: 58,
-        minWidth: 58,
-        borderRadius: "17px",
-        bgcolor: isOrange ? "#FFF0E3" : "#EAF3EC",
-        color: isOrange ? COLORS.orange : COLORS.green,
-        display: "grid",
-        placeItems: "center",
-        flexShrink: 0,
+        p: { xs: 2.8, sm: 3.2, md: 3.5 },
+        height: "100%",
+        minWidth: 0,
+        borderRadius: 4,
+        border: `1px solid ${COLORS.border}`,
+        bgcolor: COLORS.white,
+        display: "flex",
+        flexDirection: "column",
+        transition: "all 0.25s ease",
+        "&:hover": {
+          transform: { xs: "none", md: "translateY(-7px)" },
+          boxShadow: "0 16px 35px rgba(20,83,45,0.09)",
+          borderColor: "#B8D2BE",
+        },
       }}
     >
-      <Icon size={size} strokeWidth={1.9} />
-    </Box>
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ mb: 3 }}
+      >
+        <Box
+          sx={{
+            width: 60,
+            height: 60,
+            minWidth: 60,
+            borderRadius: "18px",
+            bgcolor: isOrange ? "#FFF0E3" : "#EAF3EC",
+            color: isOrange ? COLORS.orange : COLORS.green,
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <Icon size={28} strokeWidth={1.9} />
+        </Box>
+
+        <Typography
+          sx={{
+            color: "#D7E0D8",
+            fontSize: 28,
+            fontWeight: 900,
+          }}
+        >
+          {item.number}
+        </Typography>
+      </Stack>
+
+      <Typography
+        component="h3"
+        sx={{
+          color: COLORS.green,
+          fontWeight: 900,
+          fontSize: { xs: 19, md: 21 },
+          lineHeight: 1.4,
+          mb: 1.5,
+          overflowWrap: "break-word",
+        }}
+      >
+        {t(`cultureAndTraditions.${item.title}`)}
+      </Typography>
+
+      <Typography
+        sx={{
+          color: COLORS.muted,
+          fontSize: 14,
+          lineHeight: 2,
+          flex: 1,
+          overflowWrap: "break-word",
+        }}
+      >
+        {t(`cultureAndTraditions.${item.description}`)}
+      </Typography>
+
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={0.8}
+        sx={{
+          mt: 3,
+          color: isOrange ? COLORS.orange : COLORS.green,
+          fontWeight: 800,
+        }}
+      >
+        <Typography sx={{ fontSize: 13, fontWeight: 800 }}>
+          {t(`cultureAndTraditions.${item.action}`)}
+        </Typography>
+        <ArrowUpRight size={17} />
+      </Stack>
+    </Paper>
   );
 }
 
 function CultureAndTraditionsPage() {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { t } = useTranslation("about/cultureAndTraditions");
 
   const tr = (key) => t(`cultureAndTraditions.${key}`);
 
@@ -209,7 +239,6 @@ function CultureAndTraditionsPage() {
           background: `linear-gradient(120deg, ${COLORS.darkGreen} 0%, ${COLORS.green} 62%, #287044 100%)`,
           color: COLORS.white,
           py: { xs: 8, sm: 10, md: 12 },
-
           "&::before": {
             content: '""',
             position: "absolute",
@@ -221,7 +250,6 @@ function CultureAndTraditionsPage() {
             top: { xs: -100, md: -180 },
             pointerEvents: "none",
           },
-
           "&::after": {
             content: '""',
             position: "absolute",
@@ -242,7 +270,8 @@ function CultureAndTraditionsPage() {
               label={tr("hero.eyebrow")}
               sx={{
                 mb: 3,
-                height: 36,
+                height: "auto",
+                minHeight: 36,
                 maxWidth: "100%",
                 color: "#FED7AA",
                 bgcolor: "rgba(255,255,255,0.10)",
@@ -255,6 +284,7 @@ function CultureAndTraditionsPage() {
                 },
                 "& .MuiChip-label": {
                   px: 1.5,
+                  py: 1,
                   whiteSpace: "normal",
                 },
               }}
@@ -263,15 +293,11 @@ function CultureAndTraditionsPage() {
             <Typography
               component="h1"
               sx={{
-                fontSize: {
-                  xs: 32,
-                  sm: 46,
-                  md: 60,
-                },
+                fontSize: { xs: 34, sm: 48, md: 62 },
                 fontWeight: 900,
-                lineHeight: 1.16,
+                lineHeight: 1.2,
                 letterSpacing: "-0.8px",
-                mb: 2.5,
+                mb: 2,
                 maxWidth: 780,
                 overflowWrap: "break-word",
               }}
@@ -281,9 +307,22 @@ function CultureAndTraditionsPage() {
 
             <Typography
               sx={{
+                color: "#FED7AA",
+                fontSize: { xs: 18, sm: 21, md: 25 },
+                fontWeight: 800,
+                lineHeight: 1.5,
+                mb: 2.5,
+                overflowWrap: "break-word",
+              }}
+            >
+              {tr("hero.tagline")}
+            </Typography>
+
+            <Typography
+              sx={{
                 color: "rgba(255,255,255,0.84)",
                 fontSize: { xs: 14.5, sm: 16, md: 18 },
-                lineHeight: 1.95,
+                lineHeight: 1.9,
                 maxWidth: 720,
                 overflowWrap: "break-word",
               }}
@@ -294,7 +333,7 @@ function CultureAndTraditionsPage() {
             <Stack
               direction="row"
               alignItems="center"
-              spacing={1.2}
+              spacing={1}
               sx={{
                 mt: 3.5,
                 color: "#FED7AA",
@@ -302,7 +341,7 @@ function CultureAndTraditionsPage() {
                 rowGap: 1,
               }}
             >
-              <Landmark size={19} />
+              <MapPin size={19} />
               <Typography
                 sx={{
                   fontSize: 13.5,
@@ -317,14 +356,14 @@ function CultureAndTraditionsPage() {
         </Container>
       </Box>
 
-      {/* INTRODUCTION */}
+      {/* VILLAGE INTRODUCTION */}
       <Container maxWidth="lg" sx={{ py: { xs: 7, md: 10 } }}>
         <Box
           sx={{
             display: "grid",
             gridTemplateColumns: {
               xs: "minmax(0, 1fr)",
-              md: "minmax(0, 0.88fr) minmax(0, 1.12fr)",
+              md: "minmax(0, 0.85fr) minmax(0, 1.15fr)",
             },
             gap: { xs: 4, md: 7 },
             alignItems: "center",
@@ -332,12 +371,11 @@ function CultureAndTraditionsPage() {
             minWidth: 0,
           }}
         >
-          {/* Highlight Card */}
           <Paper
             elevation={0}
             sx={{
               minWidth: 0,
-              minHeight: { xs: 270, sm: 300, md: 390 },
+              minHeight: { xs: 250, sm: 290, md: 350 },
               borderRadius: { xs: 4, md: 5 },
               p: { xs: 3, sm: 4, md: 5 },
               background: "linear-gradient(145deg, #FFF8EF 0%, #FDE8D3 100%)",
@@ -384,7 +422,7 @@ function CultureAndTraditionsPage() {
                   color: COLORS.green,
                   fontSize: { xs: 25, sm: 29, md: 34 },
                   fontWeight: 900,
-                  lineHeight: 1.35,
+                  lineHeight: 1.4,
                   maxWidth: 370,
                   overflowWrap: "break-word",
                 }}
@@ -402,10 +440,9 @@ function CultureAndTraditionsPage() {
                 position: "relative",
                 zIndex: 1,
                 color: COLORS.green,
-                flexWrap: "wrap",
               }}
             >
-              <Sun size={19} color={COLORS.orange} />
+              <Quote size={20} color={COLORS.orange} />
               <Typography
                 sx={{
                   fontWeight: 800,
@@ -418,80 +455,29 @@ function CultureAndTraditionsPage() {
             </Stack>
           </Paper>
 
-          {/* Introduction Text */}
           <Box sx={{ minWidth: 0, width: "100%" }}>
             <SectionHeading
               eyebrow={tr("intro.eyebrow")}
               title={tr("intro.title")}
               description={tr("intro.description")}
             />
-
-            <Typography
-              sx={{
-                color: COLORS.muted,
-                fontSize: { xs: 14, md: 15 },
-                lineHeight: 2,
-                mt: -2,
-                overflowWrap: "break-word",
-              }}
-            >
-              {tr("intro.description2")}
-            </Typography>
-
-            <Paper
-              elevation={0}
-              sx={{
-                mt: 3,
-                p: { xs: 2, md: 2.5 },
-                borderRadius: 3,
-                bgcolor: "#F2F7F2",
-                borderLeft: `4px solid ${COLORS.orange}`,
-                minWidth: 0,
-              }}
-            >
-              <Stack
-                direction="row"
-                spacing={1.5}
-                alignItems="center"
-              >
-                <HeartHandshake
-                  size={25}
-                  color={COLORS.green}
-                  style={{ flexShrink: 0 }}
-                />
-
-                <Typography
-                  sx={{
-                    color: COLORS.green,
-                    fontWeight: 800,
-                    fontSize: { xs: 13, md: 14 },
-                    lineHeight: 1.7,
-                    minWidth: 0,
-                    overflowWrap: "break-word",
-                  }}
-                >
-                  {tr("intro.message")}
-                </Typography>
-              </Stack>
-            </Paper>
           </Box>
         </Box>
       </Container>
 
-      {/* CULTURAL TRADITIONS */}
+      {/* VILLAGE CULTURE AND IDENTITY */}
       <Box
         sx={{
           bgcolor: COLORS.cream,
           py: { xs: 7, md: 10 },
-          position: "relative",
         }}
       >
         <Container maxWidth="lg">
           <SectionHeading
             centered
-            eyebrow={tr("traditions.eyebrow")}
-            title={tr("traditions.title")}
-            description={tr("traditions.description")}
+            eyebrow={tr("highlights.eyebrow")}
+            title={tr("highlights.title")}
+            description={tr("highlights.description")}
           />
 
           <Box
@@ -499,412 +485,21 @@ function CultureAndTraditionsPage() {
               display: "grid",
               gridTemplateColumns: {
                 xs: "minmax(0, 1fr)",
-                sm: "repeat(2, minmax(0, 1fr))",
-                lg: "repeat(4, minmax(0, 1fr))",
+                md: "repeat(3, minmax(0, 1fr))",
               },
               gap: { xs: 2, md: 2.5 },
               width: "100%",
+              alignItems: "stretch",
             }}
           >
-            {traditions.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <Paper
-                  key={item.number}
-                  elevation={0}
-                  sx={{
-                    p: { xs: 2.8, md: 3 },
-                    borderRadius: 4,
-                    border: `1px solid ${COLORS.border}`,
-                    height: "100%",
-                    minWidth: 0,
-                    bgcolor: COLORS.white,
-                    transition: "all 0.25s ease",
-                    "&:hover": {
-                      transform: {
-                        xs: "none",
-                        md: "translateY(-7px)",
-                      },
-                      boxShadow: "0 16px 35px rgba(20,83,45,0.09)",
-                      borderColor: "#B8D2BE",
-                    },
-                  }}
-                >
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    sx={{ mb: 3 }}
-                  >
-                    <IconBox icon={Icon} />
-
-                    <Typography
-                      sx={{
-                        color: "#D7E0D8",
-                        fontSize: 27,
-                        fontWeight: 900,
-                      }}
-                    >
-                      {item.number}
-                    </Typography>
-                  </Stack>
-
-                  <Typography
-                    sx={{
-                      color: COLORS.green,
-                      fontWeight: 900,
-                      fontSize: 18,
-                      mb: 1.3,
-                      overflowWrap: "break-word",
-                    }}
-                  >
-                    {tr(item.title)}
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      color: COLORS.muted,
-                      fontSize: 13.5,
-                      lineHeight: 1.9,
-                      overflowWrap: "break-word",
-                    }}
-                  >
-                    {tr(item.description)}
-                  </Typography>
-                </Paper>
-              );
-            })}
+            {villageHighlights.map((item) => (
+              <HighlightCard key={item.number} item={item} t={t} />
+            ))}
           </Box>
         </Container>
       </Box>
 
-      {/* FESTIVALS */}
-      <Container maxWidth="lg" sx={{ py: { xs: 7, md: 10 } }}>
-        <SectionHeading
-          eyebrow={tr("festivals.eyebrow")}
-          title={tr("festivals.title")}
-          description={tr("festivals.description")}
-          centered
-        />
-
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "minmax(0, 1fr)",
-              sm: "repeat(2, minmax(0, 1fr))",
-            },
-            gap: { xs: 2, md: 2.5 },
-            width: "100%",
-          }}
-        >
-          {festivals.map((item, index) => {
-            const Icon = item.icon;
-
-            return (
-              <Paper
-                key={item.title}
-                elevation={0}
-                sx={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: { xs: 2, md: 2.5 },
-                  p: { xs: 2.5, sm: 3, md: 3.5 },
-                  borderRadius: 4,
-                  border: `1px solid ${COLORS.border}`,
-                  bgcolor: COLORS.white,
-                  minWidth: 0,
-                  transition: "all 0.25s ease",
-                  "&:hover": {
-                    borderColor: "#C5D8C8",
-                    boxShadow: "0 12px 28px rgba(20,83,45,0.07)",
-                  },
-                }}
-              >
-                <IconBox
-                  icon={Icon}
-                  color={index % 2 === 0 ? "orange" : "green"}
-                  size={24}
-                />
-
-                <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Typography
-                    sx={{
-                      color: COLORS.green,
-                      fontSize: { xs: 16, md: 18 },
-                      fontWeight: 900,
-                      mb: 1,
-                      overflowWrap: "break-word",
-                    }}
-                  >
-                    {tr(item.title)}
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      color: COLORS.muted,
-                      fontSize: 13.5,
-                      lineHeight: 1.9,
-                      overflowWrap: "break-word",
-                    }}
-                  >
-                    {tr(item.description)}
-                  </Typography>
-                </Box>
-              </Paper>
-            );
-          })}
-        </Box>
-      </Container>
-
-      {/* FOOD AND FOLK ART */}
-      <Box
-        sx={{
-          bgcolor: "#F3F7F2",
-          py: { xs: 7, md: 10 },
-        }}
-      >
-        <Container maxWidth="lg">
-          <SectionHeading
-            centered
-            eyebrow={tr("heritage.eyebrow")}
-            title={tr("heritage.title")}
-            description={tr("heritage.description")}
-          />
-
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: {
-                xs: "minmax(0, 1fr)",
-                md: "repeat(2, minmax(0, 1fr))",
-              },
-              gap: { xs: 2.5, md: 3 },
-              width: "100%",
-            }}
-          >
-            {/* Food */}
-            <Paper
-              elevation={0}
-              sx={{
-                p: { xs: 3, sm: 3.5, md: 4 },
-                borderRadius: 4,
-                bgcolor: COLORS.white,
-                border: `1px solid ${COLORS.border}`,
-                borderTop: `4px solid ${COLORS.orange}`,
-                minWidth: 0,
-                transition: "all 0.25s ease",
-                "&:hover": {
-                  transform: {
-                    xs: "none",
-                    md: "translateY(-5px)",
-                  },
-                  boxShadow: "0 15px 30px rgba(20,83,45,0.07)",
-                },
-              }}
-            >
-              <IconBox icon={Utensils} color="orange" size={27} />
-
-              <Typography
-                sx={{
-                  color: COLORS.green,
-                  fontSize: { xs: 20, md: 23 },
-                  fontWeight: 900,
-                  mt: 2.5,
-                  mb: 1.5,
-                  overflowWrap: "break-word",
-                }}
-              >
-                {tr("heritage.foodTitle")}
-              </Typography>
-
-              <Typography
-                sx={{
-                  color: COLORS.muted,
-                  fontSize: 14,
-                  lineHeight: 2,
-                  overflowWrap: "break-word",
-                }}
-              >
-                {tr("heritage.foodDescription")}
-              </Typography>
-            </Paper>
-
-            {/* Art */}
-            <Paper
-              elevation={0}
-              sx={{
-                p: { xs: 3, sm: 3.5, md: 4 },
-                borderRadius: 4,
-                bgcolor: COLORS.white,
-                border: `1px solid ${COLORS.border}`,
-                borderTop: `4px solid ${COLORS.green}`,
-                minWidth: 0,
-                transition: "all 0.25s ease",
-                "&:hover": {
-                  transform: {
-                    xs: "none",
-                    md: "translateY(-5px)",
-                  },
-                  boxShadow: "0 15px 30px rgba(20,83,45,0.07)",
-                },
-              }}
-            >
-              <IconBox icon={Music2} size={27} />
-
-              <Typography
-                sx={{
-                  color: COLORS.green,
-                  fontSize: { xs: 20, md: 23 },
-                  fontWeight: 900,
-                  mt: 2.5,
-                  mb: 1.5,
-                  overflowWrap: "break-word",
-                }}
-              >
-                {tr("heritage.artTitle")}
-              </Typography>
-
-              <Typography
-                sx={{
-                  color: COLORS.muted,
-                  fontSize: 14,
-                  lineHeight: 2,
-                  overflowWrap: "break-word",
-                }}
-              >
-                {tr("heritage.artDescription")}
-              </Typography>
-            </Paper>
-          </Box>
-        </Container>
-      </Box>
-
-      {/* COMMUNITY VALUES */}
-      <Container maxWidth="lg" sx={{ py: { xs: 7, md: 10 } }}>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "minmax(0, 1fr)",
-              md: "minmax(0, 0.85fr) minmax(0, 1.15fr)",
-            },
-            gap: { xs: 3.5, md: 7 },
-            alignItems: "center",
-            width: "100%",
-            minWidth: 0,
-          }}
-        >
-          <Box sx={{ minWidth: 0, width: "100%" }}>
-            <SectionHeading
-              eyebrow={tr("valuesEyebrow")}
-              title={tr("valuesTitle")}
-              description={tr("valuesDescription")}
-            />
-
-            <Stack
-              direction="row"
-              spacing={1}
-              alignItems="center"
-              sx={{
-                color: COLORS.orange,
-                mt: -2,
-                flexWrap: "wrap",
-              }}
-            >
-              <Flower2 size={20} />
-
-              <Typography
-                sx={{
-                  fontSize: 13,
-                  color: COLORS.green,
-                  fontWeight: 800,
-                  overflowWrap: "break-word",
-                }}
-              >
-                {tr("hero.location")}
-              </Typography>
-            </Stack>
-          </Box>
-
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: {
-                xs: "minmax(0, 1fr)",
-                sm: "repeat(2, minmax(0, 1fr))",
-              },
-              gap: 2,
-              width: "100%",
-              minWidth: 0,
-            }}
-          >
-            {values.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <Paper
-                  key={item.key}
-                  elevation={0}
-                  sx={{
-                    p: { xs: 2.5, md: 3 },
-                    borderRadius: 3.5,
-                    bgcolor:
-                      index % 2 === 0 ? COLORS.cream : "#EFF6F0",
-                    border: "1px solid rgba(20,83,45,0.05)",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1.8,
-                    minHeight: 100,
-                    minWidth: 0,
-                    width: "100%",
-                    transition: "all 0.2s ease",
-                    "&:hover": {
-                      borderColor: "#B8D2BE",
-                      transform: {
-                        xs: "none",
-                        md: "translateY(-3px)",
-                      },
-                    },
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 42,
-                      height: 42,
-                      minWidth: 42,
-                      borderRadius: "13px",
-                      bgcolor: COLORS.white,
-                      color: COLORS.green,
-                      display: "grid",
-                      placeItems: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Icon size={21} />
-                  </Box>
-
-                  <Typography
-                    sx={{
-                      color: COLORS.green,
-                      fontWeight: 800,
-                      fontSize: 14,
-                      lineHeight: 1.6,
-                      minWidth: 0,
-                      overflowWrap: "break-word",
-                    }}
-                  >
-                    {tr(item.key)}
-                  </Typography>
-                </Paper>
-              );
-            })}
-          </Box>
-        </Box>
-      </Container>
-
-      {/* CLOSING CTA */}
+      {/* CLOSING MESSAGE */}
       <Box
         sx={{
           position: "relative",
@@ -912,7 +507,6 @@ function CultureAndTraditionsPage() {
           bgcolor: COLORS.darkGreen,
           py: { xs: 6, md: 8 },
           color: COLORS.white,
-
           "&::before": {
             content: '""',
             position: "absolute",
@@ -924,7 +518,6 @@ function CultureAndTraditionsPage() {
             top: -120,
             pointerEvents: "none",
           },
-
           "&::after": {
             content: '""',
             position: "absolute",
@@ -959,11 +552,11 @@ function CultureAndTraditionsPage() {
             <Typography
               component="h2"
               sx={{
-                fontSize: { xs: 25, sm: 30, md: 37 },
+                fontSize: { xs: 24, sm: 30, md: 37 },
                 fontWeight: 900,
-                lineHeight: 1.3,
+                lineHeight: 1.4,
                 mt: 2.5,
-                mb: 2,
+                mb: 1.5,
                 overflowWrap: "break-word",
               }}
             >
@@ -977,36 +570,11 @@ function CultureAndTraditionsPage() {
                 lineHeight: 2,
                 maxWidth: 700,
                 mx: "auto",
-                mb: 3.5,
                 overflowWrap: "break-word",
               }}
             >
               {tr("closing.description")}
             </Typography>
-
-            <Button
-              onClick={() => navigate("/contact")}
-              variant="contained"
-              endIcon={<ArrowRight size={18} />}
-              sx={{
-                bgcolor: COLORS.orange,
-                color: COLORS.white,
-                borderRadius: 50,
-                px: { xs: 3, md: 4 },
-                py: 1.4,
-                fontWeight: 800,
-                fontSize: 14,
-                textTransform: "none",
-                boxShadow: "0 8px 22px rgba(232,117,25,0.22)",
-                "&:hover": {
-                  bgcolor: "#C85D10",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 12px 25px rgba(232,117,25,0.3)",
-                },
-              }}
-            >
-              {tr("closing.button")}
-            </Button>
           </Box>
         </Container>
       </Box>

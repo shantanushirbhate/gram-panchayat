@@ -1,0 +1,56 @@
+
+{
+  "environment": {
+    "hero": {
+      "breadcrumb": "Home / Education and Environment / Village Development and Sustainable Growth",
+      "title": "Village Development and Environmental Initiatives",
+      "description": "Special Gram Panchayat initiatives for sustainable development, environmental protection and modern village facilities."
+    },
+    "intro": {
+      "eyebrow": "Green and Sustainable Village Development",
+      "title": "Towards a Prosperous Village Through Nature Conservation",
+      "description": "Protecting the environment is essential while working towards the overall development of a village. Initiatives such as tree plantation, cleanliness, water conservation, renewable energy and digital literacy can help build a clean, green and sustainable village."
+    },
+    "message": {
+      "title": "Protect Nature, Develop the Village",
+      "description": "A clean, green and well-equipped village can be built through community participation and collective efforts. Environment-friendly actions today lay the foundation for a safer tomorrow."
+    },
+    "activities": {
+      "eyebrow": "Environment-Friendly Initiatives",
+      "title": "Key Initiatives for Village Development",
+      "description": "Initiatives that encourage environmental protection, cleanliness, conservation of natural resources and the use of modern technology.",
+      "items": {
+        "treePlantation": {
+          "title": "Tree Plantation Campaign",
+          "description": "Increase green cover and maintain environmental balance in the village. Encourage every family to plant at least one tree through the 'One Home – One Tree' concept."
+        },
+        "cleanliness": {
+          "title": "Waste Segregation and Management",
+          "description": "Promote separate collection and proper management of wet and dry waste. Encourage composting of wet waste and create awareness among citizens to keep the village clean."
+        },
+        "waterConservation": {
+          "title": "Water Conservation and Management",
+          "description": "Create awareness about responsible water use, rainwater harvesting and the protection of available water resources."
+        },
+        "renewableEnergy": {
+          "title": "Solar and Renewable Energy",
+          "description": "Promote solar energy to reduce electricity consumption and support environment-friendly lighting. Encourage the use of solar street lights on major roads and at public junctions."
+        },
+        "greenery": {
+          "title": "Green and Plastic-Free Village",
+          "description": "Reduce the use of single-use plastics and encourage environment-friendly alternatives such as reusable cloth bags."
+        },
+        "awareness": {
+          "title": "Environmental Awareness and Digital Literacy",
+          "description": "Build awareness among citizens about environmental protection, cleanliness and the use of modern technology. Encourage young people and women to develop computer and internet skills."
+        }
+      }
+    },
+    "commitment": {
+      "title": "Gram Panchayat's Commitment to Sustainable Development",
+      "description": "The objective is to promote sustainable village development through initiatives in cleanliness, tree conservation, water conservation, renewable energy and digital literacy. Active participation from village residents is essential to these efforts."
+    },
+    "greenFuture": "Green Future • Sustainable Development",
+    "greenFutureDescription": "Collective efforts towards a clean, beautiful and environment-friendly village."
+  }
+}

@@ -1,0 +1,72 @@
+
+{
+  "initiativesAndEvents": {
+    "hero": {
+      "badge": "Initiatives & Events",
+      "title": "Initiatives & Events",
+      "description": "Various initiatives undertaken for village development and social responsibility.",
+      "caption": "Together, we work towards a cleaner, greener and better village."
+    },
+    "intro": {
+      "eyebrow": "OUR COMMUNITY EFFORTS",
+      "title": "Working Together for Village Development",
+      "description": "The Gram Panchayat organizes various initiatives and community activities to improve village life and promote social responsibility.",
+      "descriptionTwo": "These activities encourage public participation, environmental protection, cleanliness, health awareness and the overall development of our village.",
+      "highlightTitle": "Development Through Participation",
+      "highlightDescription": "Every initiative becomes successful through the active participation, cooperation and dedication of villagers."
+    },
+    "activities": {
+      "eyebrow": "OUR INITIATIVES",
+      "title": "Village Initiatives & Activities",
+      "description": "A glimpse of the activities organized by the Gram Panchayat and villagers for the betterment of our community.",
+      "treePlantation": {
+        "day": "15",
+        "month": "August",
+        "category": "Environment",
+        "title": "Mega Tree Plantation Campaign 2024",
+        "description": "A total of 500 trees were planted in open spaces in the village and around the cremation ground. Young people participated enthusiastically in this initiative."
+      },
+      "cleanliness": {
+        "day": "02",
+        "month": "October",
+        "category": "Clean India",
+        "title": "Cleanliness Campaign on the Occasion of Gandhi Jayanti",
+        "description": "The entire village was cleaned under the 'Clean Village, Beautiful Village' initiative. A demonstration of wet and dry waste segregation was also conducted."
+      },
+      "healthCamp": {
+        "day": "10",
+        "month": "January",
+        "category": "Healthcare",
+        "title": "Free Eye Examination and Health Camp",
+        "description": "A free eye examination and cataract surgery camp for senior citizens was organized at the Primary Health Centre."
+      },
+      "womenGathering": {
+        "day": "08",
+        "month": "March",
+        "category": "Women Empowerment",
+        "title": "International Women's Day and Haldi Kumkum Celebration",
+        "description": "A women's gathering was organized in the village on the occasion of Women's Day. Guidance was provided to self-help groups, along with a Haldi Kumkum programme."
+      },
+      "gramSabha": {
+        "day": "15",
+        "month": "August",
+        "category": "Administration",
+        "title": "Special Gram Sabha on Independence Day",
+        "description": "A special Gram Sabha was organized to discuss issues related to the village water supply and road development."
+      },
+      "shramdaan": {
+        "day": "01",
+        "month": "May",
+        "category": "Water Conservation",
+        "title": "Save Water, Recharge Water – Community Voluntary Work",
+        "description": "Villagers contributed one day of voluntary labour to deepen the village stream and construct bunds, highlighting the importance of water conservation."
+      }
+    },
+    "closing": {
+      "eyebrow": "COMMUNITY PARTICIPATION",
+      "title": "Together, We Can Build a Better Village",
+      "description": "The active participation of every villager makes our development initiatives meaningful. Let us continue working together for the progress and well-being of our village.",
+      "button": "Contact Gram Panchayat"
+    }
+  }
+}

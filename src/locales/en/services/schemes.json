@@ -1,0 +1,79 @@
+
+{
+  "services": {
+    "schemes": {
+      "hero": {
+        "title": "Government Schemes",
+        "description": "Explore government welfare schemes that support the development and well-being of our village community.",
+        "breadcrumb": "Government Schemes"
+      },
+      "intro": {
+        "eyebrow": "PUBLIC WELFARE",
+        "title": "Government Schemes for Villagers",
+        "description": "Learn about housing, agriculture, employment, healthcare, drinking water and women and child welfare schemes."
+      },
+      "labels": {
+        "objective": "Objective",
+        "benefit": "Benefits",
+        "eligibility": "Eligibility"
+      },
+      "items": {
+        "housing": {
+          "category": "Housing",
+          "title": "Pradhan Mantri Awas Yojana (Gramin)",
+          "objective": "To provide safe and permanent houses to eligible rural homeless families and households living in inadequate houses.",
+          "benefit": "Financial assistance for house construction is provided to eligible beneficiaries in instalments, according to applicable government rules.",
+          "eligibility": "Eligible rural households identified under the applicable housing scheme criteria and approved beneficiary lists."
+        },
+        "agriculture": {
+          "category": "Agriculture",
+          "title": "PM-KISAN Samman Nidhi",
+          "objective": "To provide financial support to eligible farmer families.",
+          "benefit": "Eligible farmer families receive ₹6,000 per year in three instalments of ₹2,000 each, subject to scheme rules.",
+          "eligibility": "Landholding farmer families meeting the scheme conditions, including applicable land-record and exclusion criteria."
+        },
+        "employment": {
+          "category": "Employment",
+          "title": "Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGA)",
+          "objective": "To provide wage employment opportunities to rural households and support village development works.",
+          "benefit": "Provides a guarantee of up to 100 days of wage employment per rural household in a financial year, subject to the scheme rules and demand for work.",
+          "eligibility": "Adult members of rural households willing to undertake unskilled manual work. A valid job card is required."
+        },
+        "health": {
+          "category": "Healthcare",
+          "title": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana",
+          "objective": "To help eligible families access hospital treatment without facing major financial hardship.",
+          "benefit": "Eligible families can receive health cover of up to ₹5 lakh per family per year for covered hospital treatment, subject to scheme conditions.",
+          "eligibility": "Beneficiaries identified under the applicable government eligibility database and scheme rules. Check eligibility before applying."
+        },
+        "water": {
+          "category": "Drinking Water",
+          "title": "Jal Jeevan Mission - Har Ghar Jal",
+          "objective": "To improve access to safe drinking water through household tap connections in rural areas.",
+          "benefit": "Supports the provision of functional household tap connections and village drinking-water infrastructure under the mission.",
+          "eligibility": "Rural households covered by the village water-supply plan and implementation guidelines."
+        },
+        "womenChild": {
+          "category": "Women & Child Welfare",
+          "title": "Mazi Kanya Bhagyashree / Applicable Girl Child Welfare Scheme",
+          "objective": "To encourage the birth, education and well-being of girl children.",
+          "benefit": "Financial assistance may be available under the applicable state scheme, subject to current government conditions.",
+          "eligibility": "Eligibility depends on the currently active Maharashtra government scheme, family conditions and required documentation. Confirm the applicable scheme with the concerned department."
+        }
+      },
+      "process": {
+        "eyebrow": "HOW TO APPLY",
+        "title": "How to Access Government Schemes",
+        "description": "Follow these general steps to check eligibility and apply for a government welfare scheme.",
+        "stepOne": "Identify the scheme that matches your needs and circumstances.",
+        "stepTwo": "Check the latest eligibility conditions and required documents with the concerned department or Gram Panchayat office.",
+        "stepThree": "Submit the application and supporting documents through the official portal or authorised office.",
+        "stepFour": "Keep the application acknowledgement and follow up with the concerned department to check its status."
+      },
+      "note": {
+        "title": "Important Information",
+        "description": "Scheme benefits, financial assistance, eligibility conditions and application procedures may change from time to time. The information on this page is for general guidance only. Confirm the latest rules and beneficiary status through the official government portal or concerned department before applying."
+      }
+    }
+  }
+}

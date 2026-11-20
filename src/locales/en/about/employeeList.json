@@ -1,0 +1,101 @@
+
+{
+  "employeeList": {
+    "hero": {
+      "eyebrow": "OUR TEAM",
+      "title": "Village Government Employees",
+      "description": "Information and contact numbers of government employees working for our village.",
+      "location": "Pimpalkhuta Budruk, Warud, Amravati"
+    },
+    "section": {
+      "eyebrow": "EMPLOYEE INFORMATION",
+      "title": "Village Government Employees and Their Contact Numbers",
+      "description": "Below is the information about government employees serving our village, their designations, and their contact numbers."
+    },
+    "card": {
+  "designationPending": "Designation not available",
+  "namePending": "Name not available",
+  "phonePending": "Contact number not available"
+},
+    "employees": [
+      {
+        "id": 1,
+        "icon": "👨‍💼",
+        "role": "Gram Panchayat Peon",
+        "name": "Mr. Raju Shinde",
+        "phone": "98000 00010"
+      },
+      {
+        "id": 2,
+        "icon": "💧",
+        "role": "Water Supply Employee",
+        "name": "Mr. Vilas More",
+        "phone": "98000 00011"
+      },
+      {
+        "id": 3,
+        "icon": "👷",
+        "role": "Gram Rojgar Sevak (GRS)",
+        "name": "Mr. Amit Jadhav",
+        "phone": "98000 00012"
+      },
+      {
+        "id": 4,
+        "icon": "🏫",
+        "role": "Headmaster (Zilla Parishad School)",
+        "name": "Mr. Prakash Patil",
+        "phone": "98000 00013"
+      },
+      {
+        "id": 5,
+        "icon": "📚",
+        "role": "Assistant Teacher",
+        "name": "Mrs. Anjali Deshmukh",
+        "phone": "98000 00014"
+      },
+      {
+        "id": 6,
+        "icon": "👶",
+        "role": "Anganwadi Worker",
+        "name": "Mrs. Suman Gaikwad",
+        "phone": "98000 00015"
+      },
+      {
+        "id": 7,
+        "icon": "💊",
+        "role": "ASHA Volunteer",
+        "name": "Mrs. Lata Pawar",
+        "phone": "98000 00016"
+      },
+      {
+        "id": 8,
+        "icon": "👮",
+        "role": "Police Patil",
+        "name": "Mr. Vikram Rane",
+        "phone": "98000 00017"
+      },
+      {
+        "id": 9,
+        "icon": "🌾",
+        "role": "Agriculture Assistant",
+        "name": "Mr. Suresh Mane",
+        "phone": "98000 00018"
+      },
+      {
+        "id": 10,
+        "icon": "💻",
+        "role": "Computer Operator",
+        "name": "Mr. Amol Kale",
+        "phone": "98000 00019"
+      }
+    ],
+    "empty": {
+      "title": "Employee Information Coming Soon",
+      "description": "Employee details will be published after verification."
+    },
+    "footer": {
+      "message": "Our employees are always committed to serving our village."
+    },
+    "contactButton": "Contact"
+  }
+}

@@ -9,8 +9,6 @@ import {
   CardContent,
   Stack,
   Chip,
-  Button,
-  Divider,
 } from "@mui/material";
 
 import {
@@ -18,22 +16,11 @@ import {
   MapPin,
   Clock,
   Phone,
-  Mail,
   CalendarDays,
   Building2,
-  Users,
-  FileText,
-  ShieldCheck,
-  ArrowRight,
-  Navigation,
-  BriefcaseBusiness,
-  Info,
-  CheckCircle2,
-  Globe,
 } from "lucide-react";
 
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 const COLORS = {
   green: "#173B2A",
@@ -47,14 +34,80 @@ const COLORS = {
   border: "#E6EDE7",
 };
 
-const officeFacilities = [
-  { key: "certificates", icon: FileText },
-  { key: "publicServices", icon: Users },
-  { key: "administration", icon: BriefcaseBusiness },
-  { key: "schemes", icon: ShieldCheck },
-];
+function DetailCard({ icon: Icon, title, description, value }) {
+  return (
+    <Card
+      elevation={0}
+      sx={{
+        height: "100%",
+        borderRadius: 3,
+        border: `1px solid ${COLORS.border}`,
+        bgcolor: COLORS.white,
+        transition: "all 0.25s ease",
+        "&:hover": {
+          transform: "translateY(-4px)",
+          borderColor: COLORS.orange,
+          boxShadow: "0 14px 30px rgba(23,59,42,0.08)",
+        },
+      }}
+    >
+      <CardContent
+        sx={{
+          p: { xs: 2.5, md: 3 },
+          "&:last-child": { pb: 3 },
+        }}
+      >
+        <Box
+          sx={{
+            width: 54,
+            height: 54,
+            borderRadius: 2.5,
+            bgcolor: COLORS.lightGreen,
+            color: COLORS.green,
+            display: "grid",
+            placeItems: "center",
+            mb: 2.2,
+          }}
+        >
+          <Icon size={26} />
+        </Box>
 
-const visitSteps = [1, 2, 3, 4];
+        <Typography
+          variant="h6"
+          fontWeight={800}
+          color={COLORS.green}
+          mb={1}
+        >
+          {title}
+        </Typography>
+
+        <Typography
+          variant="body2"
+          color={COLORS.muted}
+          lineHeight={1.8}
+          sx={{ whiteSpace: "pre-line" }}
+        >
+          {description}
+        </Typography>
+
+        {value && (
+          <Typography
+            mt={2}
+            color={COLORS.green}
+            fontWeight={800}
+            variant="body1"
+            sx={{
+              whiteSpace: "pre-line",
+              overflowWrap: "anywhere",
+            }}
+          >
+            {value}
+          </Typography>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
 
 function SectionHeading({ eyebrow, title, description }) {
   return (
@@ -97,70 +150,39 @@ function SectionHeading({ eyebrow, title, description }) {
   );
 }
 
-function DetailCard({ icon: Icon, title, description, children }) {
-  return (
-    <Card
-      elevation={0}
-      sx={{
-        height: "100%",
-        borderRadius: 3,
-        border: `1px solid ${COLORS.border}`,
-        bgcolor: COLORS.white,
-        transition: "all 0.25s ease",
-        "&:hover": {
-          transform: "translateY(-4px)",
-          borderColor: COLORS.orange,
-          boxShadow: "0 14px 30px rgba(23,59,42,0.08)",
-        },
-      }}
-    >
-      <CardContent sx={{ p: 3, "&:last-child": { pb: 3 } }}>
-        <Box
-          sx={{
-            width: 52,
-            height: 52,
-            borderRadius: 2.5,
-            bgcolor: COLORS.lightGreen,
-            color: COLORS.green,
-            display: "grid",
-            placeItems: "center",
-            mb: 2.2,
-          }}
-        >
-          <Icon size={25} />
-        </Box>
-
-        <Typography
-          variant="h6"
-          fontWeight={800}
-          color={COLORS.green}
-          mb={1}
-        >
-          {title}
-        </Typography>
-
-        <Typography
-          variant="body2"
-          color={COLORS.muted}
-          lineHeight={1.8}
-        >
-          {description}
-        </Typography>
-
-        {children}
-      </CardContent>
-    </Card>
-  );
-}
-
 export default function OfficeDetailsPage() {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+  // Namespace must match the registration in src/locales/index.js.
+  const { t, ready } = useTranslation("about/officeDetails");
 
+  // Your JSON contains the outer "officeDetails" object.
   const od = (key) => t(`officeDetails.${key}`);
 
+  if (!ready) {
+    return (
+      <Box
+        sx={{
+          minHeight: "60vh",
+          display: "grid",
+          placeItems: "center",
+          bgcolor: COLORS.cream,
+        }}
+      >
+        <Typography color={COLORS.green} fontWeight={700}>
+          Loading office details...
+        </Typography>
+      </Box>
+    );
+  }
+
   return (
-    <Box sx={{ bgcolor: COLORS.cream, minHeight: "100vh", pb: 8 }}>
+    <Box
+      sx={{
+        bgcolor: COLORS.cream,
+        minHeight: "100vh",
+        pb: { xs: 6, md: 9 },
+        overflowX: "hidden",
+      }}
+    >
       {/* HERO SECTION */}
       <Box
         sx={{
@@ -205,7 +227,9 @@ export default function OfficeDetailsPage() {
               color: COLORS.white,
               border: "1px solid rgba(255,255,255,0.2)",
               fontWeight: 700,
-              "& .MuiChip-icon": { color: "#F5B36F" },
+              "& .MuiChip-icon": {
+                color: "#F5B36F",
+              },
             }}
           />
 
@@ -213,9 +237,13 @@ export default function OfficeDetailsPage() {
             variant="h2"
             sx={{
               fontWeight: 900,
-              fontSize: { xs: "2.1rem", sm: "2.8rem", md: "3.6rem" },
-              lineHeight: 1.15,
-              maxWidth: 800,
+              fontSize: {
+                xs: "2rem",
+                sm: "2.8rem",
+                md: "3.6rem",
+              },
+              lineHeight: 1.2,
+              maxWidth: 850,
               mb: 2,
             }}
           >
@@ -225,7 +253,7 @@ export default function OfficeDetailsPage() {
           <Typography
             sx={{
               maxWidth: 720,
-              color: "rgba(255,255,255,0.82)",
+              color: "rgba(255,255,255,0.85)",
               fontSize: { xs: "0.98rem", md: "1.1rem" },
               lineHeight: 1.9,
             }}
@@ -243,7 +271,7 @@ export default function OfficeDetailsPage() {
 
             <Typography
               variant="body2"
-              color="rgba(255,255,255,0.85)"
+              color="rgba(255,255,255,0.9)"
               fontWeight={600}
             >
               {od("locationShort")}
@@ -281,19 +309,15 @@ export default function OfficeDetailsPage() {
               {od("introTitle")}
             </Typography>
 
-            <Typography color={COLORS.muted} lineHeight={1.9} mb={2}>
-              {od("introDescription")}
-            </Typography>
-
             <Typography color={COLORS.muted} lineHeight={1.9}>
-              {od("introDescription2")}
+              {od("introDescription")}
             </Typography>
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
-                minHeight: { xs: 240, md: 310 },
+                minHeight: { xs: 220, md: 280 },
                 borderRadius: 4,
                 p: { xs: 3, md: 4 },
                 bgcolor: COLORS.green,
@@ -343,7 +367,7 @@ export default function OfficeDetailsPage() {
 
               <Typography
                 lineHeight={1.9}
-                color="rgba(255,255,255,0.82)"
+                color="rgba(255,255,255,0.85)"
                 position="relative"
               >
                 {od("highlightDescription")}
@@ -362,264 +386,45 @@ export default function OfficeDetailsPage() {
         />
 
         <Grid container spacing={2.5}>
-          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <DetailCard
               icon={MapPin}
               title={od("locationTitle")}
               description={od("locationDescription")}
-            >
-              <Typography
-                mt={2}
-                color={COLORS.green}
-                fontWeight={700}
-                variant="body2"
-              >
-                {od("address")}
-              </Typography>
-            </DetailCard>
+              value={od("address")}
+            />
           </Grid>
 
-          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <DetailCard
-              icon={Clock}
-              title={od("timingTitle")}
-              description={od("timingDescription")}
-            >
-              <Typography
-                mt={2}
-                color={COLORS.green}
-                fontWeight={700}
-                variant="body2"
-              >
-                {od("timingValue")}
-              </Typography>
-            </DetailCard>
-          </Grid>
-
-          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-            <DetailCard
-              icon={CalendarDays}
-              title={od("workingDaysTitle")}
-              description={od("workingDaysDescription")}
-            >
-              <Typography
-                mt={2}
-                color={COLORS.green}
-                fontWeight={700}
-                variant="body2"
-              >
-                {od("workingDaysValue")}
-              </Typography>
-            </DetailCard>
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/* CONTACT INFORMATION */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
-        <SectionHeading
-          eyebrow={od("contactEyebrow")}
-          title={od("contactTitle")}
-          description={od("contactDescription")}
-        />
-
-        <Grid container spacing={2.5}>
           <Grid size={{ xs: 12, md: 6 }}>
             <DetailCard
               icon={Phone}
               title={od("phoneTitle")}
               description={od("phoneDescription")}
-            >
-              <Button
-                component="a"
-                href="tel:9920942994"
-                startIcon={<Phone size={17} />}
-                sx={{
-                  mt: 2,
-                  color: COLORS.green,
-                  fontWeight: 800,
-                  textTransform: "none",
-                  px: 0,
-                  "&:hover": { bgcolor: "transparent", color: COLORS.orange },
-                }}
-              >
-                9920942994
-              </Button>
-            </DetailCard>
+              value={od("phoneUnavailable")}
+            />
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>
             <DetailCard
-              icon={Mail}
-              title={od("emailTitle")}
-              description={od("emailDescription")}
-            >
-              <Button
-                component="a"
-                href="mailto:gppimpalkhuta30@gmail.com"
-                startIcon={<Mail size={17} />}
-                sx={{
-                  mt: 2,
-                  color: COLORS.green,
-                  fontWeight: 800,
-                  textTransform: "none",
-                  px: 0,
-                  "&:hover": { bgcolor: "transparent", color: COLORS.orange },
-                }}
-              >
-                gppimpalkhuta30@gmail.com
-              </Button>
-            </DetailCard>
+              icon={CalendarDays}
+              title={od("workingDaysTitle")}
+              description={od("workingDaysDescription")}
+              value={od("workingDaysValue")}
+            />
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 6 }}>
+            <DetailCard
+              icon={Clock}
+              title={od("timingTitle")}
+              description={od("timingDescription")}
+              value={od("timingValue")}
+            />
           </Grid>
         </Grid>
       </Container>
 
-      {/* FACILITIES */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
-        <SectionHeading
-          eyebrow={od("facilitiesEyebrow")}
-          title={od("facilitiesTitle")}
-          description={od("facilitiesDescription")}
-        />
-
-        <Grid container spacing={2.5}>
-          {officeFacilities.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <Grid key={item.key} size={{ xs: 12, sm: 6, md: 3 }}>
-                <Card
-                  elevation={0}
-                  sx={{
-                    height: "100%",
-                    borderRadius: 3,
-                    border: `1px solid ${COLORS.border}`,
-                    bgcolor: COLORS.white,
-                    transition: "all 0.25s ease",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                      borderColor: COLORS.orange,
-                    },
-                  }}
-                >
-                  <CardContent sx={{ p: 2.7 }}>
-                    <Box
-                      sx={{
-                        width: 50,
-                        height: 50,
-                        borderRadius: 2.5,
-                        bgcolor: COLORS.lightGreen,
-                        color: COLORS.green,
-                        display: "grid",
-                        placeItems: "center",
-                        mb: 2,
-                      }}
-                    >
-                      <Icon size={24} />
-                    </Box>
-
-                    <Typography
-                      fontWeight={800}
-                      color={COLORS.green}
-                      mb={1}
-                    >
-                      {od(`facilities.${item.key}.title`)}
-                    </Typography>
-
-                    <Typography
-                      variant="body2"
-                      color={COLORS.muted}
-                      lineHeight={1.8}
-                    >
-                      {od(`facilities.${item.key}.description`)}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-
-      {/* VISITING GUIDELINES */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
-        <Box
-          sx={{
-            bgcolor: COLORS.white,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: 4,
-            p: { xs: 2.5, sm: 4, md: 5 },
-          }}
-        >
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={2}
-            alignItems={{ xs: "flex-start", sm: "center" }}
-            mb={3}
-          >
-            <Box
-              sx={{
-                width: 54,
-                height: 54,
-                borderRadius: 2.5,
-                bgcolor: COLORS.lightGreen,
-                color: COLORS.green,
-                display: "grid",
-                placeItems: "center",
-                flexShrink: 0,
-              }}
-            >
-              <Info size={27} />
-            </Box>
-
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight={900}
-                color={COLORS.green}
-              >
-                {od("guidelinesTitle")}
-              </Typography>
-
-              <Typography color={COLORS.muted} variant="body2">
-                {od("guidelinesDescription")}
-              </Typography>
-            </Box>
-          </Stack>
-
-          <Divider sx={{ borderColor: COLORS.border, mb: 3 }} />
-
-          <Grid container spacing={2.5}>
-            {visitSteps.map((number) => (
-              <Grid key={number} size={{ xs: 12, sm: 6 }}>
-                <Stack direction="row" spacing={1.5} alignItems="flex-start">
-                  <Box
-                    sx={{
-                      width: 32,
-                      height: 32,
-                      borderRadius: "50%",
-                      bgcolor: COLORS.lightGreen,
-                      color: COLORS.green,
-                      display: "grid",
-                      placeItems: "center",
-                      fontWeight: 900,
-                      flexShrink: 0,
-                    }}
-                  >
-                    {number}
-                  </Box>
-
-                  <Typography color={COLORS.text} lineHeight={1.8}>
-                    {od(`guidelines.${number}`)}
-                  </Typography>
-                </Stack>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Container>
-
-      {/* LOCATION CTA */}
+      {/* OFFICE LOCATION CTA */}
       <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
         <Box
           sx={{
@@ -628,90 +433,73 @@ export default function OfficeDetailsPage() {
             color: COLORS.white,
             p: { xs: 3, sm: 4, md: 5 },
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: { xs: "flex-start", md: "center" },
+            flexDirection: {
+              xs: "column",
+              md: "row",
+            },
+            alignItems: {
+              xs: "flex-start",
+              md: "center",
+            },
             justifyContent: "space-between",
             gap: 3,
           }}
         >
           <Box sx={{ maxWidth: 650 }}>
-            <Stack direction="row" spacing={1} alignItems="center" mb={1.5}>
-              <Globe size={19} color="#F5B36F" />
-
-              <Typography
-                color="#F5B36F"
-                fontWeight={800}
-                letterSpacing={1}
-                fontSize="0.78rem"
-              >
-                {od("closingEyebrow")}
-              </Typography>
-            </Stack>
+            <Typography
+              color="#F5B36F"
+              fontWeight={800}
+              letterSpacing={1}
+              fontSize="0.78rem"
+              mb={1.5}
+            >
+              {od("closingEyebrow")}
+            </Typography>
 
             <Typography
               variant="h4"
               fontWeight={900}
-              fontSize={{ xs: "1.6rem", md: "2.1rem" }}
+              fontSize={{ xs: "1.5rem", md: "2.1rem" }}
               mb={1.2}
             >
               {od("closingTitle")}
             </Typography>
 
             <Typography
-              color="rgba(255,255,255,0.8)"
+              color="rgba(255,255,255,0.85)"
               lineHeight={1.8}
             >
               {od("closingDescription")}
             </Typography>
           </Box>
 
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={1.5}
-            width={{ xs: "100%", md: "auto" }}
+          <Box
+            component="a"
+            href="https://www.google.com/maps/search/?api=1&query=Sategaon+Anjangaon+Surji+Amravati+Maharashtra"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 1,
+              px: 3,
+              py: 1.5,
+              borderRadius: 2,
+              bgcolor: COLORS.orange,
+              color: COLORS.white,
+              fontWeight: 800,
+              textDecoration: "none",
+              transition: "0.2s ease",
+              width: { xs: "100%", sm: "auto" },
+              "&:hover": {
+                bgcolor: "#D96512",
+              },
+            }}
           >
-            <Button
-              component="a"
-              href="https://www.google.com/maps/search/?api=1&query=Gram+Panchayat+Pimpalkhuta+Budruk+Warud+Amravati+Maharashtra"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="contained"
-              startIcon={<Navigation size={18} />}
-              sx={{
-                bgcolor: COLORS.orange,
-                color: COLORS.white,
-                px: 3,
-                py: 1.4,
-                borderRadius: 2,
-                fontWeight: 800,
-                textTransform: "none",
-                "&:hover": { bgcolor: "#D96512" },
-              }}
-            >
-              {od("directionsButton")}
-            </Button>
-
-            <Button
-              variant="outlined"
-              onClick={() => navigate("/contact")}
-              endIcon={<ArrowRight size={18} />}
-              sx={{
-                color: COLORS.white,
-                borderColor: "rgba(255,255,255,0.5)",
-                px: 3,
-                py: 1.4,
-                borderRadius: 2,
-                fontWeight: 800,
-                textTransform: "none",
-                "&:hover": {
-                  borderColor: COLORS.white,
-                  bgcolor: "rgba(255,255,255,0.08)",
-                },
-              }}
-            >
-              {od("contactButton")}
-            </Button>
-          </Stack>
+            <MapPin size={19} />
+            {od("directionsButton")}
+          </Box>
         </Box>
       </Container>
     </Box>

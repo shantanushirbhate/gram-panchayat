@@ -11,20 +11,26 @@ import {
   Stack,
   Chip,
 } from "@mui/material";
+
 import {
   PhoneCall,
   ShieldAlert,
   Ambulance,
-  Flame,
   HeartPulse,
   Baby,
   Users,
-  Monitor,
   AlertTriangle,
   Clock,
   ArrowUpRight,
   Phone,
+  Landmark,
+  Droplets,
+  Siren,
+  School,
+  UserRound,
+  HandHeart,
 } from "lucide-react";
+
 import { useTranslation } from "react-i18next";
 
 const COLORS = {
@@ -39,47 +45,73 @@ const COLORS = {
   border: "#E6EDE7",
 };
 
-const emergencyItems = [
+const officialItems = [
   {
-    key: "national",
-    number: "112",
-    icon: PhoneCall,
+    key: "sarpanch",
+    icon: Landmark,
+    phoneKey: "9800000000",
     featured: true,
   },
   {
-    key: "ambulance",
-    number: "108",
-    icon: Ambulance,
-  },
-  {
-    key: "police",
-    number: "100",
-    icon: ShieldAlert,
-  },
-  {
-    key: "fire",
-    number: "101",
-    icon: Flame,
-  },
-  {
-    key: "women",
-    number: "181",
-    icon: Users,
-  },
-  {
-    key: "child",
-    number: "1098",
-    icon: Baby,
-  },
-  {
-    key: "cyber",
-    number: "1930",
-    icon: Monitor,
+    key: "gramsevak",
+    icon: UserRound,
+    phoneKey: "9900000000",
   },
 ];
 
-function EmergencyContactCard({ item, title, description, callLabel }) {
+const usefulItems = [
+  {
+    key: "police",
+    icon: ShieldAlert,
+    phoneKey: "100",
+  },
+  {
+    key: "ambulance",
+    icon: Ambulance,
+    phoneKey: "108",
+  },
+  {
+    key: "water",
+    icon: Droplets,
+  },
+  {
+    key: "helpline",
+    icon: PhoneCall,
+    phoneKey: "112",
+    featured: true,
+  },
+  {
+    key: "childline",
+    icon: Baby,
+    phoneKey: "1098",
+  },
+  {
+    key: "snakeRescuer",
+    icon: Siren,
+  },
+  {
+    key: "school",
+    icon: School,
+  },
+  {
+    key: "anganwadi",
+    icon: HandHeart,
+  },
+];
+
+function ContactCard({
+  item,
+  title,
+  name,
+  number,
+  callLabel,
+  isOfficial = false,
+}) {
   const Icon = item.icon;
+
+  const phoneHref = item.phoneKey
+    ? `tel:${item.phoneKey}`
+    : null;
 
   return (
     <Card
@@ -87,7 +119,9 @@ function EmergencyContactCard({ item, title, description, callLabel }) {
       sx={{
         height: "100%",
         borderRadius: 3,
-        border: `1px solid ${item.featured ? COLORS.green : COLORS.border}`,
+        border: `1px solid ${
+          item.featured ? COLORS.green : COLORS.border
+        }`,
         background: item.featured ? COLORS.green : COLORS.white,
         color: item.featured ? COLORS.white : COLORS.text,
         transition: "all 0.25s ease",
@@ -98,7 +132,12 @@ function EmergencyContactCard({ item, title, description, callLabel }) {
         },
       }}
     >
-      <CardContent sx={{ p: { xs: 2.5, sm: 3 }, "&:last-child": { pb: 3 } }}>
+      <CardContent
+        sx={{
+          p: { xs: 2.5, sm: 3 },
+          "&:last-child": { pb: 3 },
+        }}
+      >
         <Stack
           direction="row"
           alignItems="center"
@@ -116,6 +155,7 @@ function EmergencyContactCard({ item, title, description, callLabel }) {
                 ? "rgba(255,255,255,0.14)"
                 : COLORS.lightGreen,
               color: item.featured ? COLORS.white : COLORS.green,
+              flexShrink: 0,
             }}
           >
             <Icon size={25} />
@@ -123,12 +163,13 @@ function EmergencyContactCard({ item, title, description, callLabel }) {
 
           {item.featured && (
             <Chip
-              label="24 × 7"
+              label={isOfficial ? "OFFICIAL" : "24 × 7"}
               size="small"
               sx={{
                 bgcolor: COLORS.orange,
                 color: COLORS.white,
                 fontWeight: 700,
+                fontSize: "0.68rem",
               }}
             />
           )}
@@ -137,70 +178,193 @@ function EmergencyContactCard({ item, title, description, callLabel }) {
         <Typography
           variant="h6"
           fontWeight={800}
-          sx={{ mb: 0.7, color: "inherit" }}
+          sx={{
+            mb: name ? 0.6 : 1,
+            color: "inherit",
+            fontSize: { xs: "1.05rem", sm: "1.15rem" },
+          }}
         >
           {title}
         </Typography>
 
-        <Typography
-          variant="body2"
-          sx={{
-            color: item.featured ? "rgba(255,255,255,0.78)" : COLORS.muted,
-            minHeight: 42,
-            lineHeight: 1.65,
-          }}
-        >
-          {description}
-        </Typography>
+        {name && (
+          <Typography
+            variant="body2"
+            sx={{
+              color: item.featured
+                ? "rgba(255,255,255,0.78)"
+                : COLORS.muted,
+              mb: 1.5,
+              lineHeight: 1.7,
+            }}
+          >
+            {name}
+          </Typography>
+        )}
 
         <Typography
           sx={{
-            mt: 2.2,
+            mt: name ? 1 : 2,
             mb: 2,
-            fontSize: { xs: "2rem", sm: "2.25rem" },
-            lineHeight: 1,
+            fontSize: { xs: "1.45rem", sm: "1.7rem" },
+            lineHeight: 1.35,
             fontWeight: 900,
-            letterSpacing: 1,
+            letterSpacing: 0.3,
             color: item.featured ? COLORS.white : COLORS.green,
+            overflowWrap: "anywhere",
           }}
         >
-          {item.number}
+          {number}
         </Typography>
 
-        <Button
-          component="a"
-          href={`tel:${item.number}`}
-          fullWidth
-          variant="contained"
-          startIcon={<Phone size={17} />}
-          endIcon={<ArrowUpRight size={16} />}
-          sx={{
-            py: 1.15,
-            borderRadius: 2,
-            textTransform: "none",
-            fontWeight: 800,
-            bgcolor: item.featured ? COLORS.orange : COLORS.green,
-            color: COLORS.white,
-            boxShadow: "none",
-            "&:hover": {
-              bgcolor: item.featured ? "#D96512" : COLORS.darkGreen,
+        {phoneHref ? (
+          <Button
+            component="a"
+            href={phoneHref}
+            fullWidth
+            variant="contained"
+            startIcon={<Phone size={17} />}
+            endIcon={<ArrowUpRight size={16} />}
+            sx={{
+              py: 1.15,
+              borderRadius: 2,
+              textTransform: "none",
+              fontWeight: 800,
+              bgcolor: item.featured ? COLORS.orange : COLORS.green,
+              color: COLORS.white,
               boxShadow: "none",
-            },
-          }}
-        >
-          {callLabel}
-        </Button>
+              "&:hover": {
+                bgcolor: item.featured
+                  ? "#D96512"
+                  : COLORS.darkGreen,
+                boxShadow: "none",
+              },
+            }}
+          >
+            {callLabel}
+          </Button>
+        ) : (
+          <Button
+            fullWidth
+            disabled
+            variant="contained"
+            startIcon={<Phone size={17} />}
+            sx={{
+              py: 1.15,
+              borderRadius: 2,
+              textTransform: "none",
+              fontWeight: 800,
+              "&.Mui-disabled": {
+                bgcolor: "#E9EDE9",
+                color: "#829087",
+              },
+            }}
+          >
+            {callLabel}
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
 }
 
+function ContactSection({
+  eyebrow,
+  title,
+  description,
+  items,
+  translate,
+  isOfficial = false,
+}) {
+  return (
+    <Box sx={{ mt: { xs: 5, md: 7 } }}>
+      <Box sx={{ textAlign: "center", mb: 4 }}>
+        <Typography
+          sx={{
+            color: COLORS.orange,
+            fontWeight: 800,
+            letterSpacing: 1.5,
+            fontSize: "0.78rem",
+            mb: 1,
+          }}
+        >
+          {eyebrow}
+        </Typography>
+
+        <Typography
+          variant="h3"
+          sx={{
+            color: COLORS.green,
+            fontWeight: 900,
+            fontSize: { xs: "1.7rem", sm: "2rem", md: "2.5rem" },
+            mb: 1.3,
+          }}
+        >
+          {title}
+        </Typography>
+
+        <Typography
+          sx={{
+            color: COLORS.muted,
+            maxWidth: 680,
+            mx: "auto",
+            lineHeight: 1.8,
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
+        >
+          {description}
+        </Typography>
+      </Box>
+
+      <Grid container spacing={2.5}>
+        {items.map((item) => (
+          <Grid
+            key={item.key}
+            size={{
+              xs: 12,
+              sm: 6,
+              md: isOfficial ? 6 : 4,
+            }}
+          >
+            <ContactCard
+              item={item}
+              isOfficial={isOfficial}
+              title={translate(`${item.key}.title`)}
+              name={
+                isOfficial
+                  ? translate(`${item.key}.name`)
+                  : undefined
+              }
+              number={translate(`${item.key}.number`)}
+              callLabel={translate(`${item.key}.callLabel`)}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+}
+
 export default function EmergencyContactsPage() {
-  const { t } = useTranslation();
-  const ec = (key) => t(`emergencyContacts.${key}`);
+  const { t } = useTranslation("about/emergencyContacts");
+
+  const ec = (key) =>
+    t(`emergencyContacts.${key}`, { defaultValue: "" });
+
+  const officialTranslate = (key) =>
+    ec(`officialContacts.${key}`);
+
+  const usefulTranslate = (key) =>
+    ec(`usefulContacts.${key}`);
 
   return (
-    <Box sx={{ bgcolor: COLORS.cream, minHeight: "100vh", pb: 8 }}>
+    <Box
+      sx={{
+        bgcolor: COLORS.cream,
+        minHeight: "100vh",
+        pb: 8,
+      }}
+    >
       {/* Hero */}
       <Box
         sx={{
@@ -222,6 +386,7 @@ export default function EmergencyContactsPage() {
             top: -120,
           }}
         />
+
         <Box
           sx={{
             position: "absolute",
@@ -244,7 +409,9 @@ export default function EmergencyContactsPage() {
               color: COLORS.white,
               border: "1px solid rgba(255,255,255,0.2)",
               fontWeight: 700,
-              "& .MuiChip-icon": { color: COLORS.orange },
+              "& .MuiChip-icon": {
+                color: COLORS.orange,
+              },
             }}
           />
 
@@ -252,7 +419,11 @@ export default function EmergencyContactsPage() {
             variant="h2"
             sx={{
               fontWeight: 900,
-              fontSize: { xs: "2.1rem", sm: "2.8rem", md: "3.6rem" },
+              fontSize: {
+                xs: "2.1rem",
+                sm: "2.8rem",
+                md: "3.6rem",
+              },
               lineHeight: 1.15,
               maxWidth: 760,
               mb: 2,
@@ -265,7 +436,10 @@ export default function EmergencyContactsPage() {
             sx={{
               maxWidth: 720,
               color: "rgba(255,255,255,0.82)",
-              fontSize: { xs: "0.98rem", md: "1.1rem" },
+              fontSize: {
+                xs: "0.98rem",
+                md: "1.1rem",
+              },
               lineHeight: 1.9,
             }}
           >
@@ -291,15 +465,25 @@ export default function EmergencyContactsPage() {
                 borderRadius: 2,
                 fontWeight: 800,
                 textTransform: "none",
-                "&:hover": { bgcolor: "#D96512" },
+                "&:hover": {
+                  bgcolor: "#D96512",
+                },
               }}
             >
               {ec("call112")}
             </Button>
 
-            <Stack direction="row" alignItems="center" spacing={1}>
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={1}
+            >
               <Clock size={17} color="#F5B36F" />
-              <Typography color="rgba(255,255,255,0.82)" variant="body2">
+
+              <Typography
+                color="rgba(255,255,255,0.82)"
+                variant="body2"
+              >
                 {ec("available")}
               </Typography>
             </Stack>
@@ -308,7 +492,10 @@ export default function EmergencyContactsPage() {
       </Box>
 
       {/* Emergency notice */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 3, md: 4 } }}>
+      <Container
+        maxWidth="lg"
+        sx={{ mt: { xs: 3, md: 4 } }}
+      >
         <Box
           sx={{
             display: "flex",
@@ -323,10 +510,16 @@ export default function EmergencyContactsPage() {
           <Box sx={{ color: COLORS.orange, mt: 0.2 }}>
             <AlertTriangle size={25} />
           </Box>
+
           <Box>
-            <Typography fontWeight={800} color={COLORS.text} mb={0.5}>
+            <Typography
+              fontWeight={800}
+              color={COLORS.text}
+              mb={0.5}
+            >
               {ec("noticeTitle")}
             </Typography>
+
             <Typography
               variant="body2"
               color={COLORS.muted}
@@ -338,61 +531,32 @@ export default function EmergencyContactsPage() {
         </Box>
       </Container>
 
-      {/* Contacts */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 5, md: 7 } }}>
-        <Box sx={{ textAlign: "center", mb: 4 }}>
-          <Typography
-            sx={{
-              color: COLORS.orange,
-              fontWeight: 800,
-              letterSpacing: 1.5,
-              fontSize: "0.78rem",
-              mb: 1,
-            }}
-          >
-            {ec("sectionEyebrow")}
-          </Typography>
+      {/* Official contacts */}
+      <Container maxWidth="lg">
+        <ContactSection
+          eyebrow={ec("officialContacts.eyebrow")}
+          title={ec("officialContacts.title")}
+          description={ec("officialContacts.description")}
+          items={officialItems}
+          translate={officialTranslate}
+          isOfficial
+        />
 
-          <Typography
-            variant="h3"
-            sx={{
-              color: COLORS.green,
-              fontWeight: 900,
-              fontSize: { xs: "1.8rem", md: "2.5rem" },
-              mb: 1.3,
-            }}
-          >
-            {ec("sectionTitle")}
-          </Typography>
-
-          <Typography
-            sx={{
-              color: COLORS.muted,
-              maxWidth: 680,
-              mx: "auto",
-              lineHeight: 1.8,
-            }}
-          >
-            {ec("sectionDescription")}
-          </Typography>
-        </Box>
-
-        <Grid container spacing={2.5}>
-          {emergencyItems.map((item) => (
-            <Grid key={item.key} size={{ xs: 12, sm: 6, md: 4 }}>
-              <EmergencyContactCard
-                item={item}
-                title={ec(`services.${item.key}.title`)}
-                description={ec(`services.${item.key}.description`)}
-                callLabel={ec("callNow")}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        {/* Emergency and useful contacts */}
+        <ContactSection
+          eyebrow={ec("usefulContacts.eyebrow")}
+          title={ec("usefulContacts.title")}
+          description={ec("usefulContacts.description")}
+          items={usefulItems}
+          translate={usefulTranslate}
+        />
       </Container>
 
-      {/* What to do */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
+      {/* Emergency guidelines */}
+      <Container
+        maxWidth="lg"
+        sx={{ mt: { xs: 6, md: 8 } }}
+      >
         <Box
           sx={{
             bgcolor: COLORS.white,
@@ -430,7 +594,11 @@ export default function EmergencyContactsPage() {
               >
                 {ec("guidelinesTitle")}
               </Typography>
-              <Typography color={COLORS.muted} variant="body2">
+
+              <Typography
+                color={COLORS.muted}
+                variant="body2"
+              >
                 {ec("guidelinesDescription")}
               </Typography>
             </Box>
@@ -438,8 +606,15 @@ export default function EmergencyContactsPage() {
 
           <Grid container spacing={2}>
             {[1, 2, 3, 4].map((number) => (
-              <Grid key={number} size={{ xs: 12, sm: 6 }}>
-                <Stack direction="row" spacing={1.5} alignItems="flex-start">
+              <Grid
+                key={number}
+                size={{ xs: 12, sm: 6 }}
+              >
+                <Stack
+                  direction="row"
+                  spacing={1.5}
+                  alignItems="flex-start"
+                >
                   <Box
                     sx={{
                       width: 30,
@@ -455,6 +630,7 @@ export default function EmergencyContactsPage() {
                   >
                     {number}
                   </Box>
+
                   <Typography
                     color={COLORS.text}
                     lineHeight={1.75}
@@ -470,7 +646,10 @@ export default function EmergencyContactsPage() {
       </Container>
 
       {/* Panchayat information note */}
-      <Container maxWidth="lg" sx={{ mt: 3 }}>
+      <Container
+        maxWidth="lg"
+        sx={{ mt: 3 }}
+      >
         <Box
           sx={{
             p: { xs: 2.5, md: 3 },
@@ -481,11 +660,20 @@ export default function EmergencyContactsPage() {
             alignItems: "flex-start",
           }}
         >
-          <PhoneCall size={23} color={COLORS.green} />
+          <PhoneCall
+            size={23}
+            color={COLORS.green}
+          />
+
           <Box>
-            <Typography fontWeight={800} color={COLORS.green} mb={0.5}>
+            <Typography
+              fontWeight={800}
+              color={COLORS.green}
+              mb={0.5}
+            >
               {ec("panchayatNoteTitle")}
             </Typography>
+
             <Typography
               variant="body2"
               color={COLORS.text}

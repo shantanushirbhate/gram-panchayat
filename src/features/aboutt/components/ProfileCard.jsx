@@ -27,17 +27,25 @@ const COLORS = {
 };
 
 function ProfileCard({ employee }) {
-  const { t } = useTranslation();
+  const { t } = useTranslation("about/employeeList");
 
-  const name = employee.name || t("employeeList.card.namePending");
+  const name =
+    employee.name ||
+    t("employeeList.card.namePending", {
+      defaultValue: "Name not available",
+    });
 
-  const designation = employee.designation
-    ? t(employee.designation)
-    : t("employeeList.card.designationPending");
+  const designation =
+    employee.role ||
+    t("employeeList.card.designationPending", {
+      defaultValue: "Designation not available",
+    });
 
-  const department = employee.department
-    ? t(employee.department)
-    : t("employeeList.card.departmentPending");
+  const department =
+    employee.department ||
+    t("employeeList.card.departmentPending", {
+      defaultValue: "Department not available",
+    });
 
   return (
     <Paper
@@ -57,6 +65,7 @@ function ProfileCard({ employee }) {
         },
       }}
     >
+      {/* TOP ACCENT */}
       <Box
         sx={{
           height: 7,
@@ -66,6 +75,7 @@ function ProfileCard({ employee }) {
 
       <Box sx={{ p: { xs: 2.5, sm: 3 } }}>
         <Stack alignItems="center" textAlign="center">
+          {/* EMPLOYEE IMAGE */}
           <Avatar
             src={employee.image || undefined}
             alt={name}
@@ -81,6 +91,7 @@ function ProfileCard({ employee }) {
             {!employee.image && <UserRound size={48} />}
           </Avatar>
 
+          {/* EMPLOYEE NAME */}
           <Typography
             component="h3"
             sx={{
@@ -94,6 +105,7 @@ function ProfileCard({ employee }) {
             {name}
           </Typography>
 
+          {/* DESIGNATION */}
           <Chip
             label={designation}
             size="small"
@@ -113,6 +125,7 @@ function ProfileCard({ employee }) {
             }}
           />
 
+          {/* DEPARTMENT */}
           <Stack
             direction="row"
             alignItems="center"
@@ -120,13 +133,16 @@ function ProfileCard({ employee }) {
             sx={{
               mt: 2,
               color: COLORS.muted,
+              minWidth: 0,
+              maxWidth: "100%",
             }}
           >
             <Building2 size={16} />
+
             <Typography
               sx={{
                 fontSize: 13,
-                overflowWrap: "break-word",
+                overflowWrap: "anywhere",
               }}
             >
               {department}
@@ -134,6 +150,7 @@ function ProfileCard({ employee }) {
           </Stack>
         </Stack>
 
+        {/* CONTACT DETAILS */}
         {(employee.phone || employee.email) && (
           <Box
             sx={{
@@ -142,6 +159,7 @@ function ProfileCard({ employee }) {
               borderTop: `1px solid ${COLORS.border}`,
             }}
           >
+            {/* PHONE */}
             {employee.phone && (
               <Stack
                 direction="row"
@@ -150,15 +168,18 @@ function ProfileCard({ employee }) {
                 sx={{ mb: 1.2, minWidth: 0 }}
               >
                 <Phone size={16} color={COLORS.green} />
+
                 <Typography
                   component="a"
-                  href={`tel:${employee.phone}`}
+                  href={`tel:${employee.phone.replace(/\s/g, "")}`}
                   sx={{
                     color: COLORS.muted,
                     fontSize: 13,
                     textDecoration: "none",
                     overflowWrap: "anywhere",
-                    "&:hover": { color: COLORS.green },
+                    "&:hover": {
+                      color: COLORS.green,
+                    },
                   }}
                 >
                   {employee.phone}
@@ -166,6 +187,7 @@ function ProfileCard({ employee }) {
               </Stack>
             )}
 
+            {/* EMAIL */}
             {employee.email && (
               <Stack
                 direction="row"
@@ -174,6 +196,7 @@ function ProfileCard({ employee }) {
                 sx={{ minWidth: 0 }}
               >
                 <Mail size={16} color={COLORS.green} />
+
                 <Typography
                   component="a"
                   href={`mailto:${employee.email}`}
@@ -182,7 +205,9 @@ function ProfileCard({ employee }) {
                     fontSize: 13,
                     textDecoration: "none",
                     overflowWrap: "anywhere",
-                    "&:hover": { color: COLORS.green },
+                    "&:hover": {
+                      color: COLORS.green,
+                    },
                   }}
                 >
                   {employee.email}

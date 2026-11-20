@@ -1,5 +1,6 @@
 
 import React from "react";
+
 import {
   Box,
   Container,
@@ -28,6 +29,11 @@ import {
   Target,
   Clock,
   MapPin,
+  Trash2,
+  HeartPulse,
+  Venus,
+  Landmark,
+  HandHelping,
 } from "lucide-react";
 
 import { useTranslation } from "react-i18next";
@@ -45,19 +51,13 @@ const COLORS = {
   border: "#E6EDE7",
 };
 
-const initiatives = [
-  { key: "cleanliness", icon: Sparkles },
-  { key: "treePlantation", icon: TreePine },
-  { key: "waterConservation", icon: Droplets },
-  { key: "education", icon: GraduationCap },
-  { key: "villageDevelopment", icon: Building2 },
-  { key: "publicAwareness", icon: Megaphone },
-];
-
-const eventTypes = [
-  { key: "cultural", icon: Users },
-  { key: "environmental", icon: Leaf },
-  { key: "social", icon: HeartHandshake },
+const activities = [
+  { key: "treePlantation", icon: TreePine, color: "#287A55", background: "#EAF5EE" },
+  { key: "cleanliness", icon: Sparkles, color: "#28718A", background: "#EAF5F8" },
+  { key: "healthCamp", icon: HeartPulse, color: "#BE4566", background: "#FFF0F3" },
+  { key: "womenGathering", icon: Users, color: "#8B5AA5", background: "#F4EDFA" },
+  { key: "gramSabha", icon: Landmark, color: "#B7791F", background: "#FFF8E6" },
+  { key: "shramdaan", icon: Droplets, color: "#28718A", background: "#EAF5F8" },
 ];
 
 function SectionHeading({ eyebrow, title, description }) {
@@ -76,7 +76,7 @@ function SectionHeading({ eyebrow, title, description }) {
       </Typography>
 
       <Typography
-        variant="h3"
+        component="h2"
         sx={{
           color: COLORS.green,
           fontWeight: 900,
@@ -101,7 +101,7 @@ function SectionHeading({ eyebrow, title, description }) {
   );
 }
 
-function InitiativeCard({ item, title, description }) {
+function ActivityCard({ item, translate }) {
   const Icon = item.icon;
 
   return (
@@ -112,112 +112,124 @@ function InitiativeCard({ item, title, description }) {
         borderRadius: 3,
         border: `1px solid ${COLORS.border}`,
         bgcolor: COLORS.white,
+        overflow: "hidden",
         transition: "all 0.25s ease",
         "&:hover": {
-          transform: "translateY(-5px)",
+          transform: { xs: "none", md: "translateY(-5px)" },
           borderColor: COLORS.orange,
           boxShadow: "0 14px 30px rgba(23,59,42,0.09)",
         },
       }}
     >
-      <CardContent sx={{ p: 3, "&:last-child": { pb: 3 } }}>
-        <Box
-          sx={{
-            width: 54,
-            height: 54,
-            borderRadius: 2.5,
-            bgcolor: COLORS.lightGreen,
-            color: COLORS.green,
-            display: "grid",
-            placeItems: "center",
-            mb: 2.5,
-          }}
+      <Box
+        sx={{
+          height: 5,
+          background: `linear-gradient(90deg, ${COLORS.green}, ${COLORS.orange})`,
+        }}
+      />
+
+      <CardContent sx={{ p: { xs: 2.5, md: 3 }, "&:last-child": { pb: 3 } }}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          spacing={1}
+          sx={{ mb: 2.5 }}
         >
-          <Icon size={26} />
-        </Box>
+          <Box
+            sx={{
+              width: 54,
+              height: 54,
+              borderRadius: 2.5,
+              bgcolor: item.background,
+              color: item.color,
+              display: "grid",
+              placeItems: "center",
+              flexShrink: 0,
+            }}
+          >
+            <Icon size={27} />
+          </Box>
+
+          <Box
+            sx={{
+              minWidth: 66,
+              px: 1.5,
+              py: 1,
+              borderRadius: 2.5,
+              bgcolor: COLORS.lightGreen,
+              textAlign: "center",
+            }}
+          >
+            <Typography
+              sx={{
+                color: COLORS.green,
+                fontWeight: 900,
+                fontSize: "1.35rem",
+                lineHeight: 1.1,
+              }}
+            >
+              {translate(`activities.${item.key}.day`)}
+            </Typography>
+
+            <Typography
+              sx={{
+                color: COLORS.muted,
+                fontSize: "0.72rem",
+                fontWeight: 800,
+                mt: 0.4,
+              }}
+            >
+              {translate(`activities.${item.key}.month`)}
+            </Typography>
+          </Box>
+        </Stack>
+
+        <Chip
+          label={translate(`activities.${item.key}.category`)}
+          size="small"
+          sx={{
+            mb: 1.5,
+            bgcolor: item.background,
+            color: item.color,
+            fontWeight: 800,
+            borderRadius: 1.5,
+          }}
+        />
 
         <Typography
-          variant="h6"
-          fontWeight={800}
-          color={COLORS.green}
-          mb={1}
+          component="h3"
+          sx={{
+            color: COLORS.green,
+            fontWeight: 900,
+            fontSize: { xs: "1.05rem", md: "1.12rem" },
+            lineHeight: 1.5,
+            mb: 1.2,
+          }}
         >
-          {title}
+          {translate(`activities.${item.key}.title`)}
         </Typography>
 
         <Typography
-          variant="body2"
-          color={COLORS.muted}
-          lineHeight={1.8}
+          sx={{
+            color: COLORS.muted,
+            fontSize: "0.91rem",
+            lineHeight: 1.9,
+          }}
         >
-          {description}
+          {translate(`activities.${item.key}.description`)}
         </Typography>
       </CardContent>
     </Card>
   );
 }
 
-function EventTypeCard({ item, title, description }) {
-  const Icon = item.icon;
-
-  return (
-    <Box
-      sx={{
-        p: 3,
-        height: "100%",
-        borderRadius: 3,
-        bgcolor: COLORS.white,
-        border: `1px solid ${COLORS.border}`,
-        transition: "all 0.25s ease",
-        "&:hover": {
-          borderColor: COLORS.orange,
-          transform: "translateY(-4px)",
-        },
-      }}
-    >
-      <Stack direction="row" spacing={2} alignItems="flex-start">
-        <Box
-          sx={{
-            width: 48,
-            height: 48,
-            borderRadius: 2,
-            bgcolor: "#FFF1E5",
-            color: COLORS.orange,
-            display: "grid",
-            placeItems: "center",
-            flexShrink: 0,
-          }}
-        >
-          <Icon size={23} />
-        </Box>
-
-        <Box>
-          <Typography
-            fontWeight={800}
-            color={COLORS.green}
-            mb={0.7}
-          >
-            {title}
-          </Typography>
-
-          <Typography
-            variant="body2"
-            color={COLORS.muted}
-            lineHeight={1.8}
-          >
-            {description}
-          </Typography>
-        </Box>
-      </Stack>
-    </Box>
-  );
-}
-
 export default function InitiativesAndEventsPage() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("about/initiativesAndEvents");
   const navigate = useNavigate();
 
-  const ie = (key) => t(`initiativesAndEvents.${key}`);
+  const ie = (key) =>
+    t(`initiativesAndEvents.${key}`, { defaultValue: "" });
 
   return (
     <Box sx={{ bgcolor: COLORS.cream, minHeight: "100vh", pb: 8 }}>
@@ -234,12 +246,13 @@ export default function InitiativesAndEventsPage() {
         <Box
           sx={{
             position: "absolute",
-            width: 300,
-            height: 300,
+            width: { xs: 210, md: 300 },
+            height: { xs: 210, md: 300 },
             borderRadius: "50%",
             border: "1px solid rgba(255,255,255,0.12)",
             right: { xs: -130, md: 70 },
             top: -120,
+            pointerEvents: "none",
           }}
         />
 
@@ -252,13 +265,14 @@ export default function InitiativesAndEventsPage() {
             border: "1px solid rgba(255,255,255,0.10)",
             right: { xs: -90, md: 110 },
             bottom: -150,
+            pointerEvents: "none",
           }}
         />
 
-        <Container maxWidth="lg" sx={{ position: "relative" }}>
+        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
           <Chip
             icon={<CalendarDays size={16} />}
-            label={ie("heroBadge")}
+            label={ie("hero.badge")}
             sx={{
               mb: 2.5,
               bgcolor: "rgba(255,255,255,0.12)",
@@ -270,16 +284,16 @@ export default function InitiativesAndEventsPage() {
           />
 
           <Typography
-            variant="h2"
+            component="h1"
             sx={{
               fontWeight: 900,
               fontSize: { xs: "2.1rem", sm: "2.8rem", md: "3.6rem" },
-              lineHeight: 1.15,
+              lineHeight: 1.25,
               maxWidth: 800,
               mb: 2,
             }}
           >
-            {ie("heroTitle")}
+            {ie("hero.title")}
           </Typography>
 
           <Typography
@@ -290,23 +304,25 @@ export default function InitiativesAndEventsPage() {
               lineHeight: 1.9,
             }}
           >
-            {ie("heroDescription")}
+            {ie("hero.description")}
           </Typography>
 
           <Stack
             direction="row"
             alignItems="center"
             spacing={1}
-            mt={3.5}
+            sx={{ mt: 3.5 }}
           >
             <HandHeart size={21} color="#F5B36F" />
 
             <Typography
-              variant="body2"
-              color="rgba(255,255,255,0.85)"
-              fontWeight={600}
+              sx={{
+                color: "rgba(255,255,255,0.85)",
+                fontSize: "0.9rem",
+                fontWeight: 600,
+              }}
             >
-              {ie("heroCaption")}
+              {ie("hero.caption")}
             </Typography>
           </Stack>
         </Container>
@@ -325,11 +341,11 @@ export default function InitiativesAndEventsPage() {
                 mb: 1,
               }}
             >
-              {ie("introEyebrow")}
+              {ie("intro.eyebrow")}
             </Typography>
 
             <Typography
-              variant="h3"
+              component="h2"
               sx={{
                 color: COLORS.green,
                 fontWeight: 900,
@@ -338,15 +354,15 @@ export default function InitiativesAndEventsPage() {
                 mb: 2,
               }}
             >
-              {ie("introTitle")}
+              {ie("intro.title")}
             </Typography>
 
-            <Typography color={COLORS.muted} lineHeight={1.9} mb={2}>
-              {ie("introDescription")}
+            <Typography sx={{ color: COLORS.muted, lineHeight: 1.9, mb: 2 }}>
+              {ie("intro.description")}
             </Typography>
 
-            <Typography color={COLORS.muted} lineHeight={1.9}>
-              {ie("introDescription2")}
+            <Typography sx={{ color: COLORS.muted, lineHeight: 1.9 }}>
+              {ie("intro.descriptionTwo")}
             </Typography>
           </Grid>
 
@@ -374,6 +390,7 @@ export default function InitiativesAndEventsPage() {
                   borderRadius: "50%",
                   right: -60,
                   top: -60,
+                  pointerEvents: "none",
                 }}
               />
 
@@ -393,158 +410,41 @@ export default function InitiativesAndEventsPage() {
               </Box>
 
               <Typography
-                variant="h5"
-                fontWeight={900}
-                mb={1.5}
-                position="relative"
+                component="h3"
+                sx={{ fontSize: "1.35rem", fontWeight: 900, mb: 1.5, position: "relative" }}
               >
-                {ie("highlightTitle")}
+                {ie("intro.highlightTitle")}
               </Typography>
 
               <Typography
-                lineHeight={1.9}
-                color="rgba(255,255,255,0.82)"
-                position="relative"
+                sx={{
+                  lineHeight: 1.9,
+                  color: "rgba(255,255,255,0.82)",
+                  position: "relative",
+                }}
               >
-                {ie("highlightDescription")}
+                {ie("intro.highlightDescription")}
               </Typography>
             </Box>
           </Grid>
         </Grid>
       </Container>
 
-      {/* DEVELOPMENT INITIATIVES */}
+      {/* VILLAGE ACTIVITIES */}
       <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
         <SectionHeading
-          eyebrow={ie("initiativesEyebrow")}
-          title={ie("initiativesTitle")}
-          description={ie("initiativesDescription")}
+          eyebrow={ie("activities.eyebrow")}
+          title={ie("activities.title")}
+          description={ie("activities.description")}
         />
 
         <Grid container spacing={2.5}>
-          {initiatives.map((item) => (
+          {activities.map((item) => (
             <Grid key={item.key} size={{ xs: 12, sm: 6, md: 4 }}>
-              <InitiativeCard
-                item={item}
-                title={ie(`initiatives.${item.key}.title`)}
-                description={ie(`initiatives.${item.key}.description`)}
-              />
+              <ActivityCard item={item} translate={ie} />
             </Grid>
           ))}
         </Grid>
-      </Container>
-
-      {/* EVENTS */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
-        <SectionHeading
-          eyebrow={ie("eventsEyebrow")}
-          title={ie("eventsTitle")}
-          description={ie("eventsDescription")}
-        />
-
-        <Grid container spacing={2.5}>
-          {eventTypes.map((item) => (
-            <Grid key={item.key} size={{ xs: 12, md: 4 }}>
-              <EventTypeCard
-                item={item}
-                title={ie(`events.${item.key}.title`)}
-                description={ie(`events.${item.key}.description`)}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      {/* UPCOMING EVENTS / ANNOUNCEMENTS */}
-      <Container maxWidth="lg" sx={{ mt: { xs: 6, md: 8 } }}>
-        <Box
-          sx={{
-            bgcolor: COLORS.white,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: 4,
-            p: { xs: 2.5, sm: 4, md: 5 },
-          }}
-        >
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={2}
-            alignItems={{ xs: "flex-start", sm: "center" }}
-            mb={3}
-          >
-            <Box
-              sx={{
-                width: 54,
-                height: 54,
-                borderRadius: 2.5,
-                bgcolor: COLORS.lightGreen,
-                color: COLORS.green,
-                display: "grid",
-                placeItems: "center",
-                flexShrink: 0,
-              }}
-            >
-              <CalendarDays size={27} />
-            </Box>
-
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight={900}
-                color={COLORS.green}
-              >
-                {ie("upcomingTitle")}
-              </Typography>
-
-              <Typography color={COLORS.muted} variant="body2">
-                {ie("upcomingDescription")}
-              </Typography>
-            </Box>
-          </Stack>
-
-          <Box
-            sx={{
-              p: { xs: 2.5, md: 3 },
-              borderRadius: 3,
-              bgcolor: COLORS.lightGreen,
-              border: "1px dashed #B9D0BE",
-              textAlign: "center",
-            }}
-          >
-            <Box
-              sx={{
-                width: 52,
-                height: 52,
-                mx: "auto",
-                mb: 1.5,
-                borderRadius: "50%",
-                bgcolor: COLORS.white,
-                color: COLORS.green,
-                display: "grid",
-                placeItems: "center",
-              }}
-            >
-              <Clock size={25} />
-            </Box>
-
-            <Typography
-              fontWeight={800}
-              color={COLORS.green}
-              mb={0.8}
-            >
-              {ie("noEventsTitle")}
-            </Typography>
-
-            <Typography
-              variant="body2"
-              color={COLORS.muted}
-              lineHeight={1.8}
-              maxWidth={550}
-              mx="auto"
-            >
-              {ie("noEventsDescription")}
-            </Typography>
-          </Box>
-        </Box>
       </Container>
 
       {/* COMMUNITY PARTICIPATION */}
@@ -563,33 +463,34 @@ export default function InitiativesAndEventsPage() {
           }}
         >
           <Box sx={{ maxWidth: 650 }}>
-            <Stack direction="row" spacing={1} alignItems="center" mb={1.5}>
+            <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }}>
               <MapPin size={19} color="#F5B36F" />
 
               <Typography
-                color="#F5B36F"
-                fontWeight={800}
-                letterSpacing={1}
-                fontSize="0.78rem"
+                sx={{
+                  color: "#F5B36F",
+                  fontWeight: 800,
+                  letterSpacing: 1,
+                  fontSize: "0.78rem",
+                }}
               >
-                {ie("closingEyebrow")}
+                {ie("closing.eyebrow")}
               </Typography>
             </Stack>
 
             <Typography
-              variant="h4"
-              fontWeight={900}
-              fontSize={{ xs: "1.6rem", md: "2.1rem" }}
-              mb={1.2}
+              component="h2"
+              sx={{
+                fontWeight: 900,
+                fontSize: { xs: "1.6rem", md: "2.1rem" },
+                mb: 1.2,
+              }}
             >
-              {ie("closingTitle")}
+              {ie("closing.title")}
             </Typography>
 
-            <Typography
-              color="rgba(255,255,255,0.8)"
-              lineHeight={1.8}
-            >
-              {ie("closingDescription")}
+            <Typography sx={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.8 }}>
+              {ie("closing.description")}
             </Typography>
           </Box>
 
@@ -609,7 +510,7 @@ export default function InitiativesAndEventsPage() {
               "&:hover": { bgcolor: "#D96512" },
             }}
           >
-            {ie("contactButton")}
+            {ie("closing.button")}
           </Button>
         </Box>
       </Container>

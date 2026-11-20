@@ -41,49 +41,41 @@ const COLORS = {
   background: "#F7F9F7",
 };
 
-// Common responsive spacing for every section
-const pageContainerSx = {
-  width: "100%",
-  maxWidth: "none",
-  px: {
-    xs: 2,
-    sm: 3,
-    md: "48px",
-    lg: "96px",
-  },
-  mx: "auto",
-  boxSizing: "border-box",
-};
-
 const responsibilities = [
   {
-    title: "about.water",
-    description: "about.waterDesc",
+    title: "water",
+    description: "waterDesc",
     icon: Droplets,
     color: "#0284C7",
     bg: "#E0F2FE",
   },
   {
-    title: "about.cleanliness",
-    description: "about.cleanlinessDesc",
+    title: "cleanliness",
+    description: "cleanlinessDesc",
     icon: Leaf,
     color: "#15803D",
     bg: "#DCFCE7",
   },
   {
-    title: "about.education",
-    description: "about.educationDesc",
+    title: "education",
+    description: "educationDesc",
     icon: GraduationCap,
     color: "#7C3AED",
     bg: "#EDE9FE",
   },
   {
-    title: "about.welfare",
-    description: "about.welfareDesc",
+    title: "welfare",
+    description: "welfareDesc",
     icon: HeartHandshake,
     color: "#C65A16",
     bg: "#FFEDD5",
   },
+];
+
+const developmentPoints = [
+  "developmentPoint1",
+  "developmentPoint2",
+  "developmentPoint3",
 ];
 
 const sectionHeading = {
@@ -97,9 +89,18 @@ const sectionHeading = {
   lineHeight: 1.25,
 };
 
+const pageContainerSx = {
+  width: { xs: "100%", md: "calc(100% - 2in)" },
+  maxWidth: "none",
+  px: { xs: 2, sm: 3, md: 0 },
+  mx: "auto",
+  boxSizing: "border-box",
+};
+
 function SectionLabel({ children }) {
   return (
     <Typography
+      component="p"
       sx={{
         color: COLORS.orange,
         fontWeight: 800,
@@ -117,6 +118,7 @@ function SectionLabel({ children }) {
 function SectionDivider() {
   return (
     <Box
+      aria-hidden="true"
       sx={{
         width: 75,
         height: 5,
@@ -131,7 +133,10 @@ function SectionDivider() {
 }
 
 export default function AboutPage() {
-  const { t } = useTranslation();
+  // Matches:
+  // src/locales/en/about/about.json
+  // src/locales/mr/about/about.json
+  const { t } = useTranslation("about/about");
 
   return (
     <Box
@@ -158,6 +163,7 @@ export default function AboutPage() {
         }}
       >
         <Box
+          aria-hidden="true"
           sx={{
             position: "absolute",
             top: -100,
@@ -170,6 +176,7 @@ export default function AboutPage() {
         />
 
         <Box
+          aria-hidden="true"
           sx={{
             position: "absolute",
             top: -60,
@@ -208,10 +215,11 @@ export default function AboutPage() {
               mb: 2,
             }}
           >
-            {t("about.breadcrumb")}
+            {t("breadcrumb")}
           </Typography>
 
           <Typography
+            component="h1"
             sx={{
               fontWeight: 900,
               fontSize: {
@@ -221,9 +229,10 @@ export default function AboutPage() {
               },
               lineHeight: 1.15,
               maxWidth: 850,
+              overflowWrap: "break-word",
             }}
           >
-            {t("about.heroTitle")}
+            {t("heroTitle")}
           </Typography>
 
           <Typography
@@ -235,10 +244,11 @@ export default function AboutPage() {
               maxWidth: 700,
             }}
           >
-            {t("about.heroDescription")}
+            {t("heroDescription")}
           </Typography>
 
           <Box
+            aria-hidden="true"
             sx={{
               display: "flex",
               width: 130,
@@ -256,36 +266,16 @@ export default function AboutPage() {
       </Box>
 
       {/* INTRODUCTION SECTION */}
-      <Box
-        sx={{
-          py: { xs: 7, sm: 9, md: 12 },
-          bgcolor: "#FFFFFF",
-        }}
-      >
+      <Box sx={{ py: { xs: 7, sm: 9, md: 12 }, bgcolor: "#FFFFFF" }}>
         <Container maxWidth={false} sx={pageContainerSx}>
-          <Grid
-            container
-            spacing={{ xs: 5, md: 7 }}
-            alignItems="center"
-          >
-            {/* GOVERNMENT EMBLEM */}
+          <Grid container spacing={{ xs: 5, md: 7 }} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
-              <Box
-                sx={{
-                  maxWidth: 550,
-                  width: "100%",
-                  mx: "auto",
-                }}
-              >
+              <Box sx={{ maxWidth: 550, width: "100%", mx: "auto" }}>
                 <Box
                   sx={{
                     width: "100%",
                     minHeight: { xs: 300, sm: 350, md: 420 },
-                    aspectRatio: {
-                      xs: "4 / 3",
-                      sm: "5 / 4",
-                      md: "1 / 1",
-                    },
+                    aspectRatio: { xs: "4 / 3", sm: "5 / 4", md: "1 / 1" },
                     position: "relative",
                     display: "flex",
                     alignItems: "center",
@@ -300,6 +290,7 @@ export default function AboutPage() {
                   }}
                 >
                   <Box
+                    aria-hidden="true"
                     sx={{
                       position: "absolute",
                       width: { xs: 220, sm: 290, md: 350 },
@@ -310,6 +301,7 @@ export default function AboutPage() {
                   />
 
                   <Box
+                    aria-hidden="true"
                     sx={{
                       position: "absolute",
                       width: { xs: 175, sm: 235, md: 285 },
@@ -335,6 +327,7 @@ export default function AboutPage() {
                   />
 
                   <Box
+                    aria-hidden="true"
                     sx={{
                       position: "absolute",
                       top: 0,
@@ -348,6 +341,7 @@ export default function AboutPage() {
                   />
 
                   <Box
+                    aria-hidden="true"
                     sx={{
                       position: "absolute",
                       bottom: 0,
@@ -361,6 +355,7 @@ export default function AboutPage() {
                   />
 
                   <Box
+                    aria-hidden="true"
                     sx={{
                       position: "absolute",
                       bottom: 0,
@@ -374,7 +369,6 @@ export default function AboutPage() {
                   />
                 </Box>
 
-                {/* PANCHAYAT INFORMATION CARD */}
                 <Card
                   elevation={0}
                   sx={{
@@ -385,11 +379,7 @@ export default function AboutPage() {
                   }}
                 >
                   <CardContent sx={{ p: { xs: 2, sm: 2.5 } }}>
-                    <Stack
-                      direction="row"
-                      spacing={2}
-                      alignItems="center"
-                    >
+                    <Stack direction="row" spacing={2} alignItems="center">
                       <Box
                         sx={{
                           width: 50,
@@ -406,15 +396,16 @@ export default function AboutPage() {
                         <Landmark size={25} />
                       </Box>
 
-                      <Box>
+                      <Box sx={{ minWidth: 0 }}>
                         <Typography
                           sx={{
                             color: COLORS.green,
                             fontWeight: 800,
                             fontSize: { xs: 13, sm: 15 },
+                            overflowWrap: "break-word",
                           }}
                         >
-                          {t("about.panchayatName")}
+                          {t("panchayatName")}
                         </Typography>
 
                         <Typography
@@ -424,7 +415,7 @@ export default function AboutPage() {
                             mt: 0.5,
                           }}
                         >
-                          {t("about.panchayatSubname")}
+                          {t("panchayatSubname")}
                         </Typography>
                       </Box>
                     </Stack>
@@ -433,15 +424,12 @@ export default function AboutPage() {
               </Box>
             </Grid>
 
-            {/* INTRODUCTION CONTENT */}
             <Grid size={{ xs: 12, md: 6 }}>
               <Box>
-                <SectionLabel>
-                  {t("about.introSubtitle")}
-                </SectionLabel>
+                <SectionLabel>{t("introSubtitle")}</SectionLabel>
 
-                <Typography sx={sectionHeading}>
-                  {t("about.introTitle")}
+                <Typography component="h2" sx={sectionHeading}>
+                  {t("introTitle")}
                 </Typography>
 
                 <SectionDivider />
@@ -454,7 +442,7 @@ export default function AboutPage() {
                     mb: 2,
                   }}
                 >
-                  {t("about.introDescription")}
+                  {t("introDescription")}
                 </Typography>
 
                 <Typography
@@ -464,7 +452,7 @@ export default function AboutPage() {
                     lineHeight: 2,
                   }}
                 >
-                  {t("about.introDescription2")}
+                  {t("introDescription2")}
                 </Typography>
 
                 <Box
@@ -476,11 +464,7 @@ export default function AboutPage() {
                     borderLeft: "5px solid #16803D",
                   }}
                 >
-                  <Stack
-                    direction="row"
-                    spacing={2}
-                    alignItems="center"
-                  >
+                  <Stack direction="row" spacing={2} alignItems="center">
                     <ShieldCheck
                       size={32}
                       color={COLORS.green}
@@ -495,7 +479,7 @@ export default function AboutPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      {t("about.panchayatDescription")}
+                      {t("panchayatDescription")}
                     </Typography>
                   </Stack>
                 </Box>
@@ -513,16 +497,15 @@ export default function AboutPage() {
         }}
       >
         <Container maxWidth={false} sx={pageContainerSx}>
-          <Box textAlign="center" sx={{ mb: 6 }}>
-            <SectionLabel>
-              {t("about.directionSubtitle")}
-            </SectionLabel>
+          <Box sx={{ textAlign: "center", mb: 6 }}>
+            <SectionLabel>{t("directionSubtitle")}</SectionLabel>
 
-            <Typography sx={sectionHeading}>
-              {t("about.directionTitle")}
+            <Typography component="h2" sx={sectionHeading}>
+              {t("directionTitle")}
             </Typography>
 
             <Box
+              aria-hidden="true"
               sx={{
                 width: 75,
                 height: 5,
@@ -536,7 +519,6 @@ export default function AboutPage() {
           </Box>
 
           <Grid container spacing={3} alignItems="stretch">
-            {/* VISION */}
             <Grid size={{ xs: 12, md: 6 }}>
               <Card
                 elevation={0}
@@ -547,8 +529,7 @@ export default function AboutPage() {
                   flexDirection: "column",
                   borderRadius: 4,
                   p: { xs: 2.5, sm: 4 },
-                  background:
-                    "linear-gradient(145deg, #FFFFFF, #F0F7F1)",
+                  background: "linear-gradient(145deg, #FFFFFF, #F0F7F1)",
                   border: `1px solid ${COLORS.border}`,
                   transition: "0.3s",
                   "&:hover": {
@@ -563,6 +544,7 @@ export default function AboutPage() {
                     flexGrow: 1,
                     display: "flex",
                     flexDirection: "column",
+                    "&:last-child": { pb: { xs: 2.5, sm: 3.5 } },
                   }}
                 >
                   <Box
@@ -582,6 +564,7 @@ export default function AboutPage() {
                   </Box>
 
                   <Typography
+                    component="h3"
                     sx={{
                       color: COLORS.green,
                       fontWeight: 900,
@@ -589,7 +572,7 @@ export default function AboutPage() {
                       mb: 2,
                     }}
                   >
-                    {t("about.visionTitle")}
+                    {t("visionTitle")}
                   </Typography>
 
                   <Typography
@@ -599,13 +582,12 @@ export default function AboutPage() {
                       fontSize: { xs: 14, sm: 15 },
                     }}
                   >
-                    {t("about.visionDescription")}
+                    {t("visionDescription")}
                   </Typography>
                 </CardContent>
               </Card>
             </Grid>
 
-            {/* MISSION */}
             <Grid size={{ xs: 12, md: 6 }}>
               <Card
                 elevation={0}
@@ -616,8 +598,7 @@ export default function AboutPage() {
                   flexDirection: "column",
                   borderRadius: 4,
                   p: { xs: 2.5, sm: 4 },
-                  background:
-                    "linear-gradient(145deg, #FFFFFF, #FFF6EC)",
+                  background: "linear-gradient(145deg, #FFFFFF, #FFF6EC)",
                   border: "1px solid #F2E4D4",
                   transition: "0.3s",
                   "&:hover": {
@@ -632,6 +613,7 @@ export default function AboutPage() {
                     flexGrow: 1,
                     display: "flex",
                     flexDirection: "column",
+                    "&:last-child": { pb: { xs: 2.5, sm: 3.5 } },
                   }}
                 >
                   <Box
@@ -651,6 +633,7 @@ export default function AboutPage() {
                   </Box>
 
                   <Typography
+                    component="h3"
                     sx={{
                       color: COLORS.green,
                       fontWeight: 900,
@@ -658,7 +641,7 @@ export default function AboutPage() {
                       mb: 2,
                     }}
                   >
-                    {t("about.missionTitle")}
+                    {t("missionTitle")}
                   </Typography>
 
                   <Typography
@@ -668,7 +651,7 @@ export default function AboutPage() {
                       fontSize: { xs: 14, sm: 15 },
                     }}
                   >
-                    {t("about.missionDescription")}
+                    {t("missionDescription")}
                   </Typography>
                 </CardContent>
               </Card>
@@ -678,20 +661,13 @@ export default function AboutPage() {
       </Box>
 
       {/* RESPONSIBILITIES SECTION */}
-      <Box
-        sx={{
-          py: { xs: 7, sm: 9, md: 11 },
-          backgroundColor: "#FFFFFF",
-        }}
-      >
+      <Box sx={{ py: { xs: 7, sm: 9, md: 11 }, backgroundColor: "#FFFFFF" }}>
         <Container maxWidth={false} sx={pageContainerSx}>
-          <Box textAlign="center" sx={{ mb: 6 }}>
-            <SectionLabel>
-              {t("about.responsibilitySubtitle")}
-            </SectionLabel>
+          <Box sx={{ textAlign: "center", mb: 6 }}>
+            <SectionLabel>{t("responsibilitySubtitle")}</SectionLabel>
 
-            <Typography sx={sectionHeading}>
-              {t("about.responsibilityTitle")}
+            <Typography component="h2" sx={sectionHeading}>
+              {t("responsibilityTitle")}
             </Typography>
 
             <Typography
@@ -704,10 +680,11 @@ export default function AboutPage() {
                 fontSize: { xs: 14, sm: 15 },
               }}
             >
-              {t("about.responsibilityDescription")}
+              {t("responsibilityDescription")}
             </Typography>
 
             <Box
+              aria-hidden="true"
               sx={{
                 width: 75,
                 height: 5,
@@ -743,8 +720,7 @@ export default function AboutPage() {
                       transition: "0.3s",
                       "&:hover": {
                         transform: "translateY(-7px)",
-                        boxShadow:
-                          "0 18px 35px rgba(23,59,42,0.10)",
+                        boxShadow: "0 18px 35px rgba(23,59,42,0.10)",
                       },
                     }}
                   >
@@ -754,6 +730,7 @@ export default function AboutPage() {
                         flexGrow: 1,
                         display: "flex",
                         flexDirection: "column",
+                        "&:last-child": { pb: 3 },
                       }}
                     >
                       <Box
@@ -773,6 +750,7 @@ export default function AboutPage() {
                       </Box>
 
                       <Typography
+                        component="h3"
                         sx={{
                           color: COLORS.green,
                           fontWeight: 800,
@@ -805,10 +783,8 @@ export default function AboutPage() {
                       >
                         <CheckCircle2 size={17} />
 
-                        <Typography
-                          sx={{ fontSize: 12, fontWeight: 700 }}
-                        >
-                          {t("about.ourResponsibility")}
+                        <Typography sx={{ fontSize: 12, fontWeight: 700 }}>
+                          {t("ourResponsibility")}
                         </Typography>
                       </Box>
                     </CardContent>
@@ -828,18 +804,12 @@ export default function AboutPage() {
         }}
       >
         <Container maxWidth={false} sx={pageContainerSx}>
-          <Grid
-            container
-            spacing={{ xs: 5, md: 7 }}
-            alignItems="center"
-          >
+          <Grid container spacing={{ xs: 5, md: 7 }} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
-              <SectionLabel>
-                {t("about.developmentSubtitle")}
-              </SectionLabel>
+              <SectionLabel>{t("developmentSubtitle")}</SectionLabel>
 
-              <Typography sx={sectionHeading}>
-                {t("about.developmentTitle")}
+              <Typography component="h2" sx={sectionHeading}>
+                {t("developmentTitle")}
               </Typography>
 
               <SectionDivider />
@@ -852,15 +822,11 @@ export default function AboutPage() {
                   mb: 3,
                 }}
               >
-                {t("about.developmentDescription")}
+                {t("developmentDescription")}
               </Typography>
 
               <Stack spacing={2}>
-                {[
-                  "about.developmentPoint1",
-                  "about.developmentPoint2",
-                  "about.developmentPoint3",
-                ].map((point) => (
+                {developmentPoints.map((point) => (
                   <Stack
                     key={point}
                     direction="row"
@@ -893,12 +859,13 @@ export default function AboutPage() {
                   alignItems: "center",
                   gap: 1.5,
                   color: COLORS.green,
+                  flexWrap: "wrap",
                 }}
               >
                 <Building2 size={25} />
 
                 <Typography fontWeight={800}>
-                  {t("about.panchayatName")}
+                  {t("panchayatName")}
                 </Typography>
 
                 <MoveUpRight size={19} />
@@ -929,6 +896,7 @@ export default function AboutPage() {
                 />
 
                 <Box
+                  aria-hidden="true"
                   sx={{
                     position: "absolute",
                     inset: 0,
@@ -947,15 +915,12 @@ export default function AboutPage() {
                     color: "#FFFFFF",
                   }}
                 >
-                  <Stack
-                    direction="row"
-                    spacing={1.5}
-                    alignItems="center"
-                  >
+                  <Stack direction="row" spacing={1.5} alignItems="center">
                     <Box
                       sx={{
                         width: 48,
                         height: 48,
+                        flexShrink: 0,
                         borderRadius: 2,
                         bgcolor: COLORS.saffron,
                         display: "flex",
@@ -967,9 +932,13 @@ export default function AboutPage() {
                       <Sprout size={27} />
                     </Box>
 
-                    <Box>
-                      <Typography fontWeight={800} fontSize={18}>
-                        {t("about.developmentTitle")}
+                    <Box sx={{ minWidth: 0 }}>
+                      <Typography
+                        component="h3"
+                        fontWeight={800}
+                        fontSize={{ xs: 15, sm: 18 }}
+                      >
+                        {t("developmentTitle")}
                       </Typography>
 
                       <Typography
@@ -979,7 +948,7 @@ export default function AboutPage() {
                           mt: 0.5,
                         }}
                       >
-                        {t("about.panchayatName")}
+                        {t("panchayatName")}
                       </Typography>
                     </Box>
                   </Stack>
@@ -992,11 +961,8 @@ export default function AboutPage() {
 
       {/* BOTTOM TRICOLOUR STRIP */}
       <Box
-        sx={{
-          display: "flex",
-          height: 7,
-          width: "100%",
-        }}
+        aria-hidden="true"
+        sx={{ display: "flex", height: 7, width: "100%" }}
       >
         <Box sx={{ flex: 1, bgcolor: "#FF9933" }} />
         <Box sx={{ flex: 1, bgcolor: "#FFFFFF" }} />

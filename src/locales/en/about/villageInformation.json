@@ -1,0 +1,132 @@
+
+{
+  "villageInformation": {
+    "heroTitle": "Village Information",
+    "heroDescription": "Discover the history, identity, facilities and development of our village.",
+
+    "introEyebrow": "About Our Village",
+    "introTitle": "Gram Panchayat: The Foundation of Local Self-Governance",
+    "introDescription": "The Gram Panchayat is a local self-government institution responsible for carrying out development activities and providing public services at the village level using the powers granted by the state government.",
+    "introDescription2": "With the cooperation of elected representatives, including the Sarpanch and Gram Panchayat members, and administrative staff, the institution addresses the everyday needs of villagers. It plays an important role in water supply, healthcare, sanitation, education and the development of village infrastructure. Active participation of local residents helps ensure effective decision-making, development planning and implementation.",
+
+    "villageName": "Gram Panchayat Sategaon",
+    "location": "Taluka Anjangaon Surji, District Amravati, Maharashtra",
+    "cardCaption": "A village committed to development, public participation and good governance.",
+
+    "profileEyebrow": "Village Profile",
+    "profileTitle": "Know Our Village",
+    "profileDescription": "Important information about the geographical location and identity of Gram Panchayat Sategaon.",
+
+    "featuresEyebrow": "Our Village",
+    "featuresTitle": "Village Characteristics",
+    "featuresDescription": "Our village values agriculture, community participation, environmental protection and transparent local governance.",
+
+    "facilitiesEyebrow": "Public Facilities",
+    "facilitiesTitle": "Facilities and Connectivity",
+    "facilitiesDescription": "Basic facilities and public services that support the everyday lives of villagers.",
+
+    "locationTitle": "Our Location",
+    "locationDescription": "Gram Panchayat Sategaon is located in Anjangaon Surji Taluka of Amravati District in Maharashtra, India.",
+    "locationDetailsTitle": "Village Location Details",
+
+    "closingTitle": "Together Towards a Developed Village",
+    "closingDescription": "With the active participation of citizens and the effective implementation of development initiatives, we are working towards a clean, progressive and self-reliant village.",
+    "contactButton": "Contact Gram Panchayat"
+  },
+
+  "profile": {
+    "village": "Village",
+    "villageValue": "Sategaon",
+    "taluka": "Taluka",
+    "talukaValue": "Anjangaon Surji",
+    "district": "District",
+    "districtValue": "Amravati",
+    "state": "State",
+    "stateValue": "Maharashtra",
+    "country": "Country",
+    "countryValue": "India",
+    "character": "Village Character",
+    "characterValue": "Agriculture and Community Life"
+  },
+
+  "features": {
+    "agriculture": {
+      "title": "Agriculture",
+      "description": "Agriculture is an important part of village life and the livelihood of local families."
+    },
+    "community": {
+      "title": "Community Participation",
+      "description": "Villagers participate in local activities and contribute to the development of their community."
+    },
+    "environment": {
+      "title": "Environment",
+      "description": "Environmental protection, cleanliness and sustainable development are important for the village."
+    },
+    "governance": {
+      "title": "Local Governance",
+      "description": "The Gram Panchayat works to provide public services and implement village development initiatives."
+    }
+  },
+
+  "visionMission": {
+    "eyebrow": "Our Purpose",
+    "heading": "Our Vision, Mission and Values",
+    "description": "The principles that guide our work towards the overall development of Sategaon.",
+    "visionTitle": "Our Vision",
+    "visionDescription": "To achieve comprehensive village development and make Sategaon an ideal, clean and self-reliant village.",
+    "missionTitle": "Our Mission",
+    "missionDescription": "To effectively implement government schemes and ensure that every villager receives basic facilities and their rightful benefits.",
+    "valuesTitle": "Our Core Values",
+    "valuesDescription": "Transparency, public participation, equality and social responsibility are the fundamental principles of our work."
+  },
+
+  "statistics": {
+    "eyebrow": "Village at a Glance",
+    "heading": "Population and Statistics",
+    "description": "Village demographic information based on Census 2011.",
+    "totalPopulation": "Total Population",
+    "totalPopulationValue": "5,762",
+    "male": "Male Population",
+    "maleValue": "2,922",
+    "female": "Female Population",
+    "femaleValue": "2,840",
+    "literacy": "Literacy Rate",
+    "literacyValue": "87.28%",
+    "sc": "Scheduled Caste (SC)",
+    "scValue": "1,069",
+    "st": "Scheduled Tribe (ST)",
+    "stValue": "163",
+    "sexRatio": "Sex Ratio",
+    "sexRatioValue": "972",
+    "totalHouses": "Total Houses",
+    "totalHousesValue": "1,306",
+    "source": "Source: Census of India 2011 (Sategaon, Anjangaon Surji)."
+  },
+
+  "facilities": {
+    "water": {
+      "title": "Water Supply",
+      "description": "A tap water supply scheme provides water facilities to the village."
+    },
+    "roads": {
+      "title": "Roads",
+      "description": "The village has paved asphalt roads supporting local transportation and connectivity."
+    },
+    "transport": {
+      "title": "Bus Service",
+      "description": "State Transport (ST) bus services are available for public transportation."
+    },
+    "electricity": {
+      "title": "Electricity",
+      "description": "Electricity facilities are available for domestic and agricultural purposes."
+    },
+    "education": {
+      "title": "Education",
+      "description": "A Zilla Parishad school provides educational facilities in the village."
+    },
+    "health": {
+      "title": "Healthcare",
+      "description": "Primary healthcare services are available for villagers."
+    }
+  }
+}

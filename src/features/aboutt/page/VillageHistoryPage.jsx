@@ -16,8 +16,10 @@ import {
   Sprout,
   Landmark,
   TrendingUp,
-  BookOpen,
   ArrowUpRight,
+  History,
+  MapPin,
+  Quote,
 } from "lucide-react";
 
 import AboutHero from "../components/AboutHero";
@@ -42,8 +44,9 @@ const pageContainerSx = {
   px: {
     xs: 2,
     sm: 3,
-    md: "48px",
-    lg: "96px",
+    md: 5,
+    lg: 8,
+    xl: 12,
   },
   mx: "auto",
   boxSizing: "border-box",
@@ -96,177 +99,260 @@ const themeItems = [
 ];
 
 function VillageHistoryPage() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("about/villageHistory");
 
   return (
-    <Box sx={{ bgcolor: COLORS.background, overflow: "hidden" }}>
+    <Box
+      sx={{
+        width: "100%",
+        minWidth: 0,
+        bgcolor: COLORS.background,
+        overflowX: "clip",
+      }}
+    >
       {/* HERO SECTION */}
-
       <AboutHero
         title={t("villageHistory.heroTitle")}
         subtitle={t("villageHistory.heroDescription")}
       />
 
       {/* INTRODUCTION SECTION */}
-
-      <Container
-        maxWidth={false}
+      <Box
+        component="section"
         sx={{
-          ...pageContainerSx,
-          py: { xs: 6, md: 9 },
+          width: "100%",
+          py: {
+            xs: 5,
+            sm: 6,
+            md: 9,
+          },
         }}
       >
-        <Grid
-          container
-          spacing={{ xs: 4, md: 6 }}
-          alignItems="center"
-        >
-          <Grid size={{ xs: 12, md: 7 }}>
-            <Box>
-              <Box
-                sx={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 1,
-                  px: 2,
-                  py: 0.8,
-                  borderRadius: 20,
-                  bgcolor: COLORS.lightGreen,
-                  mb: 2,
-                }}
-              >
-                <BookOpen size={16} color={COLORS.green} />
-
-                <Typography
+        <Container maxWidth={false} sx={pageContainerSx}>
+          <Grid
+            container
+            spacing={{
+              xs: 4,
+              md: 5,
+              lg: 7,
+            }}
+            alignItems="center"
+          >
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Box sx={{ width: "100%", minWidth: 0 }}>
+                <Box
                   sx={{
-                    color: COLORS.green,
-                    fontSize: 12,
-                    fontWeight: 800,
-                    letterSpacing: 1.2,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 1,
+                    px: 2,
+                    py: 0.9,
+                    borderRadius: 20,
+                    bgcolor: COLORS.lightGreen,
+                    mb: 2.5,
                   }}
                 >
-                  {t("villageHistory.introEyebrow")}
+                  <MapPin size={16} color={COLORS.green} />
+
+                  <Typography
+                    sx={{
+                      color: COLORS.green,
+                      fontSize: 12,
+                      fontWeight: 800,
+                      letterSpacing: 1,
+                    }}
+                  >
+                    {t("villageHistory.introEyebrow")}
+                  </Typography>
+                </Box>
+
+                <Typography
+                  component="h2"
+                  sx={{
+                    color: COLORS.green,
+                    fontSize: {
+                      xs: 27,
+                      sm: 32,
+                      md: 38,
+                      lg: 42,
+                    },
+                    fontWeight: 800,
+                    lineHeight: 1.25,
+                    mb: {
+                      xs: 2,
+                      md: 2.5,
+                    },
+                    overflowWrap: "anywhere",
+                  }}
+                >
+                  {t("villageHistory.introTitle")}
                 </Typography>
+
+                <Stack spacing={2}>
+                  <Typography
+                    sx={{
+                      color: COLORS.muted,
+                      fontSize: {
+                        xs: 14,
+                        sm: 15,
+                        md: 16,
+                      },
+                      lineHeight: {
+                        xs: 1.85,
+                        md: 1.95,
+                      },
+                      textAlign: "justify",
+                      overflowWrap: "break-word",
+                    }}
+                  >
+                    {t("villageHistory.introDescription")}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: COLORS.muted,
+                      fontSize: {
+                        xs: 14,
+                        sm: 15,
+                        md: 16,
+                      },
+                      lineHeight: {
+                        xs: 1.85,
+                        md: 1.95,
+                      },
+                      textAlign: "justify",
+                      overflowWrap: "break-word",
+                    }}
+                  >
+                    {t("villageHistory.introDescription2")}
+                  </Typography>
+                </Stack>
               </Box>
+            </Grid>
 
-              <Typography
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Paper
+                elevation={0}
                 sx={{
-                  color: COLORS.green,
-                  fontSize: { xs: 27, sm: 32, md: 39 },
-                  fontWeight: 800,
-                  lineHeight: 1.2,
-                  mb: 2.5,
-                }}
-              >
-                {t("villageHistory.introTitle")}
-              </Typography>
-
-              <Typography
-                sx={{
-                  color: COLORS.muted,
-                  fontSize: { xs: 15, md: 16 },
-                  lineHeight: 1.9,
-                  mb: 2,
-                }}
-              >
-                {t("villageHistory.introDescription")}
-              </Typography>
-
-              <Typography
-                sx={{
-                  color: COLORS.muted,
-                  fontSize: { xs: 15, md: 16 },
-                  lineHeight: 1.9,
-                }}
-              >
-                {t("villageHistory.introDescription2")}
-              </Typography>
-            </Box>
-          </Grid>
-
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Paper
-              elevation={0}
-              sx={{
-                minHeight: { xs: 240, md: 310 },
-                p: { xs: 3, md: 4 },
-                borderRadius: 4,
-                color: COLORS.white,
-                background: `linear-gradient(145deg, ${COLORS.green}, ${COLORS.darkGreen})`,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
-              <Box
-                sx={{
-                  position: "absolute",
-                  width: 190,
-                  height: 190,
-                  borderRadius: "50%",
-                  border: "1px solid rgba(255,255,255,0.13)",
-                  right: -55,
-                  top: -55,
-                }}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  width: 130,
-                  height: 130,
-                  borderRadius: "50%",
-                  border: "1px solid rgba(255,255,255,0.13)",
-                  right: -25,
-                  top: -25,
-                }}
-              />
-
-              <Landmark size={42} color="#FFB15C" />
-
-              <Typography
-                sx={{
-                  mt: 3,
-                  fontSize: { xs: 21, md: 25 },
-                  fontWeight: 800,
-                  lineHeight: 1.4,
+                  width: "100%",
+                  minHeight: {
+                    xs: 230,
+                    sm: 260,
+                    md: 300,
+                  },
+                  boxSizing: "border-box",
+                  p: {
+                    xs: 3,
+                    sm: 3.5,
+                    md: 4,
+                    lg: 4.5,
+                  },
+                  borderRadius: {
+                    xs: 3,
+                    md: 4,
+                  },
+                  color: COLORS.white,
+                  background: `linear-gradient(145deg, ${COLORS.green}, ${COLORS.darkGreen})`,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
                   position: "relative",
+                  overflow: "hidden",
                 }}
               >
-                {t("villageHistory.panchayatName")}
-              </Typography>
+                <Box
+                  aria-hidden="true"
+                  sx={{
+                    position: "absolute",
+                    width: 190,
+                    height: 190,
+                    borderRadius: "50%",
+                    border: "1px solid rgba(255,255,255,0.13)",
+                    right: -65,
+                    top: -65,
+                    pointerEvents: "none",
+                  }}
+                />
 
-              <Typography
-                sx={{
-                  mt: 1,
-                  color: "rgba(255,255,255,0.78)",
-                  fontSize: 14,
-                  lineHeight: 1.7,
-                  position: "relative",
-                }}
-              >
-                {t("villageHistory.location")}
-              </Typography>
+                <Box
+                  aria-hidden="true"
+                  sx={{
+                    position: "absolute",
+                    width: 130,
+                    height: 130,
+                    borderRadius: "50%",
+                    border: "1px solid rgba(255,255,255,0.13)",
+                    right: -30,
+                    top: -30,
+                    pointerEvents: "none",
+                  }}
+                />
 
-              <Box
-                sx={{
-                  mt: 3,
-                  width: 55,
-                  height: 4,
-                  borderRadius: 5,
-                  bgcolor: COLORS.orange,
-                }}
-              />
-            </Paper>
+                <Box sx={{ position: "relative" }}>
+                  <Landmark
+                    size={42}
+                    color="#FFB15C"
+                  />
+
+                  <Typography
+                    component="h3"
+                    sx={{
+                      mt: 2.5,
+                      fontSize: {
+                        xs: 21,
+                        sm: 23,
+                        md: 25,
+                      },
+                      fontWeight: 800,
+                      lineHeight: 1.4,
+                      overflowWrap: "anywhere",
+                    }}
+                  >
+                    {t("villageHistory.panchayatName")}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      mt: 1.2,
+                      color: "rgba(255,255,255,0.8)",
+                      fontSize: {
+                        xs: 13,
+                        sm: 14,
+                      },
+                      lineHeight: 1.8,
+                    }}
+                  >
+                    {t("villageHistory.location")}
+                  </Typography>
+
+                  <Box
+                    sx={{
+                      mt: 3,
+                      width: 55,
+                      height: 4,
+                      borderRadius: 5,
+                      bgcolor: COLORS.orange,
+                    }}
+                  />
+                </Box>
+              </Paper>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Box>
 
       {/* HISTORICAL BACKGROUND */}
-
-      <Box sx={{ bgcolor: COLORS.white, py: { xs: 6, md: 9 } }}>
+      <Box
+        component="section"
+        sx={{
+          bgcolor: COLORS.white,
+          py: {
+            xs: 5,
+            sm: 6,
+            md: 9,
+          },
+        }}
+      >
         <Container maxWidth={false} sx={pageContainerSx}>
           <AboutSectionHeading
             eyebrow={t("villageHistory.backgroundEyebrow")}
@@ -278,35 +364,66 @@ function VillageHistoryPage() {
           <Paper
             elevation={0}
             sx={{
-              mt: 5,
-              p: { xs: 3, sm: 4, md: 5 },
-              borderRadius: 4,
+              width: "100%",
+              mt: {
+                xs: 3,
+                md: 5,
+              },
+              p: {
+                xs: 2.5,
+                sm: 3.5,
+                md: 4.5,
+                lg: 5,
+              },
+              borderRadius: {
+                xs: 3,
+                md: 4,
+              },
               border: `1px solid ${COLORS.border}`,
               bgcolor: COLORS.cream,
               position: "relative",
               overflow: "hidden",
+              boxSizing: "border-box",
             }}
           >
             <Box
+              aria-hidden="true"
               sx={{
                 position: "absolute",
                 left: 0,
                 top: 0,
-                width: 6,
+                width: 5,
                 height: "100%",
                 bgcolor: COLORS.orange,
               }}
             />
 
             <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={3}
-              alignItems={{ xs: "flex-start", sm: "center" }}
+              direction={{
+                xs: "column",
+                sm: "row",
+              }}
+              spacing={{
+                xs: 2.5,
+                sm: 3,
+              }}
+              alignItems={{
+                xs: "flex-start",
+                sm: "flex-start",
+              }}
             >
               <Box
                 sx={{
-                  width: 68,
-                  height: 68,
+                  width: {
+                    xs: 56,
+                    sm: 64,
+                    md: 68,
+                  },
+                  height: {
+                    xs: 56,
+                    sm: 64,
+                    md: 68,
+                  },
                   flexShrink: 0,
                   borderRadius: 3,
                   bgcolor: COLORS.lightGreen,
@@ -314,16 +431,26 @@ function VillageHistoryPage() {
                   placeItems: "center",
                 }}
               >
-                <BookOpen size={32} color={COLORS.green} />
+                <History
+                  size={30}
+                  color={COLORS.green}
+                />
               </Box>
 
-              <Box>
+              <Box sx={{ flex: 1, minWidth: 0 }}>
                 <Typography
+                  component="h3"
                   sx={{
                     color: COLORS.green,
-                    fontSize: { xs: 21, md: 25 },
+                    fontSize: {
+                      xs: 20,
+                      sm: 22,
+                      md: 25,
+                    },
                     fontWeight: 800,
+                    lineHeight: 1.4,
                     mb: 1.5,
+                    overflowWrap: "anywhere",
                   }}
                 >
                   {t("villageHistory.backgroundCardTitle")}
@@ -332,8 +459,13 @@ function VillageHistoryPage() {
                 <Typography
                   sx={{
                     color: COLORS.muted,
-                    fontSize: 15,
-                    lineHeight: 1.9,
+                    fontSize: {
+                      xs: 14,
+                      sm: 15,
+                    },
+                    lineHeight: 1.95,
+                    textAlign: "justify",
+                    overflowWrap: "break-word",
                   }}
                 >
                   {t("villageHistory.backgroundCardDescription")}
@@ -345,8 +477,16 @@ function VillageHistoryPage() {
       </Box>
 
       {/* VILLAGE JOURNEY */}
-
-      <Box sx={{ py: { xs: 6, md: 9 } }}>
+      <Box
+        component="section"
+        sx={{
+          py: {
+            xs: 5,
+            sm: 6,
+            md: 9,
+          },
+        }}
+      >
         <Container maxWidth={false} sx={pageContainerSx}>
           <AboutSectionHeading
             eyebrow={t("villageHistory.journeyEyebrow")}
@@ -355,32 +495,69 @@ function VillageHistoryPage() {
             align="center"
           />
 
-          <Grid container spacing={3} sx={{ mt: 3 }}>
+          <Grid
+            container
+            spacing={{
+              xs: 2,
+              sm: 2.5,
+              md: 3,
+            }}
+            sx={{
+              mt: {
+                xs: 2,
+                md: 3,
+              },
+              alignItems: "stretch",
+            }}
+          >
             {journeyItems.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <Grid
-                  size={{ xs: 12, sm: 6, md: 3 }}
+                  size={{
+                    xs: 12,
+                    sm: 6,
+                    md: 3,
+                  }}
                   key={item.key}
+                  sx={{
+                    display: "flex",
+                    minWidth: 0,
+                  }}
                 >
                   <Paper
                     elevation={0}
                     sx={{
                       width: "100%",
-                      height: { xs: "auto", sm: 340 },
-                      minHeight: 340,
+                      height: "100%",
+                      minHeight: {
+                        xs: 0,
+                        sm: 300,
+                        md: 330,
+                      },
                       boxSizing: "border-box",
-                      p: { xs: 3, md: 3.5 },
-                      borderRadius: 4,
+                      p: {
+                        xs: 2.5,
+                        sm: 3,
+                        md: 3,
+                      },
+                      borderRadius: {
+                        xs: 3,
+                        md: 4,
+                      },
                       bgcolor: COLORS.white,
                       border: `1px solid ${COLORS.border}`,
                       display: "flex",
                       flexDirection: "column",
-                      transition: "all 0.25s ease",
+                      transition:
+                        "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
 
                       "&:hover": {
-                        transform: "translateY(-6px)",
+                        transform: {
+                          xs: "none",
+                          md: "translateY(-5px)",
+                        },
                         boxShadow:
                           "0 14px 35px rgba(23,59,42,0.09)",
                         borderColor: item.color,
@@ -394,8 +571,8 @@ function VillageHistoryPage() {
                     >
                       <Box
                         sx={{
-                          width: 58,
-                          height: 58,
+                          width: 54,
+                          height: 54,
                           flexShrink: 0,
                           borderRadius: 3,
                           bgcolor: item.background,
@@ -403,14 +580,17 @@ function VillageHistoryPage() {
                           placeItems: "center",
                         }}
                       >
-                        <Icon size={28} color={item.color} />
+                        <Icon
+                          size={27}
+                          color={item.color}
+                        />
                       </Box>
 
                       <Typography
                         sx={{
                           color: "#B7C4BA",
                           fontWeight: 800,
-                          fontSize: 20,
+                          fontSize: 19,
                         }}
                       >
                         0{index + 1}
@@ -419,13 +599,13 @@ function VillageHistoryPage() {
 
                     <Typography
                       sx={{
-                        mt: 3,
+                        mt: 2.5,
                         mb: 1,
                         color: item.color,
                         fontSize: 11,
                         fontWeight: 800,
                         letterSpacing: 1,
-                        minHeight: 18,
+                        lineHeight: 1.5,
                       }}
                     >
                       {t(
@@ -434,13 +614,18 @@ function VillageHistoryPage() {
                     </Typography>
 
                     <Typography
+                      component="h3"
                       sx={{
                         color: COLORS.green,
-                        fontSize: 18,
+                        fontSize: {
+                          xs: 17,
+                          sm: 18,
+                          md: 18,
+                        },
                         fontWeight: 800,
-                        lineHeight: 1.4,
+                        lineHeight: 1.45,
                         mb: 1.5,
-                        minHeight: 52,
+                        overflowWrap: "anywhere",
                       }}
                     >
                       {t(
@@ -451,9 +636,14 @@ function VillageHistoryPage() {
                     <Typography
                       sx={{
                         color: COLORS.muted,
-                        fontSize: 14,
-                        lineHeight: 1.8,
+                        fontSize: {
+                          xs: 13.5,
+                          sm: 14,
+                        },
+                        lineHeight: 1.85,
                         flexGrow: 1,
+                        textAlign: "left",
+                        overflowWrap: "break-word",
                       }}
                     >
                       {t(
@@ -469,8 +659,17 @@ function VillageHistoryPage() {
       </Box>
 
       {/* VILLAGE THEMES */}
-
-      <Box sx={{ bgcolor: COLORS.white, py: { xs: 6, md: 9 } }}>
+      <Box
+        component="section"
+        sx={{
+          bgcolor: COLORS.white,
+          py: {
+            xs: 5,
+            sm: 6,
+            md: 9,
+          },
+        }}
+      >
         <Container maxWidth={false} sx={pageContainerSx}>
           <AboutSectionHeading
             eyebrow={t("villageHistory.themesEyebrow")}
@@ -479,32 +678,72 @@ function VillageHistoryPage() {
             align="center"
           />
 
-          <Grid container spacing={3} sx={{ mt: 3 }}>
+          <Grid
+            container
+            spacing={{
+              xs: 2,
+              sm: 2.5,
+              md: 3,
+            }}
+            sx={{
+              mt: {
+                xs: 2,
+                md: 3,
+              },
+              alignItems: "stretch",
+            }}
+          >
             {themeItems.map((item) => {
               const Icon = item.icon;
 
               return (
                 <Grid
-                  size={{ xs: 12, sm: 6 }}
+                  size={{
+                    xs: 12,
+                    sm: 6,
+                  }}
                   key={item.key}
+                  sx={{
+                    display: "flex",
+                    minWidth: 0,
+                  }}
                 >
                   <Paper
                     elevation={0}
                     sx={{
                       width: "100%",
-                      height: { xs: "auto", sm: 155 },
-                      minHeight: 155,
+                      minHeight: {
+                        xs: 0,
+                        sm: 145,
+                        md: 155,
+                      },
+                      height: "100%",
                       boxSizing: "border-box",
-                      p: { xs: 2.5, md: 3 },
-                      borderRadius: 3,
+                      p: {
+                        xs: 2.5,
+                        sm: 3,
+                        md: 3.5,
+                      },
+                      borderRadius: {
+                        xs: 3,
+                        md: 3.5,
+                      },
                       border: `1px solid ${COLORS.border}`,
+                      bgcolor: COLORS.white,
                       display: "flex",
-                      gap: 2.5,
-                      alignItems: "center",
-                      transition: "all 0.25s ease",
+                      gap: {
+                        xs: 2,
+                        sm: 2.5,
+                      },
+                      alignItems: "flex-start",
+                      transition:
+                        "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
 
                       "&:hover": {
-                        transform: "translateY(-4px)",
+                        transform: {
+                          xs: "none",
+                          md: "translateY(-4px)",
+                        },
                         borderColor: COLORS.orange,
                         bgcolor: COLORS.cream,
                         boxShadow:
@@ -514,8 +753,16 @@ function VillageHistoryPage() {
                   >
                     <Box
                       sx={{
-                        width: 54,
-                        height: 54,
+                        width: {
+                          xs: 46,
+                          sm: 50,
+                          md: 54,
+                        },
+                        height: {
+                          xs: 46,
+                          sm: 50,
+                          md: 54,
+                        },
                         flexShrink: 0,
                         borderRadius: 2.5,
                         bgcolor: COLORS.lightGreen,
@@ -523,16 +770,31 @@ function VillageHistoryPage() {
                         placeItems: "center",
                       }}
                     >
-                      <Icon size={25} color={COLORS.green} />
+                      <Icon
+                        size={24}
+                        color={COLORS.green}
+                      />
                     </Box>
 
-                    <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Box
+                      sx={{
+                        flex: 1,
+                        minWidth: 0,
+                      }}
+                    >
                       <Typography
+                        component="h3"
                         sx={{
                           color: COLORS.green,
-                          fontSize: 18,
+                          fontSize: {
+                            xs: 16,
+                            sm: 17,
+                            md: 18,
+                          },
                           fontWeight: 800,
+                          lineHeight: 1.45,
                           mb: 0.8,
+                          overflowWrap: "anywhere",
                         }}
                       >
                         {t(
@@ -543,8 +805,12 @@ function VillageHistoryPage() {
                       <Typography
                         sx={{
                           color: COLORS.muted,
-                          fontSize: 14,
+                          fontSize: {
+                            xs: 13,
+                            sm: 14,
+                          },
                           lineHeight: 1.8,
+                          overflowWrap: "break-word",
                         }}
                       >
                         {t(
@@ -553,11 +819,17 @@ function VillageHistoryPage() {
                       </Typography>
                     </Box>
 
-                    <ArrowUpRight
-                      size={19}
-                      color={COLORS.orange}
-                      style={{ flexShrink: 0 }}
-                    />
+                    <Box
+                      sx={{
+                        flexShrink: 0,
+                        pt: 0.5,
+                      }}
+                    >
+                      <ArrowUpRight
+                        size={19}
+                        color={COLORS.orange}
+                      />
+                    </Box>
                   </Paper>
                 </Grid>
               );
@@ -567,11 +839,14 @@ function VillageHistoryPage() {
       </Box>
 
       {/* CLOSING SECTION */}
-
       <Box
+        component="section"
         sx={{
-          py: { xs: 6, md: 8 },
-          px: 2,
+          py: {
+            xs: 5,
+            sm: 6,
+            md: 8,
+          },
           bgcolor: COLORS.green,
           textAlign: "center",
           position: "relative",
@@ -579,6 +854,19 @@ function VillageHistoryPage() {
         }}
       >
         <Container maxWidth={false} sx={pageContainerSx}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              mb: 2,
+            }}
+          >
+            <Quote
+              size={30}
+              color="#FFB15C"
+            />
+          </Box>
+
           <Typography
             sx={{
               color: "#FFB15C",
@@ -592,12 +880,18 @@ function VillageHistoryPage() {
           </Typography>
 
           <Typography
+            component="h2"
             sx={{
               color: COLORS.white,
-              fontSize: { xs: 27, sm: 32, md: 39 },
+              fontSize: {
+                xs: 25,
+                sm: 31,
+                md: 39,
+              },
               fontWeight: 800,
-              lineHeight: 1.25,
+              lineHeight: 1.4,
               mb: 2,
+              overflowWrap: "anywhere",
             }}
           >
             {t("villageHistory.closingTitle")}
@@ -605,10 +899,14 @@ function VillageHistoryPage() {
 
           <Typography
             sx={{
-              color: "rgba(255,255,255,0.78)",
+              color: "rgba(255,255,255,0.8)",
               maxWidth: 760,
               mx: "auto",
-              fontSize: { xs: 14, md: 16 },
+              fontSize: {
+                xs: 14,
+                sm: 15,
+                md: 16,
+              },
               lineHeight: 1.9,
             }}
           >

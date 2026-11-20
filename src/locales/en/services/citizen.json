@@ -1,0 +1,68 @@
+
+{
+  "services": {
+    "citizen": {
+      "hero": {
+        "title": "Gram Panchayat Certificates & Forms",
+        "description": "Find application forms and information about certificates required by citizens.",
+        "breadcrumb": "Citizen Services"
+      },
+      "intro": {
+        "eyebrow": "CITIZEN FACILITIES",
+        "title": "Gram Panchayat Certificates & Applications",
+        "description": "Find information about applications for birth, death, marriage, property and other essential services."
+      },
+      "forms": {
+        "download": "Download Form",
+        "unavailable": "Form Link Coming Soon",
+        "items": {
+          "birthRegistration": {
+            "title": "Birth Registration Certificate",
+            "description": "Prescribed application form for registering a child's birth in the Gram Panchayat records."
+          },
+          "deathRegistration": {
+            "title": "Death Registration Certificate",
+            "description": "Application for registering a person's death and obtaining the relevant certificate."
+          },
+          "marriageRegistration": {
+            "title": "Marriage Registration",
+            "description": "Application form for registering a marriage and submitting the marriage memorandum as per applicable rules."
+          },
+          "sample8A": {
+            "title": "Form 8(A) Extract",
+            "description": "An extract showing property assessment and relevant records for a house or land."
+          },
+          "bplCertificate": {
+            "title": "Below Poverty Line (BPL) Certificate",
+            "description": "Official certificate regarding inclusion in the BPL list. Confirm the applicable list and eligibility with the office."
+          },
+          "noDuesCertificate": {
+            "title": "No Dues Certificate",
+            "description": "Application for a certificate confirming that no dues are outstanding, for election or loan-related purposes."
+          },
+          "toiletUsageCertificate": {
+            "title": "Toilet Usage Certificate",
+            "description": "Certificate confirming that a household has and uses a toilet. It may be required for government schemes."
+          },
+          "constructionPermission": {
+            "title": "Construction Permission / NOC",
+            "description": "Application seeking Gram Panchayat permission for new house construction or repair work."
+          }
+        }
+      },
+      "process": {
+        "eyebrow": "APPLICATION PROCESS",
+        "title": "How to Apply for a Certificate",
+        "description": "Follow these general steps when applying for a Gram Panchayat certificate.",
+        "stepOne": "Identify the certificate or application you require.",
+        "stepTwo": "Check the required documents with the concerned office.",
+        "stepThree": "Submit the application with the required documents at the Gram Panchayat office.",
+        "stepFour": "Check the application status and receive the certificate as prescribed."
+      },
+      "note": {
+        "title": "Important Information",
+        "description": "Required documents, fees and procedures may differ for each certificate. Before submitting an application, confirm the requirements and availability of the official form with the Gram Panchayat office."
+      }
+    }
+  }
+}

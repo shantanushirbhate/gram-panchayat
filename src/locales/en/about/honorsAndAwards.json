@@ -1,0 +1,52 @@
+
+{
+  "honorsAndAwards": {
+    "hero": {
+      "badge": "Honors and Achievements",
+      "title": "Proud Achievements",
+      "description": "Various government awards and honors received by the Gram Panchayat in recognition of its work and contribution to village development.",
+      "caption": "Recognition for village development and public service"
+    },
+    "section": {
+      "eyebrow": "AWARDS AND RECOGNITION",
+      "title": "Government Awards and Honors",
+      "description": "The following awards recognize the Gram Panchayat's work in cleanliness, digital services, community harmony, administrative quality, and environmental conservation."
+    },
+    "awards": [
+      {
+        "id": 1,
+        "year": "2023–24",
+        "title": "Sant Gadge Baba Village Cleanliness Award",
+        "description": "First place at the district level for excellent village cleanliness and wastewater management. The entire village was declared Open Defecation Free (ODF Plus)."
+      },
+      {
+        "id": 2,
+        "year": "2021–22",
+        "title": "Smart Village Award",
+        "description": "Recognized by the government for the effective implementation of digital facilities, Wi-Fi, and the e-Gram Panchayat system in the village."
+      },
+      {
+        "id": 3,
+        "year": "2019–20",
+        "title": "Mahatma Gandhi Dispute-Free Village Award",
+        "description": "Special recognition from the State Government for resolving all village disputes amicably and maintaining peace and order in the village."
+      },
+      {
+        "id": 4,
+        "year": "2018",
+        "title": "ISO 9001:2015 Certification",
+        "description": "Received an international-standard ISO certificate for maintaining transparency and quality in the Gram Panchayat's office administration.",
+        "note": "Certified Quality Standard"
+      },
+      {
+        "id": 5,
+        "year": "2015–16",
+        "title": "Yashwantrao Chavan Village Prosperity Award",
+        "description": "Recognized at the taluka level for notable achievements in water conservation and tree plantation programmes."
+      }
+    ],
+    "footer": {
+      "message": "Honors that reflect our commitment to village development, quality public service, and community progress."
+    }
+  }
+}

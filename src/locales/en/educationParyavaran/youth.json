@@ -1,0 +1,73 @@
+
+{
+  "youth": {
+    "hero": {
+      "breadcrumb": "Home / Education and Environment / Education and Youth Corner",
+      "title": "Education and Youth Corner",
+      "description": "An initiative to support the bright future of village students and the overall development of young people through educational guidance, scholarships, skill development and youth participation."
+    },
+    "intro": {
+      "eyebrow": "Education, Opportunities and Youth Empowerment",
+      "title": "Growth Opportunities for Students and Young People",
+      "description": "This initiative aims to help students explore educational opportunities and guide young people towards employment, self-employment and active participation in community development."
+    },
+    "message": {
+      "title": "Opportunities for Every Student, Direction for Every Young Person",
+      "description": "The main objective is to encourage students and young people to build a bright future through competitive examination guidance, higher education information, scholarship schemes, skill training and digital learning."
+    },
+    "opportunities": {
+      "eyebrow": "Educational and Career Opportunities",
+      "title": "Guidance for Students and Young People",
+      "description": "Information and guidance covering school education, higher studies, scholarships and skill development.",
+      "items": {
+        "schoolEducation": {
+          "title": "Educational Guidance",
+          "description": "Guidance for competitive examinations such as MPSC, UPSC and police recruitment, career options after Classes 10 and 12, admission assistance and information about free library facilities."
+        },
+        "higherEducation": {
+          "title": "Higher Education and Career Opportunities",
+          "description": "Information about college admissions, undergraduate and postgraduate education, professional courses, opportunities for studying abroad and available financial assistance."
+        },
+        "scholarships": {
+          "title": "Scholarships and Educational Financial Assistance",
+          "description": "Guidance on government scholarship applications, the Rajarshi Shahu Maharaj Tuition Fee Scheme and educational concessions and schemes available for students from disadvantaged communities."
+        },
+        "digitalLearning": {
+          "title": "Digital Learning and Computer Literacy",
+          "description": "Information about MS-CIT, CCC and other computer courses, development of digital skills and guidance on the effective use of the internet and technology."
+        },
+        "skillDevelopment": {
+          "title": "Skill Development and Self-Employment",
+          "description": "Information about skill training under PMKVY, self-employment training camps, digital marketing and technical courses, along with guidance on small businesses, tailoring and fashion designing through women's self-help groups."
+        },
+        "careerGuidance": {
+          "title": "Career and Competitive Examination Guidance",
+          "description": "Career guidance after Classes 10 and 12, preparation for police recruitment, support for participation in taluka and district-level competitions, and information about health check-up camps for young people."
+        }
+      }
+    },
+    "activities": {
+      "eyebrow": "Active Youth Participation",
+      "title": "Initiatives for Overall Youth Development",
+      "description": "Initiatives that encourage leadership, reading habits, social responsibility and innovation among young people.",
+      "items": {
+        "youthParticipation": {
+          "title": "Youth Participation, Sports and Health",
+          "description": "Encourage the use of village gyms and playgrounds, participation in taluka and district-level sports competitions, youth health check-up camps and involvement in village development activities."
+        },
+        "readingCulture": {
+          "title": "Reading Culture and Knowledge Development",
+          "description": "Encourage reading among students and young people, promote free library facilities and motivate them to read competitive examination materials, educational resources and informative books."
+        },
+        "innovation": {
+          "title": "Youth Dialogue and Innovation",
+          "description": "Encourage monthly 'Youth Speak' discussions, startup guidance for aspiring entrepreneurs, youth-led solutions to village problems and workshops on technology and agriculture."
+        }
+      }
+    },
+    "note": {
+      "title": "Youth Development Builds a Brighter Future for the Village",
+      "description": "The objective is to nurture capable young people through education, skills, sports, health and innovative thinking. Students and young people should contact the relevant official offices for information about government schemes, training programmes and available facilities."
+    }
+  }
+}

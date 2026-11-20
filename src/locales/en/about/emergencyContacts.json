@@ -1,0 +1,99 @@
+
+{
+  "emergencyContacts": {
+    "heroBadge": "Emergency Assistance",
+    "heroTitle": "Emergency Contacts",
+    "heroDescription": "Important contact numbers for emergency assistance, public services and Gram Panchayat officials. Keep these numbers handy when you need help.",
+    "call112": "Call Emergency Helpline 112",
+    "available": "Emergency assistance available 24 × 7",
+
+    "noticeTitle": "Important Emergency Information",
+    "noticeDescription": "In case of an emergency, contact the appropriate emergency service immediately. For immediate assistance anywhere in India, call the national emergency helpline 112.",
+
+    "officialContacts": {
+      "eyebrow": "GRAM PANCHAYAT ADMINISTRATION",
+      "title": "Key Officials Contact",
+      "description": "Contact the Gram Panchayat officials for village administration, development work and public services.",
+
+      "sarpanch": {
+        "title": "Sarpanch",
+        "name": "Mr. [Name of Sarpanch]",
+        "number": "98000 00000",
+        "callLabel": "Call Sarpanch"
+      },
+
+      "gramsevak": {
+        "title": "Gram Sevak / Village Development Officer",
+        "name": "Mr. [Name of Secretary]",
+        "number": "99000 00000",
+        "callLabel": "Call Gram Sevak"
+      }
+    },
+
+    "usefulContacts": {
+      "eyebrow": "EMERGENCY AND PUBLIC SERVICES",
+      "title": "Emergency and Useful Contacts",
+      "description": "Important telephone numbers for emergency services, public utilities, education and child welfare.",
+
+      "police": {
+        "title": "Police Station",
+        "number": "100 / [Local Number]",
+        "callLabel": "Call Police"
+      },
+
+      "ambulance": {
+        "title": "Ambulance / Health Centre",
+        "number": "108 / [Local Number]",
+        "callLabel": "Call Ambulance"
+      },
+
+      "water": {
+        "title": "Water Supply Department",
+        "number": "[Employee's Number]",
+        "callLabel": "Call Water Supply"
+      },
+
+      "helpline": {
+        "title": "24 × 7 Emergency Helpline",
+        "number": "112 (All India)",
+        "callLabel": "Call Helpline"
+      },
+
+      "childline": {
+        "title": "Child Marriage Prevention / Childline",
+        "number": "1098 (Toll Free)",
+        "callLabel": "Call Childline"
+      },
+
+      "snakeRescuer": {
+        "title": "Snake Rescuer (Snake Catcher)",
+        "number": "[Snake Rescuer's Number]",
+        "callLabel": "Call Snake Rescuer"
+      },
+
+      "school": {
+        "title": "School Principal",
+        "number": "[Principal's Number]",
+        "callLabel": "Call School"
+      },
+
+      "anganwadi": {
+        "title": "Anganwadi Coordinator / Worker",
+        "number": "[Anganwadi Worker's Number]",
+        "callLabel": "Call Anganwadi"
+      }
+    },
+
+    "guidelinesTitle": "Important Guidelines During an Emergency",
+    "guidelinesDescription": "Follow these steps when contacting an emergency service.",
+    "guidelines": {
+      "1": "Stay calm and explain the emergency clearly.",
+      "2": "Provide your exact location and nearby landmarks.",
+      "3": "Share a working contact number so the response team can reach you.",
+      "4": "Follow the instructions given by the emergency service."
+    },
+
+    "panchayatNoteTitle": "Gram Panchayat Contact Information",
+    "panchayatNoteDescription": "For village-level complaints, public services and administrative assistance, contact the Gram Panchayat office or the concerned official."
+  }
+}

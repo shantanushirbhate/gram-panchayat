@@ -1,0 +1,131 @@
+
+{
+  "wishesAndCongratulations": {
+    "hero": {
+      "badge": "Wishes & Congratulations",
+      "title": "Celebrating Happiness, Achievements & Togetherness",
+      "description": "The Gram Panchayat celebrates the special moments, achievements and milestones of every member of our village community.",
+      "chipOne": "Sharing Happiness",
+      "chipTwo": "Celebrating Together"
+    },
+    "intro": {
+      "eyebrow": "A COMMUNITY THAT CARES",
+      "title": "Every Special Moment Deserves to Be Celebrated",
+      "description": "Our village is more than a place where we live. It is a family where every achievement, celebration and happy moment brings us closer together.",
+      "descriptionTwo": "Through wishes and congratulations, the Gram Panchayat recognizes the efforts, dedication and success of villagers and encourages everyone to move forward.",
+      "highlightTitle": "Together in Every Celebration",
+      "highlightDescription": "We believe that sharing happiness makes our community stronger and creates lasting bonds among villagers."
+    },
+    "wishes": {
+      "eyebrow": "SPECIAL OCCASIONS",
+      "title": "Wishes & Congratulations",
+      "description": "We are happy to celebrate life's beautiful moments and recognize the achievements of our villagers.",
+      "items": {
+        "birthday": {
+          "title": "Birthday Wishes",
+          "description": "Warm birthday wishes to all villagers. May every year bring happiness, good health and new opportunities."
+        },
+        "anniversary": {
+          "title": "Anniversary Wishes",
+          "description": "Heartfelt wishes to couples celebrating their wedding anniversaries. May their journey together remain filled with love and happiness."
+        },
+        "achievement": {
+          "title": "Achievement Recognition",
+          "description": "Congratulations to individuals who achieve success in education, sports, public service and other fields."
+        },
+        "success": {
+          "title": "Success & Milestones",
+          "description": "We appreciate every milestone and success that inspires others and brings pride to our village."
+        }
+      }
+    },
+    "students": {
+      "badge": "Student Felicitation Ceremony",
+      "title": "🎉 Felicitation Ceremony for Meritorious Students 🎉",
+      "subtitle": "Heartiest congratulations to the successful students of the academic year 2024–25!",
+      "sscTitle": "🏆 Class 10 (SSC) Achievers",
+      "class": "Class 10",
+      "percentage": "Percentage",
+      "firstBadge": "First in the Village",
+      "ssc": {
+        "aditi": {
+          "name": "Miss Aditi Jadhav",
+          "marks": "94.50%"
+        },
+        "rahul": {
+          "name": "Master Rahul Patil",
+          "marks": "96.20%"
+        },
+        "soham": {
+          "name": "Master Soham Deshmukh",
+          "marks": "91.00%"
+        }
+      },
+      "specialTitle": "🌟 Special Achievements & Other Successes",
+      "special": {
+        "ajay": {
+          "name": "Mr. Ajay Kale",
+          "achievement": "Selected in the Police Recruitment"
+        },
+        "sneha": {
+          "name": "Miss Sneha Shinde",
+          "achievement": "Received the NMMS Scholarship"
+        },
+        "vijay": {
+          "name": "Master Vijay Pawar",
+          "achievement": "Gold Medal in the State-Level Running Competition"
+        },
+        "sayali": {
+          "name": "Miss Sayali More",
+          "achievement": "Class 12 (Science) – 88%"
+        }
+      },
+      "messageTitle": "✨ Message from the Sarpanch ✨",
+      "message": "The success achieved by the students of our village is a matter of pride for all of us. The Gram Panchayat and all villagers extend their heartfelt best wishes for their bright future and continued success!",
+      "signature": "– Sarpanch and Gram Panchayat Members, [Village Name]"
+    },
+    "celebrations": {
+      "eyebrow": "TOGETHER AS A COMMUNITY",
+      "title": "Celebrating Together",
+      "description": "Festivals, community gatherings and special occasions bring villagers together and strengthen our bonds.",
+      "items": {
+        "festivals": {
+          "title": "Festival Celebrations",
+          "description": "We celebrate festivals with joy, unity and enthusiasm, respecting our traditions and cultural values."
+        },
+        "community": {
+          "title": "Community Gatherings",
+          "description": "Village gatherings and community events provide opportunities to connect, share happiness and build stronger relationships."
+        },
+        "special": {
+          "title": "Special Occasions",
+          "description": "We recognize important moments and memorable achievements that bring happiness and pride to our village."
+        }
+      }
+    },
+    "values": {
+      "eyebrow": "OUR COMMUNITY VALUES",
+      "title": "Values That Bring Us Together",
+      "description": "Our celebrations are guided by values that encourage respect, unity and positive growth throughout the village.",
+      "items": {
+        "respect": {
+          "title": "Respect for Everyone",
+          "description": "We value every individual and appreciate their contributions, efforts and achievements."
+        },
+        "togetherness": {
+          "title": "Unity & Togetherness",
+          "description": "We believe in standing together, sharing happiness and supporting one another in every situation."
+        },
+        "encouragement": {
+          "title": "Encouraging Success",
+          "description": "We motivate children, youth and every villager to work towards their goals and achieve their dreams."
+        }
+      }
+    },
+    "closing": {
+      "title": "Every Achievement Makes Our Village Proud",
+      "description": "Let us continue to celebrate happiness, appreciate achievements and build a stronger, united and progressive village together.",
+      "button": "Contact Gram Panchayat"
+    }
+  }
+}

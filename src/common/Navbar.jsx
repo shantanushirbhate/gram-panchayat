@@ -38,6 +38,7 @@ import navigationMenu from "../config/navigationMenu.js";
 
 import indiaEmblem from "../assets/Emblem_of_India_(Government_Gazette).svg";
 import maharashtraSeal from "../assets/Seal_of_Maharashtra.svg.webp";
+import sategaonLogo from "../assets/sategaonlogo.webp";
 
 const COLORS = {
   green: "#14532D",
@@ -52,44 +53,27 @@ const COLORS = {
   border: "#E5E7EB",
 };
 
-const LOGO_URL = "https://www.pimpalkhutabk.in/icon/logo_gp.png";
+const PANCHAYAT_HEADING =
+  "ग्रा.पं. सातेगाव, पं.स. अंजनगाव सुर्जी, जि. अमरावती";
+
+const PANCHAYAT_QUOTE =
+  "गाव हा विश्वाचा नकाशा, गावावरूनी देशाची परीक्षा, गावाची भंगता अवदशा येईल देशा";
+
+const PANCHAYAT_LOCATION =
+  "पं.स. अंजनगाव सुर्जी, जि. अमरावती, महाराष्ट्र";
+
+const CONTACT_PHONE = "9920942994";
+const CONTACT_EMAIL = "gppimpalkhuta30@gmail.com";
 
 const containerSpacing = {
   px: {
-    xs: 2,
+    xs: 1.5,
     sm: 3,
     md: 4,
     lg: 5,
     xl: 7,
   },
 };
-
-// ================= SHORT NAVIGATION LABELS =================
-//in transparancy add this three dropdown
-//1.arthik mahiti
-//2.kamachi mahiti
-//3.gram sabha corner
-
-//in education and environment add this add this drop down
-//1.paryavaran v shasvat vikas
-//2.shikshan ani yuvak kopra
-//3.shikshan v payavaran
-
-//in seva add this drop down
-//1.suchana v jahirati
-//2.online kar bharna
-//3.nagrik seva
-//4.shaskiya yojna
-//5.mahiticha adhikar
-
-
-//in adhik add this dropdown
-//1.rojgar v kaushalya
-//2.udyog v upkram
-//3.swyam sahayata gut
-//4.mahatvache duve
-//5.takrar,suchana,salla,abhipray
-//6.sitemap
 
 const shortLabels = {
   en: {
@@ -126,22 +110,16 @@ function Navbar() {
   const [activeDesktopMenu, setActiveDesktopMenu] = useState(null);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState(null);
 
-  // ================= LANGUAGE =================
-
   const currentLanguage = i18n.resolvedLanguage?.startsWith("mr")
     ? "mr"
     : "en";
 
-  // ================= TRANSLATION HELPERS =================
-
   const getLabel = (label) => t(`navbar.${label}`);
 
-  const getShortLabel = (label) => {
-    return shortLabels[currentLanguage]?.[label] || getLabel(label);
-  };
+  const getShortLabel = (label) =>
+    shortLabels[currentLanguage]?.[label] || getLabel(label);
 
-  // ================= ROUTE CHANGE =================
-
+  // Close menus when the route changes.
   useEffect(() => {
     const activeItem = navigationMenu.find((item) =>
       item.children?.some(
@@ -155,9 +133,13 @@ function Navbar() {
     setMobileOpen(false);
     setDesktopAnchor(null);
     setActiveDesktopMenu(null);
-  }, [location.pathname]);
 
-  // ================= RESPONSIVE DRAWER =================
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [location.pathname]);
 
   useEffect(() => {
     if (isDesktop) {
@@ -174,8 +156,6 @@ function Navbar() {
     setActiveDesktopMenu(null);
   };
 
-  // ================= DESKTOP DROPDOWN =================
-
   const handleDesktopMenu = (event, label) => {
     if (activeDesktopMenu === label && desktopAnchor) {
       closeDesktopMenu();
@@ -186,15 +166,11 @@ function Navbar() {
     setActiveDesktopMenu(label);
   };
 
-  // ================= MOBILE SUBMENU =================
-
   const toggleMobileMenu = (label) => {
     setExpandedMobileMenu((previous) =>
       previous === label ? null : label
     );
   };
-
-  // ================= ACTIVE ROUTE =================
 
   const isParentActive = (item) => {
     if (item.path === "/") {
@@ -216,8 +192,7 @@ function Navbar() {
     (item) => item.label === activeDesktopMenu
   );
 
-  // ================= DESKTOP NAVIGATION ITEM =================
-
+  // Desktop navigation item.
   const renderDesktopItem = (item) => {
     const active = isParentActive(item);
 
@@ -270,7 +245,6 @@ function Navbar() {
       >
         {item.children?.length > 0 ? (
           <Button
-            fullWidth
             title={getLabel(item.label)}
             onClick={(event) =>
               handleDesktopMenu(event, item.label)
@@ -297,7 +271,6 @@ function Navbar() {
             component={NavLink}
             to={item.path}
             end={item.path === "/"}
-            fullWidth
             title={getLabel(item.label)}
             sx={{
               ...buttonStyles,
@@ -354,8 +327,8 @@ function Navbar() {
             sx={{
               minHeight: {
                 xs: 76,
-                sm: 90,
-                md: 112,
+                sm: 104,
+                md: 126,
               },
               display: "flex",
               alignItems: "center",
@@ -379,7 +352,7 @@ function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 gap: {
-                  xs: 0.7,
+                  xs: 0.6,
                   sm: 1.5,
                   md: 2,
                 },
@@ -388,28 +361,19 @@ function Navbar() {
                 textDecoration: "none",
               }}
             >
-              {/* GOVERNMENT LOGOS */}
+              {/* GOVERNMENT AND GRAM PANCHAYAT LOGOS */}
 
               <Stack
                 direction="row"
                 alignItems="center"
                 spacing={{
-                  xs: 0.3,
+                  xs: 0.25,
                   sm: 0.8,
                   md: 1.3,
                 }}
                 sx={{ flexShrink: 0 }}
               >
-                <Box
-                  component="img"
-                  src={LOGO_URL}
-                  alt="Gram Panchayat Logo"
-                  sx={{
-                    width: { xs: 37, sm: 54, md: 72 },
-                    height: { xs: 37, sm: 54, md: 72 },
-                    objectFit: "contain",
-                  }}
-                />
+                {/* GOVERNMENT OF INDIA */}
 
                 <Box
                   sx={{
@@ -424,8 +388,8 @@ function Navbar() {
                     src={indiaEmblem}
                     alt="Government of India"
                     sx={{
-                      width: { xs: 22, sm: 33, md: 43 },
-                      height: { xs: 30, sm: 44, md: 56 },
+                      width: { xs: 21, sm: 33, md: 43 },
+                      height: { xs: 29, sm: 44, md: 56 },
                       objectFit: "contain",
                     }}
                   />
@@ -442,12 +406,14 @@ function Navbar() {
                   </Typography>
                 </Box>
 
+                {/* MAHARASHTRA GOVERNMENT */}
+
                 <Box
                   sx={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    minWidth: { xs: 26, sm: 40, md: 50 },
+                    minWidth: { xs: 25, sm: 40, md: 50 },
                   }}
                 >
                   <Box
@@ -455,8 +421,8 @@ function Navbar() {
                     src={maharashtraSeal}
                     alt="Maharashtra Government"
                     sx={{
-                      width: { xs: 24, sm: 36, md: 46 },
-                      height: { xs: 30, sm: 44, md: 56 },
+                      width: { xs: 23, sm: 36, md: 46 },
+                      height: { xs: 29, sm: 44, md: 56 },
                       objectFit: "contain",
                     }}
                   />
@@ -472,52 +438,94 @@ function Navbar() {
                     महाराष्ट्र शासन
                   </Typography>
                 </Box>
+
+                {/* SATEGAON GRAM PANCHAYAT LOGO */}
+
+                <Box
+                  component="img"
+                  src={sategaonLogo}
+                  alt="Gram Panchayat Sategaon Logo"
+                  sx={{
+                    width: { xs: 35, sm: 54, md: 72 },
+                    height: { xs: 35, sm: 54, md: 72 },
+                    objectFit: "contain",
+                    flexShrink: 0,
+                  }}
+                />
               </Stack>
 
-              {/* PANCHAYAT NAME */}
+              {/* PANCHAYAT NAME AND QUOTE */}
 
-              <Box sx={{ minWidth: 0, overflow: "hidden" }}>
+              <Box
+                sx={{
+                  minWidth: 0,
+                  flex: 1,
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
                 <Typography
                   sx={{
                     color: COLORS.green,
                     fontWeight: 900,
                     fontSize: {
-                      xs: 11,
-                      sm: 17,
-                      md: 23,
-                      lg: 26,
+                      xs: 10,
+                      sm: 15,
+                      md: 20,
+                      lg: 22,
                     },
-                    lineHeight: 1.4,
-                    whiteSpace: {
-                      xs: "normal",
-                      sm: "nowrap",
-                    },
+                    lineHeight: 1.5,
+                    whiteSpace: "normal",
                     overflowWrap: "anywhere",
                   }}
                 >
-                  {t("navbar.panchayatName")}
+                  {PANCHAYAT_HEADING}
                 </Typography>
 
                 <Typography
                   sx={{
                     color: COLORS.text,
                     fontWeight: 700,
-                    fontSize: { xs: 7, sm: 10, md: 13 },
+                    fontSize: {
+                      xs: 7,
+                      sm: 9,
+                      md: 12,
+                    },
                     lineHeight: 1.5,
                   }}
                 >
                   {t("navbar.englishName")}
                 </Typography>
 
-                <Typography
+                <Box
                   sx={{
-                    color: COLORS.muted,
-                    fontSize: { xs: 6, sm: 8, md: 10 },
-                    mt: 0.3,
+                    display: {
+                      xs: "none",
+                      sm: "flex",
+                    },
+                    alignItems: "flex-start",
+                    gap: 0.5,
+                    mt: 0.5,
                   }}
                 >
-                  ता. वरुड, जिल्हा अमरावती, महाराष्ट्र
-                </Typography>
+                  <Typography
+                    sx={{
+                      color: COLORS.orange,
+                      fontSize: {
+                        sm: 8,
+                        md: 10,
+                        lg: 11,
+                      },
+                      fontWeight: 700,
+                      lineHeight: 1.6,
+                      fontStyle: "italic",
+                    }}
+                  >
+                    “{PANCHAYAT_QUOTE}”
+                  </Typography>
+                </Box>
               </Box>
             </Box>
 
@@ -553,7 +561,7 @@ function Navbar() {
 
                   <Typography
                     component="a"
-                    href="tel:9920942994"
+                    href={`tel:${CONTACT_PHONE}`}
                     sx={{
                       fontWeight: 800,
                       fontSize: 12,
@@ -562,7 +570,7 @@ function Navbar() {
                       "&:hover": { color: COLORS.orange },
                     }}
                   >
-                    9920942994
+                    {CONTACT_PHONE}
                   </Typography>
                 </Box>
               </Stack>
@@ -594,7 +602,7 @@ function Navbar() {
 
                   <Typography
                     component="a"
-                    href="mailto:gppimpalkhuta30@gmail.com"
+                    href={`mailto:${CONTACT_EMAIL}`}
                     sx={{
                       fontWeight: 700,
                       fontSize: 11,
@@ -603,7 +611,7 @@ function Navbar() {
                       "&:hover": { color: COLORS.orange },
                     }}
                   >
-                    gppimpalkhuta30@gmail.com
+                    {CONTACT_EMAIL}
                   </Typography>
                 </Box>
               </Stack>
@@ -871,46 +879,56 @@ function Navbar() {
             borderBottom: `3px solid ${COLORS.orange}`,
           }}
         >
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="flex-start"
-          >
-            <Stack direction="row" alignItems="center" spacing={1.2}>
-              <Box
-                component="img"
-                src={LOGO_URL}
-                alt="Gram Panchayat Logo"
+          <Stack direction="row" alignItems="center" spacing={1.2}>
+            <Box
+              component="img"
+              src={sategaonLogo}
+              alt="Gram Panchayat Sategaon Logo"
+              sx={{
+                width: 42,
+                height: 42,
+                objectFit: "contain",
+                backgroundColor: COLORS.white,
+                borderRadius: 2,
+                p: 0.4,
+                flexShrink: 0,
+              }}
+            />
+
+            <Box sx={{ minWidth: 0 }}>
+              <Typography
+                fontWeight={900}
+                fontSize={12}
+                lineHeight={1.6}
+                sx={{ overflowWrap: "anywhere" }}
+              >
+                {PANCHAYAT_HEADING}
+              </Typography>
+
+              <Typography
+                fontSize={9}
+                fontWeight={600}
                 sx={{
-                  width: 42,
-                  height: 42,
-                  objectFit: "contain",
-                  backgroundColor: COLORS.white,
-                  borderRadius: 2,
-                  p: 0.4,
+                  color: "rgba(255,255,255,0.85)",
+                  mt: 0.3,
                 }}
-              />
+              >
+                {t("navbar.englishName")}
+              </Typography>
 
-              <Box>
-                <Typography fontWeight={900} fontSize={12}>
-                  {t("navbar.panchayatName")}
-                </Typography>
-
-                <Typography
-                  fontSize={9}
-                  sx={{ color: "rgba(255,255,255,0.8)" }}
-                >
-                  ग्रामपंचायत
-                </Typography>
-
-                <Typography
-                  fontSize={7}
-                  sx={{ color: "rgba(255,255,255,0.7)" }}
-                >
-                  ता. वरुड, जि. अमरावती
-                </Typography>
-              </Box>
-            </Stack>
+              <Typography
+                fontSize={8}
+                fontWeight={600}
+                lineHeight={1.6}
+                sx={{
+                  color: "#FFD6B5",
+                  mt: 0.6,
+                  fontStyle: "italic",
+                }}
+              >
+                “{PANCHAYAT_QUOTE}”
+              </Typography>
+            </Box>
           </Stack>
         </Box>
 
@@ -999,8 +1017,6 @@ function Navbar() {
                           borderLeft: `2px solid ${COLORS.orange}`,
                         }}
                       >
-                        {/* MOBILE OVERVIEW ITEM */}
-
                         <ListItemButton
                           component={NavLink}
                           to={item.path}
@@ -1035,8 +1051,6 @@ function Navbar() {
                             }}
                           />
                         </ListItemButton>
-
-                        {/* MOBILE SUBMENU ITEMS */}
 
                         {item.children.map((child) => (
                           <ListItemButton
@@ -1164,13 +1178,13 @@ function Navbar() {
 
                 <Typography
                   component="a"
-                  href="tel:9920942994"
+                  href={`tel:${CONTACT_PHONE}`}
                   fontWeight={800}
                   fontSize={11}
                   color={COLORS.green}
                   sx={{ textDecoration: "none" }}
                 >
-                  9920942994
+                  {CONTACT_PHONE}
                 </Typography>
               </Box>
             </Stack>
@@ -1197,7 +1211,7 @@ function Navbar() {
 
                 <Typography
                   component="a"
-                  href="mailto:gppimpalkhuta30@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   fontWeight={700}
                   fontSize={10}
                   color={COLORS.green}
@@ -1206,7 +1220,7 @@ function Navbar() {
                     overflowWrap: "anywhere",
                   }}
                 >
-                  gppimpalkhuta30@gmail.com
+                  {CONTACT_EMAIL}
                 </Typography>
               </Box>
             </Stack>
@@ -1232,7 +1246,7 @@ function Navbar() {
                 fontWeight={600}
                 lineHeight={1.4}
               >
-                ता. वरुड, जि. अमरावती, महाराष्ट्र
+                {PANCHAYAT_LOCATION}
               </Typography>
             </Stack>
           </Stack>

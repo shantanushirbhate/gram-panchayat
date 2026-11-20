@@ -1,4 +1,3 @@
-
 import {
   Box,
   Container,
@@ -8,9 +7,9 @@ import {
   CardContent,
   Stack,
   Chip,
-  LinearProgress,
   Divider,
 } from "@mui/material";
+
 import Grid from "@mui/material/Grid";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -22,9 +21,7 @@ import {
   MapPin,
   Phone,
   Mail,
-  Users,
   Sprout,
-  Ruler,
   FileText,
   HeartPulse,
   Droplets,
@@ -34,8 +31,14 @@ import {
   Clock,
   Landmark,
   House,
-  ShieldCheck,
   Leaf,
+  Route,
+  Users,
+  ShieldCheck,
+  BookOpen,
+  Church,
+  Wheat,
+  Trees,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -112,114 +115,218 @@ const heroSlides = [
   {
     subtitle: "सेवा • समर्पण • पारदर्शकता",
     subtitleEn: "SERVICE • DEDICATION • TRANSPARENCY",
-    title: "पिंपळखुटा बु. ग्रामपंचायतीमध्ये आपले स्वागत आहे",
-    titleEn: "Welcome to Gram Panchayat Pimpalkhuta Budruk",
+
+    title: "सातेगाव ग्रामपंचायतीमध्ये आपले स्वागत आहे",
+    titleEn: "Welcome to Gram Panchayat Sategaon",
+
     description:
-      "गावाचा विकास, नागरिकांना सुविधा आणि पारदर्शक प्रशासन हेच आमचे ध्येय.",
+      "गावाचा सर्वांगीण विकास, नागरिकांना उत्तम सुविधा आणि पारदर्शक प्रशासन हेच आमचे ध्येय.",
+
     descriptionEn:
-      "Working towards village development, better public services and transparent administration.",
+      "Our mission is village development, better public facilities and transparent administration.",
+
     image: heroImage1,
+
     button: "गावाबद्दल जाणून घ्या",
     buttonEn: "Explore Our Village",
+
     link: "/about",
   },
   {
     subtitle: "आपले गाव • आपली जबाबदारी",
     subtitleEn: "OUR VILLAGE • OUR RESPONSIBILITY",
-    title: "स्वच्छ, सुंदर आणि विकसित गाव",
-    titleEn: "Towards a Clean, Green and Developed Village",
+
+    title: "स्वच्छ, सुंदर आणि विकसित सातेगाव",
+    titleEn: "Towards a Clean, Green and Developed Sategaon",
+
     description:
-      "स्वच्छता, पाणीपुरवठा, आरोग्य आणि मूलभूत सुविधांच्या विकासासाठी ग्रामपंचायत कटिबद्ध आहे.",
+      "स्वच्छता, पाणीपुरवठा, शिक्षण, आरोग्य आणि मूलभूत सुविधांच्या विकासासाठी एकत्रित प्रयत्न.",
+
     descriptionEn:
-      "Committed to improving sanitation, water supply, healthcare and essential village infrastructure.",
+      "Working together to improve sanitation, water supply, education, healthcare and essential facilities.",
+
     image: heroImage2,
-    button: "आमचे उपक्रम",
+
+    button: "आमच्या सेवा",
     buttonEn: "Our Services",
+
     link: "/services",
   },
   {
     subtitle: "कृषी • संस्कृती • विकास",
     subtitleEn: "AGRICULTURE • CULTURE • DEVELOPMENT",
-    title: "समृद्ध गावासाठी एकत्रित प्रयत्न",
-    titleEn: "Together for a Better Village",
+
+    title: "समृद्ध सातेगावसाठी एकत्रित प्रयत्न",
+    titleEn: "Together for a Better Sategaon",
+
     description:
-      "कृषीप्रधान गावाची परंपरा जपत शिक्षण, आरोग्य आणि विकासाच्या दिशेने वाटचाल.",
+      "शेतीची परंपरा, सामाजिक एकता आणि सांस्कृतिक वारसा जपत विकासाच्या दिशेने वाटचाल.",
+
     descriptionEn:
-      "Preserving our agricultural roots while moving forward in education, healthcare and development.",
+      "Moving towards progress while preserving our agricultural traditions, social unity and cultural heritage.",
+
     image: heroImage3,
+
     button: "फोटो गॅलरी",
     buttonEn: "Explore Gallery",
+
     link: "/gallery",
   },
 ];
 
 // ======================================================
-// VILLAGE STATISTICS
+// VILLAGE HIGHLIGHTS
 // ======================================================
 
-const villageStats = [
-  {
-    icon: Users,
-    value: "1,244",
-    title: "एकूण लोकसंख्या",
-    titleEn: "Group Panchayat Population",
-    description: "गट ग्रामपंचायत बावरूळी",
-    descriptionEn: "Group Gram Panchayat Bawurli",
-  },
-  {
-    icon: Ruler,
-    value: "25.67",
-    title: "क्षेत्रफळ",
-    titleEn: "Geographical Area",
-    description: "चौ. कि.मी.",
-    descriptionEn: "Square kilometres",
-  },
+const villageHighlights = [
   {
     icon: Sprout,
-    value: "कृषी",
-    title: "मुख्य व्यवसाय",
-    titleEn: "Main Occupation",
-    description: "शेती आणि कृषी व्यवसाय",
-    descriptionEn: "Agriculture and farming",
+    title: "कृषीप्रधान गाव",
+    titleEn: "Agriculture-based Village",
+
+    description:
+      "शेती हा गावातील प्रमुख व्यवसाय असून शेतकरी विविध पिकांचे उत्पादन घेतात.",
+
+    descriptionEn:
+      "Agriculture is the primary occupation, with farmers cultivating a variety of crops.",
   },
   {
-    icon: Landmark,
-    value: "1959",
-    title: "ग्रामपंचायत स्थापना",
-    titleEn: "Gram Panchayat Since",
-    description: "समाजसेवेचा प्रवास",
-    descriptionEn: "Years of community service",
+    icon: MapPin,
+    title: "भौगोलिक स्थान",
+    titleEn: "Geographical Location",
+
+    description:
+      "सातेगाव हे अमरावती जिल्ह्यातील अंजनगाव सुर्जी तालुक्यात वसलेले आहे.",
+
+    descriptionEn:
+      "Sategaon is situated in Anjangaon Surji taluka of Amravati district.",
+  },
+  {
+    icon: GraduationCap,
+    title: "शिक्षण आणि संस्कार",
+    titleEn: "Education and Learning",
+
+    description:
+      "जिल्हा परिषद शाळा आणि अंगणवाडीच्या माध्यमातून बालशिक्षणाला प्रोत्साहन.",
+
+    descriptionEn:
+      "Primary education and child development are supported through the Zilla Parishad school and Anganwadi.",
+  },
+  {
+    icon: Church,
+    title: "धार्मिक आणि सांस्कृतिक वारसा",
+    titleEn: "Cultural Heritage",
+
+    description:
+      "हनुमान मंदिर, ग्रामदैवत आणि पारंपरिक सणांमधून गावाची सांस्कृतिक ओळख जपली जाते.",
+
+    descriptionEn:
+      "The Hanuman temple, village deity and traditional festivals preserve the village's cultural identity.",
   },
 ];
 
 // ======================================================
-// DEVELOPMENT PROGRESS
+// VILLAGE INFORMATION
 // ======================================================
 
-const progressItems = [
+const villageInformation = [
   {
-    icon: HeartPulse,
-    title: "लसीकरण पूर्ण",
-    titleEn: "Vaccination Completed",
-    value: 95,
+    icon: Route,
+    title: "दळणवळण",
+    titleEn: "Connectivity",
+
+    description:
+      "गावातील रस्ते आणि दळणवळणाच्या सुविधांमुळे परिसरातील प्रमुख ठिकाणांशी संपर्क साधता येतो.",
+
+    descriptionEn:
+      "Road and transport facilities help connect the village with nearby important places.",
   },
   {
-    icon: ShieldCheck,
-    title: "हागणदारी मुक्त",
-    titleEn: "Open Defecation Free",
-    value: 100,
+    icon: Droplets,
+    title: "पाणीपुरवठा",
+    titleEn: "Water Supply",
+
+    description:
+      "नागरिकांना पिण्याच्या पाण्याची सुविधा उपलब्ध करून देणे आणि जलसंधारणाला प्रोत्साहन देणे.",
+
+    descriptionEn:
+      "Providing drinking water facilities and encouraging water conservation.",
+  },
+  {
+    icon: BookOpen,
+    title: "शिक्षण",
+    titleEn: "Education",
+
+    description:
+      "जिल्हा परिषद शाळा आणि डिजिटल शिक्षणाच्या माध्यमातून विद्यार्थ्यांच्या विकासाला प्रोत्साहन.",
+
+    descriptionEn:
+      "Supporting students through the Zilla Parishad school and digital learning initiatives.",
+  },
+  {
+    icon: HeartPulse,
+    title: "आरोग्य आणि स्वच्छता",
+    titleEn: "Health and Sanitation",
+
+    description:
+      "स्वच्छता अभियान आणि आरोग्यविषयक उपक्रमांद्वारे निरोगी गाव निर्माण करण्याचा प्रयत्न.",
+
+    descriptionEn:
+      "Promoting a healthy village through sanitation drives and health-related initiatives.",
+  },
+  {
+    icon: Church,
+    title: "धार्मिक स्थळे",
+    titleEn: "Religious Places",
+
+    description:
+      "हनुमान मंदिर आणि ग्रामदैवताच्या माध्यमातून गावाची धार्मिक परंपरा जपली जाते.",
+
+    descriptionEn:
+      "The Hanuman temple and village deity are important parts of the village's religious traditions.",
+  },
+  {
+    icon: Wheat,
+    title: "शेती आणि अर्थव्यवस्था",
+    titleEn: "Agriculture and Economy",
+
+    description:
+      "कापूस, सोयाबीन, तूर, हरभरा आणि भाजीपाला ही गावातील महत्त्वाची कृषी उत्पादने आहेत.",
+
+    descriptionEn:
+      "Cotton, soybean, pigeon pea, chickpeas and vegetables are important agricultural products.",
+  },
+];
+
+// ======================================================
+// AGRICULTURE CROPS
+// ======================================================
+
+const agricultureItems = [
+  {
+    icon: Sprout,
+    title: "कापूस",
+    titleEn: "Cotton",
+  },
+  {
+    icon: Leaf,
+    title: "सोयाबीन",
+    titleEn: "Soybean",
+  },
+  {
+    icon: Wheat,
+    title: "तूर",
+    titleEn: "Pigeon Pea",
   },
   {
     icon: Sun,
-    title: "सौर पथदिवे",
-    titleEn: "Solar Street Lights",
-    value: 85,
+    title: "हरभरा",
+    titleEn: "Chickpeas",
   },
   {
-    icon: GraduationCap,
-    title: "डिजिटल साक्षरता",
-    titleEn: "Digital Literacy",
-    value: 70,
+    icon: Trees,
+    title: "भाजीपाला",
+    titleEn: "Vegetables",
   },
 ];
 
@@ -230,35 +337,47 @@ const progressItems = [
 const services = [
   {
     icon: FileText,
-    title: "जन्म नोंदणी",
-    titleEn: "Birth Registration",
-    fee: "₹20",
-    time: "7 दिवस",
-    timeEn: "7 days",
-  },
-  {
-    icon: FileText,
-    title: "मृत्यू नोंदणी",
-    titleEn: "Death Registration",
-    fee: "₹20",
-    time: "3 कार्यदिवस",
-    timeEn: "3 working days",
-  },
-  {
-    icon: Users,
-    title: "विवाह नोंदणी",
-    titleEn: "Marriage Registration",
-    fee: "₹20",
-    time: "7–15 दिवस",
-    timeEn: "7–15 days",
+    title: "जन्म आणि मृत्यू नोंदणी",
+    titleEn: "Birth and Death Registration",
+
+    description:
+      "जन्म आणि मृत्यू नोंदणीसंबंधी आवश्यक माहिती व मार्गदर्शन.",
+
+    descriptionEn:
+      "Information and guidance regarding birth and death registration.",
   },
   {
     icon: House,
-    title: "रहिवासी दाखला",
-    titleEn: "Residency Certificate",
-    fee: "₹25",
-    time: "3 कार्यदिवस",
-    timeEn: "3 working days",
+    title: "विविध दाखले",
+    titleEn: "Certificates",
+
+    description:
+      "नागरिकांना आवश्यक असलेल्या विविध दाखल्यांसाठी मार्गदर्शन.",
+
+    descriptionEn:
+      "Guidance for citizens regarding various required certificates.",
+  },
+  {
+    icon: Users,
+    title: "नागरिक सेवा",
+    titleEn: "Citizen Services",
+
+    description:
+      "ग्रामपंचायतीमार्फत उपलब्ध असलेल्या नागरिक सेवांची माहिती.",
+
+    descriptionEn:
+      "Information about citizen services provided by the Gram Panchayat.",
+  },
+  {
+    icon: Landmark,
+    title: "शासकीय योजना",
+    titleEn: "Government Schemes",
+
+    description:
+      "केंद्र आणि राज्य शासनाच्या विविध योजनांची माहिती.",
+
+    descriptionEn:
+      "Information about various Central and State Government schemes.",
   },
 ];
 
@@ -342,100 +461,10 @@ function IconTile({ icon: Icon, size = 25 }) {
 }
 
 // ======================================================
-// STATISTICS CARD
+// HIGHLIGHT CARD
 // ======================================================
 
-function StatCard({ stat, index, text }) {
-  const Icon = stat.icon;
-
-  return (
-    <Card
-      elevation={0}
-      sx={{
-        ...cardStyle,
-        position: "relative",
-        overflow: "hidden",
-        minHeight: { xs: 205, sm: 220, md: 225 },
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <CardContent
-        sx={{
-          width: "100%",
-          height: "100%",
-          minWidth: 0,
-          p: { xs: 2.5, sm: 3 },
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          boxSizing: "border-box",
-          "&:last-child": {
-            pb: 3,
-          },
-        }}
-      >
-        <Typography
-          aria-hidden="true"
-          sx={{
-            position: "absolute",
-            top: 5,
-            right: 17,
-            fontSize: { xs: 54, md: 68 },
-            fontWeight: 900,
-            color: "rgba(23,59,42,0.045)",
-          }}
-        >
-          0{index + 1}
-        </Typography>
-
-        <IconTile icon={Icon} />
-
-        <Typography
-          sx={{
-            mt: 2,
-            color: COLORS.green,
-            fontWeight: 900,
-            fontSize: { xs: 27, sm: 30, md: 33 },
-            lineHeight: 1.2,
-          }}
-        >
-          {stat.value}
-        </Typography>
-
-        <Typography
-          sx={{
-            mt: 1,
-            color: COLORS.text,
-            fontWeight: 800,
-            fontSize: { xs: 14, sm: 15 },
-            lineHeight: 1.5,
-          }}
-        >
-          {text(stat.title, stat.titleEn)}
-        </Typography>
-
-        <Typography
-          sx={{
-            mt: "auto",
-            pt: 0.7,
-            color: COLORS.muted,
-            fontSize: 12,
-            lineHeight: 1.6,
-          }}
-        >
-          {text(stat.description, stat.descriptionEn)}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
-}
-
-// ======================================================
-// DEVELOPMENT PROGRESS CARD
-// ======================================================
-
-function ProgressCard({ item, text }) {
+function HighlightCard({ item, text }) {
   const Icon = item.icon;
 
   return (
@@ -443,66 +472,95 @@ function ProgressCard({ item, text }) {
       elevation={0}
       sx={{
         ...cardStyle,
-        minHeight: { xs: 215, sm: 220, md: 225 },
-        p: { xs: 2.5, sm: 3 },
-        boxSizing: "border-box",
-        display: "flex",
-        flexDirection: "column",
+        minHeight: { xs: 220, sm: 235 },
       }}
     >
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        sx={{ mb: 2.5 }}
+      <CardContent
+        sx={{
+          p: { xs: 2.5, sm: 3 },
+          "&:last-child": { pb: 3 },
+        }}
       >
-        <IconTile icon={Icon} size={23} />
+        <IconTile icon={Icon} />
 
         <Typography
           sx={{
+            mt: 2,
+            mb: 1,
             color: COLORS.green,
-            fontSize: 25,
             fontWeight: 900,
+            fontSize: 17,
+            lineHeight: 1.5,
           }}
         >
-          {item.value}%
+          {text(item.title, item.titleEn)}
         </Typography>
-      </Stack>
 
-      <Typography
-        sx={{
-          color: COLORS.text,
-          fontWeight: 800,
-          fontSize: 15,
-          lineHeight: 1.5,
-          mb: 2,
-          minHeight: 45,
-        }}
-      >
-        {text(item.title, item.titleEn)}
-      </Typography>
-
-      <LinearProgress
-        variant="determinate"
-        value={item.value}
-        aria-label={`${item.value}%`}
-        sx={{
-          mt: "auto",
-          height: 9,
-          borderRadius: 10,
-          backgroundColor: "#E8EDE8",
-          "& .MuiLinearProgress-bar": {
-            borderRadius: 10,
-            backgroundColor: COLORS.orange,
-          },
-        }}
-      />
+        <Typography
+          color="text.secondary"
+          fontSize={13}
+          lineHeight={1.9}
+        >
+          {text(item.description, item.descriptionEn)}
+        </Typography>
+      </CardContent>
     </Card>
   );
 }
 
 // ======================================================
-// PUBLIC SERVICE CARD
+// VILLAGE INFORMATION CARD
+// ======================================================
+
+function InformationCard({ item, text }) {
+  const Icon = item.icon;
+
+  return (
+    <Card
+      elevation={0}
+      sx={{
+        ...cardStyle,
+        minHeight: { xs: 205, sm: 220 },
+      }}
+    >
+      <CardContent
+        sx={{
+          p: { xs: 2.5, sm: 3 },
+          "&:last-child": { pb: 3 },
+        }}
+      >
+        <Stack direction="row" spacing={2} alignItems="center">
+          <IconTile icon={Icon} size={23} />
+
+          <Typography
+            sx={{
+              color: COLORS.green,
+              fontWeight: 900,
+              fontSize: 16,
+              lineHeight: 1.5,
+            }}
+          >
+            {text(item.title, item.titleEn)}
+          </Typography>
+        </Stack>
+
+        <Typography
+          sx={{
+            mt: 2,
+            color: COLORS.muted,
+            fontSize: 13,
+            lineHeight: 1.9,
+          }}
+        >
+          {text(item.description, item.descriptionEn)}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+}
+
+// ======================================================
+// SERVICE CARD
 // ======================================================
 
 function ServiceCard({ service, text }) {
@@ -513,24 +571,18 @@ function ServiceCard({ service, text }) {
       elevation={0}
       sx={{
         ...cardStyle,
-        minHeight: { xs: 310, sm: 320, md: 330 },
+        minHeight: { xs: 255, sm: 265 },
         display: "flex",
         flexDirection: "column",
       }}
     >
       <CardContent
         sx={{
-          width: "100%",
-          height: "100%",
-          minWidth: 0,
           p: { xs: 2.5, sm: 3 },
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          boxSizing: "border-box",
-          "&:last-child": {
-            pb: 3,
-          },
+          "&:last-child": { pb: 3 },
         }}
       >
         <IconTile icon={Icon} />
@@ -538,54 +590,26 @@ function ServiceCard({ service, text }) {
         <Typography
           sx={{
             mt: 2,
-            minHeight: 52,
-            display: "flex",
-            alignItems: "center",
             color: COLORS.green,
             fontWeight: 900,
             fontSize: 17,
             lineHeight: 1.5,
+            minHeight: 52,
           }}
         >
           {text(service.title, service.titleEn)}
         </Typography>
 
-        <Divider sx={{ my: 2 }} />
-
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          sx={{ mb: 1.5, gap: 1 }}
+        <Typography
+          sx={{
+            mt: 1,
+            color: COLORS.muted,
+            fontSize: 13,
+            lineHeight: 1.8,
+          }}
         >
-          <Typography color="text.secondary" fontSize={13}>
-            {text("शुल्क", "Fee")}
-          </Typography>
-
-          <Typography color={COLORS.green} fontWeight={900}>
-            {service.fee}
-          </Typography>
-        </Stack>
-
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="flex-start"
-          sx={{ gap: 1 }}
-        >
-          <Typography color="text.secondary" fontSize={13}>
-            {text("कालावधी", "Processing")}
-          </Typography>
-
-          <Typography
-            color={COLORS.text}
-            fontWeight={700}
-            fontSize={13}
-            textAlign="right"
-          >
-            {text(service.time, service.timeEn)}
-          </Typography>
-        </Stack>
+          {text(service.description, service.descriptionEn)}
+        </Typography>
 
         <Button
           component={Link}
@@ -593,7 +617,7 @@ function ServiceCard({ service, text }) {
           endIcon={<ArrowUpRight size={17} />}
           sx={{
             mt: "auto",
-            pt: 2.5,
+            pt: 2,
             alignSelf: "flex-start",
             color: COLORS.orange,
             fontWeight: 900,
@@ -662,7 +686,9 @@ function HomePage() {
         color: COLORS.text,
       }}
     >
-      {/* HERO SLIDER */}
+      {/* ==================================================
+          HERO SLIDER
+      ================================================== */}
 
       <Box
         sx={{
@@ -766,7 +792,6 @@ function HomePage() {
                         mb: { xs: 2.5, md: 3 },
                         maxWidth: "100%",
                         height: "auto",
-                        alignSelf: "flex-start",
                         backgroundColor: COLORS.saffron,
                         color: "#78350F",
                         fontWeight: 900,
@@ -817,7 +842,10 @@ function HomePage() {
                       direction={{ xs: "column", sm: "row" }}
                       spacing={1.5}
                       sx={{
-                        alignItems: { xs: "stretch", sm: "center" },
+                        alignItems: {
+                          xs: "stretch",
+                          sm: "center",
+                        },
                         maxWidth: { xs: 320, sm: "none" },
                       }}
                     >
@@ -856,7 +884,8 @@ function HomePage() {
                           minHeight: 49,
                           "&:hover": {
                             borderColor: COLORS.saffron,
-                            backgroundColor: "rgba(255,255,255,0.12)",
+                            backgroundColor:
+                              "rgba(255,255,255,0.12)",
                           },
                         }}
                       >
@@ -890,16 +919,22 @@ function HomePage() {
         >
           <MapPin size={18} color={COLORS.orange} />
 
-          <Typography fontWeight={800} fontSize={13} color={COLORS.green}>
+          <Typography
+            fontWeight={800}
+            fontSize={13}
+            color={COLORS.green}
+          >
             {text(
-              "वरुड, अमरावती, महाराष्ट्र",
-              "Warud, Amravati, Maharashtra"
+              "ता. अंजनगाव सुर्जी, जि. अमरावती",
+              "Anjangaon Surji, Amravati"
             )}
           </Typography>
         </Box>
       </Box>
 
-      {/* ANNOUNCEMENTS */}
+      {/* ==================================================
+          ANNOUNCEMENTS
+      ================================================== */}
 
       <Box
         sx={{
@@ -968,16 +1003,16 @@ function HomePage() {
             >
               {[
                 text(
-                  "ग्रामसभा नोटीस - मार्च 2026",
-                  "Gram Sabha Notice - March 2026"
+                  "ग्रामसभा आणि बैठकींच्या सूचना",
+                  "Gram Sabha and Meeting Notices"
                 ),
                 text(
-                  "प्रधानमंत्री आवास योजना - नोंदणी सुरू",
-                  "Pradhan Mantri Awas Yojana - Registration Open"
+                  "शासकीय योजनांची माहिती",
+                  "Government Scheme Information"
                 ),
                 text(
-                  "ग्रामसभा नोटीस - मार्च 2026",
-                  "Gram Sabha Notice - March 2026"
+                  "नागरिक सेवा आणि महत्त्वाच्या सूचना",
+                  "Citizen Services and Important Updates"
                 ),
               ].map((announcement, index) => (
                 <Stack
@@ -990,7 +1025,9 @@ function HomePage() {
                     component="span"
                     sx={{
                       animation:
-                        index === 0 ? "blinkStar 1.2s infinite" : "none",
+                        index === 0
+                          ? "blinkStar 1.2s infinite"
+                          : "none",
                     }}
                   >
                     ⭐
@@ -1003,18 +1040,6 @@ function HomePage() {
                   >
                     {announcement}
                   </Typography>
-
-                  <Chip
-                    label={text("नवीन", "NEW")}
-                    size="small"
-                    sx={{
-                      height: 22,
-                      backgroundColor: "#FDE68A",
-                      color: "#78350F",
-                      fontWeight: 900,
-                      fontSize: 10,
-                    }}
-                  />
                 </Stack>
               ))}
             </Stack>
@@ -1022,11 +1047,15 @@ function HomePage() {
         </Box>
       </Box>
 
-      {/* TODAY'S THOUGHTS */}
+      {/* ==================================================
+          TODAY'S THOUGHTS
+      ================================================== */}
 
       <TodaysThoughts />
 
-      {/* VILLAGE INTRODUCTION AND STATISTICS */}
+      {/* ==================================================
+          VILLAGE INTRODUCTION
+      ================================================== */}
 
       <Box
         sx={{
@@ -1062,14 +1091,18 @@ function HomePage() {
 
         <Container
           maxWidth={false}
-          sx={{ px: PAGE_GUTTER, position: "relative", zIndex: 1 }}
+          sx={{
+            px: PAGE_GUTTER,
+            position: "relative",
+            zIndex: 1,
+          }}
         >
           <Grid
             container
             spacing={{ xs: 4, md: 6 }}
-            alignItems="stretch"
+            alignItems="center"
           >
-            <Grid size={{ xs: 12, md: 4 }}>
+            <Grid size={{ xs: 12, md: 5 }}>
               <Box
                 sx={{
                   height: "100%",
@@ -1094,7 +1127,9 @@ function HomePage() {
                     backgroundColor: "#E7EFE8",
                     color: COLORS.green,
                     fontWeight: 900,
-                    "& .MuiChip-icon": { color: COLORS.orange },
+                    "& .MuiChip-icon": {
+                      color: COLORS.orange,
+                    },
                   }}
                 />
 
@@ -1109,8 +1144,8 @@ function HomePage() {
                   }}
                 >
                   {text(
-                    "पिंपळखुटा बु. ग्रामपंचायत",
-                    "Gram Panchayat Pimpalkhuta Budruk"
+                    "सातेगाव ग्रामपंचायत",
+                    "Gram Panchayat Sategaon"
                   )}
                 </Typography>
 
@@ -1133,8 +1168,8 @@ function HomePage() {
                   }}
                 >
                   {text(
-                    "महाराष्ट्रातील अमरावती जिल्ह्यातील वरुड तालुक्यात वसलेले आपले गाव. नागरिकांच्या सहभागातून गावाचा सर्वांगीण विकास साधण्याचा आमचा प्रयत्न आहे. स्वच्छता, मूलभूत सुविधा, शिक्षण आणि ग्रामीण विकासाला प्राधान्य देऊन ग्रामपंचायत सातत्याने कार्यरत आहे.",
-                    "Our village is located in Warud taluka of Amravati district, Maharashtra. We strive for the overall development of the village through citizen participation, with a focus on sanitation, essential facilities, education and rural development."
+                    "अमरावती जिल्ह्यातील अंजनगाव सुर्जी तालुक्यात वसलेले सातेगाव हे नैसर्गिक सौंदर्य, सामाजिक सलोखा आणि कृषी परंपरेसाठी ओळखले जाते. गावातील नागरिकांच्या सहभागातून शिक्षण, आरोग्य, पाणीपुरवठा, स्वच्छता आणि ग्रामीण विकासाला प्राधान्य देऊन गावाचा सर्वांगीण विकास साधण्याचा प्रयत्न केला जातो.",
+                    "Sategaon, located in Anjangaon Surji taluka of Amravati district, is known for its natural surroundings, social harmony and agricultural traditions. Through community participation, efforts are made to promote education, healthcare, water supply, sanitation and overall rural development."
                   )}
                 </Typography>
 
@@ -1152,7 +1187,7 @@ function HomePage() {
                 >
                   <IconTile icon={MapPin} />
 
-                  <Box>
+                  <Box sx={{ minWidth: 0 }}>
                     <Typography
                       fontWeight={900}
                       color={COLORS.green}
@@ -1167,8 +1202,8 @@ function HomePage() {
                       sx={{ mt: 0.4, lineHeight: 1.6 }}
                     >
                       {text(
-                        "वरुड, जिल्हा अमरावती, महाराष्ट्र",
-                        "Warud, Amravati District, Maharashtra"
+                        "सातेगाव, ता. अंजनगाव सुर्जी, जि. अमरावती, महाराष्ट्र",
+                        "Sategaon, Anjangaon Surji, Amravati, Maharashtra"
                       )}
                     </Typography>
                   </Box>
@@ -1201,47 +1236,33 @@ function HomePage() {
               </Box>
             </Grid>
 
-            <Grid size={{ xs: 12, md: 8 }} sx={{ minWidth: 0 }}>
+            <Grid size={{ xs: 12, md: 7 }} sx={{ minWidth: 0 }}>
               <Grid
                 container
                 spacing={CARD_GRID_SPACING}
                 alignItems="stretch"
               >
-                {villageStats.map((stat, index) => (
-                  <Grid size={{ xs: 12, sm: 6 }}
- 
- 
- 
- key={stat.title}
- sx={{
- display: "flex",
- minWidth: 0,
- }}>
-                    <StatCard stat={stat} index={index} text={text} />
+                {villageHighlights.map((item) => (
+                  <Grid
+                    key={item.title}
+                    size={{ xs: 12, sm: 6 }}
+                    sx={{
+                      display: "flex",
+                      minWidth: 0,
+                    }}
+                  >
+                    <HighlightCard item={item} text={text} />
                   </Grid>
                 ))}
               </Grid>
-
-              <Typography
-                variant="caption"
-                color="text.secondary"
-                sx={{
-                  display: "block",
-                  mt: 2,
-                  lineHeight: 1.7,
-                }}
-              >
-                {text(
-                  "* लोकसंख्या ही अधिकृत वेबसाइटवर दिलेली गट ग्रामपंचायत बावरूळीची आकडेवारी आहे.",
-                  "* Population figure is shown as the group Gram Panchayat Bawurli figure on the official website."
-                )}
-              </Typography>
             </Grid>
           </Grid>
         </Container>
       </Box>
 
-      {/* ABOUT SECTION */}
+      {/* ==================================================
+          ABOUT SECTION
+      ================================================== */}
 
       <Box
         sx={{
@@ -1266,8 +1287,8 @@ function HomePage() {
               >
                 <Box
                   component="img"
-                  src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200"
-                  alt="Agricultural landscape"
+                  src={heroImage3}
+                  alt="Sategaon village"
                   loading="lazy"
                   sx={{
                     width: "100%",
@@ -1297,10 +1318,13 @@ function HomePage() {
                     {text("आपली ओळख", "OUR IDENTITY")}
                   </Typography>
 
-                  <Typography color={COLORS.green} fontWeight={900}>
+                  <Typography
+                    color={COLORS.green}
+                    fontWeight={900}
+                  >
                     {text(
-                      "कृषीप्रधान गाव",
-                      "An Agriculture-based Village"
+                      "कृषी आणि संस्कृती",
+                      "Agriculture and Culture"
                     )}
                   </Typography>
                 </Box>
@@ -1341,8 +1365,8 @@ function HomePage() {
                 sx={{ mb: 3 }}
               >
                 {text(
-                  "ग्रामपंचायत पिंपळखुटा बु. ही स्थानिक स्वराज्य संस्थेच्या माध्यमातून नागरिकांना मूलभूत सुविधा उपलब्ध करून देण्यासाठी कार्यरत आहे. स्वच्छता, पाणीपुरवठा, शिक्षण, आरोग्य आणि ग्रामीण विकास या क्षेत्रांमध्ये सातत्याने प्रयत्न केले जातात.",
-                  "Gram Panchayat Pimpalkhuta Budruk works to provide essential public services through local self-governance. Our focus includes sanitation, water supply, education, healthcare and rural development."
+                  "सातेगावची ओळख ही येथील शेती, धार्मिक परंपरा आणि सामाजिक एकतेशी जोडलेली आहे. गावातील नागरिकांच्या सहकार्याने स्वच्छता, पाणीपुरवठा, शिक्षण, आरोग्य आणि पायाभूत सुविधांच्या विकासासाठी प्रयत्न केले जातात. आधुनिक तंत्रज्ञानाची जोड देत गावाच्या प्रगतीचा मार्ग अधिक सक्षम करण्याचा आमचा प्रयत्न आहे.",
+                  "Sategaon's identity is closely connected to its agriculture, religious traditions and social unity. With the cooperation of residents, efforts are made to improve sanitation, water supply, education, healthcare and infrastructure. We aim to strengthen the village's progress by combining traditional values with modern approaches."
                 )}
               </Typography>
 
@@ -1351,21 +1375,28 @@ function HomePage() {
                   {
                     icon: Droplets,
                     label: text(
-                      "पाणीपुरवठा आणि स्वच्छता",
-                      "Water Supply and Sanitation"
+                      "पाणीपुरवठा आणि जलसंधारण",
+                      "Water Supply and Conservation"
                     ),
                   },
                   {
                     icon: GraduationCap,
                     label: text(
-                      "शिक्षण आणि आरोग्य सुविधा",
-                      "Education and Healthcare"
+                      "शिक्षण आणि बालविकास",
+                      "Education and Child Development"
                     ),
                   },
                   {
-                    icon: Leaf,
+                    icon: HeartPulse,
                     label: text(
-                      "कृषी आणि ग्रामीण विकास",
+                      "आरोग्य आणि स्वच्छता",
+                      "Healthcare and Sanitation"
+                    ),
+                  },
+                  {
+                    icon: Sprout,
+                    label: text(
+                      "शेती आणि ग्रामीण विकास",
                       "Agriculture and Rural Development"
                     ),
                   },
@@ -1395,7 +1426,11 @@ function HomePage() {
                         <Icon size={20} />
                       </Box>
 
-                      <Typography color={COLORS.text} fontWeight={800}>
+                      <Typography
+                        color={COLORS.text}
+                        fontWeight={800}
+                        fontSize={14}
+                      >
                         {item.label}
                       </Typography>
                     </Stack>
@@ -1426,15 +1461,9 @@ function HomePage() {
         </Container>
       </Box>
 
-      {/* MINISTER SECTION */}
-
-      <MinisterSection />
-
-      {/* VILLAGE PHOTO GALLERY */}
-
-      <VillagePhotSlider />
-
-      {/* DEVELOPMENT PROGRESS */}
+      {/* ==================================================
+          VILLAGE GEOGRAPHY AND FACILITIES
+      ================================================== */}
 
       <Box
         sx={{
@@ -1444,14 +1473,17 @@ function HomePage() {
       >
         <Container maxWidth={false} sx={{ px: PAGE_GUTTER }}>
           <SectionHeading
-            subtitle={text("विकासाचा आढावा", "DEVELOPMENT OVERVIEW")}
+            subtitle={text(
+              "गावाची वैशिष्ट्ये",
+              "VILLAGE FEATURES"
+            )}
             title={text(
-              "गाव विकास प्रगती मीटर",
-              "Village Development Progress"
+              "सातेगावची ओळख आणि सुविधा",
+              "Village Identity and Facilities"
             )}
             description={text(
-              "अधिकृत वेबसाइटवर प्रकाशित केलेल्या प्रगतीच्या आकडेवारीनुसार.",
-              "Progress figures as published on the official website."
+              "गावातील भौगोलिक, शैक्षणिक, आरोग्यविषयक आणि सामाजिक वैशिष्ट्यांची माहिती.",
+              "Explore the geographical, educational, healthcare and social features of Sategaon."
             )}
           />
 
@@ -1460,39 +1492,226 @@ function HomePage() {
             spacing={CARD_GRID_SPACING}
             alignItems="stretch"
           >
-            {progressItems.map((item) => (
-              <Grid size={{ xs: 12, sm: 6, md: 3 }}
- 
- 
- 
- 
- key={item.title}
- sx={{
- display: "flex",
- minWidth: 0,
- }}>
-                <ProgressCard item={item} text={text} />
+            {villageInformation.map((item) => (
+              <Grid
+                key={item.title}
+                size={{ xs: 12, sm: 6, md: 4 }}
+                sx={{
+                  display: "flex",
+                  minWidth: 0,
+                }}
+              >
+                <InformationCard item={item} text={text} />
               </Grid>
             ))}
           </Grid>
         </Container>
       </Box>
 
-      {/* PUBLIC SERVICES */}
+      {/* ==================================================
+          AGRICULTURE SECTION
+      ================================================== */}
 
       <Box
         sx={{
-          backgroundColor: "#FFFFFF",
+          backgroundColor: COLORS.white,
+          py: { xs: 7, sm: 8, md: 10 },
+        }}
+      >
+        <Container maxWidth={false} sx={{ px: PAGE_GUTTER }}>
+          <Grid
+            container
+            spacing={{ xs: 4, md: 6 }}
+            alignItems="center"
+          >
+            <Grid size={{ xs: 12, md: 5 }}>
+              <Typography
+                color={COLORS.orange}
+                fontWeight={900}
+                fontSize={13}
+                letterSpacing={1.3}
+                sx={{ mb: 1 }}
+              >
+                {text("शेती आणि अर्थव्यवस्था", "AGRICULTURE")}
+              </Typography>
+
+              <Typography
+                component="h2"
+                sx={{
+                  color: COLORS.green,
+                  fontWeight: 900,
+                  fontSize: { xs: 28, sm: 34, md: 40 },
+                  lineHeight: 1.3,
+                  mb: 2,
+                }}
+              >
+                {text(
+                  "शेती हीच सातेगावची आर्थिक ताकद",
+                  "Agriculture Is the Strength of Sategaon"
+                )}
+              </Typography>
+
+              <Typography
+                color="text.secondary"
+                fontSize={{ xs: 14, md: 15 }}
+                lineHeight={2}
+                sx={{ mb: 3 }}
+              >
+                {text(
+                  "सातेगावची अर्थव्यवस्था प्रामुख्याने शेतीवर अवलंबून आहे. येथील शेतकरी कापूस, सोयाबीन, तूर आणि हरभरा यांसारखी पिके घेतात. काही शेतकरी भाजीपाला उत्पादनाकडेही वळले आहेत. आधुनिक कृषी तंत्रज्ञानाचा वापर करून शेती अधिक सक्षम करण्याचे प्रयत्न सुरू आहेत.",
+                  "Sategaon's economy primarily depends on agriculture. Farmers cultivate crops such as cotton, soybean, pigeon pea and chickpeas. Some farmers are also engaged in vegetable cultivation. Efforts are being made to strengthen farming through modern agricultural practices."
+                )}
+              </Typography>
+
+              <Button
+                component={Link}
+                to="/about"
+                variant="contained"
+                endIcon={<ArrowRight size={18} />}
+                sx={{
+                  backgroundColor: COLORS.green,
+                  px: 3,
+                  py: 1.5,
+                  borderRadius: 2,
+                  fontWeight: 800,
+                  "&:hover": {
+                    backgroundColor: COLORS.darkGreen,
+                  },
+                }}
+              >
+                {text("अधिक माहिती", "Explore More")}
+              </Button>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 7 }}>
+              <Box
+                sx={{
+                  p: { xs: 2.5, sm: 3.5, md: 4 },
+                  borderRadius: 4,
+                  backgroundColor: COLORS.cream,
+                  border: `1px solid ${COLORS.border}`,
+                }}
+              >
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  spacing={2}
+                  sx={{ mb: 3 }}
+                >
+                  <IconTile icon={Wheat} size={28} />
+
+                  <Box>
+                    <Typography
+                      color={COLORS.green}
+                      fontWeight={900}
+                      fontSize={18}
+                    >
+                      {text(
+                        "सातेगावमधील प्रमुख पिके",
+                        "Major Crops of Sategaon"
+                      )}
+                    </Typography>
+
+                    <Typography
+                      color="text.secondary"
+                      fontSize={13}
+                      sx={{ mt: 0.5 }}
+                    >
+                      {text(
+                        "गावातील महत्त्वाची कृषी उत्पादने",
+                        "Important agricultural produce"
+                      )}
+                    </Typography>
+                  </Box>
+                </Stack>
+
+                <Grid container spacing={2}>
+                  {agricultureItems.map((item) => {
+                    const Icon = item.icon;
+
+                    return (
+                      <Grid
+                        key={item.title}
+                        size={{ xs: 6, sm: 4 }}
+                      >
+                        <Box
+                          sx={{
+                            minHeight: 115,
+                            p: 2,
+                            backgroundColor: COLORS.white,
+                            border: `1px solid ${COLORS.border}`,
+                            borderRadius: 3,
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            textAlign: "center",
+                            gap: 1,
+                            transition: "0.3s",
+                            "&:hover": {
+                              borderColor: COLORS.orange,
+                              transform: {
+                                xs: "none",
+                                md: "translateY(-4px)",
+                              },
+                            },
+                          }}
+                        >
+                          <Icon
+                            size={27}
+                            color={COLORS.orange}
+                          />
+
+                          <Typography
+                            color={COLORS.green}
+                            fontWeight={900}
+                            fontSize={14}
+                          >
+                            {text(item.title, item.titleEn)}
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* ==================================================
+          MINISTER SECTION
+      ================================================== */}
+
+      <MinisterSection />
+
+      {/* ==================================================
+          VILLAGE PHOTO GALLERY
+      ================================================== */}
+
+      <VillagePhotSlider />
+
+      {/* ==================================================
+          PUBLIC SERVICES
+      ================================================== */}
+
+      <Box
+        sx={{
+          backgroundColor: COLORS.cream,
           py: { xs: 7, sm: 8, md: 11 },
         }}
       >
         <Container maxWidth={false} sx={{ px: PAGE_GUTTER }}>
           <SectionHeading
             subtitle={text("नागरिक सेवा", "CITIZEN SERVICES")}
-            title={text("आमच्या प्रमुख सेवा", "Our Public Services")}
+            title={text(
+              "ग्रामपंचायतीच्या प्रमुख सेवा",
+              "Gram Panchayat Public Services"
+            )}
             description={text(
-              "ग्रामपंचायतीमार्फत उपलब्ध असलेल्या काही प्रमुख दाखला आणि नोंदणी सेवा.",
-              "Some of the certificate and registration services listed by the Gram Panchayat."
+              "नागरिकांच्या दैनंदिन गरजांसाठी ग्रामपंचायतीमार्फत उपलब्ध असलेल्या सेवा आणि सुविधांची माहिती.",
+              "Information about services and facilities available through the Gram Panchayat for citizens."
             )}
           />
 
@@ -1502,16 +1721,14 @@ function HomePage() {
             alignItems="stretch"
           >
             {services.map((service) => (
-              <Grid size={{ xs: 12, sm: 6, md: 3 }}
- 
- 
- 
- 
- key={service.title}
- sx={{
- display: "flex",
- minWidth: 0,
- }}>
+              <Grid
+                key={service.title}
+                size={{ xs: 12, sm: 6, md: 3 }}
+                sx={{
+                  display: "flex",
+                  minWidth: 0,
+                }}
+              >
                 <ServiceCard service={service} text={text} />
               </Grid>
             ))}
@@ -1540,7 +1757,144 @@ function HomePage() {
         </Container>
       </Box>
 
-      {/* CONTACT SECTION */}
+      {/* ==================================================
+          CULTURE AND SOCIAL UNITY
+      ================================================== */}
+
+      <Box
+        sx={{
+          backgroundColor: COLORS.white,
+          py: { xs: 7, sm: 8, md: 10 },
+        }}
+      >
+        <Container maxWidth={false} sx={{ px: PAGE_GUTTER }}>
+          <Grid
+            container
+            spacing={{ xs: 4, md: 6 }}
+            alignItems="center"
+          >
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Box
+                sx={{
+                  borderRadius: 4,
+                  backgroundColor: COLORS.cream,
+                  p: { xs: 3, sm: 4 },
+                  border: `1px solid ${COLORS.border}`,
+                }}
+              >
+                <IconTile icon={Landmark} size={29} />
+
+                <Typography
+                  component="h2"
+                  sx={{
+                    mt: 2.5,
+                    color: COLORS.green,
+                    fontSize: { xs: 26, sm: 32 },
+                    fontWeight: 900,
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {text(
+                    "परंपरा, संस्कृती आणि सामाजिक ऐक्य",
+                    "Tradition, Culture and Social Unity"
+                  )}
+                </Typography>
+
+                <Typography
+                  color="text.secondary"
+                  fontSize={14}
+                  lineHeight={2}
+                  sx={{ mt: 2 }}
+                >
+                  {text(
+                    "सातेगावमध्ये पोळा, गणेशोत्सव आणि नवरात्री यांसारखे सण पारंपरिक पद्धतीने उत्साहात साजरे केले जातात. गावातील विविध समाजातील नागरिक एकत्रितपणे सण, उत्सव आणि सामाजिक उपक्रमांमध्ये सहभागी होतात. या परंपरांमुळे गावातील सामाजिक एकता आणि सांस्कृतिक वारसा टिकून आहे.",
+                    "Festivals such as Pola, Ganeshotsav and Navratri are celebrated with enthusiasm and traditional customs in Sategaon. Residents from different communities participate in festivals and social activities, helping preserve the village's cultural heritage and social unity."
+                  )}
+                </Typography>
+              </Box>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Stack spacing={2.5}>
+                {[
+                  {
+                    icon: Church,
+                    title: "ग्रामदैवत आणि हनुमान मंदिर",
+                    titleEn: "Village Deity and Hanuman Temple",
+                    description:
+                      "गावातील धार्मिक आणि आध्यात्मिक परंपरेचे महत्त्वाचे केंद्र.",
+                    descriptionEn:
+                      "Important centres of the village's religious and spiritual traditions.",
+                  },
+                  {
+                    icon: Sun,
+                    title: "पारंपरिक सण आणि उत्सव",
+                    titleEn: "Traditional Festivals",
+                    description:
+                      "पोळा, गणेशोत्सव आणि नवरात्री उत्साहाने साजरे केले जातात.",
+                    descriptionEn:
+                      "Pola, Ganeshotsav and Navratri are celebrated with enthusiasm.",
+                  },
+                  {
+                    icon: Users,
+                    title: "सामाजिक एकता",
+                    titleEn: "Social Harmony",
+                    description:
+                      "सर्व समाजातील नागरिकांमध्ये सहकार्य आणि एकोप्याची भावना.",
+                    descriptionEn:
+                      "A spirit of cooperation and harmony among residents.",
+                  },
+                ].map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <Stack
+                      key={item.title}
+                      direction="row"
+                      spacing={2}
+                      alignItems="flex-start"
+                      sx={{
+                        p: 2.5,
+                        border: `1px solid ${COLORS.border}`,
+                        borderRadius: 3,
+                        backgroundColor: COLORS.white,
+                      }}
+                    >
+                      <IconTile icon={Icon} size={23} />
+
+                      <Box sx={{ minWidth: 0 }}>
+                        <Typography
+                          color={COLORS.green}
+                          fontWeight={900}
+                          fontSize={15}
+                        >
+                          {text(item.title, item.titleEn)}
+                        </Typography>
+
+                        <Typography
+                          color="text.secondary"
+                          fontSize={13}
+                          lineHeight={1.8}
+                          sx={{ mt: 0.7 }}
+                        >
+                          {text(
+                            item.description,
+                            item.descriptionEn
+                          )}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  );
+                })}
+              </Stack>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* ==================================================
+          CONTACT SECTION
+      ================================================== */}
 
       <Box
         sx={{
@@ -1564,7 +1918,11 @@ function HomePage() {
 
         <Container
           maxWidth={false}
-          sx={{ px: PAGE_GUTTER, position: "relative", zIndex: 1 }}
+          sx={{
+            px: PAGE_GUTTER,
+            position: "relative",
+            zIndex: 1,
+          }}
         >
           <Grid
             container
@@ -1607,8 +1965,8 @@ function HomePage() {
                 }}
               >
                 {text(
-                  "ग्रामपंचायत कार्यालयाशी संपर्क साधण्यासाठी खालील संपर्क माहितीचा वापर करा.",
-                  "Use the contact details below to reach the Gram Panchayat office for assistance and information."
+                  "ग्रामपंचायत कार्यालयाशी संपर्क साधण्यासाठी आणि आपल्या सूचना मांडण्यासाठी आमच्या संपर्क पृष्ठाला भेट द्या.",
+                  "Visit our contact page to reach the Gram Panchayat office and share your suggestions or concerns."
                 )}
               </Typography>
 
@@ -1647,16 +2005,37 @@ function HomePage() {
                 <Stack spacing={2.5}>
                   <ContactRow
                     icon={MapPin}
-                    title={text("कार्यालय पत्ता", "Office Address")}
+                    title={text("गावाचे स्थान", "VILLAGE LOCATION")}
                   >
                     <Typography
                       color="text.secondary"
                       fontSize={14}
-                      lineHeight={1.7}
+                      lineHeight={1.8}
                     >
                       {text(
-                        "ग्रामपंचायत कार्यालय पिंपळखुटा बु., ता. वरुड, जि. अमरावती",
-                        "Gram Panchayat Office, Pimpalkhuta Budruk, Warud, Amravati"
+                        "सातेगाव, तालुका अंजनगाव सुर्जी, जिल्हा अमरावती, महाराष्ट्र",
+                        "Sategaon, Anjangaon Surji Taluka, Amravati District, Maharashtra"
+                      )}
+                    </Typography>
+                  </ContactRow>
+
+                  <Divider />
+
+                  <ContactRow
+                    icon={Building2}
+                    title={text(
+                      "ग्रामपंचायत कार्यालय",
+                      "GRAM PANCHAYAT OFFICE"
+                    )}
+                  >
+                    <Typography
+                      color="text.secondary"
+                      fontSize={14}
+                      lineHeight={1.8}
+                    >
+                      {text(
+                        "ग्रामपंचायत सातेगाव",
+                        "Gram Panchayat Sategaon"
                       )}
                     </Typography>
                   </ContactRow>
@@ -1665,19 +2044,20 @@ function HomePage() {
 
                   <ContactRow
                     icon={Phone}
-                    title={text("संपर्क क्रमांक", "Phone Number")}
+                    title={text(
+                      "संपर्क आणि मदत",
+                      "CONTACT AND SUPPORT"
+                    )}
                   >
                     <Typography
-                      component="a"
-                      href="tel:9920942994"
-                      sx={{
-                        color: COLORS.muted,
-                        textDecoration: "none",
-                        fontSize: 14,
-                        "&:hover": { color: COLORS.orange },
-                      }}
+                      color="text.secondary"
+                      fontSize={14}
+                      lineHeight={1.8}
                     >
-                      9920942994
+                      {text(
+                        "संपर्क क्रमांक आणि अधिक माहितीसाठी संपर्क पृष्ठाला भेट द्या.",
+                        "Visit the contact page for phone numbers and further information."
+                      )}
                     </Typography>
                   </ContactRow>
 
@@ -1685,36 +2065,42 @@ function HomePage() {
 
                   <ContactRow
                     icon={Mail}
-                    title={text("ई-मेल", "Email")}
+                    title={text(
+                      "सूचना आणि अभिप्राय",
+                      "SUGGESTIONS AND FEEDBACK"
+                    )}
                   >
                     <Typography
-                      component="a"
-                      href="mailto:gppimpalkhuta30@gmail.com"
-                      sx={{
-                        color: COLORS.muted,
-                        textDecoration: "none",
-                        fontSize: { xs: 12, sm: 14 },
-                        overflowWrap: "anywhere",
-                        "&:hover": { color: COLORS.orange },
-                      }}
+                      color="text.secondary"
+                      fontSize={14}
+                      lineHeight={1.8}
                     >
-                      gppimpalkhuta30@gmail.com
-                    </Typography>
-                  </ContactRow>
-
-                  <Divider />
-
-                  <ContactRow
-                    icon={Clock}
-                    title={text("कार्यालय वेळ", "Office Hours")}
-                  >
-                    <Typography color="text.secondary" fontSize={14}>
                       {text(
-                        "सकाळी १० ते संध्याकाळी ६",
-                        "10:00 AM – 6:00 PM"
+                        "आपल्या सूचना आणि अभिप्राय ग्रामपंचायतीपर्यंत पोहोचवा.",
+                        "Share your suggestions and feedback with the Gram Panchayat."
                       )}
                     </Typography>
                   </ContactRow>
+
+                  <Button
+                    component={Link}
+                    to="/contact"
+                    fullWidth
+                    variant="contained"
+                    endIcon={<ArrowRight size={18} />}
+                    sx={{
+                      mt: 1,
+                      py: 1.5,
+                      borderRadius: 2,
+                      backgroundColor: COLORS.green,
+                      fontWeight: 900,
+                      "&:hover": {
+                        backgroundColor: COLORS.darkGreen,
+                      },
+                    }}
+                  >
+                    {text("आमच्याशी संपर्क साधा", "Contact Us")}
+                  </Button>
                 </Stack>
               </Card>
             </Grid>
@@ -1722,7 +2108,9 @@ function HomePage() {
         </Container>
       </Box>
 
-      {/* BOTTOM VILLAGE LOCATION */}
+      {/* ==================================================
+          BOTTOM VILLAGE LOCATION
+      ================================================== */}
 
       <Box
         sx={{
@@ -1737,7 +2125,10 @@ function HomePage() {
             alignItems="center"
             spacing={1.2}
           >
-            <Building2 size={19} color={COLORS.orange} />
+            <Building2
+              size={19}
+              color={COLORS.orange}
+            />
 
             <Typography
               textAlign="center"
@@ -1747,8 +2138,8 @@ function HomePage() {
               lineHeight={1.7}
             >
               {text(
-                "ग्रामपंचायत पिंपळखुटा बु. • तालुका वरुड • जिल्हा अमरावती • महाराष्ट्र 444908",
-                "Gram Panchayat Pimpalkhuta Budruk • Warud • Amravati • Maharashtra 444908"
+                "ग्रामपंचायत सातेगाव • तालुका अंजनगाव सुर्जी • जिल्हा अमरावती • महाराष्ट्र",
+                "Gram Panchayat Sategaon • Anjangaon Surji • Amravati • Maharashtra"
               )}
             </Typography>
           </Stack>

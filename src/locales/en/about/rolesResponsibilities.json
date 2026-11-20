@@ -1,0 +1,78 @@
+
+{
+  "rolesResponsibilities": {
+    "hero": {
+      "eyebrow": "OFFICIALS AND ADMINISTRATION",
+      "title": "Roles and Responsibilities in Village Development",
+      "description": "The Gram Panchayat administration plays an important role in planning village development, implementing government schemes, maintaining public services and addressing the needs of villagers.",
+      "chipOne": "Responsible Administration",
+      "chipTwo": "Village Development"
+    },
+
+    "roles": {
+      "eyebrow": "GRAM PANCHAYAT ADMINISTRATION",
+      "sectionTitle": "The Backbone of Village Development: Roles and Responsibilities",
+      "sectionDescription": "The elected representatives and Gram Panchayat officials work together to ensure effective administration and the overall development of the village.",
+      "roleLabel": "Roles and Responsibilities",
+
+      "sarpanchDeputy": {
+        "title": "Sarpanch / Deputy Sarpanch",
+        "points": {
+          "one": "Preside over Gram Sabha meetings and monthly meetings.",
+          "two": "Plan and implement village development schemes.",
+          "three": "Supervise and oversee the functioning of the Gram Panchayat.",
+          "four": "Sign government records and cheques as authorized.",
+          "five": "Communicate the problems and concerns of villagers to the government."
+        }
+      },
+
+      "officer": {
+        "title": "Gram Panchayat Officer",
+        "points": {
+          "one": "Maintain Gram Panchayat records, files and documents.",
+          "two": "Provide information about government schemes and implement them.",
+          "three": "Collect taxes and maintain financial accounts.",
+          "four": "Register births, deaths and marriages and issue certificates.",
+          "five": "Prepare and maintain the proceedings and minutes of meetings."
+        }
+      },
+
+      "members": {
+        "title": "Gram Panchayat Members",
+        "points": {
+          "one": "Present the problems and concerns of their respective wards during meetings.",
+          "two": "Monitor development works carried out in the village.",
+          "three": "Encourage villagers to participate in Gram Sabha meetings.",
+          "four": "Help ensure that government schemes reach people in need.",
+          "five": "Help maintain peace and public order in the village."
+        }
+      }
+    },
+
+    "committees": {
+      "eyebrow": "VILLAGE-LEVEL COMMITTEES",
+      "title": "Various Gram Panchayat Committees",
+      "description": "Different committees focus on essential village services and community welfare to support the overall development of the village.",
+
+      "waterSupply": {
+        "title": "Water Supply Committee",
+        "description": "Plans the storage and distribution of water to ensure proper water supply in the village."
+      },
+
+      "healthNutrition": {
+        "title": "Health and Nutrition Committee",
+        "description": "Looks after the health and well-being of villagers and monitors Anganwadi activities."
+      },
+
+      "disputeFree": {
+        "title": "Dispute-Free Village Committee",
+        "description": "Works to resolve disputes within the village through mutual understanding and discussion."
+      },
+
+      "education": {
+        "title": "Education Committee",
+        "description": "Monitors the quality of education and the functioning of the Zilla Parishad school."
+      }
+    }
+  }
+}

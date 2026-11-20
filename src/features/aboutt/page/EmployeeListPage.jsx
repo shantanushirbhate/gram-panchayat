@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 
 import ProfileCard from "../components/ProfileCard";
-import employees from "../data/employees";
 
 const COLORS = {
   green: "#14532D",
@@ -29,16 +28,20 @@ const COLORS = {
 };
 
 function EmployeeListPage() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation("about/employeeList");
 
-  // Use the currently selected language.
-  const currentLanguage = i18n.resolvedLanguage || i18n.language;
+  // Employee information from the selected language JSON file.
+  const employees = t("employeeList.employees", {
+    returnObjects: true,
+    defaultValue: [],
+  });
 
-  // Translation helper with a fallback.
+  const employeeList = Array.isArray(employees) ? employees : [];
+
+  // Translation helper with fallback values.
   const tr = (key, fallback) =>
     t(`employeeList.${key}`, {
       defaultValue: fallback,
-      lng: currentLanguage,
     });
 
   return (
@@ -121,26 +124,26 @@ function EmployeeListPage() {
               sx={{
                 fontSize: { xs: 32, sm: 46, md: 58 },
                 fontWeight: 900,
-                lineHeight: 1.3,
+                lineHeight: 1.5,
                 mb: 2.5,
                 overflowWrap: "anywhere",
               }}
             >
-              {tr("hero.title", "Gram Panchayat Employees")}
+              {tr("hero.title", "Village Government Employees")}
             </Typography>
 
             <Typography
               sx={{
                 color: "rgba(255,255,255,0.84)",
                 fontSize: { xs: 14, sm: 16, md: 18 },
-                lineHeight: 1.9,
+                lineHeight: 2,
                 maxWidth: 700,
                 overflowWrap: "anywhere",
               }}
             >
               {tr(
                 "hero.description",
-                "Meet the people working for our village."
+                "Details and contact numbers of government employees serving our village."
               )}
             </Typography>
 
@@ -209,31 +212,34 @@ function EmployeeListPage() {
               color: COLORS.green,
               fontSize: { xs: 26, sm: 34, md: 40 },
               fontWeight: 900,
-              lineHeight: 1.4,
+              lineHeight: 1.5,
               mb: 1.5,
               overflowWrap: "anywhere",
             }}
           >
-            {tr("section.title", "Meet Our Employees")}
+            {tr(
+              "section.title",
+              "Village Government Employees and Their Contact Numbers"
+            )}
           </Typography>
 
           <Typography
             sx={{
               color: COLORS.muted,
               fontSize: { xs: 14, md: 15.5 },
-              lineHeight: 1.9,
+              lineHeight: 2,
               overflowWrap: "anywhere",
             }}
           >
             {tr(
               "section.description",
-              "Meet the employees serving our village."
+              "Contact information of government employees working for our village."
             )}
           </Typography>
         </Box>
 
         {/* EMPLOYEE CARDS */}
-        {employees.length > 0 ? (
+        {employeeList.length > 0 ? (
           <Box
             sx={{
               display: "grid",
@@ -247,7 +253,7 @@ function EmployeeListPage() {
               minWidth: 0,
             }}
           >
-            {employees.map((employee) => (
+            {employeeList.map((employee) => (
               <ProfileCard
                 key={employee.id}
                 employee={employee}
@@ -291,7 +297,7 @@ function EmployeeListPage() {
                 fontWeight: 900,
                 fontSize: { xs: 20, md: 24 },
                 mb: 1.5,
-                overflowWrap: "anywhere",
+                lineHeight: 1.5,
               }}
             >
               {tr(
@@ -304,10 +310,9 @@ function EmployeeListPage() {
               sx={{
                 color: COLORS.muted,
                 fontSize: { xs: 13.5, md: 15 },
-                lineHeight: 1.9,
+                lineHeight: 2,
                 maxWidth: 560,
                 mx: "auto",
-                overflowWrap: "anywhere",
               }}
             >
               {tr(
@@ -334,17 +339,14 @@ function EmployeeListPage() {
             justifyContent="center"
             textAlign="center"
           >
-            <UsersRound
-              size={25}
-              color={COLORS.green}
-            />
+            <UsersRound size={25} color={COLORS.green} />
 
             <Typography
               sx={{
                 color: COLORS.green,
                 fontWeight: 800,
                 fontSize: { xs: 13, md: 15 },
-                lineHeight: 1.8,
+                lineHeight: 2,
                 overflowWrap: "anywhere",
               }}
             >

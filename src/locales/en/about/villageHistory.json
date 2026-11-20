@@ -1,0 +1,74 @@
+
+{
+  "villageHistory": {
+    "heroTitle": "Historical Heritage: Sategaon",
+    "heroDescription": "A Symbol of Unity and a Home of Development",
+
+    "introEyebrow": "📌 Village Identity",
+    "introTitle": "Village Identity",
+    "introDescription": "Sategaon, located in Anjangaon Surji Taluka, is a scenic and progressive village. Its residents are known for their hardworking nature and social harmony. The village has embraced modernity while preserving its traditional heritage.",
+    "introDescription2": "",
+
+    "panchayatName": "Sategaon",
+    "location": "Anjangaon Surji Taluka",
+
+    "backgroundEyebrow": "📜 History and Origin of the Name",
+    "backgroundTitle": "History and Origin of the Name",
+    "backgroundDescription": "The name 'Sategaon' has a deep meaning. The word 'Sate' is associated with 'Saat' (Seven) or 'Saath' (Company/Unity).",
+    "backgroundCardTitle": "💡 Interesting Information:",
+    "backgroundCardDescription": "It is believed that seven small settlements existed in this region in the past. These settlements came together to form a larger village, which may be why it was named 'Sategaon' (a group of seven villages). It is also known as a village that stands together and supports everyone.",
+
+    "journeyEyebrow": "Village Deity and Culture",
+    "journeyTitle": "Village Deity and Culture",
+    "journeyDescription": "",
+
+    "journeyItems": {
+      "community": {
+        "label": "🚩 Village Deity and Culture",
+        "title": "Village Deity and Culture",
+        "description": "Shri Hanuman and Shri Sant Gajanan Maharaj are the village deities, and their temples are places of faith for the villagers. Festivals: Hanuman Jayanti and Ganeshotsav are celebrated here with great enthusiasm. Tradition: The village has a strong Warkari tradition, with regular bhajans and the chanting of God's name."
+      },
+      "agriculture": {
+        "label": "🌾 Agricultural and Geographical Importance",
+        "title": "Agricultural and Geographical Importance",
+        "description": "The Sategaon region is known for its fertile land. Its progressive farmers cultivate various crops. Main Crops: Cotton, soybean, tur and wheat. Orchards: Orange and banana orchards are significant in this region, strengthening the village's economic condition."
+      },
+      "administration": {
+        "label": "📈 Rapid Development",
+        "title": "Rapid Development",
+        "description": "Sategaon has always been at the forefront of development. The village has a well-equipped Gram Panchayat building, concrete roads, good drinking water facilities and a wastewater management system (Drainage System)."
+      },
+      "development": {
+        "label": "Moving Ahead on the Path of Progress",
+        "title": "Moving Ahead on the Path of Progress",
+        "description": "The younger generation of the village is highly educated and works in various fields."
+      }
+    },
+
+    "themesEyebrow": "Village Highlights",
+    "themesTitle": "Features of Sategaon",
+    "themesDescription": "",
+
+    "themes": {
+      "community": {
+        "title": "Unity and Social Harmony",
+        "description": "The residents are known for their hardworking nature and social harmony."
+      },
+      "agriculture": {
+        "title": "Agricultural and Geographical Importance",
+        "description": "The Sategaon region is known for its fertile land. Main Crops: Cotton, soybean, tur and wheat. Orchards: Orange and banana orchards are significant in this region, strengthening the village's economic condition."
+      },
+      "administration": {
+        "title": "Gram Panchayat and Facilities",
+        "description": "The village has a well-equipped Gram Panchayat building, concrete roads, good drinking water facilities and a wastewater management system (Drainage System)."
+      },
+      "development": {
+        "title": "Rapid Development",
+        "description": "The younger generation of the village is highly educated and works in various fields."
+      }
+    },
+
+    "closingTitle": "\"Together We Will Achieve Development, This Is Our Sategaon!\"",
+    "closingDescription": "Moving Ahead on the Path of Progress"
+  }
+}

@@ -1,0 +1,87 @@
+
+{
+  "educationParyavaran": {
+    "badge": "Education & Environment"
+  },
+  "information": {
+    "hero": {
+      "breadcrumb": "Education & Environment",
+      "title": "Education and Environmental Information",
+      "description": "Explore information about education, learning opportunities, environmental protection and community participation in our village."
+    },
+    "intro": {
+      "eyebrow": "Knowledge for Progress",
+      "title": "Building an Educated and Environmentally Responsible Village",
+      "description": "Education creates opportunities for a better future, while environmental awareness helps protect the resources we depend on. The Gram Panchayat encourages awareness, participation and collective efforts in both areas."
+    },
+    "message": {
+      "title": "A Message for Every Citizen",
+      "description": "Every child deserves the opportunity to learn, and every citizen has a role in protecting the environment. Parents, students, teachers, youth and community members can work together to build a knowledgeable, healthy and sustainable village."
+    },
+    "education": {
+      "eyebrow": "Education",
+      "title": "Education and Learning Facilities",
+      "description": "Access to education, guidance and learning resources helps children and young people develop their knowledge, skills and confidence.",
+      "items": {
+        "schoolInformation": {
+          "title": "School Information",
+          "description": "Get information about educational institutions, school-related activities, learning opportunities and the importance of regular attendance and quality education."
+        },
+        "educationFacilities": {
+          "title": "Educational Facilities",
+          "description": "Learn about available educational resources and facilities that support students, encourage learning and help create a positive educational environment."
+        },
+        "higherEducation": {
+          "title": "Higher Education",
+          "description": "Students can seek guidance about further studies, courses, admission procedures, career opportunities and available scholarship information after completing school education."
+        }
+      }
+    },
+    "environment": {
+      "eyebrow": "Environment",
+      "title": "Environmental Protection and Conservation",
+      "description": "Protecting nature, conserving natural resources and maintaining cleanliness are shared responsibilities that contribute to a healthy village.",
+      "items": {
+        "environmentProtection": {
+          "title": "Environmental Protection",
+          "description": "Encourage citizens to protect trees, plants, soil, water and local biodiversity, and to adopt environmentally responsible practices in daily life."
+        },
+        "treePlantation": {
+          "title": "Tree Plantation",
+          "description": "Promote tree plantation and the care of planted trees to increase green cover, improve the local environment and create awareness about the importance of trees."
+        },
+        "wasteManagement": {
+          "title": "Waste Management",
+          "description": "Encourage household waste segregation, responsible disposal, cleanliness and reduced use of single-use plastics to help maintain a clean village."
+        },
+        "waterConservation": {
+          "title": "Water Conservation",
+          "description": "Promote careful use of water, rainwater harvesting, protection of water sources and community participation in conserving this essential natural resource."
+        }
+      }
+    },
+    "participation": {
+      "eyebrow": "Community Participation",
+      "title": "Working Together for Village Development",
+      "description": "Public awareness, access to reliable information and active community participation help make education and environmental initiatives more effective.",
+      "items": {
+        "publicAwareness": {
+          "title": "Public Awareness",
+          "description": "Spread awareness about education, cleanliness, environmental protection, water conservation and responsible citizenship through community communication and activities."
+        },
+        "officialInformation": {
+          "title": "Official Information",
+          "description": "Stay informed about Gram Panchayat notices, public initiatives, educational information and environment-related updates through official communication channels."
+        },
+        "communityParticipation": {
+          "title": "Community Participation",
+          "description": "Encourage students, parents, teachers, youth and residents to participate in village development activities, cleanliness initiatives and environmental conservation efforts."
+        }
+      }
+    },
+    "note": {
+      "title": "Our Shared Responsibility",
+      "description": "A better village begins with education, awareness and collective action. Let us work together to support learning, protect nature and create a clean, green and sustainable future."
+    }
+  }
+}

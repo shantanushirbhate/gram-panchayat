@@ -1,0 +1,41 @@
+
+{
+  "officeDetails": {
+    "heroBadge": "Gram Panchayat Office",
+    "heroTitle": "Gram Panchayat Office Sategaon",
+    "heroDescription": "Official office information of Gram Panchayat Sategaon, Taluka Anjangaon Surji, District Amravati.",
+    "locationShort": "Sategaon, Taluka Anjangaon Surji, District Amravati",
+
+    "introEyebrow": "OFFICE INFORMATION",
+    "introTitle": "Gram Panchayat Office Sategaon",
+    "introDescription": "The Gram Panchayat office is located at the Main Chowk, Sategaon, Taluka Anjangaon Surji, District Amravati.",
+
+    "highlightTitle": "Office Location",
+    "highlightDescription": "Gram Panchayat Office Sategaon, Taluka Anjangaon Surji, District Amravati.",
+
+    "informationEyebrow": "OFFICIAL DETAILS",
+    "informationTitle": "Office Details",
+    "informationDescription": "Find the office address, contact availability, working days and office hours.",
+
+    "locationTitle": "Office Address",
+    "locationDescription": "Visit the Gram Panchayat office at the following address.",
+    "address": "Main Chowk, Sategaon,\nTaluka Anjangaon Surji, District Amravati.",
+
+    "phoneTitle": "Contact Information",
+    "phoneDescription": "Contact number information.",
+    "phoneUnavailable": "Contact number not available",
+
+    "workingDaysTitle": "Working Days",
+    "workingDaysDescription": "Days when the Gram Panchayat office is open.",
+    "workingDaysValue": "Monday to Friday",
+
+    "timingTitle": "Office Hours",
+    "timingDescription": "Daily office working hours.",
+    "timingValue": "10:00 AM to 6:00 PM",
+
+    "closingEyebrow": "GRAM PANCHAYAT SATEGAON",
+    "closingTitle": "Visit Our Office",
+    "closingDescription": "The Gram Panchayat office is located at Main Chowk, Sategaon, Taluka Anjangaon Surji, District Amravati.",
+    "directionsButton": "View Location"
+  }
+}

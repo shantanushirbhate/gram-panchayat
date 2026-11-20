@@ -7,129 +7,103 @@ import {
   Paper,
   Stack,
   Typography,
+  Button,
+  Divider,
 } from "@mui/material";
+
 import { useTranslation } from "react-i18next";
+
 import {
   FileText,
-  UserRound,
-  Home,
+  Baby,
   Heart,
-  ClipboardList,
-  FileCheck,
+  Home,
+  ChartNoAxesColumn,
+  ClipboardCheck,
+  Toilet,
+  HardHat,
   Info,
   ArrowUpRight,
+  Download,
+  FileDown,
 } from "lucide-react";
 
 import ServicesHero from "../components/ServicesHero";
 import ServicesSectionHeading from "../components/ServicesSectionHeading";
 
-const citizenServices = [
+// Citizen application forms.
+// Add the official PDF URL in downloadUrl when it is available.
+const onlineForms = [
   {
     id: 1,
-    key: "birthCertificate",
-    icon: UserRound,
-    mrTitle: "जन्म प्रमाणपत्र",
-    mrDescription:
-      "नागरिकांना जन्म नोंदणी आणि जन्म प्रमाणपत्र मिळवण्यासाठी आवश्यक मार्गदर्शन.",
-    enTitle: "Birth Certificate",
-    enDescription:
-      "Guidance for birth registration and obtaining a birth certificate.",
+    key: "birthRegistration",
+    icon: Baby,
+    downloadUrl: "",
   },
   {
     id: 2,
-    key: "deathCertificate",
+    key: "deathRegistration",
     icon: FileText,
-    mrTitle: "मृत्यू प्रमाणपत्र",
-    mrDescription:
-      "मृत्यू नोंदणी आणि मृत्यू प्रमाणपत्रासंबंधी आवश्यक माहिती व मार्गदर्शन.",
-    enTitle: "Death Certificate",
-    enDescription:
-      "Information and guidance regarding death registration and death certificates.",
+    downloadUrl: "",
   },
   {
     id: 3,
-    key: "residenceCertificate",
-    icon: Home,
-    mrTitle: "रहिवासी प्रमाणपत्र",
-    mrDescription:
-      "रहिवासासंबंधी प्रमाणपत्र मिळवण्यासाठी अर्ज प्रक्रिया आणि आवश्यक माहिती.",
-    enTitle: "Residence Certificate",
-    enDescription:
-      "Information about the application process for residence-related certificates.",
+    key: "marriageRegistration",
+    icon: Heart,
+    downloadUrl: "",
   },
   {
     id: 4,
-    key: "marriageRelatedServices",
-    icon: Heart,
-    mrTitle: "विवाह संबंधित सेवा",
-    mrDescription:
-      "विवाह नोंदणी आणि विवाहासंबंधी उपलब्ध सेवांबाबत मार्गदर्शन.",
-    enTitle: "Marriage Related Services",
-    enDescription:
-      "Guidance regarding marriage registration and related services.",
+    key: "propertyExtract",
+    icon: Home,
+    downloadUrl: "",
   },
   {
     id: 5,
-    key: "applicationServices",
-    icon: ClipboardList,
-    mrTitle: "अर्ज संबंधित सेवा",
-    mrDescription:
-      "विविध शासकीय आणि ग्रामपंचायत सेवांसाठी अर्ज सादर करण्याबाबत माहिती.",
-    enTitle: "Application Services",
-    enDescription:
-      "Information about submitting applications for government and Gram Panchayat services.",
+    key: "bplCertificate",
+    icon: ChartNoAxesColumn,
+    downloadUrl: "",
   },
   {
     id: 6,
-    key: "otherCertificates",
-    icon: FileCheck,
-    mrTitle: "इतर प्रमाणपत्रे",
-    mrDescription:
-      "ग्रामपंचायतीशी संबंधित इतर उपलब्ध प्रमाणपत्रे आणि सेवांबाबत माहिती.",
-    enTitle: "Other Certificates",
-    enDescription:
-      "Information about other available certificates and Gram Panchayat services.",
+    key: "noDuesCertificate",
+    icon: ClipboardCheck,
+    downloadUrl: "",
+  },
+  {
+    id: 7,
+    key: "toiletUsageCertificate",
+    icon: Toilet,
+    downloadUrl: "",
+  },
+  {
+    id: 8,
+    key: "constructionPermission",
+    icon: HardHat,
+    downloadUrl: "",
   },
 ];
 
 const applicationSteps = [
-  {
-    key: "stepOne",
-    mr: "आवश्यक असलेले प्रमाणपत्र किंवा सेवा निश्चित करा.",
-    en: "Identify the certificate or service you require.",
-  },
-  {
-    key: "stepTwo",
-    mr: "संबंधित कार्यालयाकडून आवश्यक कागदपत्रांची माहिती घ्या.",
-    en: "Check the required documents with the concerned office.",
-  },
-  {
-    key: "stepThree",
-    mr: "आवश्यक कागदपत्रांसह अर्ज सादर करा.",
-    en: "Submit the application along with the required documents.",
-  },
-  {
-    key: "stepFour",
-    mr: "अर्जाची स्थिती तपासा आणि नियमानुसार सेवा प्राप्त करा.",
-    en: "Check the application status and receive the service as prescribed.",
-  },
+  "stepOne",
+  "stepTwo",
+  "stepThree",
+  "stepFour",
 ];
 
 const NagrikSevaPage = () => {
   const { i18n } = useTranslation();
 
   const currentLanguage =
-    i18n.resolvedLanguage || i18n.language || "en";
+    i18n.resolvedLanguage || i18n.language || "mr";
 
   const isMarathi = currentLanguage.startsWith("mr");
   const language = isMarathi ? "mr" : "en";
 
-  // Use the namespace configured in i18next.
   const namespace = Array.isArray(i18n.options.defaultNS)
     ? i18n.options.defaultNS[0]
-    : i18n.options.defaultNS || "translation";
+    : i18n.options.defaultNS || "common";
 
-  // Read only the selected language and use fallback text if missing.
   const tr = (key, mrFallback, enFallback) => {
     const translatedValue = i18n.getResource(
       language,
@@ -153,13 +127,13 @@ const NagrikSevaPage = () => {
       <ServicesHero
         title={tr(
           "services.citizen.hero.title",
-          "नागरिक सेवा",
-          "Citizen Services"
+          "ग्रामपंचायत दाखले व फॉर्म",
+          "Gram Panchayat Certificates & Forms"
         )}
         subtitle={tr(
           "services.citizen.hero.description",
-          "ग्रामपंचायतीमार्फत नागरिकांना उपलब्ध असलेल्या विविध सेवा आणि प्रमाणपत्रांची माहिती.",
-          "Information about various services and certificates available to citizens through the Gram Panchayat."
+          "नागरिकांसाठी आवश्यक विविध दाखल्यांचे फॉर्म्स आणि अर्जांची माहिती.",
+          "Find application forms and information about certificates required by citizens."
         )}
         breadcrumb={tr(
           "services.citizen.hero.breadcrumb",
@@ -168,7 +142,7 @@ const NagrikSevaPage = () => {
         )}
       />
 
-      <Container maxWidth="lg" sx={{ py: { xs: 5, md: 8 } }}>
+      <Container maxWidth="lg" sx={{ py: { xs: 4, md: 7 } }}>
         {/* Introduction */}
         <ServicesSectionHeading
           eyebrow={tr(
@@ -178,106 +152,166 @@ const NagrikSevaPage = () => {
           )}
           title={tr(
             "services.citizen.intro.title",
-            "नागरिकांसाठी उपलब्ध सेवा",
-            "Services Available for Citizens"
+            "ग्रामपंचायत दाखले व अर्ज",
+            "Gram Panchayat Certificates & Applications"
           )}
           description={tr(
             "services.citizen.intro.description",
-            "जन्म, मृत्यू, रहिवास आणि इतर प्रमाणपत्रांसह ग्रामपंचायतीशी संबंधित विविध नागरी सेवांची माहिती येथे उपलब्ध आहे.",
-            "Explore information about birth, death, residence and other certificates, along with various citizen services provided by the Gram Panchayat."
+            "जन्म, मृत्यू, विवाह, मालमत्ता आणि इतर आवश्यक सेवांसाठी उपलब्ध असलेल्या अर्जांची माहिती येथे मिळवा.",
+            "Find information about applications for birth, death, marriage, property and other essential services."
           )}
         />
 
-        {/* Citizen Services */}
-        <Grid container spacing={{ xs: 2, md: 3 }} sx={{ mt: 3 }}>
-          {citizenServices.map((item) => {
-            const Icon = item.icon;
+        {/* Application Forms */}
+        <Box sx={{ mt: 3 }}>
+          <Grid container spacing={{ xs: 2, md: 3 }}>
+            {onlineForms.map((form) => {
+              const Icon = form.icon;
+              const formKey = `services.citizen.forms.items.${form.key}`;
+              const isAvailable = Boolean(form.downloadUrl);
 
-            return (
-              <Grid key={item.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                <Paper
-                  elevation={0}
-                  sx={{
-                    height: "100%",
-                    minHeight: 190,
-                    p: { xs: 2.5, sm: 3 },
-                    borderRadius: 4,
-                    bgcolor: "#FFFFFF",
-                    border: "1px solid #E5EDE7",
-                    transition: "all 0.25s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      borderColor: "#E87519",
-                      boxShadow: "0 12px 28px rgba(20,83,45,0.08)",
-                    },
-                  }}
+              return (
+                <Grid
+                  key={form.id}
+                  size={{ xs: 12, sm: 6, md: 4 }}
                 >
-                  <Stack spacing={2}>
-                    <Box
-                      sx={{
-                        width: 54,
-                        height: 54,
-                        display: "grid",
-                        placeItems: "center",
-                        borderRadius: 3,
-                        bgcolor: "#EDF5EF",
-                        color: "#14532D",
-                      }}
-                    >
-                      <Icon size={27} />
-                    </Box>
+                  <Paper
+                    elevation={0}
+                    sx={{
+                      height: "100%",
+                      minHeight: 245,
+                      p: { xs: 2.5, sm: 3 },
+                      borderRadius: 4,
+                      bgcolor: "#FFFFFF",
+                      border: "1px solid #E5EDE7",
+                      display: "flex",
+                      flexDirection: "column",
+                      transition: "all 0.25s ease",
+                      "&:hover": {
+                        transform: "translateY(-4px)",
+                        borderColor: "#E87519",
+                        boxShadow:
+                          "0 12px 28px rgba(20,83,45,0.08)",
+                      },
+                    }}
+                  >
+                    <Stack spacing={2} sx={{ flex: 1 }}>
+                      <Box
+                        sx={{
+                          width: 54,
+                          height: 54,
+                          display: "grid",
+                          placeItems: "center",
+                          borderRadius: 3,
+                          bgcolor: "#EDF5EF",
+                          color: "#14532D",
+                        }}
+                      >
+                        <Icon size={27} />
+                      </Box>
 
-                    <Typography
+                      <Typography
+                        sx={{
+                          color: "#173B2A",
+                          fontSize: "1.05rem",
+                          fontWeight: 800,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {tr(
+                          `${formKey}.title`,
+                          form.key,
+                          form.key
+                        )}
+                      </Typography>
+
+                      <Typography
+                        sx={{
+                          color: "#64748B",
+                          fontSize: "0.88rem",
+                          lineHeight: 1.85,
+                        }}
+                      >
+                        {tr(
+                          `${formKey}.description`,
+                          "या दाखल्यासाठी आवश्यक अर्ज आणि माहितीसाठी ग्रामपंचायत कार्यालयाशी संपर्क साधा.",
+                          "Contact the Gram Panchayat office for the application and information required for this certificate."
+                        )}
+                      </Typography>
+                    </Stack>
+
+                    <Divider sx={{ my: 2 }} />
+
+                    <Button
+                      component={isAvailable ? "a" : "button"}
+                      href={isAvailable ? form.downloadUrl : undefined}
+                      target={isAvailable ? "_blank" : undefined}
+                      rel={
+                        isAvailable
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      disabled={!isAvailable}
+                      fullWidth
+                      variant="contained"
+                      startIcon={
+                        isAvailable ? (
+                          <Download size={18} />
+                        ) : (
+                          <FileDown size={18} />
+                        )
+                      }
                       sx={{
-                        color: "#173B2A",
-                        fontSize: "1.05rem",
+                        py: 1.2,
+                        borderRadius: 2.5,
+                        bgcolor: "#14532D",
                         fontWeight: 800,
+                        textTransform: "none",
+                        "&:hover": {
+                          bgcolor: "#0F3F22",
+                        },
+                        "&.Mui-disabled": {
+                          bgcolor: "#E8EEE9",
+                          color: "#738278",
+                        },
                       }}
                     >
-                      {tr(
-                        `services.citizen.items.${item.key}.title`,
-                        item.mrTitle,
-                        item.enTitle
-                      )}
-                    </Typography>
+                      {isAvailable
+                        ? tr(
+                            "services.citizen.forms.download",
+                            "फॉर्म डाउनलोड करा",
+                            "Download Form"
+                          )
+                        : tr(
+                            "services.citizen.forms.unavailable",
+                            "फॉर्म लिंक लवकरच उपलब्ध",
+                            "Form Link Coming Soon"
+                          )}
+                    </Button>
+                  </Paper>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Box>
 
-                    <Typography
-                      sx={{
-                        color: "#64748B",
-                        fontSize: "0.88rem",
-                        lineHeight: 1.8,
-                      }}
-                    >
-                      {tr(
-                        `services.citizen.items.${item.key}.description`,
-                        item.mrDescription,
-                        item.enDescription
-                      )}
-                    </Typography>
-                  </Stack>
-                </Paper>
-              </Grid>
-            );
-          })}
-        </Grid>
-
-        {/* General Process */}
+        {/* Application Process */}
         <Box sx={{ mt: { xs: 6, md: 8 } }}>
           <ServicesSectionHeading
             eyebrow={tr(
               "services.citizen.process.eyebrow",
-              "सेवा मिळवण्याची पद्धत",
-              "SERVICE PROCEDURE"
+              "अर्ज करण्याची पद्धत",
+              "APPLICATION PROCESS"
             )}
             title={tr(
               "services.citizen.process.title",
-              "अर्ज करण्याची सामान्य प्रक्रिया",
-              "General Application Process"
+              "दाखल्यासाठी अर्ज करण्याची प्रक्रिया",
+              "How to Apply for a Certificate"
             )}
             description={tr(
               "services.citizen.process.description",
-              "ग्रामपंचायतीशी संबंधित सेवा किंवा प्रमाणपत्र मिळवण्यासाठी खालील सामान्य टप्प्यांचे पालन करा.",
-              "Follow these general steps when applying for a Gram Panchayat service or certificate."
+              "ग्रामपंचायत दाखला किंवा प्रमाणपत्र मिळवण्यासाठी खालील सामान्य टप्प्यांचे पालन करा.",
+              "Follow these general steps when applying for a Gram Panchayat certificate."
             )}
             align="left"
           />
@@ -294,7 +328,7 @@ const NagrikSevaPage = () => {
             <Stack spacing={2.5}>
               {applicationSteps.map((step, index) => (
                 <Stack
-                  key={step.key}
+                  key={step}
                   direction="row"
                   spacing={2}
                   alignItems="flex-start"
@@ -324,16 +358,29 @@ const NagrikSevaPage = () => {
                       }}
                     >
                       {tr(
-                        `services.citizen.process.${step.key}`,
-                        step.mr,
-                        step.en
+                        `services.citizen.process.${step}`,
+                        [
+                          "आवश्यक असलेला दाखला किंवा अर्ज निश्चित करा.",
+                          "संबंधित कार्यालयाकडून आवश्यक कागदपत्रांची माहिती घ्या.",
+                          "आवश्यक कागदपत्रांसह अर्ज ग्रामपंचायत कार्यालयात सादर करा.",
+                          "अर्जाची स्थिती तपासा आणि नियमानुसार दाखला प्राप्त करा.",
+                        ][index],
+                        [
+                          "Identify the certificate or application you require.",
+                          "Check the required documents with the concerned office.",
+                          "Submit the application with the required documents at the Gram Panchayat office.",
+                          "Check the application status and receive the certificate as prescribed.",
+                        ][index]
                       )}
                     </Typography>
                   </Box>
 
                   {index < applicationSteps.length - 1 && (
                     <Box sx={{ flexShrink: 0, mt: 1 }}>
-                      <ArrowUpRight size={18} color="#E87519" />
+                      <ArrowUpRight
+                        size={18}
+                        color="#E87519"
+                      />
                     </Box>
                   )}
                 </Stack>
@@ -353,7 +400,11 @@ const NagrikSevaPage = () => {
             border: "1px solid #F5D7AF",
           }}
         >
-          <Stack direction="row" spacing={1.5} alignItems="flex-start">
+          <Stack
+            direction="row"
+            spacing={1.5}
+            alignItems="flex-start"
+          >
             <Box sx={{ flexShrink: 0, mt: 0.3 }}>
               <Info size={23} color="#C46A14" />
             </Box>
@@ -382,8 +433,8 @@ const NagrikSevaPage = () => {
               >
                 {tr(
                   "services.citizen.note.description",
-                  "प्रत्येक सेवेसाठी आवश्यक कागदपत्रे, शुल्क आणि प्रक्रिया वेगवेगळी असू शकते. अचूक माहितीसाठी ग्रामपंचायत कार्यालयाशी संपर्क साधावा. सर्व सेवा ऑनलाइन उपलब्ध आहेत असे गृहीत धरू नये.",
-                  "Required documents, fees and procedures may differ for each service. Contact the Gram Panchayat office for accurate information. Please do not assume that all services are available online."
+                  "प्रत्येक दाखल्यासाठी आवश्यक कागदपत्रे, शुल्क आणि प्रक्रिया वेगवेगळी असू शकते. अर्ज सादर करण्यापूर्वी ग्रामपंचायत कार्यालयाकडून आवश्यक माहिती आणि अधिकृत फॉर्मची उपलब्धता तपासून घ्यावी.",
+                  "Required documents, fees and procedures may differ for each certificate. Before submitting an application, confirm the requirements and availability of the official form with the Gram Panchayat office."
                 )}
               </Typography>
             </Box>

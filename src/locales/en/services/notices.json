@@ -1,0 +1,94 @@
+
+{
+  "services": {
+    "notices": {
+      "hero": {
+        "title": "Notices, Tenders and Announcements",
+        "description": "Stay informed about the latest updates, public notices and important announcements from the Gram Panchayat.",
+        "breadcrumb": "Notices and Announcements"
+      },
+      "intro": {
+        "eyebrow": "PUBLIC INFORMATION",
+        "title": "Official Notices and Updates",
+        "description": "Find important information about village administration, public services, development works and community activities."
+      },
+      "categories": {
+        "publicNotices": {
+          "title": "Public Notices",
+          "description": "Official notices and information issued for village residents."
+        },
+        "announcements": {
+          "title": "Announcements",
+          "description": "Important announcements about Gram Panchayat meetings and village activities."
+        },
+        "circulars": {
+          "title": "Circulars",
+          "description": "Official circulars, instructions and administrative information."
+        },
+        "importantUpdates": {
+          "title": "Important Updates",
+          "description": "Important updates regarding public services and village facilities."
+        }
+      },
+      "list": {
+        "eyebrow": "LATEST INFORMATION",
+        "title": "Notices and Announcements",
+        "description": "Browse the notices and announcements issued by the Gram Panchayat."
+      },
+      "status": {
+        "expired": "Past Notice"
+      },
+      "labels": {
+        "date": "Notice Date",
+        "deadline": "Deadline"
+      },
+      "items": {
+        "roadRepair": {
+          "title": "Road Repair – Public E-Tender",
+          "date": "15 December 2025",
+          "deadline": "25 December 2025",
+          "description": "Sealed tenders are invited from registered contractors for concreting the main road in Ward No. 4 of Mouje [Village Name]. The estimated project cost is ₹5,00,000.",
+          "additional": "The tender submission deadline was 25 December 2025."
+        },
+        "specialGramSabha": {
+          "title": "Notice Regarding a Special Gram Sabha Meeting",
+          "date": "14 December 2025",
+          "description": "All villagers were informed that a Special Gram Sabha meeting was scheduled for 20 December 2025 at 10:00 AM at the Gram Panchayat office to discuss planning under the 15th Finance Commission.",
+          "additional": "Villagers were requested to attend the meeting."
+        },
+        "waterSupply": {
+          "title": "Notice Regarding Temporary Water Supply Suspension",
+          "date": "12 December 2025",
+          "description": "Due to urgent repair work on the main water pipeline, the water supply across the village was scheduled to remain suspended on 18 December 2025.",
+          "additional": "Residents were requested to store sufficient water in advance and cooperate during the repair work."
+        },
+        "solarPump": {
+          "title": "Applications for the Solar Agricultural Pump Scheme",
+          "date": "10 December 2025",
+          "deadline": "30 December 2025",
+          "description": "Applications were invited from eligible farmers under the Kusum Solar Pump Scheme. Applicants in the open category were required to pay 10% of the applicable amount.",
+          "additional": "Interested farmers were requested to contact the Gram Panchayat office by 30 December 2025."
+        },
+        "cleanlinessDrive": {
+          "title": "Village Cleanliness Drive",
+          "date": "2 October 2025",
+          "description": "A community cleanliness and voluntary labour activity was organised at 7:00 AM on the occasion of the Swachhata Hi Seva campaign.",
+          "additional": "Youth groups and self-help groups were invited to participate."
+        },
+        "taxPayment": {
+          "title": "Appeal for House Tax and Water Tax Payment",
+          "date": "Financial Year 2025–26",
+          "description": "Residents were encouraged to pay their house tax and water tax for the current financial year before 31 March 2026. A 5% tax concession was announced for eligible payments made within the specified period.",
+          "additional": "Tax payments were accepted online or in cash at the Gram Panchayat office."
+        }
+      },
+      "information": {
+        "eyebrow": "IMPORTANT INFORMATION",
+        "title": "Stay Connected with the Gram Panchayat",
+        "description": "Keep checking official announcements for information about public services and village development.",
+        "message": "For clarification about any notice, tender or announcement, contact the Gram Panchayat office during working hours.",
+        "note": "The notices displayed here include historical announcements. Please contact the Gram Panchayat office to confirm current schemes, deadlines and updated information."
+      }
+    }
+  }
+}

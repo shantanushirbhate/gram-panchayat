@@ -5,8 +5,13 @@ import { Button, ButtonGroup } from "@mui/material";
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
+  const currentLanguage = i18n.resolvedLanguage || i18n.language;
+
+  const changeLanguage = async (language) => {
+    if (currentLanguage.startsWith(language)) return;
+
+    await i18n.changeLanguage(language);
+
     localStorage.setItem("language", language);
   };
 
@@ -49,14 +54,22 @@ const LanguageSwitcher = () => {
     >
       <Button
         onClick={() => changeLanguage("mr")}
-        variant={i18n.language.startsWith("mr") ? "contained" : "outlined"}
+        variant={
+          currentLanguage.startsWith("mr")
+            ? "contained"
+            : "outlined"
+        }
       >
         मराठी
       </Button>
 
       <Button
         onClick={() => changeLanguage("en")}
-        variant={i18n.language.startsWith("en") ? "contained" : "outlined"}
+        variant={
+          currentLanguage.startsWith("en")
+            ? "contained"
+            : "outlined"
+        }
       >
         English
       </Button>

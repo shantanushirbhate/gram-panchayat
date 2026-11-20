@@ -1,0 +1,43 @@
+
+{
+  "cultureAndTraditions": {
+    "hero": {
+      "eyebrow": "Culture, Heritage and Community",
+      "title": "Sategaon",
+      "tagline": "A Beautiful Blend of Tradition and Modernity",
+      "description": "A progressive village blessed with natural beauty, Sategaon is known for its religious heritage, social unity and strong agricultural roots.",
+      "location": "Taluka Anjangaon Surji | District Amravati"
+    },
+    "intro": {
+      "eyebrow": "ABOUT OUR VILLAGE",
+      "title": "A Village of Farmers and Hardworking People",
+      "description": "Sategaon is a progressive and naturally rich village in Anjangaon Surji taluka. Known for its religious heritage and social unity, the village is recognised as a place of farmers and hardworking people. Its fertile black soil and water resources keep the surrounding landscape lush and green.",
+      "highlight": "A prosperous village, enriched by nature and community spirit",
+      "caption": "Sujalam Sufalam Sategaon"
+    },
+    "highlights": {
+      "eyebrow": "OUR CULTURE AND IDENTITY",
+      "title": "The Spirit of Sategaon",
+      "description": "The village's religious heritage, agricultural prosperity and active community life are important parts of its identity."
+    },
+    "religiousHeritage": {
+      "title": "Religious Heritage",
+      "description": "The Hanuman Temple and local places of worship are centres of faith for the villagers. The annual fair and public celebrations reflect the social harmony and unity of the community.",
+      "action": "Explore the heritage"
+    },
+    "agriculturalProsperity": {
+      "title": "Agricultural Prosperity",
+      "description": "The village's orange orchards, cotton and banana production are well known throughout the surrounding region. Progressive farmer groups and irrigation facilities are contributing to the village's prosperity.",
+      "action": "Discover agriculture"
+    },
+    "communityLife": {
+      "title": "Community Life",
+      "description": "The youth of Sategaon are always active in education, arts and sports. The village's well-equipped school and library help preserve its rich cultural heritage.",
+      "action": "Know about progress"
+    },
+    "closing": {
+      "title": "Sujalam Sufalam Sategaon",
+      "description": "A village where tradition, agriculture, natural resources and community spirit come together."
+    }
+  }
+}

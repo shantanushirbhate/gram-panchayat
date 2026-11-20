@@ -1,0 +1,93 @@
+
+{
+  "samitiya": {
+    "hero": {
+      "title": "Village-Level Committees",
+      "description": "Information about the various committees working for village development and their contact details.",
+      "breadcrumb": "Village-Level Committees"
+    },
+    "intro": {
+      "eyebrow": "Community Leadership",
+      "title": "Committees for Village Development",
+      "description": "Village-level committees support local development by addressing important community needs through planning, coordination and public participation.",
+      "messageTitle": "Working Together for a Better Village",
+      "messageDescription": "Each committee plays an important role in improving village services, resolving local issues and supporting the well-being of residents. Citizens are encouraged to cooperate with committee members and take part in community initiatives."
+    },
+    "committees": {
+      "eyebrow": "Our Committees",
+      "title": "Village-Level Committees",
+      "description": "Meet the committees, learn about their responsibilities and find the contact details of their chairpersons.",
+      "items": {
+        "waterSanitation": {
+          "title": "Water Supply and Sanitation Committee",
+          "description": "Plans and manages water distribution in the village and coordinates cleanliness initiatives.",
+          "chairpersonLabel": "Committee Chairperson",
+          "chairperson": "Mr. Ramesh Patil",
+          "contactLabel": "Contact",
+          "phone": "98000 00001"
+        },
+        "disputeResolution": {
+          "title": "Mahatma Gandhi Dispute-Free Committee",
+          "description": "Helps resolve minor and major local disputes amicably within the village through mutual understanding.",
+          "chairpersonLabel": "Committee Chairperson",
+          "chairperson": "Mr. Ashok Jadhav",
+          "contactLabel": "Contact",
+          "phone": "98000 00002"
+        },
+        "healthNutrition": {
+          "title": "Village Health and Nutrition Committee",
+          "description": "Monitors healthcare services, vaccination activities and efforts to eliminate malnutrition.",
+          "chairpersonLabel": "Committee Chairperson (Sarpanch)",
+          "chairperson": "Mrs. Sunita Deshmukh",
+          "contactLabel": "Contact",
+          "phone": "98000 00003"
+        },
+        "schoolManagement": {
+          "title": "School Management Committee",
+          "description": "Looks after the quality of the Zilla Parishad school and the facilities provided to students.",
+          "chairpersonLabel": "Committee Chairperson",
+          "chairperson": "Mr. Vijay Kale",
+          "contactLabel": "Contact",
+          "phone": "98000 00004"
+        },
+        "womenChildWelfare": {
+          "title": "Women and Child Welfare Committee",
+          "description": "Works towards women's empowerment, supports self-help groups and oversees Anganwadi-related activities.",
+          "chairpersonLabel": "Committee Chairperson",
+          "chairperson": "Mrs. Minakshi Shinde",
+          "contactLabel": "Contact",
+          "phone": "98000 00005"
+        },
+        "disasterManagement": {
+          "title": "Disaster Management Committee",
+          "description": "Coordinates assistance and relief activities during floods, fires and other natural disasters.",
+          "chairpersonLabel": "Committee Chairperson",
+          "chairperson": "Mr. Vilas Pawar",
+          "contactLabel": "Contact",
+          "phone": "98000 00006"
+        }
+      },
+      "note": "For assistance or further information, please contact the respective committee chairperson."
+    },
+    "responsibilities": {
+      "eyebrow": "Our Responsibilities",
+      "title": "Key Responsibilities of Committees",
+      "description": "Committees work together to support essential village services, community welfare and local development.",
+      "items": {
+        "planning": "Planning and coordinating village-level development activities.",
+        "publicParticipation": "Encouraging public participation and cooperation in community initiatives.",
+        "monitoring": "Monitoring local services and identifying issues that need attention.",
+        "coordination": "Coordinating with residents and relevant authorities to address community needs."
+      }
+    },
+    "participation": {
+      "title": "Your Participation Makes a Difference",
+      "description": "Active citizen participation, cooperation and communication help village committees work effectively and make development initiatives more successful."
+    },
+    "commitment": {
+      "eyebrow": "Our Commitment",
+      "title": "Together for a Stronger Village",
+      "description": "Let us work together with our village committees to promote cooperation, improve local services and build a healthy, clean and progressive village."
+    }
+  }
+}

@@ -5,10 +5,15 @@ import {
   Paper,
   Typography,
   Stack,
+  Divider,
 } from "@mui/material";
+import { Phone, UserRound } from "lucide-react";
 
 const SamitiyaCard = ({ item }) => {
   const Icon = item.icon;
+
+  // Remove spaces and other formatting for telephone links.
+  const phoneLink = item.phone?.replace(/[^\d+]/g, "");
 
   return (
     <Paper
@@ -28,7 +33,7 @@ const SamitiyaCard = ({ item }) => {
       }}
     >
       <Stack spacing={2} sx={{ height: "100%" }}>
-        {/* Icon */}
+        {/* Committee Icon */}
         <Box
           sx={{
             width: 58,
@@ -44,7 +49,7 @@ const SamitiyaCard = ({ item }) => {
           {Icon && <Icon size={28} strokeWidth={1.8} />}
         </Box>
 
-        {/* Title */}
+        {/* Committee Title */}
         <Typography
           component="h3"
           sx={{
@@ -57,19 +62,18 @@ const SamitiyaCard = ({ item }) => {
           {item.title}
         </Typography>
 
-        {/* Description */}
+        {/* Committee Description */}
         <Typography
           sx={{
             color: "#64748B",
             fontSize: { xs: 13, sm: 14 },
             lineHeight: 1.85,
-            flexGrow: 1,
           }}
         >
           {item.description}
         </Typography>
 
-        {/* Responsibilities */}
+        {/* Optional Responsibilities */}
         {item.responsibilities?.length > 0 && (
           <Box
             sx={{
@@ -120,6 +124,123 @@ const SamitiyaCard = ({ item }) => {
               ))}
             </Stack>
           </Box>
+        )}
+
+        {/* Chairperson and Contact Details */}
+        {(item.chairperson || item.phone) && (
+          <>
+            <Divider sx={{ borderColor: "#E8EEE9", mt: "auto" }} />
+
+            {/* Chairperson */}
+            {item.chairperson && (
+              <Stack direction="row" spacing={1.5} alignItems="center">
+                <Box
+                  sx={{
+                    width: 38,
+                    height: 38,
+                    flexShrink: 0,
+                    borderRadius: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#14532D",
+                    backgroundColor: "#EAF4EC",
+                  }}
+                >
+                  <UserRound size={19} />
+                </Box>
+
+                <Box sx={{ minWidth: 0 }}>
+                  <Typography
+                    sx={{
+                      color: "#8A9690",
+                      fontSize: 11,
+                      fontWeight: 600,
+                      mb: 0.3,
+                    }}
+                  >
+                    {item.chairpersonLabel || "Committee Chairperson"}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "#173B2A",
+                      fontSize: { xs: 13, sm: 14 },
+                      fontWeight: 800,
+                      lineHeight: 1.5,
+                      overflowWrap: "anywhere",
+                    }}
+                  >
+                    {item.chairperson}
+                  </Typography>
+                </Box>
+              </Stack>
+            )}
+
+            {/* Contact Number */}
+            {item.phone && (
+              <Box
+                component="a"
+                href={phoneLink ? `tel:${phoneLink}` : undefined}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1.5,
+                  p: 1.5,
+                  borderRadius: 2.5,
+                  backgroundColor: "#F0F7F1",
+                  border: "1px solid #E1EEE3",
+                  textDecoration: "none",
+                  transition: "all 0.25s ease",
+                  "&:hover": {
+                    backgroundColor: "#E5F2E7",
+                    borderColor: "#14532D",
+                  },
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 36,
+                    height: 36,
+                    flexShrink: 0,
+                    borderRadius: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#FFFFFF",
+                    backgroundColor: "#14532D",
+                  }}
+                >
+                  <Phone size={17} />
+                </Box>
+
+                <Box sx={{ minWidth: 0 }}>
+                  <Typography
+                    sx={{
+                      color: "#8A9690",
+                      fontSize: 11,
+                      fontWeight: 600,
+                      mb: 0.3,
+                    }}
+                  >
+                    {item.contactLabel || "Contact"}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "#14532D",
+                      fontSize: 14,
+                      fontWeight: 800,
+                      letterSpacing: 0.3,
+                      overflowWrap: "anywhere",
+                    }}
+                  >
+                    {item.phone}
+                  </Typography>
+                </Box>
+              </Box>
+            )}
+          </>
         )}
       </Stack>
     </Paper>

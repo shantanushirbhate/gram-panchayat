@@ -1,0 +1,64 @@
+{
+  "transparency": {
+    "works": {
+      "hero": {
+        "breadcrumb": "Home / Transparency / Development Works",
+        "title": "Development Works",
+        "description": "A detailed overview of the development projects and schemes undertaken by Gram Panchayat Sategaon."
+      },
+      "intro": {
+        "eyebrow": "Development and Progress",
+        "title": "Development Works and Schemes",
+        "description": "Information about the development projects and schemes undertaken by Gram Panchayat Sategaon for the overall progress of the village."
+      },
+      "categories": {
+        "completed": {
+          "title": "Completed Works",
+          "description": "Development projects completed in the village and facilities made available to residents."
+        },
+        "ongoing": {
+          "title": "Ongoing Development Works",
+          "description": "An overview of development projects currently in progress and their status."
+        },
+        "proposed": {
+          "title": "Upcoming Proposed Works",
+          "description": "Planned and proposed projects for the future development of the village."
+        }
+      },
+      "records": {
+        "eyebrow": "Development Project Details",
+        "title": "Development Work Information",
+        "description": "Details of development projects undertaken by the Gram Panchayat, including their current status, location and expenditure.",
+        "work1": {
+          "title": "Concrete Road Construction in Ward No. 2",
+          "description": "Construction of a new cement concrete road from Mr. Patil's house to Maruti Temple.",
+          "status": "In Progress",
+          "location": "Ward No. 2 — Mr. Patil's House to Maruti Temple",
+          "year": "Financial Year 2025–26",
+          "cost": "Funding: 15th Finance Commission | Expenditure: ₹ 5.00 Lakh"
+        },
+        "work2": {
+          "title": "New Drinking Water Pipeline",
+          "description": "Replacement of the old leaking pipeline with a new PVC pipeline in the village.",
+          "status": "Near Completion",
+          "location": "Gram Panchayat Sategaon",
+          "year": "Financial Year 2025–26",
+          "cost": "Funding: Jal Jeevan Mission | Expenditure: ₹ 10.50 Lakh"
+        },
+        "work3": {
+          "title": "Installation of 50 New LED Street Lights",
+          "description": "High-mast and LED lights were installed on major village roads and at important intersections.",
+          "status": "Completed",
+          "location": "Major Village Roads and Intersections",
+          "year": "Completed: November 2024",
+          "cost": "Expenditure: ₹ 3.00 Lakh"
+        }
+      },
+      "progress": "Work Progress",
+      "note": {
+        "title": "Important Notice",
+        "description": "The information about the above projects is currently not up to date. It will be revised as soon as new information becomes available. Please contact the Gram Panchayat office for verified and updated information."
+      }
+    }
+  }
+}

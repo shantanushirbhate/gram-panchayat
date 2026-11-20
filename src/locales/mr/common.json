@@ -1,0 +1,51 @@
+
+{
+  "navbar": {
+    "panchayatName": "ग्रामपंचायत पिंपळखुटा बुद्रुक",
+    "englishName": "Gram Panchayat Pimpalkhuta Budruk",
+
+    "home": "मुख्यपृष्ठ",
+    "about": "परिचय",
+    "aboutInformation": "ग्रामपंचायतीची माहिती",
+    "villageIdentity": "गावाची ओळख",
+    "villageHistory": "गावाचा इतिहास",
+    "villageInformation": "गावाची माहिती",
+    "officeDetails": "कार्यालयीन तपशील",
+    "employeeList": "कर्मचारी यादी",
+    "honorsAndAwards": "सन्मान व पुरस्कार",
+    "wishesAndCongratulations": "शुभेच्छा व अभिनंदन",
+    "initiativesAndEvents": "उपक्रम व कार्यक्रम",
+    "cultureAndTraditions": "संस्कृती व परंपरा",
+    "emergencyContacts": "आपत्कालीन संपर्क",
+    "rolesAndResponsibilities": "भूमिका व जबाबदाऱ्या",
+
+    "transparency": "पारदर्शकता",
+    "arthikMahiti": "आर्थिक माहिती",
+    "kamachiMahiti": "कामाची माहिती",
+    "gramSabhaCorner": "ग्रामसभा दालन",
+
+    "educationParyavaran": "शिक्षण व पर्यावरण",
+    "paryavaranVShasvatVikas": "पर्यावरण व शाश्वत विकास",
+    "shikshanAniYuvakKopra": "शिक्षण व युवक कोपरा",
+    "shikshanVPayavaran": "शिक्षण व पर्यावरण",
+
+    "samitiya": "समित्या",
+
+    "seva": "सेवा",
+    "suchanaVJahirati": "सूचना व जाहिराती",
+    "onlineKarBharna": "ऑनलाइन कर भरणा",
+    "nagrikSeva": "नागरिक सेवा",
+    "shaskiyaYojna": "शासकीय योजना",
+    "mahitichaAdhikar": "माहितीचा अधिकार",
+
+    "adhik": "अधिक",
+    "rojgarVKaushalya": "रोजगार व कौशल्य",
+    "udyogVUpkram": "उद्योग व उपक्रम",
+    "swyamSahayataGut": "स्वयं सहायता गट",
+    "mahatvacheDuve": "महत्त्वाचे दुवे",
+    "takrarSuchanaSallaAbhipray": "तक्रार / सूचना / सल्ला / अभिप्राय",
+    "sitemap": "साइटमॅप",
+
+    "dashboard": "डॅशबोर्ड"
+  }
+}

@@ -1,0 +1,54 @@
+
+
+
+
+
+{
+  "transparency": {
+    "gramSabha": {
+      "hero": {
+        "breadcrumb": "Home / Transparency / Gram Sabha",
+        "title": "Gram Sabha Annual Schedule – 2026",
+        "description": "Information about Gram Sabha meetings, notices, resolutions and important village development decisions of Gram Panchayat Sategaon."
+      },
+      "intro": {
+        "eyebrow": "Public Participation and Transparency",
+        "title": "Gram Sabha Information Centre",
+        "description": "Gram Sabha meetings are organized to ensure citizens' participation in the village development process. Information about meetings, notices, resolutions and proceedings is available here."
+      },
+      "sections": {
+        "meetings": {
+          "title": "Gram Sabha Meetings",
+          "description": "Details of scheduled Gram Sabha meetings, including dates, timings and venues."
+        },
+        "notices": {
+          "title": "Gram Sabha Notices",
+          "description": "Official announcements regarding upcoming Gram Sabha meetings and important matters."
+        },
+        "resolutions": {
+          "title": "Gram Sabha Resolutions",
+          "description": "Development-related and public welfare resolutions approved during Gram Sabha meetings."
+        },
+        "minutes": {
+          "title": "Meeting Minutes",
+          "description": "Written records of discussions, decisions and proceedings of Gram Sabha meetings."
+        }
+      },
+      "records": {
+        "eyebrow": "Meetings and Decisions",
+        "title": "Gram Sabha Records and Information",
+        "description": "Information about the annual Gram Sabha schedule, meeting details and important decisions.",
+        "meetingTitle": "Gram Sabha Meeting",
+        "meetingDescription": "A special Gram Sabha meeting was scheduled for 26 January 2026 on the occasion of Republic Day. The meeting was scheduled for 10:30 AM at the Zilla Parishad School Ground, beside the flagpole.",
+        "meetingStatus": "Scheduled Date – 26 January 2026",
+        "decisionTitle": "Key Gram Sabha Agenda Items",
+        "decisionDescription": "The key agenda items included preparation and approval of the GPDP (Gram Panchayat Development Plan) for 2026–27, a special discussion on Republic Day, selection of beneficiaries for individual benefit schemes and reading of resolutions passed by the Mahila Gram Sabha.",
+        "decisionStatus": "Meeting Agenda"
+      },
+      "note": {
+        "title": "Important Notice",
+        "description": "Information about Gram Sabha meetings, resolutions and minutes will be updated according to available records. Please contact the Gram Panchayat Sategaon office for official and detailed information."
+      }
+    }
+  }
+}

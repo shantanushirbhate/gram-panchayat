@@ -1,49 +1,65 @@
 
 import {
   Users,
-  Leaf,
   Droplets,
+  Handshake,
   GraduationCap,
-  ShieldCheck,
   HeartHandshake,
+  ShieldCheck,
+  ClipboardCheck,
+  Eye,
 } from "lucide-react";
 
+// ================= COMMITTEE CARDS =================
 export const samitiyaCards = [
   {
     id: 1,
-    key: "villageDevelopment",
-    icon: Users,
-  },
-  {
-    id: 2,
-    key: "waterManagement",
+    key: "waterSanitation",
     icon: Droplets,
   },
   {
+    id: 2,
+    key: "disputeResolution",
+    icon: Handshake,
+  },
+  {
     id: 3,
-    key: "healthAndSanitation",
+    key: "healthNutrition",
     icon: HeartHandshake,
   },
   {
     id: 4,
-    key: "education",
+    key: "schoolManagement",
     icon: GraduationCap,
   },
   {
     id: 5,
-    key: "environment",
-    icon: Leaf,
+    key: "womenChildWelfare",
+    icon: Users,
   },
   {
     id: 6,
-    key: "socialJustice",
+    key: "disasterManagement",
     icon: ShieldCheck,
   },
 ];
 
+// ================= COMMITTEE RESPONSIBILITIES =================
 export const samitiyaResponsibilities = [
-  { id: 1, key: "planning" },
-  { id: 2, key: "publicParticipation" },
-  { id: 3, key: "monitoring" },
-  { id: 4, key: "transparency" },
+  {
+    id: 1,
+    key: "planning",
+  },
+  {
+    id: 2,
+    key: "publicParticipation",
+  },
+  {
+    id: 3,
+    key: "monitoring",
+  },
+  {
+    id: 4,
+    key: "coordination",
+  },
 ];

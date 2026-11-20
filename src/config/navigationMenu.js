@@ -15,10 +15,7 @@ const navigationMenu = [
         label: "aboutInformation",
         path: "/about",
       },
-      {
-        label: "villageIdentity",
-        path: "/about/village-identity",
-      },
+
       {
         label: "villageHistory",
         path: "/about/history",
@@ -65,7 +62,6 @@ const navigationMenu = [
   // TRANSPARENCY
   {
     label: "transparency",
-    path: "/transparency",
     children: [
       {
         label: "arthikMahiti",
@@ -109,32 +105,32 @@ const navigationMenu = [
   },
 
   // SEVA
-{
-  label: "seva",
-  path: "/services",
-  children: [
-    {
-      label: "suchanaVJahirati",
-      path: "/services/suchana-jahirati",
-    },
-    {
-      label: "onlineKarBharna",
-      path: "/services/online-kar-bharna",
-    },
-    {
-      label: "nagrikSeva",
-      path: "/services/nagrik-seva",
-    },
-    {
-      label: "shaskiyaYojna",
-      path: "/services/shaskiya-yojna",
-    },
-    {
-      label: "mahitichaAdhikar",
-      path: "/services/mahiticha-adhikar",
-    },
-  ],
-},
+  {
+    label: "seva",
+    path: "/services",
+    children: [
+      {
+        label: "suchanaVJahirati",
+        path: "/services/suchana-jahirati",
+      },
+      {
+        label: "onlineKarBharna",
+        path: "/services/online-kar-bharna",
+      },
+      {
+        label: "nagrikSeva",
+        path: "/services/nagrik-seva",
+      },
+      {
+        label: "shaskiyaYojna",
+        path: "/services/shaskiya-yojna",
+      },
+      {
+        label: "mahitichaAdhikar",
+        path: "/services/mahiticha-adhikar",
+      },
+    ],
+  },
 
   // ADHIK
   {
@@ -154,7 +150,7 @@ const navigationMenu = [
         path: "/adhik/swyam-sahayata-gut",
       },
       {
-        label: "mahatvacheDuwe",
+        label: "mahatvacheDuve",
         path: "/adhik/mahatvache-duwe",
       },
       {

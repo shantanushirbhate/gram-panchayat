@@ -1,0 +1,60 @@
+
+{
+  "navbar": {
+    "panchayatName": "Gram Panchayat Sategaon",
+    "englishName": "Gram Panchayat Sategaon",
+    "location": "Taluka Anjangaon Surji, District Amravati, Maharashtra",
+
+    "home": "Home",
+    "about": "About",
+    "aboutInformation": "About Information",
+    "villageIdentity": "Village Identity",
+    "villageHistory": "Village History",
+    "villageInformation": "Village Information",
+    "officeDetails": "Office Details",
+    "employeeList": "Employee List",
+    "honorsAndAwards": "Honors & Awards",
+    "wishesAndCongratulations": "Wishes & Congratulations",
+    "initiativesAndEvents": "Initiatives & Events",
+    "cultureAndTraditions": "Culture & Traditions",
+    "emergencyContacts": "Emergency Contacts",
+    "rolesAndResponsibilities": "Roles & Responsibilities",
+
+    "transparency": "Transparency",
+    "arthikMahiti": "Financial Information",
+    "kamachiMahiti": "Work Information",
+    "gramSabhaCorner": "Gram Sabha Corner",
+
+    "educationParyavaran": "Education & Environment",
+    "paryavaranVShasvatVikas": "Environment & Sustainable Development",
+    "shikshanAniYuvakKopra": "Education & Youth Corner",
+    "shikshanVPayavaran": "Education & Environment",
+
+    "samitiya": "Committees",
+
+    "seva": "Services",
+    "suchanaVJahirati": "Notices & Announcements",
+    "onlineKarBharna": "Online Tax Payment",
+    "nagrikSeva": "Citizen Services",
+    "shaskiyaYojna": "Government Schemes",
+    "mahitichaAdhikar": "Right to Information",
+
+    "adhik": "More",
+    "rojgarVKaushalya": "Employment & Skills",
+    "udyogVUpkram": "Industries & Initiatives",
+    "swyamSahayataGut": "Self-Help Groups",
+    "mahatvacheDuwe": "Important Links",
+    "takrarSuchanaSallaAbhipray": "Complaints, Suggestions & Feedback",
+    "sitemap": "Sitemap",
+
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "mainMenu": "Main Menu",
+    "contactInformation": "Contact Information",
+    "contactNumber": "Contact Number",
+    "email": "Email",
+    "governmentOfIndia": "Government of India",
+    "maharashtraGovernment": "Government of Maharashtra",
+    "footerTagline": "Service • Dedication • Transparency"
+  }
+}

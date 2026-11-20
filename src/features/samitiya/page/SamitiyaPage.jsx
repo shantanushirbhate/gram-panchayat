@@ -139,24 +139,46 @@ const SamitiyaPage = () => {
             spacing={{ xs: 2, sm: 2.5, md: 3 }}
             sx={{ mt: { xs: 2, md: 3 } }}
           >
-            {samitiyaCards.map((item) => (
-              <Grid
-                key={item.id}
-                size={{ xs: 12, sm: 6, md: 4 }}
-              >
-                <SamitiyaCard
-                  item={{
-                    icon: item.icon,
-                    title: t(
-                      `samitiya.committees.items.${item.key}.title`
-                    ),
-                    description: t(
-                      `samitiya.committees.items.${item.key}.description`
-                    ),
-                  }}
-                />
-              </Grid>
-            ))}
+            {samitiyaCards.map((item) => {
+              const committeeKey = `samitiya.committees.items.${item.key}`;
+
+              return (
+                <Grid
+                  key={item.id}
+                  size={{ xs: 12, sm: 6, md: 4 }}
+                >
+                  <SamitiyaCard
+                    item={{
+                      // Committee icon
+                      icon: item.icon,
+
+                      // Committee information
+                      title: t(`${committeeKey}.title`),
+                      description: t(`${committeeKey}.description`),
+
+                      // Chairperson information
+                      chairpersonLabel: t(
+                        `${committeeKey}.chairpersonLabel`
+                      ),
+                      chairperson: t(
+                        `${committeeKey}.chairperson`
+                      ),
+
+                      // Contact information
+                      contactLabel: t(
+                        `${committeeKey}.contactLabel`
+                      ),
+                      phone: t(`${committeeKey}.phone`),
+
+                      // Optional responsibilities
+                      responsibilities: item.responsibilities || [],
+                      responsibilitiesTitle:
+                        item.responsibilitiesTitle,
+                    }}
+                  />
+                </Grid>
+              );
+            })}
           </Grid>
 
           <Typography
